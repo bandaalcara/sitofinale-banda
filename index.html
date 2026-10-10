@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Corpo Bandistico Municipale “G. Verdi”</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f1e8;
+      color: #1e332d;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+.contact-info {
+  max-width: 650px;
+  margin: 40px auto 0;
+  text-align: center;
+}
+
+.contact-info p {
+  margin: 0 0 20px;
+  color: #d7dedb;
+}
+
+.contact-info strong {
+  color: #f7f3ea;
+}
+
+.contact-info a {
+  color: #d4b56a;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.contact-info small {
+  color: #aeb9b4;
+}
+    /* HEADER */
+
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 25px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+      color: white;
+    }
+
+ .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.logo img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: white;
+  padding: 3px;
+}
+    nav {
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      transition: 0.3s;
+    }
+
+    .search-box {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.search-box input {
+  width: 170px;
+  padding: 9px 14px;
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 20px;
+  background: rgba(255,255,255,0.12);
+  color: white;
+  outline: none;
+  font-size: 13px;
+}
+
+.search-box input::placeholder {
+  color: #ddd;
+}
+
+.search-box input:focus {
+  border-color: #d4b56a;
+  background: rgba(255,255,255,0.18);
+}
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 7%;
+      position: relative;
+      background:
+        linear-gradient(rgba(20, 45, 39, 0.82), rgba(20, 45, 39, 0.82)),
+        url("home.jpeg")
+        center/cover;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      color: #d4b56a;
+      font-size: 15px;
+      letter-spacing: 5px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 7vw, 90px);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+      font-size: 22px;
+      color: #eee;
+      margin-bottom: 35px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 28px;
+      border: 1px solid #d4b56a;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background: #d4b56a;
+      color: #1e332d;
+    }
+
+    /* GENERAL */
+
+    section {
+      padding: 100px 7%;
+    }
+
+    .section-label {
+      color: #a48642;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .section-title {
+      font-size: 45px;
+      margin-bottom: 25px;
+    }
+
+    .section-text {
+      max-width: 750px;
+      font-size: 18px;
+      color: #53615c;
+    }
+
+    /* STORIA */
+
+    .history {
+      background: #f5f1e8;
+    }
+
+    .history-number {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(70px, 12vw, 150px);
+      color: #d4b56a;
+      line-height: 1;
+      margin: 35px 0;
+    }
+
+    .years {
+      font-size: 22px;
+      letter-spacing: 4px;
+      color: #1e332d;
+    }
+
+    /* EVENTI */
+
+    .events {
+      background: #1e332d;
+      color: white;
+    }
+
+    .events .section-text {
+      color: #d7dedb;
+    }
+
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 50px;
+    }
+
+    .event-card {
+      border: 1px solid rgba(212, 181, 106, 0.4);
+      padding: 35px;
+      min-height: 230px;
+      transition: 0.3s;
+    }
+
+    .event-card:hover {
+      transform: translateY(-5px);
+      border-color: #d4b56a;
+    }
+
+    .event-date {
+      color: #d4b56a;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+
+    .event-card h3 {
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    .event-card p {
+      color: #d7dedb;
+    }
+
+    /* BANDA */
+
+    .band {
+      background: white;
+    }
+
+    .band-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .band-box {
+      min-height: 400px;
+      background:
+        linear-gradient(rgba(30, 51, 45, 0.2), rgba(30, 51, 45, 0.2)),
+        url("labanda.jpeg")
+        center/cover;
+    }
+
+    .band-links {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+  .band-links a {
+  border: 1px solid #d4b56a;
+  padding: 10px 16px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.band-links a:hover {
+  background: #d4b56a;
+  color: #1e332d;
+}
+
+    /* SCUOLA */
+
+    .school {
+      background: #e9e3d6;
+    }
+
+    .school-content {
+      max-width: 850px;
+    }
+        .music-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 45px;
+    }
+
+    .music-card {
+      background: #f7f3ea;
+      padding: 30px 25px;
+      border: 1px solid rgba(20, 45, 39, 0.12);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .music-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(20, 45, 39, 0.12);
+    }
+
+    .music-card span {
+      display: block;
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .music-card h3 {
+      margin-bottom: 10px;
+      color: #1e332d;
+      font-family: Georgia, serif;
+      font-size: 22px;
+    }
+
+    .music-card p {
+      margin: 0;
+      line-height: 1.6;
+      font-size: 15px;
+      color: #555;
+    }
+
+    @media (max-width: 800px) {
+      .music-features {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* GALLERIA */
+
+    .gallery {
+      background: white;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 45px;
+    }
+
+    .gallery-item {
+      height: 250px;
+      background: #d9d4c9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #68736e;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+    }
+
+    /* CONTATTI */
+
+    .contact {
+      background: #1e332d;
+      color: white;
+      text-align: center;
+    }
+
+    .contact .section-text {
+      margin: 0 auto 30px;
+      color: #d7dedb;
+    }
+
+    .social {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .social a {
+      border: 1px solid rgba(212, 181, 106, 0.5);
+      padding: 12px 22px;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .social a:hover {
+      background: #d4b56a;
+      color: #1e332d;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #14251f;
+      color: #aeb9b4;
+      text-align: center;
+      padding: 30px 7%;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      header {
+        padding: 20px 5%;
+      }
+
+      .logo {
+        font-size: 16px;
+      }
+
+      nav {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  font-size: 10px;
+}
+
+.search-box {
+  display: none;
+}
+
+      .hero {
+        padding: 100px 7%;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .hero-subtitle {
+        font-size: 18px;
+      }
+
+      section {
+        padding: 70px 7%;
+      }
+
+      .section-title {
+        font-size: 36px;
+      }
+
+      .event-grid,
+      .gallery-grid,
+      .band-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .band-box {
+        min-height: 300px;
+      }
+
+      .history-number {
+        font-size: 90px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="logo">
+      <img src="logo.jpeg" alt="Logo Corpo Bandistico Municipale G. Verdi">
+      <span>G. VERDI · 1911</span>
+    </div>
+    
+    <nav>
+  <a href="index.html">Home</a>
+  <a href="la-banda.html">La Banda</a>
+  <a href="musica.html">Musica</a>
+  <a href="eventi.html">Eventi</a>
+  <a href="albo.html">Albo Storico</a>
+  <a href="#galleria">Galleria</a>
+  <a href="#contatti">Contatti</a>
+</nav>
+      <div class="search-box">
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Cerca..."
+    onkeyup="cercaNelSito()"
+  >
+</div>
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">DAL 1911</div>
+
+      <h1>
+        Corpo Bandistico<br>
+        Municipale “G. Verdi”
+      </h1>
+
+      <div class="hero-subtitle">
+        Associazione Musicale Alcarese
+        <br>
+        115 anni di musica, tradizione e passione.
+      </div>
+
+      <a href="la-banda.html" class="button">
+  Scopri la nostra storia
+</a>
+
+    </div>
+
+  </section>
+
+
+  <!-- STORIA -->
+
+  <section class="history" id="storia">
+
+    <div class="section-label">La nostra storia</div>
+
+    <h2 class="section-title">
+      115 anni di storia
+    </h2>
+
+    <div class="history-number">
+      1911
+    </div>
+
+    <div class="years">
+      1911 — 2026
+    </div>
+
+    <p class="section-text" style="margin-top:30px;">
+      Una tradizione musicale che attraversa generazioni,
+      accompagnando la vita della comunità di Alcara Li Fusi
+      e mantenendo vivo, anno dopo anno, il valore della musica
+      e della condivisione.
+    </p>
+
+  </section>
+
+  <!-- LA BANDA -->
+
+  <section class="band">
+
+    <div class="band-grid">
+
+      <div class="band-box"></div>
+
+      <div>
+
+        <div class="section-label">La Banda</div>
+
+        <h2 class="section-title">
+          Una comunità<br>
+          che suona insieme.
+        </h2>
+
+        <p class="section-text">
+          Scopri la storia del Corpo Bandistico Municipale
+          “G. Verdi”, le persone che ne hanno fatto parte,
+          i direttori e il direttivo dell'Associazione Musicale
+          Alcarese.
+        </p>
+
+       <div class="band-links">
+  <a href="albo.html">Albo Storico</a>
+</div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MUSICA -->
+
+<section class="school" id="musica">
+
+  <div class="school-content">
+
+    <div class="section-label">Musica e formazione</div>
+
+    <h2 class="section-title">
+      La musica che cresce con noi
+    </h2>
+
+    <p class="section-text">
+      La musica si impara, si vive e si trasmette.
+      Da oltre un secolo, l'Associazione Musicale Alcarese
+      rappresenta un punto di riferimento per la formazione
+      musicale e per la crescita di nuove generazioni di musicisti.
+    </p>
+
+    <p class="section-text">
+      Attraverso la Scuola di Musica, bambini, ragazzi e adulti
+      possono avvicinarsi al mondo della musica, conoscere gli
+      strumenti della banda e sviluppare passione, disciplina
+      e spirito di gruppo.
+    </p>
+
+    <div class="music-features">
+
+      <div class="music-card">
+        <span>🎺</span>
+        <h3>Strumenti</h3>
+        <p>
+          Un percorso dedicato alla conoscenza e allo studio
+          degli strumenti musicali della banda.
+        </p>
+      </div>
+
+      <div class="music-card">
+        <span>🎼</span>
+        <h3>Formazione</h3>
+        <p>
+          Dalle prime nozioni musicali alla pratica d'insieme,
+          per costruire solide basi e crescere insieme.
+        </p>
+      </div>
+
+      <div class="music-card">
+        <span>🎵</span>
+        <h3>Passione</h3>
+        <p>
+          La musica come esperienza di condivisione,
+          tradizione e partecipazione alla vita della comunità.
+        </p>
+      </div>
+
+    </div>
+
+    <a href="musica.html" class="button"
+   style="margin-top:30px; background:#1e332d;">
+  Scopri la Scuola di Musica
+</a>
+
+  </div>
+
+</section>
+
+
+  <!-- CONTATTI -->
+
+<section class="contact" id="contatti">
+
+  <div class="section-label">Contatti</div>
+
+  <h2 class="section-title">
+    Seguici e resta in contatto
+  </h2>
+
+  <p class="section-text">
+    Tutte le novità, gli eventi e le attività
+    dell'Associazione Musicale Alcarese.
+  </p>
+
+  <div class="contact-info">
+
+    <p>
+      <strong>ASSOCIAZIONE MUSICALE ALCARESE</strong>
+    </p>
+
+    <p>
+      Via della Rinascita, n. 16<br>
+      98070 Alcara li Fusi (ME)
+    </p>
+
+    <p>
+      P. IVA n. 03297680831<br>
+      C.F. 95023530835
+    </p>
+
+    <p>
+      Tel. 338.240.2745<br>
+      <small>Maestro Direttore</small>
+    </p>
+
+    <p>
+      Email:
+      <a href="mailto:bandamunicipalealcara@gmail.com">
+        bandamunicipalealcara@gmail.com
+      </a>
+    </p>
+
+    <p>
+      PEC:
+      associazionemusicalealcarese@pec.it
+    </p>
+
+  </div>
+
+  <div class="social">
+
+    <a href="#" target="_blank">Facebook</a>
+
+    <a href="#" target="_blank">Instagram</a>
+
+  </div>
+
+</section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <strong>
+      Corpo Bandistico Municipale “G. Verdi”
+    </strong>
+
+    <br>
+
+    Associazione Musicale Alcarese · Alcara Li Fusi · Messina
+
+    <br><br>
+
+    Dal 1911…
+
+  </footer>
+<script>
+
+function cercaNelSito() {
+
+  const testo = document.getElementById("searchInput").value
+    .toLowerCase()
+    .trim();
+
+  if (testo === "") {
+    return;
+  }
+
+  const elementi = document.querySelectorAll(
+    "h1, h2, h3, p, .section-label, .years"
+  );
+
+  for (let elemento of elementi) {
+
+    if (elemento.textContent.toLowerCase().includes(testo)) {
+
+      elemento.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+      elemento.style.transition = "background 0.3s";
+      elemento.style.background = "#d4b56a";
+
+      setTimeout(() => {
+        elemento.style.background = "";
+      }, 1500);
+
+      return;
+    }
+  }
+
+}
+
+</script>
+</body>
+</html>
+   
