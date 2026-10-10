@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Musica | Corpo Bandistico Municipale “G. Verdi”</title>
+  <title>La Scuola di Musica | Corpo Bandistico Municipale “G. Verdi”</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -69,6 +72,7 @@
       max-width: 700px;
       line-height: 1.7;
       font-size: 18px;
+      color: #f7f3ea;
     }
 
     section {
@@ -91,52 +95,55 @@
       color: #4d514d;
     }
 
-   .card {
-  background: #f7f3ea;
-  padding: 40px;
-  margin-top: 35px;
-  border: 1px solid rgba(30, 51, 45, 0.12);
-  box-shadow: 0 8px 25px rgba(30, 51, 45, 0.06);
-}
+    .card {
+      background: #f7f3ea;
+      padding: 40px;
+      margin-top: 35px;
+      border: 1px solid rgba(30, 51, 45, 0.12);
+      box-shadow: 0 8px 25px rgba(30, 51, 45, 0.06);
+    }
 
-.card h2 {
-  color: #1e332d;
-  margin-top: 0;
-  margin-bottom: 25px;
-}
+    .card h2 {
+      color: #1e332d;
+      margin-top: 0;
+      margin-bottom: 25px;
+    }
 
-.card h3 {
-  color: #1e332d;
-  font-family: Georgia, serif;
-  margin-top: 30px;
-}
+    .card h3 {
+      color: #1e332d;
+      font-family: Georgia, serif;
+      margin-top: 30px;
+    }
 
-.card p {
-  margin-bottom: 18px;
-}
-.photo-placeholder {
-  margin-top: 30px;
-  min-height: 220px;
-  background: #e9e3d6;
-  border: 2px dashed #c9a45c;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #1e332d;
-  font-family: Georgia, serif;
-  font-size: 18px;
-  text-align: center;
-}
+    .card p {
+      margin-bottom: 18px;
+    }
+
     blockquote {
-  margin: 30px 0;
-  padding: 20px 25px;
-  border-left: 4px solid #c9a45c;
-  background: rgba(233, 227, 214, 0.6);
-  font-family: Georgia, serif;
-  font-style: italic;
-  line-height: 1.8;
-  color: #1e332d;
-}
+      margin: 30px 0;
+      padding: 20px 25px;
+      border-left: 4px solid #c9a45c;
+      background: rgba(233, 227, 214, 0.6);
+      font-family: Georgia, serif;
+      font-style: italic;
+      line-height: 1.8;
+      color: #1e332d;
+    }
+
+    .photo-placeholder {
+      margin-top: 30px;
+      min-height: 220px;
+      background: #e9e3d6;
+      border: 2px dashed #c9a45c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1e332d;
+      font-family: Georgia, serif;
+      font-size: 18px;
+      text-align: center;
+    }
+
     footer {
       background: #1e332d;
       color: #f7f3ea;
@@ -144,36 +151,225 @@
       padding: 35px 7%;
     }
 
- @media (max-width: 800px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+    footer p {
+      color: #f7f3ea;
+    }
 
-  nav {
-    gap: 15px;
-  }
+    /* Biografia e fotografia principale del Maestro */
 
-  h1 {
-    font-size: 42px;
-  }
+    .parrino-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(240px, 0.85fr);
+      gap: 32px;
+      align-items: start;
+    }
 
-  h2 {
-    font-size: 30px;
-  }
+    .parrino-biografia {
+      min-width: 0;
+    }
 
-  section {
-    padding: 60px 6%;
-  }
+    .parrino-biografia p:first-child {
+      margin-top: 0;
+    }
 
-  .card {
-    padding: 25px 20px;
-  }
+    .parrino-foto-principale {
+      margin: 8px 0 25px;
+      text-align: center;
+    }
 
-  .photo-placeholder {
-    min-height: 180px;
-  }
-}
+    .parrino-foto-principale img {
+      display: block;
+      width: 100%;
+      max-height: 520px;
+      object-fit: contain;
+      border-radius: 6px;
+      cursor: zoom-in;
+      background: #e9e3d6;
+    }
+
+    .parrino-foto-principale p {
+      margin: 10px 0 0;
+      font-size: 14px;
+      font-style: italic;
+    }
+
+    /* Galleria fotografica */
+
+    .parrino-galleria-titolo {
+      margin-top: 45px !important;
+    }
+
+    .parrino-carousel {
+      margin-top: 20px;
+      padding: 18px;
+      background: #e9e3d6;
+      border-radius: 8px;
+    }
+
+    .parrino-carousel-display {
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr) 44px;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .parrino-freccia {
+      border: 0;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      background: #1e332d;
+      color: #f7f3ea;
+      font-size: 28px;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .parrino-freccia:hover {
+      background: #c9a45c;
+      color: #1e332d;
+    }
+
+    .parrino-foto-grande {
+      display: block;
+      width: 100%;
+      height: 430px;
+      object-fit: contain;
+      background: #f7f3ea;
+      border-radius: 5px;
+      cursor: zoom-in;
+    }
+
+    .parrino-contatore {
+      text-align: center;
+      font-size: 13px;
+      margin: 10px 0 15px;
+      color: #1e332d;
+    }
+
+    .parrino-miniature {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 5px 2px 12px;
+      scroll-behavior: smooth;
+    }
+
+    .parrino-miniatura {
+      flex: 0 0 92px;
+      height: 72px;
+      padding: 3px;
+      border: 2px solid transparent;
+      border-radius: 5px;
+      background: #f7f3ea;
+      cursor: pointer;
+    }
+
+    .parrino-miniatura img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 2px;
+    }
+
+    .parrino-miniatura.attiva {
+      border-color: #c9a45c;
+    }
+
+    /* Visualizzazione ingrandita */
+
+    #parrino-lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      inset: 0;
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.9);
+      align-items: center;
+      justify-content: center;
+    }
+
+    #parrino-lightbox.aperto {
+      display: flex;
+    }
+
+    #parrino-lightbox img {
+      max-width: 92vw;
+      max-height: 88vh;
+      object-fit: contain;
+    }
+
+    #parrino-lightbox button {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 42px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 800px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        gap: 15px;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      h2 {
+        font-size: 30px;
+      }
+
+      section {
+        padding: 60px 6%;
+      }
+
+      .card {
+        padding: 25px 20px;
+      }
+
+      .parrino-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .parrino-foto-principale {
+        max-width: 440px;
+        margin: 25px auto;
+      }
+
+      .parrino-foto-grande {
+        height: 300px;
+      }
+
+      .parrino-carousel-display {
+        grid-template-columns: 36px minmax(0, 1fr) 36px;
+        gap: 6px;
+      }
+
+      .parrino-freccia {
+        width: 36px;
+        height: 36px;
+        font-size: 23px;
+      }
+
+      .parrino-miniatura {
+        flex-basis: 76px;
+        height: 62px;
+      }
+
+      .photo-placeholder {
+        min-height: 180px;
+      }
+    }
   </style>
 </head>
 
@@ -182,20 +378,19 @@
 <header>
   <div class="logo">Corpo Bandistico Municipale “G. Verdi”</div>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="la-banda.html">La Banda</a>
-  <a href="musica.html">La Scuola di Musica</a>
-  <a href="eventi.html">Eventi</a>
-  <a href="index.html#galleria">Galleria</a>
-  <a href="index.html#contatti">Contatti</a>
-</nav>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="la-banda.html">La Banda</a>
+    <a href="musica.html">La Scuola di Musica</a>
+    <a href="eventi.html">Eventi</a>
+    <a href="index.html#galleria">Galleria</a>
+    <a href="index.html#contatti">Contatti</a>
+  </nav>
 </header>
 
 <section class="hero">
   <div class="content">
     <div class="section-label">Musica e formazione</div>
-
     <h1>La Scuola di Musica</h1>
 
     <p>
@@ -208,7 +403,6 @@
 
 <section>
   <div class="content">
-
     <div class="section-label">La nostra scuola</div>
 
     <h2>La musica si impara, si vive e si trasmette.</h2>
@@ -229,152 +423,182 @@
       tra generazioni diverse e contribuisce a mantenere viva
       la tradizione musicale della nostra Associazione.
     </p>
-
   </div>
 </section>
 
 <section>
   <div class="content">
-
     <div class="section-label">Una figura fondamentale</div>
 
     <h2>Il Maestro Onorario Giuseppe Parrino</h2>
 
     <div class="card">
 
-      <p>
-        Il Maestro Onorario Giuseppe Parrino è nato nel 1929
-        ad Alcara li Fusi ed è morto l'8 ottobre 2021.
-      </p>
+      <div class="parrino-layout">
+        <div class="parrino-biografia">
 
-      <p>
-        Ha studiato inizialmente nella scuola di musica bandistica
-        con il maestro Cipitì e ha proseguito gli studi con il
-        Piccolo Mi♭ con il maestro Seminara, entrando a far parte
-        della Banda Municipale Alcarese a 17 anni, nel 1946.
-      </p>
+          <p>
+            Il Maestro Onorario Giuseppe Parrino è nato nel 1929
+            ad Alcara li Fusi ed è morto l'8 ottobre 2021.
+          </p>
 
-      <p>
-        Nel 1977 è stato nominato Capo Banda e da allora ha svolto
-        anche la funzione di insegnante della Scuola di Musica
-        della Banda. Fino al 2013 ha formato con successo
-        <strong>90 allievi</strong>, consentendo il loro inserimento
-        in Banda.
-      </p>
+          <p>
+            Ha studiato inizialmente nella scuola di musica bandistica
+            con il maestro Cipitì e ha proseguito gli studi con il
+            Piccolo Mi♭ con il maestro Seminara, entrando a far parte
+            della Banda Municipale Alcarese a 17 anni, nel 1946.
+          </p>
 
-      <p>
-        In occasione dell'ottantesimo anniversario della fondazione
-        della Banda, nel 1991, gli è stato conferito un attestato
-        in riconoscimento del suo impegno, del suo sapere e
-        dell'opera svolta per il progresso musicale alcarese.
-      </p>
+          <p>
+            Nel 1977 è stato nominato Capo Banda e da allora ha svolto
+            anche la funzione di insegnante della Scuola di Musica
+            della Banda. Fino al 2013 ha formato con successo
+            <strong>90 allievi</strong>, consentendo il loro inserimento
+            in Banda.
+          </p>
 
-      <p>
-        Nell'agosto del 1996 gli è stato riconosciuto dalla Banda
-        il <strong>Diploma di Maestro Onorario</strong>, su iniziativa
-        del maestro direttore M. Saccone.
-      </p>
+          <p>
+            In occasione dell'ottantesimo anniversario della fondazione
+            della Banda, nel 1991, gli è stato conferito un attestato
+            in riconoscimento del suo impegno, del suo sapere e
+            dell'opera svolta per il progresso musicale alcarese.
+          </p>
 
-      <blockquote>
-        «Titolo di riconoscenza artistica per una vita dedicata
-        con passione e virtù al servizio reso con esemplare talento
-        nel Corpo Bandistico Municipale».
-      </blockquote>
+          <p>
+            Nell'agosto del 1996 gli è stato riconosciuto dalla Banda
+            il <strong>Diploma di Maestro Onorario</strong>, su iniziativa
+            del maestro direttore M. Saccone.
+          </p>
 
-      <h3>Le sue composizioni</h3>
+          <blockquote>
+            «Titolo di riconoscenza artistica per una vita dedicata
+            con passione e virtù al servizio reso con esemplare talento
+            nel Corpo Bandistico Municipale».
+          </blockquote>
 
-      <ul>
-        <li><strong>Vecchia banda musicale Alcarese</strong> — marcia sinfonica</li>
-        <li><strong>Desy</strong> — marcia sinfonica</li>
-        <li><strong>Nicolas</strong> — marcia sinfonica</li>
-        <li><strong>Argentina</strong> — marcia militare</li>
-        <li><strong>Due Novembre</strong> — marcia funebre</li>
-      </ul>
+          <h3>Le sue composizioni</h3>
 
-      <h3>Un'eredità che continua</h3>
+          <ul>
+            <li><strong>Vecchia banda musicale Alcarese</strong> — marcia sinfonica</li>
+            <li><strong>Desy</strong> — marcia sinfonica</li>
+            <li><strong>Nicolas</strong> — marcia sinfonica</li>
+            <li><strong>Argentina</strong> — marcia militare</li>
+            <li><strong>Due Novembre</strong> — marcia funebre</li>
+          </ul>
 
-      <p>
-        Al Maestro Giuseppe Parrino il Corpo Bandistico Municipale
-        deve moltissimo. Ha educato all'arte musicale intere
-        generazioni di nostri componenti, trasmettendo loro con
-        passione, lavoro e impegno assoluto un grande amore
-        per la musica.
-      </p>
+          <h3>Un'eredità che continua</h3>
 
-      <p>
-        Ci ha trasmesso i valori della dedizione e dell'impegno
-        e ci ha fatto capire quanto sia bello e importante vivere
-        la musica in tutte le sue forme, soprattutto nella
-        condivisione, come in una grande famiglia.
-      </p>
+          <p>
+            Al Maestro Giuseppe Parrino il Corpo Bandistico Municipale
+            deve moltissimo. Ha educato all'arte musicale intere
+            generazioni di nostri componenti, trasmettendo loro con
+            passione, lavoro e impegno assoluto un grande amore
+            per la musica.
+          </p>
 
-      <p>
-        <strong>Noi possiamo solo dirgli GRAZIE!</strong>
-      </p>
+          <p>
+            Ci ha trasmesso i valori della dedizione e dell'impegno
+            e ci ha fatto capire quanto sia bello e importante vivere
+            la musica in tutte le sue forme, soprattutto nella
+            condivisione, come in una grande famiglia.
+          </p>
 
-      <p>
-        Grazie per tutto quello che ci ha dato e per tutto il lavoro
-        svolto per il bene della nostra Banda.
-      </p>
+          <p><strong>Noi possiamo solo dirgli GRAZIE!</strong></p>
 
-      <p>
-        Grazie per la sua gentilezza e per la sua umiltà.
-      </p>
+          <p>
+            Grazie per tutto quello che ci ha dato e per tutto il lavoro
+            svolto per il bene della nostra Banda.
+          </p>
 
-      <p>
-        Grazie, infine, per essere stato un modello da seguire
-        per tutti noi.
-      </p>
+          <p>Grazie per la sua gentilezza e per la sua umiltà.</p>
 
-      <p>
-        <strong>La sua cara Banda.</strong>
-      </p>
+          <p>
+            Grazie, infine, per essere stato un modello da seguire
+            per tutti noi.
+          </p>
 
-<div class="parrino-foto-principale">
-  <img src="foto-parrino/donpippo1.jpg"
-       alt="Il Maestro Onorario Giuseppe Parrino"
-       onclick="apriFoto(this.src, this.alt)">
-  <p>Il Maestro Onorario Giuseppe Parrino</p>
-</div>
+          <p><strong>La sua cara Banda.</strong></p>
 
-<h3 class="parrino-galleria-titolo">Ricordi del Maestro</h3>
+        </div>
 
-<div class="parrino-galleria">
-  <img src="foto-parrino/2.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
-  <img src="foto-parrino/3.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
-  <img src="foto-parrino/4.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
-  <img src="foto-parrino/5.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
-  <img src="foto-parrino/6.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
-  <img src="foto-parrino/7.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
-  <img src="foto-parrino/8.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
-  <img src="foto-parrino/9.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
-  <img src="foto-parrino/10.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
-  <img src="foto-parrino/11.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
-  <img src="foto-parrino/14.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
-  <img src="foto-parrino/15.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
-  <img src="foto-parrino/16.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
-  <img src="foto-parrino/17.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
-  <img src="foto-parrino/20.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
-  <img src="foto-parrino/21.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
-  <img src="foto-parrino/23.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
-  <img src="foto-parrino/24.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
-  <img src="foto-parrino/25.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
-</div>
+        <div class="parrino-foto-principale">
+          <img
+            src="foto-parrino/donpippo1.jpg"
+            alt="Il Maestro Onorario Giuseppe Parrino"
+            onclick="apriFoto(this.src, this.alt)"
+          >
+          <p>Il Maestro Onorario Giuseppe Parrino</p>
+        </div>
+      </div>
 
-<div id="parrino-lightbox" onclick="chiudiFoto()">
-  <button type="button" aria-label="Chiudi" onclick="event.stopPropagation(); chiudiFoto()">×</button>
-  <img id="parrino-lightbox-img" src="" alt="">
-</div>
-```
+      <h3 class="parrino-galleria-titolo">Ricordi del Maestro</h3>
+
+      <div class="parrino-carousel" aria-label="Galleria fotografica del Maestro Giuseppe Parrino">
+
+        <div class="parrino-carousel-display">
+          <button
+            class="parrino-freccia"
+            type="button"
+            aria-label="Foto precedente"
+            onclick="cambiaFotoParrino(-1)"
+          >‹</button>
+
+          <img
+            id="parrino-foto-grande"
+            class="parrino-foto-grande"
+            src="foto-parrino/2.jpg"
+            alt="Ricordo del Maestro Giuseppe Parrino"
+            onclick="apriFoto(this.src, this.alt)"
+          >
+
+          <button
+            class="parrino-freccia"
+            type="button"
+            aria-label="Foto successiva"
+            onclick="cambiaFotoParrino(1)"
+          >›</button>
+        </div>
+
+        <p id="parrino-contatore" class="parrino-contatore">
+          Foto 1 di 19
+        </p>
+
+        <div class="parrino-miniature" id="parrino-miniature">
+
+          <button class="parrino-miniatura attiva" type="button" onclick="selezionaFotoParrino(0)" aria-label="Visualizza foto 1"><img src="foto-parrino/2.jpg" alt=""></button>
+          <button class="parrino-miniatura" type="button" onclick="selezionaFotoParrino(1)" aria-label="Visualizza foto 2"><img src="foto-parrino/3.jpg" alt=""></button>
+          <button class="parrino-miniatura" type="button" onclick="selezionaFotoParrino(2)" aria-label="Visualizza foto 3"><img src="foto-parrino/4.jpg" alt=""></button>
+          <button class="parrino-miniatura" type="button" onclick="selezionaFotoParrino(3)" aria-label="Visualizza foto 4"><img src="foto-parrino/5.jpg" alt=""></button>
+          <button class="parrino-miniatura" type="button" onclick="selezionaFotoParrino(4)" aria-label="Visualizza foto 5"><img src="foto-parrino/6.jpg" alt=""></button>
+          <button class="parrino-miniatura" type="button" onclick="selezionaFotoParrino(5)" aria-label="Visualizza foto 6"><img src="foto-parrino/7.jpg" alt=""></button>
+          <button class="parrino-miniatura" type="button" onclick="selezionaFotoParrino(6)" aria-label="Visualizza foto 7"><img src="foto-parrino/8.jpg" alt=""></button>
+          <button class="parrino-miniatura" type="button" onclick="selezionaFotoParrino(7)" aria-label="Visualizza foto 8"><img src="foto-parrino/9.jpg" alt=""></button>
+          <button class="parrino-miniatura" type="button" onclick="selezionaFotoParrino(8)" aria-label="Visualizza foto 9"><img src="foto-parrino/10.jpg" alt=""></button>
+          <button class="parrino-miniatura" type="button" onclick="selezionaFotoParrino(9)" aria-label="Visualizza foto 10"><img src="foto-parrino/11.jpg" alt=""></button>
+          <button class="parrino-miniatura" type="button" onclick="selezionaFotoParrino(10)" aria-label="Visualizza foto 11"><img src="foto-parrino/14.jpg" alt=""></button>
+          <button class="parrino-miniatura" type="button" onclick="selezionaFotoParrino(11)" aria-label="Visualizza foto 12"><img src="foto-parrino/15.jpg" alt=""></button>
+          <button class="parrino-miniatura" type="button" onclick="selezionaFotoParrino(12)" aria-label="Visualizza foto 13"><img src="foto-parrino/16.jpg" alt=""></button>
+          <button class="parrino-miniatura" type="button" onclick="selezionaFotoParrino(13)" aria-label="Visualizza foto 14"><img src="foto-parrino/17.jpg" alt=""></button>
+          <button class="parrino-miniatura" type="button" onclick="selezionaFotoParrino(14)" aria-label="Visualizza foto 15"><img src="foto-parrino/20.jpg" alt=""></button>
+          <button class="parrino-miniatura" type="button" onclick="selezionaFotoParrino(15)" aria-label="Visualizza foto 16"><img src="foto-parrino/21.jpg" alt=""></button>
+          <button class="parrino-miniatura" type="button" onclick="selezionaFotoParrino(16)" aria-label="Visualizza foto 17"><img src="foto-parrino/23.jpg" alt=""></button>
+          <button class="parrino-miniatura" type="button" onclick="selezionaFotoParrino(17)" aria-label="Visualizza foto 18"><img src="foto-parrino/24.jpg" alt=""></button>
+          <button class="parrino-miniatura" type="button" onclick="selezionaFotoParrino(18)" aria-label="Visualizza foto 19"><img src="foto-parrino/25.jpg" alt=""></button>
+
+        </div>
+      </div>
+
+      <div id="parrino-lightbox" onclick="chiudiFoto()">
+        <button type="button" aria-label="Chiudi" onclick="event.stopPropagation(); chiudiFoto()">×</button>
+        <img id="parrino-lightbox-img" src="" alt="">
+      </div>
 
     </div>
-
   </div>
 </section>
 
 <section>
   <div class="content">
-
     <div class="section-label">Valori</div>
 
     <h2>Perché scegliere la Scuola di Musica della Banda</h2>
@@ -391,19 +615,16 @@
       persone di età e professioni diverse imparano a collaborare,
       sostenersi e condividere la passione per la musica.
     </p>
-
   </div>
 </section>
 
 <section>
   <div class="content">
-
     <div class="section-label">Una testimonianza</div>
 
     <h2>La Banda è famiglia</h2>
 
     <div class="card">
-
       <p>
         <strong>Rosaria Gianguzzo</strong><br>
         Componente della Banda Municipale — Sax Contralto
@@ -432,14 +653,12 @@
         nel cuore!
         »
       </blockquote>
-
     </div>
-
   </div>
 </section>
+
 <section>
   <div class="content">
-
     <div class="section-label">Cultura musicale</div>
 
     <h2>La Banda come patrimonio culturale</h2>
@@ -459,7 +678,6 @@
     </p>
 
     <div class="card">
-
       <h2>L'importanza delle bande</h2>
 
       <p>
@@ -487,14 +705,12 @@
         differenti, che attraverso la musica imparano a suonare
         insieme e a costruire qualcosa di comune.
       </p>
-
     </div>
-
   </div>
 </section>
+
 <section>
   <div class="content">
-
     <div class="section-label">I nostri giovani musicisti</div>
 
     <h2>I risultati della nostra Scuola</h2>
@@ -502,7 +718,6 @@
     <!-- CONCORSO 2026 - MIRTO -->
 
     <div class="card">
-
       <h2>🥇 Primo Premio al Concorso Musicale Nazionale "Salvuccio Percacciolo" 2026</h2>
 
       <p>
@@ -520,137 +735,3 @@
 
       <p>
         Questo successo, frutto di impegno e determinazione, dà lustro
-        alla cultura musicale Alcarese e crea un continuum con il lavoro
-        e l'ambizione del nostro Corpo Bandistico, pronto ad accogliere
-        con gioia questi ragazzi meravigliosi nel mondo "dei grandi".
-      </p>
-
-      <div class="photo-placeholder">
-        📷 Foto del concorso
-      </div>
-
-    </div>
-
-
-    <!-- CONCORSO 2026 - CROTONE -->
-
-    <div class="card">
-
-      <h2>🥇 Primo Premio alla XVIII Edizione del Concorso Musicale Nazionale "Maria Grazia Cutuli"</h2>
-
-      <p>
-        <strong>ORGOGLIO ALCARESE: I NOSTRI RAGAZZI CONQUISTANO
-        IL PRIMO PREMIO!</strong>
-      </p>
-
-      <p>
-        La gioia è immensa e l'emozione ancora di più! Con immenso
-        orgoglio, noi, Corpo Bandistico Municipale “G.Verdi” di
-        Alcara li Fusi festeggiamo i ragazzi della nostra Scuola
-        di Musica, che hanno conquistato il
-        <strong>Primo Premio</strong> alla XVIII Edizione del
-        Concorso Musicale Nazionale “Maria Grazia Cutuli” che si
-        è svolta nel mese di maggio del <strong>2026 a Crotone</strong>!
-      </p>
-
-      <p>
-        Partiti con la voglia di mettersi in gioco e di vivere
-        un'importante esperienza di crescita, i nostri giovani
-        musicisti hanno superato ogni aspettativa, dimostrando sul
-        palco non solo un grandissimo talento, ma anche una maturità
-        e una passione straordinarie.
-      </p>
-
-      <p>
-        Un ringraziamento speciale va al M° Santino Santoro, che con
-        dedizione, pazienza e guida sapiente ha accompagnato i ragazzi
-        in questo percorso, valorizzando il lavoro svolto durante
-        tutto l'anno.
-      </p>
-
-      <p>
-        Questo traguardo non è solo una vittoria in una competizione,
-        ma la conferma che l'impegno, il sacrificio e l'amore per la
-        musica ripagano sempre. Siete il futuro della nostra
-        associazione e della nostra tradizione bandistica, e non
-        potremmo essere più fieri di voi!
-      </p>
-
-      <p>
-        Grazie ragazzi per aver portato così in alto il nome di
-        Alcara Li Fusi e della nostra realtà musicale. Continuate
-        a suonare con questo entusiasmo e a farci emozionare!
-      </p>
-
-      <div class="photo-placeholder">
-        📷 Foto del concorso
-      </div>
-
-    </div>
-
-
-    <!-- CONCORSO 2025 - MIRTO -->
-
-    <div class="card">
-
-      <h2>🥈 Secondo Premio — 22 maggio 2025</h2>
-
-      <p>
-        <strong>
-          Partecipazione degli studenti della nostra Scuola di Musica
-          alla Rassegna musicale scolastica Premio Internazionale
-          "Salvuccio Percacciolo" di Mirto.
-        </strong>
-      </p>
-
-      <p>
-        <strong>Piccoli Grandi "Banditi" crescono!</strong>
-      </p>
-
-      <p>
-        Congratulazioni ai meravigliosi ragazzi della scuola di musica
-        del nostro Corpo Bandistico, guidati dal Maestro Santino Santoro,
-        per essersi aggiudicati il <strong>2° premio</strong>, con
-        votazione <strong>94/100</strong>, al Premio Internazionale
-        "Salvuccio Percacciolo"!
-      </p>
-
-      <p>
-        La musica è un essenziale mezzo di educazione e di crescita
-        musicale ma soprattutto umana.
-      </p>
-
-      <p>
-        Siamo felici che tanti giovanissimi credano fortemente in
-        questi valori, nel potere della musica di unire la passione
-        alla dedizione e alla cultura del lavoro, ma soprattutto di
-        congiungere tanti ragazzi che condividono lo stesso amore
-        per il pentagramma.
-      </p>
-
-      <p>
-        Complimenti dunque ai nostri piccoli Bandisti e a tutti i
-        partecipanti, siete il nostro avvenire.
-      </p>
-
-      <div class="photo-placeholder">
-        📷 Foto del concorso
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<footer>
-  <p>
-    © 2026 Associazione Musicale Alcarese – Corpo Bandistico Municipale “G. Verdi”
-  </p>
-
-  <p>
-    Dal 1911, musica e tradizione.
-  </p>
-</footer>
-
-</body>
-</html>
