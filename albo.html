@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Albo Storico | Corpo Bandistico Municipale “G. Verdi”</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #24332f;
+      background: #f7f3eb;
+      line-height: 1.5;
+    }
+
+    header {
+      background: #173f38;
+      color: white;
+      padding: 22px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: #d6b46a;
+    }
+
+    .hero {
+      background: #173f38;
+      color: white;
+      text-align: center;
+      padding: 75px 20px;
+    }
+
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(2.3rem, 6vw, 4rem);
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      color: #e7e2d8;
+      font-size: 1.05rem;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 5%;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 40px;
+    }
+
+    .intro h2 {
+      font-family: Georgia, serif;
+      color: #173f38;
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+    }
+
+    .search-box {
+      background: white;
+      padding: 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+      border-top: 4px solid #c8a45d;
+    }
+
+    .search-box label {
+      display: block;
+      font-weight: bold;
+      color: #173f38;
+      margin-bottom: 10px;
+    }
+
+    #search {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #ccd2cf;
+      border-radius: 3px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    #search:focus {
+      border-color: #173f38;
+    }
+
+    .result-count {
+      margin-top: 12px;
+      color: #66716d;
+      font-size: 0.9rem;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      background: white;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.06);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 700px;
+    }
+
+    th {
+      background: #173f38;
+      color: white;
+      padding: 15px 12px;
+      text-align: left;
+      font-family: Georgia, serif;
+      font-weight: normal;
+    }
+
+    td {
+      padding: 12px;
+      border-bottom: 1px solid #e5e2da;
+    }
+
+    tr:nth-child(even) {
+      background: #faf8f3;
+    }
+
+    tr:hover {
+      background: #f0ebe1;
+    }
+
+    .number {
+      width: 65px;
+      color: #8a7444;
+      font-weight: bold;
+    }
+
+    /* =========================
+       MAESTRI DIRETTORI
+    ========================= */
+
+    .directors {
+      padding: 90px 7%;
+      background: #e9e3d6;
+    }
+
+    .directors .content {
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .directors .section-label {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 12px;
+      color: #c9a45c;
+      margin-bottom: 18px;
+    }
+
+    .directors h2 {
+      font-family: Georgia, serif;
+      font-size: 42px;
+      color: #1e332d;
+      margin: 0 0 18px;
+    }
+
+    .directors .intro-text {
+      max-width: 750px;
+      line-height: 1.8;
+      color: #4d514d;
+      margin-bottom: 45px;
+    }
+
+    .directors-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .director-card {
+      background: #f7f3ea;
+      padding: 28px;
+      border: 1px solid rgba(30, 51, 45, 0.12);
+      box-shadow: 0 8px 25px rgba(30, 51, 45, 0.06);
+    }
+
+    .director-card.featured {
+      grid-column: 1 / -1;
+      border-left: 5px solid #c9a45c;
+      padding: 38px;
+    }
+
+    .director-years {
+      color: #a1813d;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .director-card h3 {
+      font-family: Georgia, serif;
+      font-size: 25px;
+      color: #1e332d;
+      margin: 0 0 15px;
+    }
+
+    .director-card p {
+      line-height: 1.8;
+      color: #4d514d;
+      margin-bottom: 12px;
+    }
+
+    .director-photo {
+      margin-top: 25px;
+      min-height: 220px;
+      background: #e9e3d6;
+      border: 2px dashed #c9a45c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1e332d;
+      font-family: Georgia, serif;
+      text-align: center;
+    }
+
+    .director-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .director-buttons a {
+      display: inline-block;
+      padding: 12px 18px;
+      background: #1e332d;
+      color: #f7f3ea;
+      text-decoration: none;
+      font-size: 13px;
+      transition: 0.2s ease;
+    }
+
+    .director-buttons a:hover {
+      background: #c9a45c;
+      color: #1e332d;
+    }
+
+    footer {
+      background: #102e29;
+      color: #d8dfdc;
+      text-align: center;
+      padding: 35px 20px;
+      font-size: 0.9rem;
+      margin-top: 0;
+    }
+
+    @media (max-width: 800px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        gap: 13px;
+      }
+
+      main {
+        padding: 45px 4%;
+      }
+
+      .hero {
+        padding: 60px 20px;
+      }
+
+      .directors {
+        padding: 60px 6%;
+      }
+
+      .directors-list {
+        grid-template-columns: 1fr;
+      }
+
+      .director-card.featured {
+        grid-column: auto;
+        padding: 25px 20px;
+      }
+
+      .directors h2 {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Corpo Bandistico Municipale “G. Verdi”</div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="la-banda.html">La Banda</a>
+    <a href="musica.html">Musica</a>
+    <a href="eventi.html">Eventi</a>
+    <a href="index.html#galleria">Galleria</a>
+    <a href="index.html#contatti">Contatti</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Albo storico</h1>
+  <p>
+    Tutti i componenti del Corpo Bandistico Municipale
+    dal 1911 ad oggi
+  </p>
+</section>
+
+<main>
+
+  <div class="intro">
+    <h2>400 nomi, oltre un secolo di musica</h2>
+    <p>
+      L'Albo storico raccoglie i componenti che hanno fatto parte
+      del Corpo Bandistico Municipale nel corso della sua storia.
+      Un patrimonio umano e musicale che attraversa generazioni,
+      strumenti e oltre un secolo di tradizione.
+    </p>
+  </div>
+
+  <div class="search-box">
+    <label for="search">Cerca nell'Albo</label>
+
+    <input
+      type="text"
+      id="search"
+      placeholder="Cerca per nome, cognome, data o strumento..."
+    >
+
+    <div class="result-count" id="resultCount">
+      400 componenti
+    </div>
+  </div>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>N.</th>
+          <th>Nome e cognome</th>
+          <th>Data di nascita</th>
+          <th>Strumento / ruolo</th>
+        </tr>
+      </thead>
+
+      <tbody id="alboBody">
+      </tbody>
+    </table>
+  </div>
+
+</main>
+
+<!-- =========================
+     MAESTRI DIRETTORI
+========================= -->
+
+<section class="directors">
+
+  <div class="content">
+
+    <div class="section-label">
+      Dal 1911 ad oggi
+    </div>
+
+    <h2>Maestri Direttori</h2>
+
+    <p class="intro-text">
+      L'elenco dei Maestri Direttori che hanno guidato il
+      Corpo Bandistico Municipale “G. Verdi” di Alcara Li Fusi
+      nel corso della sua storia.
+    </p>
+
+    <div class="directors-list">
+
+      <div class="director-card featured">
+
+        <div class="director-years">
+          1981 – oggi
+        </div>
+
+        <h3>M° Michele Saccone</h3>
+
+        <p>
+          Michele Saccone nasce a Messina l'1/5/1962.
+        </p>
+
+        <p>
+          Nel 1977 inizia gli studi presso il Conservatorio Musicale
+          “A. Corelli” di Messina nella classe di Fagotto,
+          diplomandosi nel 1984.
+        </p>
+
+        <p>
+          Nel 1981 viene nominato Maestro Direttore della Banda
+          Municipale Alcarese, incarico che ricopre ancora oggi
+          con soddisfazione e orgoglio.
+        </p>
+
+        <div class="director-photo">
+          📷 Foto del Maestro Michele Saccone
+        </div>
+
+        <div class="director-buttons">
+          <a href="la-banda.html">
+            Leggi il curriculum
+          </a>
+
+          <a href="index.html#galleria">
+            Guarda la fotogallery
+          </a>
+        </div>
+
+      </div>
+
+      <div class="director-card">
+        <div class="director-years">1973 – 1980</div>
+        <h3>M° Biagio Amata</h3>
+      </div>
+
+      <div class="director-card">
+        <div class="director-years">1962 – 1972</div>
+        <h3>M° Salvatore Cipitì</h3>
+      </div>
+
+      <div class="director-card">
+        <div class="director-years">1962</div>
+        <h3>M° Lombardo</h3>
+      </div>
+
+      <div class="director-card">
+        <div class="director-years">1960 – 1962</div>
+        <h3>M° Salvatore Cipitì</h3>
+      </div>
+
+      <div class="director-card">
+        <div class="director-years">1951 – 1960</div>
+        <h3>M° Francesco Seminara</h3>
+      </div>
+
+      <div class="director-card">
+        <div class="director-years">1949 – 1951</div>
+        <h3>M° Cascio</h3>
+      </div>
+
+      <div class="director-card">
+        <div class="director-years">1948 – 1949</div>
+        <h3>M° Pancrazio</h3>
+      </div>
+
+      <div class="director-card">
+        <div class="director-years">1947 – 1948</div>
+        <h3>M° Lo Presti</h3>
+      </div>
+
+      <div class="director-card">
+        <div class="director-years">1944 – 1947</div>
+        <h3>M° Giuseppe Lo Schivo</h3>
+      </div>
+
+      <div class="director-card">
+        <div class="director-years">1941 – 1942</div>
+        <h3>M° Bonzì</h3>
+      </div>
+
+      <div class="director-card">
+        <div class="director-years">1940 – 1941</div>
+        <h3>M° Lo Schiavo</h3>
+      </div>
+
+      <div class="director-card">
+        <div class="director-years">1933 – 1935</div>
+        <h3>M° Salvatore D'Agata</h3>
+      </div>
+
+      <div class="director-card">
+        <div class="director-years">1932 – 1933</div>
+        <h3>M° Rivela</h3>
+      </div>
+
+      <div class="director-card">
+        <div class="director-years">1930 – 1932</div>
+        <h3>M° Mario La Rocca</h3>
+      </div>
+
+      <div class="director-card">
+        <div class="director-years">1929 – 1930</div>
+        <h3>M° Pistretto</h3>
+      </div>
+
+      <div class="director-card">
+        <div class="director-years">1925 – 1929</div>
+        <h3>M° Amedeo Caponetto</h3>
+      </div>
+
+      <div class="director-card">
+        <div class="director-years">1924 – 1925</div>
+        <h3>M° Salvatore D'Agata</h3>
+      </div>
+
+      <div class="director-card">
+        <div class="director-years">1922 – 1924</div>
+        <h3>M° Vitello</h3>
+      </div>
+
+      <div class="director-card">
+        <div class="director-years">1921 – 1922</div>
+        <h3>M° Salvatore D'Agata</h3>
+      </div>
+
+      <div class="director-card">
+        <div class="director-years">1916 – 1917</div>
+        <h3>M° Francesco Iervolino</h3>
+      </div>
+
+      <div class="director-card">
+        <div class="director-years">1914 – 1915</div>
+        <h3>M° Giuseppe Novazio</h3>
+      </div>
+
+      <div class="director-card">
+        <div class="director-years">1911 – 1914</div>
+        <h3>M° Giacomo Zurlino</h3>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <p>
+    © 2026 Associazione Musicale Alcarese –
+    Corpo Bandistico Municipale “G. Verdi”
+  </p>
+
+  <p>
+    Dal 1911, musica e tradizione.
+  </p>
+</footer>
+
+<script>
+
+const componenti = [
+  {n:1,nome:"Agliolo Gallitto Giovanni",data:"24/06/1961",strumento:"Flicorno Contralto"},
+  {n:2,nome:"Agliolo Gallitto Nicolino",data:"16/04/1962",strumento:"Trombone"},
+  {n:3,nome:"Alfano Giovanni",data:"20/08/1964",strumento:"Clarinetto"},
+  {n:4,nome:"Alpino Giacomo",data:"05/04/1908",strumento:"Clarinetto - Percussioni"},
+  {n:5,nome:"Alpino Nicolino",data:"",strumento:"Clarinetto"},
+  {n:6,nome:"Alpino Nicolò",data:"06/10/1897",strumento:"Clarinetto"},
+  {n:7,nome:"Artino Alessandro",data:"23/04/2011",strumento:"Clarinetto"},
+  {n:8,nome:"Artino Amelia",data:"15/06/1969",strumento:"Clarinetto"},
+  {n:9,nome:"Artino Antonino",data:"",strumento:"Bombardino"},
+  {n:10,nome:"Artino Antonino",data:"",strumento:"Percussioni"},
+  {n:11,nome:"Artino Antonino",data:"",strumento:"Sax Contralto"},
+  {n:12,nome:"Artino Francesco",data:"27/03/1974",strumento:"Tromba"},
+  {n:13,nome:"Artino Gabriele",data:"08/11/1988",strumento:"Percussioni"},
+  {n:14,nome:"Artino Giuseppe",data:"12/05/1975",strumento:"Clarinetto"},
+  {n:15,nome:"Artino Nicolò",data:"09/02/1931",strumento:"Clarinetto"},
+  {n:16,nome:"Artino Nunzio",data:"",strumento:"Trombone"},
+  {n:17,nome:"Artino Cast. Antonino",data:"",strumento:"Trombone"},
+  {n:18,nome:"Bartolo Biagio",data:"08/06/1953",strumento:"Clarone"},
+  {n:19,nome:"Bartolo Gabriella Ada",data:"13/01/1980",strumento:"Sax Contralto"},
+  {n:20,nome:"Bartolo Nicolino",data:"12/05/1955",strumento:"Sax Contralto"},
+  {n:21,nome:"Baudo Calogero",data:"",strumento:"Ottavino"},
+  {n:22,nome:"Betel Gaetano",data:"10/02/1939",strumento:"Oboe"},
+  {n:23,nome:"Bettino Santi",data:"",strumento:"Percussioni"},
+  {n:24,nome:"Bompiedi Gennarino",data:"03/01/1930",strumento:"Sax Tenore"},
+  {n:25,nome:"Bompiedi Melchiorre",data:"16/10/1938",strumento:"Clarinetto"},
+  {n:26,nome:"Bompiedi Nicola",data:"17/07/1984",strumento:"Corno"},
+  {n:27,nome:"Bompiedi Nicolò",data:"18/02/1931",strumento:"Clarinetto"},
+  {n:28,nome:"Bontempo Anastasia",data:"08/06/1980",strumento:"Clarinetto"},
+  {n:29,nome:"Bontempo Demis",data:"14/08/1978",strumento:"Sax Soprano"},
+  {n:30,nome:"Bontempo Giovannino",data:"17/10/1924",strumento:"Clarinetto"},
+  {n:31,nome:"Bontempo Nunzio",data:"23/02/1956",strumento:"Clarinetto"},
+  {n:32,nome:"Bontempo Salvatore",data:"27/06/1877",strumento:"Corno"},
+  {n:33,nome:"Calandi Giuseppe",data:"17/11/1966",strumento:"Corno"},
+  {n:34,nome:"Calanni Giuseppe",data:"12/02/1936",strumento:"Tromba"},
+  {n:35,nome:"Calanni Macchio Giuseppe",data:"18/04/1995",strumento:"Tromba"},
+  {n:36,nome:"Calanni Macchio Nunziatina",data:"13/05/1969",strumento:"Clarinetto"},
+  {n:37,nome:"Calanni Macchio Vincenzo",data:"13/05/1962",strumento:"Tromba"},
+  {n:38,nome:"Calcò Martina",data:"13/11/1998",strumento:"Sax Soprano"},
+  {n:39,nome:"Calcò Davide",data:"11/05/2009",strumento:"Tromba"},
+  {n:40,nome:"Calderaro Antonino",data:"14/11/1925",strumento:"Clarinetto"},
+  {n:41,nome:"Calderaro Antonino",data:"22/02/1927",strumento:"Flicorno"},
+  {n:42,nome:"Calderaro Francesco",data:"10/11/1912",strumento:"Percussioni"},
+  {n:43,nome:"Calderaro Giovanni",data:"08/08/1892",strumento:"Clarinetto"},
+  {n:44,nome:"Calderaro Giuseppe",data:"29/04/1941",strumento:"Clarinetto"},
+  {n:45,nome:"Calderaro Nicolò",data:"",strumento:"Bombardino"},
+  {n:46,nome:"Calderaro Salvatore",data:"19/081893",strumento:"Trombone"},
+  {n:47,nome:"Calderone Arianna",data:"02/09/2003",strumento:"Sax Contralto"},
+  {n:48,nome:"Cardillo Alessio",data:"16/02/1994",strumento:"Percussioni"},
+  {n:49,nome:"Casta Antonino",data:"07/10/1961",strumento:"Flicorno Soprano"},
+  {n:50,nome:"Casta Raffa Antonino",data:"24/02/1904",strumento:"Percussioni"},
+  {n:51,nome:"Cavallaro Antonio Franco",data:"03/11/1969",strumento:"Flicorno Soprano"},
+  {n:52,nome:"Cavallaro Daniele",data:"23/10/1967",strumento:"Clarin. - Percussioni"},
+  {n:53,nome:"Cavallaro Doris",data:"17/08/1993",strumento:"Flauto"},
+  {n:54,nome:"Cavallaro Ginevra",data:"20/12/2013",strumento:"Sax soprano"},
+  {n:55,nome:"Cavallaro Giuseppe",data:"14/03/1955",strumento:"Clarinetto"},
+  {n:56,nome:"Cavallaro Giuseppe",data:"14/06/1955",strumento:"Clarinetto"},
+  {n:57,nome:"Cavallaro Nicolas",data:"14/12/1984",strumento:"Clarinetto"},
+  {n:58,nome:"Cavallaro Salvatore",data:"17/01/1963",strumento:"Clarinetto"},
+  {n:59,nome:"Cipitì Basilio",data:"31/05/1928",strumento:"Tromba"},
+  {n:60,nome:"Cipitì Carlo",data:"18/08/1948",strumento:"Clarinetto"},
+  {n:61,nome:"Cipitì Filadelfio",data:"28/11/1983",strumento:"Tromba"},
+  {n:62,nome:"Cipitì Francesco",data:"16/04/1867",strumento:"Clarinetto"},
+  {n:63,nome:"Cipitì Gaetano",data:"",strumento:"Percussioni"},
+  {n:64,nome:"Cipitì Giovannino",data:"28/06/1949",strumento:"Trombone"},
+  {n:65,nome:"Cipitì Giuseppe",data:"",strumento:"Basso"},
+  {n:66,nome:"Cipitì Giuseppe",data:"",strumento:"Corno"},
+  {n:67,nome:"Cipitì Giuseppe",data:"",strumento:"Trombone"},
+  {n:68,nome:"Cipitì Giuseppe",data:"",strumento:"Basso"},
+  {n:69,nome:"Cipitì Lucio",data:"07/04/1915",strumento:"Basso"},
+  {n:70,nome:"Cipitì Melchiorre",data:"",strumento:"Clarinetto"},
+  {n:71,nome:"Cipitì Nicolò",data:"14/04/1931",strumento:"Clarinetto"},
+  {n:72,nome:"Cipitì Salvatore",data:"16/05/1912",strumento:"Clarinetto"},
+  {n:73,nome:"Cipitì Salvatore",data:"10/10/1912",strumento:"Clarinetto"},
+  {n:74,nome:"Cipitì Venerino",data:"07/02/1941",strumento:"Clarinetto"},
+  {n:75,nome:"Citriglia Antonino",data:"02/11/1964",strumento:"Clarinetto"},
+  {n:76,nome:"Citriglia Nicolino",data:"30/09/1964",strumento:"Clarinetto"},
+  {n:77,nome:"Citriglia Salvatore",data:"20/11/1947",strumento:"Bombardino"},
+  {n:78,nome:"Citriglia Vincenzo",data:"30/07/1961",strumento:"Clarinetto"},
+  {n:79,nome:"Collica Alexander Pio",data:"06/06/2000",strumento:"Clarinetto"},
+  {n:80,nome:"Consiglio Amedeo",data:"03/01/1951",strumento:"Sax Tenore"},
+  {n:81,nome:"Consiglio Antonino",data:"01/06/1920",strumento:"Flicorno Contralto"},
+  {n:82,nome:"Consiglio Carmelo",data:"14/06/1926",strumento:"Tromba"},
+  {n:83,nome:"Consiglio Gianluigi",data:"30/12/1982",strumento:"Sax Tenore"},
+  {n:84,nome:"Consiglio Rinaldo",data:"25/04/1927",strumento:"Flicorno Contralto"},
+  {n:85,nome:"Consiglio Salvatore",data:"",strumento:"Percussioni"},
+  {n:86,nome:"Consiglio Salvatore",data:"09/12/1923",strumento:"Tromba"},
+  {n:87,nome:"Costanzo Alessandro",data:"02/10/1978",strumento:"Sax Tenore"},
+  {n:88,nome:"Costanzo Antonino",data:"14/02/1911",strumento:"Flicornino"},
+  {n:89,nome:"Costanzo Biagio",data:"03/02/1953",strumento:"Sax Contralto"},
+  {n:90,nome:"Costanzo Daniele",data:"03/01/1979",strumento:"Sax Contralto"},
+  {n:91,nome:"Costanzo Errico",data:"03/01/1979",strumento:"Clarinetto"},
+  {n:92,nome:"Costanzo Giuseppe",data:"",strumento:"Flicorno Contralto"},
+  {n:93,nome:"Costanzo Leopoldo Gaetano",data:"07/10/1950",strumento:"Clarinetto"},
+  {n:94,nome:"Costanzo Serena",data:"23/09/1993",strumento:"Clarinetto"},
+  {n:95,nome:"Costanzo Salvatore",data:"",strumento:"Tromba"},
+  {n:96,nome:"Costanzo Salvatore",data:"07/04/1966",strumento:"Clarinetto"},
+  {n:97,nome:"D'Agata Antonino",data:"",strumento:"Clarinetto"},
+  {n:98,nome:"De Blasi Luigi",data:"25/03/1994",strumento:"Sax Tenore"},
+  {n:99,nome:"De Maria Calogero",data:"10/03/1905",strumento:"Clarinetto"},
+  {n:100,nome:"Di Blatto Amedeo",data:"20/08/1921",strumento:"Ottavino"},
+  {n:101,nome:"Di Blatto Giulio",data:"22/05/1926",strumento:"Clarinetto"},
+  {n:102,nome:"Di Blatto Giuseppe",data:"31/10/1908",strumento:"Flicorno Contralto"},
+  {n:103,nome:"Di Gaetano Fausto",data:"15/04/1946",strumento:"Tromba"},
+  {n:104,nome:"Di Gaetano Nicolino",data:"30/07/1962",strumento:"Tromba"},
+  {n:105,nome:"Di Gaetano Nicolò",data:"29/04/1998",strumento:"Tromba"},
+  {n:106,nome:"Di Maria Enrico Gaetano",data:"08/10/1930",strumento:"Sax Tenore"},
+  {n:107,nome:"Di Maria Franco",data:"02/04/1966",strumento:"Sax Tenore"},
+  {n:108,nome:"Di Maria Giovanni",data:"27/02/1925",strumento:"Clarinetto"},
+  {n:109,nome:"Di Maria Nicolino",data:"03/05/1928",strumento:"Tromba"},
+  {n:110,nome:"Di Marco Salvatore",data:"",strumento:"Trombone"},
+  {n:111,nome:"Di Nardo Gaetano",data:"",strumento:"Clarinetto"},
+  {n:112,nome:"Di Nardo Giuseppe",data:"04/12/1904",strumento:"Bombardino"},
+  {n:113,nome:"Di Nardo Ignazio",data:"",strumento:"Flicornino"},
+  {n:114,nome:"Di Nardo Ignazio",data:"",strumento:"Trombone"},
+  {n:115,nome:"Di Nardo Nicola",data:"06/04/1911",strumento:"Percussioni"},
+  {n:116,nome:"Di Nardo Severio",data:"",strumento:"Basso"},
+  {n:117,nome:"Di Naso Umberto",data:"19/07/1980",strumento:"Clarinetto"},
+  {n:118,nome:"Di Stefano Nicolino",data:"14/08/1948",strumento:"Clarinetto"},
+  {n:119,nome:"Di Stefano Salvatore",data:"27/11/1966",strumento:"Tromba"},
+  {n:120,nome:"Dottore Calogero",data:"24/10/1929",strumento:"Basso"},
+  {n:121,nome:"Dottore Carola",data:"19/10/2011",strumento:"San Contralto"},
+  {n:122,nome:"Dottore Enzo",data:"06/03/2000",strumento:"Bombardino"},
+  {n:123,nome:"Dottore Francesco",data:"21/09/1895",strumento:"Tromba"},
+  {n:124,nome:"Dottore Giovanni",data:"19/06/1920",strumento:"Clarinetto"},
+  {n:125,nome:"Dottore Giuseppe",data:"",strumento:"Clarinetto"},
+  {n:126,nome:"Dottore Leandro",data:"23/10/1984",strumento:"Basso"},
+  {n:127,nome:"Dottore Melissa",data:"28/02/2000",strumento:"Clarinetto - Sax contralto"},
+  {n:128,nome:"Dottore Giachino Nicolò",data:"01/01/1953",strumento:"Clarinetto"},
+  {n:129,nome:"Dottore Nicolino",data:"",strumento:"Basso"},
+  {n:130,nome:"Dottore Nicolò",data:"04/02/1901",strumento:"Tromba"},
+  {n:131,nome:"Dottore Nunzio",data:"03/03/1970",strumento:"Corno"},
+  {n:132,nome:"Dottore Nunzio",data:"23/07/2011",strumento:"Clarinetto"},
+  {n:133,nome:"Dottore Simone",data:"27/01/1993",strumento:"Trombone"},
+  {n:134,nome:"Dottore Vincenzo",data:"26/11/1963",strumento:"Clarinetto"},
+  {n:135,nome:"Faraci Alex",data:"18/11/1997",strumento:"Sax Tenore"},
+  {n:136,nome:"Faraci Davide",data:"22/08/2007",strumento:"Sax Contralto"},
+  {n:137,nome:"Faraci Maria Pia",data:"27/04/2001",strumento:"Sax Soprano"},
+  {n:138,nome:"Faraci Mela",data:"19/06/1969",strumento:"Sax Soprano"},
+  {n:139,nome:"Faraci Salvatore",data:"05/03/1908",strumento:"Clarinetto"},
+  {n:140,nome:"Fragapane Antonino",data:"",strumento:"Percussioni"},
+  {n:141,nome:"Fragapane Antonino",data:"26/03/1962",strumento:"Sax Contralto"},
+  {n:142,nome:"Fragapane Giuseppe",data:"",strumento:"Sax Contralto"},
+  {n:143,nome:"Fragapane Nicolino",data:"",strumento:"Tromba"},
+  {n:144,nome:"Fragapane Salvatore",data:"10/08/1975",strumento:"Trombone"},
+  {n:145,nome:"Fragapane Vincenzo",data:"",strumento:"Basso"},
+  {n:146,nome:"Franchina Antonino",data:"07/05/1953",strumento:"Flicornino"},
+  {n:147,nome:"Franchina Salvatore",data:"03/02/1974",strumento:"Clarinetto"},
+  {n:148,nome:"Galati Casmiro Amedeo",data:"29/08/1949",strumento:"Clarinetto"},
+  {n:149,nome:"Galati Casmiro Dario",data:"06/07/1991",strumento:"Sax Contr. - Sax Barit."},
+  {n:150,nome:"Galati Casmiro Giuseppe Salv.",data:"01/01/1931",strumento:"Clarinetto"},
+  {n:151,nome:"Galati Casmiro Sandro",data:"22/08/1989",strumento:"Clarinetto"},
+  {n:152,nome:"Galati Orazio",data:"03/01/1948",strumento:"Corno"},
+  {n:153,nome:"Gianguzzo Calogero",data:"26/07/1989",strumento:"Flicorno Soprano - Tromba"},
+  {n:154,nome:"Gianguzzo Carmelo",data:"",strumento:"Flicornino"},
+  {n:155,nome:"Gianguzzo Eugenio",data:"",strumento:"Flicorno Soprano"},
+  {n:156,nome:"Gianguzzo Giuseppe",data:"",strumento:"Clarinetto"},
+  {n:157,nome:"Gianguzzo Rosaria",data:"06/01/1992",strumento:"Sax Contralto"},
+  {n:158,nome:"Gianguzzo Salvatore",data:"",strumento:"Trombone"},
+  {n:159,nome:"Gianguzzo Viviana",data:"02/07/1997",strumento:"Clarinetto"},
+  {n:160,nome:"Gioitta Alessandro",data:"20/07/1980",strumento:"Tromba"},
+  {n:161,nome:"Gioitta Carmelo",data:"21/06/1976",strumento:"Clarinetto"},
+  {n:162,nome:"Gioitta Dario",data:"12/11/1997",strumento:"Clarinetto"},
+  {n:163,nome:"Gioitta Filippo",data:"08/09/1970",strumento:"Tromba"},
+  {n:164,nome:"Gioitta Marco",data:"27/10/1982",strumento:"Trombone"},
+  {n:165,nome:"Gioitta Nicolò",data:"22/11/1951",strumento:"Percussioni"},
+  {n:166,nome:"Gioitta Nicolino",data:"",strumento:"Tromba"},
+  {n:167,nome:"Gioitta Salvatore",data:"24/05/2005",strumento:"Trombone"},
+  {n:168,nome:"Gioitta Santi",data:"01/11/1898",strumento:"Basso"},
+  {n:169,nome:"Granata Laura",data:"12/05/1993",strumento:"Flauto"},
+  {n:170,nome:"Imbrigiotta Gaetano",data:"",strumento:"Percussioni"},
+  {n:171,nome:"Karra Carmelo",data:"",strumento:"Clarinetto"},
+  {n:172,nome:"Karra Carmelo",data:"19/02/1970",strumento:"Sax Tenore"},
+  {n:173,nome:"Karra Nicolò",data:"",strumento:"Percussioni"},
+  {n:174,nome:"Lombardo Nunzio",data:"",strumento:"Tromba"},
+  {n:175,nome:"Lo Presti Loris",data:"15/06/1997",strumento:"Sax Contralto"},
+  {n:176,nome:"Lovano Joseph Salvatore",data:"29/12/1952",strumento:"Sax Tenore"},
+  {n:177,nome:"Lo Vano Giuseppe",data:"",strumento:"Clarinetto"},
+  {n:178,nome:"Lo Vano Luigi",data:"06/01/1903",strumento:"Trombone"},
+  {n:179,nome:"Lo Vano Nadia",data:"29/05/1966",strumento:"Clarinetto"},
+  {n:180,nome:"Lo Vano Nicolino",data:"",strumento:"Trombone"},
+  {n:181,nome:"Lo Vano Stefano",data:"",strumento:"Flicorno Contralto"},
+  {n:182,nome:"Lo Vano Vincenzo",data:"",strumento:"Clarinetto"},
+  {n:183,nome:"Luca Alain",data:"17/12/1976",strumento:"Sax Tenore - Sax Baritono"},
+  {n:184,nome:"Luca Alessandro",data:"30/09/1978",strumento:"Trombone - Basso"},
+  {n:185,nome:"Luca Gabriele",data:"31/10/2001",strumento:"Clarinetto"},
+  {n:186,nome:"Luca Giuseppe",data:"03/06/1966",strumento:"Sax Tenore - Sax Baritono"},
+  {n:187,nome:"Luca Silvano",data:"22/11/1982",strumento:"Corno"},
+  {n:188,nome:"Maenza Calogero",data:"27/06/1913",strumento:"Flicorno Contralto"},
+  {n:189,nome:"Maenza Giuseppe",data:"",strumento:"Flicorno Contralto"},
+  {n:190,nome:"Manasseri Morena",data:"15/03/1984",strumento:"Sax Soprano"},
+  {n:191,nome:"Mannanici Antonio",data:"08/08/1997",strumento:"Tromba - Corno - Tuba"},
+  {n:192,nome:"Mannanici Giuseppe",data:"11/09/1968",strumento:"Percussioni"},
+  {n:193,nome:"Manzo Santo",data:"",strumento:"Sax Tenore"},
+  {n:194,nome:"Marino Alessandro Francesco",data:"04/10/2006",strumento:"Fagotto - Sax Baritono"},
+  {n:195,nome:"Marino Gaetano",data:"",strumento:"Trombone"},
+  {n:196,nome:"Marino Stefano",data:"05/03/2010",strumento:"Percussioni"},
+  {n:197,nome:"Marino Batà Andrea",data:"27/08/1989",strumento:"Basso"},
+  {n:198,nome:"Marino Batà Antonino",data:"02/08/1953",strumento:"Clarinetto"},
+  {n:199,nome:"Marino Batà Giuseppe",data:"18/11/1955",strumento:"Tromba"},
+  {n:200,nome:"Marino Batà Nicola",data:"",strumento:"Flauto"},
+  {n:201,nome:"Mileti Antonino",data:"07/03/1959",strumento:"Flicorno Contralto"},
+  {n:202,nome:"Mileti Basilio",data:"",strumento:"Clarinetto Piccolo Mib"},
+  {n:203,nome:"Mileti Costantino",data:"",strumento:"Basso"},
+  {n:204,nome:"Mileti Giovanni",data:"",strumento:"Clarinetto"},
+  {n:205,nome:"Mileti Salvatore",data:"",strumento:"Tromba"},
+  {n:206,nome:"Mileti Nardo Calogero",data:"",strumento:"Bombardino"},
+  {n:207,nome:"Mormino Alfredo",data:"12/10/1953",strumento:"Sax Soprano"},
+  {n:208,nome:"Mormino Giuseppe",data:"",strumento:"Percussioni"},
+  {n:209,nome:"Mustica Giuseppe",data:"20/08/1965",strumento:"Flicornino"},
+  {n:210,nome:"Mustica Salvatore",data:"24/03/2007",strumento:"Tromba"},
+  {n:211,nome:"Napoli Antonio",data:"02/10/1998",strumento:"Tromba"},
+  {n:212,nome:"Napoli Franco",data:"05/03/1963",strumento:"Sax Contralto"},
+  {n:213,nome:"Napoli Niclino",data:"05/11/1961",strumento:"Corno"},
+  {n:214,nome:"Napoli Vincenzo",data:"21/04/1947",strumento:"Tromba"},
+  {n:215,nome:"Naro Antonio",data:"12/09/2002",strumento:"Clarinetto"},
+  {n:216,nome:"Naro Biagio",data:"27/05/1968",strumento:"Clarinetto"},
+  {n:217,nome:"Oddo Carmelo",data:"28/05/1987",strumento:"Clarinetto"},
+  {n:218,nome:"Oddo Salvatore",data:"23/06/1968",strumento:"Tromba"},
+  {n:219,nome:"Oriti Alisia",data:"02/05/2003",strumento:"Clarin. Piccolo Mib"},
+  {n:220,nome:"Oriti Antonello",data:"01/03/1965",strumento:"Sax Contralto"},
+  {n:221,nome:"Oriti Antonino",data:"",strumento:"Clarinetto"},
+  {n:222,nome:"Oriti Davide",data:"19/10/2003",strumento:"Clarin. Piccolo Mib"},
+  {n:223,nome:"Oriti Francesco",data:"",strumento:"Percussioni"},
+  {n:224,nome:"Oriti Francesco",data:"",strumento:"Percussioni"},
+  {n:225,nome:"Oriti Francesco",data:"",strumento:"Clarinetto"},
+  {n:226,nome:"Oriti Gaetano",data:"10/08/1942",strumento:"Clarinetto"},
+  {n:227,nome:"Oriti Gino",data:"24/03/1958",strumento:"Clar. Picc. Mib - Percussioni"},
+  {n:228,nome:"Oriti Giuseppe",data:"",strumento:"Sax Soprano"},
+  {n:229,nome:"Oriti Ivano",data:"17/04/1982",strumento:"Bombardino"},
+  {n:230,nome:"Oriti Luca",data:"14/11/1983",strumento:"Clarinetto"},
+  {n:231,nome:"Oriti Luca",data:"23/04/1997",strumento:"Sax Contralto"},
+  {n:232,nome:"Oriti Marco",data:"28/09/1979",strumento:"Clarin. Piccolo Mib"},
+  {n:233,nome:"Oriti Mario",data:"09/10/1932",strumento:"Tromba"},
+  {n:234,nome:"Oriti Matteo",data:"21/09/1978",strumento:"Tromba"},
+  {n:235,nome:"Oriti Nicola",data:"",strumento:"Flauto"},
+  {n:236,nome:"Oriti Nicolino",data:"",strumento:"Tromba"},
+  {n:237,nome:"Oriti Rosario",data:"06/09/1969",strumento:"Tromba"},
+  {n:238,nome:"Oriti Salvatore",data:"30/10/1935",strumento:"Basso"},
+  {n:239,nome:"Oriti Salvatore",data:"15/03/1926",strumento:"Sax Contralto"},
+  {n:240,nome:"Oriti Salvatore",data:"11/07/1998",strumento:"Sax Contralto - Fagotto"},
+  {n:241,nome:"Oriti Salvatore",data:"12/04/1966",strumento:"Sax Contralto"},
+  {n:242,nome:"Oriti Salvatore",data:"",strumento:"Sax Soprano"},
+  {n:243,nome:"Oriti Umberto",data:"10/07/1958",strumento:"Sax Soprano"},
+  {n:244,nome:"Oriti Misterio Nicolò",data:"21/10/1950",strumento:"Flicornino"},
+  {n:245,nome:"Papa Anita",data:"15/09/1964",strumento:"Sax Contralto"},
+  {n:246,nome:"Papa Gaetano",data:"",strumento:"Tromba"},
+  {n:247,nome:"Papa Gianluca",data:"30/08/1979",strumento:"Flicorno Soprano"},
+  {n:248,nome:"Papa Giuseppe",data:"",strumento:"Bombardino"},
+  {n:249,nome:"Papa Michelangelo",data:"27/08/1935",strumento:"Basso - Percussioni"},
+  {n:250,nome:"Papa Salvatore",data:"",strumento:"Basso"},
+  {n:251,nome:"Pappalardo Basilio",data:"09/03/1985",strumento:"Basso"},
+  {n:252,nome:"Parisi Antonino",data:"07/09/1951",strumento:"Clarinetto"},
+  {n:253,nome:"Parisi Gabriella",data:"30/01/1978",strumento:"Flicorno Soprano"},
+  {n:254,nome:"Parisi Gennaro",data:"13/07/1923",strumento:"Basso"},
+  {n:255,nome:"Parisi Giuseppe",data:"",strumento:"Clarinetto"},
+  {n:256,nome:"Parisi Giuseppe Nicola",data:"",strumento:"Bombardino"},
+  {n:257,nome:"Parisi Ignazio",data:"",strumento:"Clarinetto"},
+  {n:258,nome:"Parisi Martina",data:"24/01/1981",strumento:"Flauto"},
+  {n:259,nome:"Parisi Nicolino",data:"",strumento:"Clarinetto Piccolo Mib"},
+  {n:260,nome:"Parisi Nicolò",data:"27/07/1949",strumento:"Tromba - Percussioni"},
+  {n:261,nome:"Parisi Nicolò",data:"",strumento:"Flicorno Contralto"},
+  {n:262,nome:"Parisi Salvatore",data:"",strumento:"Tromba"},
+  {n:263,nome:"Parisi Salvatore",data:"17/08/1957",strumento:"Clarinetto"},
+  {n:264,nome:"Parrino Antonino",data:"02/11/1926",strumento:"Trombone"},
+  {n:265,nome:"Parrino Biagio",data:"",strumento:"Percussioni"},
+  {n:266,nome:"Parrino Carmelo",data:"25/08/1974",strumento:"Tromba"},
+  {n:267,nome:"Parrino Giovanni Attilio",data:"30/05/1958",strumento:"Clarinetto"},
+  {n:268,nome:"Parrino Giuseppe",data:"28/11/1929",strumento:"maestro onorario (Clarinetto)"},
+  {n:269,nome:"Parrino Giuseppe",data:"09/11/1964",strumento:"maestro (Tuba)"},
+  {n:270,nome:"Parrino Giuseppe Luciano",data:"13/12/1987",strumento:"Tromba"},
+  {n:271,nome:"Parrino Learco",data:"08/10/1933",strumento:"Flicorno Contralto"},
+  {n:272,nome:"Parrino Luca",data:"11/10/1978",strumento:"Basso"},
+  {n:273,nome:"Parrino Nicolina",data:"10/04/1967",strumento:"Clarinetto"},
+  {n:274,nome:"Parrino Nicolino",data:"",strumento:"Tromba"},
+  {n:275,nome:"Parrino Nicolino",data:"15/08/1931",strumento:"Flicorno Contralto"},
+  {n:276,nome:"Parrino Rosario",data:"29/08/1966",strumento:"Contrabbasso"},
+  {n:277,nome:"Parrino Salvatore",data:"1926",strumento:"Flicorno Contralto"},
+  {n:278,nome:"Parrino Santina",data:"21/07/1993",strumento:"Flauto"},
+  {n:279,nome:"Parrino Teresa",data:"01/07/1965",strumento:"Clarinetto"},
+  {n:280,nome:"Passalacqua Claudia",data:"30/06/1991",strumento:"Flauto"},
+  {n:281,nome:"Passalacqua Fabrizio",data:"28/11/1989",strumento:"Corno"},
+  {n:282,nome:"Patroniti Andrea",data:"16/10/1996",strumento:"Tromba"},
+  {n:283,nome:"Patroniti Antonino",data:"",strumento:"Clarinetto"},
+  {n:284,nome:"Patroniti Gaetano",data:"29/11/1949",strumento:"Oboe"},
+  {n:285,nome:"Patroniti Nicolò",data:"25/04/1951",strumento:"Clarone"},
+  {n:286,nome:"Pirronello Calogero",data:"19/09/1928",strumento:"Basso - Percussioni"},
+  {n:287,nome:"Pirronello Carlo",data:"10/12/1954",strumento:"Clarin. Piccolo Mib"},
+  {n:288,nome:"Pirronello Elia",data:"03/08/1998",strumento:"Trombone"},
+  {n:289,nome:"Pirronello Gaetano",data:"",strumento:"Percussioni"},
+  {n:290,nome:"Pirronello Lucio",data:"01/02/1964",strumento:"Clarin. Piccolo Mib"},
+  {n:291,nome:"Pirronello Nicola",data:"27/10/2009",strumento:"Tromba"},
+  {n:292,nome:"Pirronello Salvatore",data:"",strumento:"Trombone"},
+  {n:293,nome:"Pirronello Salvatore",data:"",strumento:"Sax Contralto"},
+  {n:294,nome:"Piscitello Marco",data:"08/06/1990",strumento:"Clarinetto"},
+  {n:295,nome:"Restifo Antonino",data:"19/01/1990",strumento:"Clarinetto"},
+  {n:296,nome:"Restifo Nicolino",data:"17/11/1916",strumento:"Basso"},
+  {n:297,nome:"Restifo Rossella",data:"02/09/1970",strumento:"Flicorno Contralto"},
+  {n:298,nome:"Restifo Vincenzo",data:"01/08/1912",strumento:"Percussioni"},
+  {n:299,nome:"Restifo Chiav. Andrea",data:"19/07/1976",strumento:"Bombardino"},
+  {n:300,nome:"Restifo Chiav. Giuseppe",data:"",strumento:"Basso"},
+  {n:301,nome:"Restifo Chiav. Giuseppe",data:"16/09/1968",strumento:"maestro (Clarinetto)"},
+  {n:302,nome:"Restifo Chiav. Ivano",data:"02/03/1982",strumento:"Tromba"},
+  {n:303,nome:"Restifo Chiav. Mattia",data:"04/02/1997",strumento:"Tromba"},
+  {n:304,nome:"Restifo Chiav. Nicolino",data:"07/04/1953",strumento:"Tromba"},
+  {n:305,nome:"Restifo Chiav. Salvatore",data:"22/11/1965",strumento:"Tromba"},
+  {n:306,nome:"Restifo Chiav. Vincenzo",data:"29/02/1940",strumento:"Tromba"},
+  {n:307,nome:"Restifo Olivera Salvatore",data:"03/09/1922",strumento:"Clarinetto"},
+  {n:308,nome:"Restifo Pecorella Giuseppe",data:"18/03/1980",strumento:"Flicorno Contralto"},
+  {n:309,nome:"Riccardo Francesco",data:"13/06/1979",strumento:"Percussioni"},
+  {n:310,nome:"Riccardo Marzia",data:"18/09/1977",strumento:"Sax Contralto"},
+  {n:311,nome:"Ricco Nicolò",data:"",strumento:"Percussioni"},
+  {n:312,nome:"Ridolfo Francesco",data:"06/02/1995",strumento:"Clarinetto"},
+  {n:313,nome:"Roberto Nicolò",data:"",strumento:"Basso"},
+  {n:314,nome:"Romano Angelo",data:"10/02/1955",strumento:"Clarin. Piccolo Mib"},
+  {n:315,nome:"Rundo Basilio",data:"05/06/1995",strumento:"Tromba"},
+  {n:316,nome:"Rundo Giuseppe",data:"30/10/1958",strumento:"Clarinetto"},
+  {n:317,nome:"Rundo Giuseppe",data:"",strumento:"Clarinetto"},
+  {n:318,nome:"Rundo Nicolò",data:"",strumento:"Ficorno Contralto"},
+  {n:319,nome:"Saccone Biagio",data:"28/10/1969",strumento:"Flicorno Contralto"},
+  {n:320,nome:"Saccone Francesco",data:"12/11/2002",strumento:"Percussioni - Violino"},
+  {n:321,nome:"Saccone Giuseppe",data:"29/07/2002",strumento:"Tromba"},
+  {n:322,nome:"Saccone Luigi Stefano",data:"05/06/1982",strumento:"Clarinetto"},
+  {n:323,nome:"Saccone Maria Pina",data:"19/01/1983",strumento:"Clarinetto"},
+  {n:324,nome:"Saccone Michele",data:"01/05/1962",strumento:"Sax Contr. - Fagotto"},
+  {n:325,nome:"Saccone Nicola",data:"01/05/1969",strumento:"Bombardino"},
+  {n:326,nome:"Saccone Salvatore",data:"",strumento:"Clarinetto"},
+  {n:327,nome:"Saccone Salvatore",data:"08/01/1993",strumento:"Percussioni"},
+  {n:328,nome:"Saccone Salvatore",data:"",strumento:"Percussioni"},
+  {n:329,nome:"Saccone Salvatore",data:"18/09/1970",strumento:"Trombone"},
+  {n:330,nome:"Sanfilippo Antonino",data:"",strumento:"Trombone"},
+  {n:331,nome:"Sanfilippo Basilio",data:"08/11/1952",strumento:"Trombone"},
+  {n:332,nome:"Sanfilippo Beniamino",data:"",strumento:"Flicorno Contralto"},
+  {n:333,nome:"Sanfilippo Nicolò",data:"",strumento:"Percussioni"},
+  {n:334,nome:"Sanfilippo Vincenzo",data:"",strumento:"Trombone"},
+  {n:335,nome:"Santoro Antonino",data:"",strumento:"Flicorno Contralto"},
+  {n:336,nome:"Santoro Antonino",data:"25/11/1921",strumento:"Clarinetto"},
+  {n:337,nome:"Santoro Antonio",data:"06/11/1999",strumento:"Clarinetto"},
+  {n:338,nome:"Santoro Luca",data:"22/08/1999",strumento:"Corno"},
+  {n:339,nome:"Santoro Mattia",data:"19/06/2007",strumento:"Corno"},
+  {n:340,nome:"Santoro Michele",data:"29/03/1900",strumento:"Basso"},
+  {n:341,nome:"Santoro Roberto",data:"26/01/1963",strumento:"Sax Soprano"},
+  {n:342,nome:"Santoro Salvatore",data:"03/01/1957",strumento:"Percussioni"},
+  {n:343,nome:"Santoro Santino",data:"01/11/1965",strumento:"maestro (Corno)"},
+  {n:344,nome:"Scafidi Giuseppe",data:"26/08/1965",strumento:"Bombardino - Percussioni"},
+  {n:345,nome:"Scafidi Graziella",data:"06/04/1982",strumento:"Flauto"},
+  {n:346,nome:"Scafidi Ignazio",data:"",strumento:"Sax Contralto"},
+  {n:347,nome:"Scafidi Nicolino",data:"22/03/1941",strumento:"Flicornino"},
+  {n:348,nome:"Serio Carmelo",data:"",strumento:"Flicorno Contralto"},
+  {n:349,nome:"Serio Nicola",data:"13/09/1968",strumento:"Sax Soprano"},
+  {n:350,nome:"Serio Salvatore",data:"",strumento:"Basso"},
+  {n:351,nome:"Sguro Nicolò",data:"10/02/1958",strumento:"Sax Tenore"},
+  {n:352,nome:"Sguro Sara",data:"19/04/1994",strumento:"Sax Soprano"},
+  {n:353,nome:"Sidoti Gaetano",data:"01/02/1962",strumento:"Flicorno Contralto"},
+  {n:354,nome:"Sidoti Mario",data:"08/12/1955",strumento:"Percussioni"},
+  {n:355,nome:"Sidoti Nicolò",data:"25/01/1966",strumento:"Sax Soprano"},
+  {n:356,nome:"Simonella Antonino",data:"",strumento:"Percussioni"},
+  {n:357,nome:"Simonella Giuseppe",data:"",strumento:"Bombardino"},
+  {n:358,nome:"Simonella Nicola",data:"27/07/1969",strumento:"Flicorno Contralto"},
+  {n:359,nome:"Simonella Nicolò",data:"",strumento:"Clarinetto"},
+  {n:360,nome:"Soprana Nicolino",data:"",strumento:"Percussioni"},
+  {n:361,nome:"Spinello Massimo",data:"16/07/1977",strumento:"Sax Ten. - Sax Barit."},
+  {n:362,nome:"Spinello Salvatore",data:"",strumento:"Percussioni"},
+  {n:363,nome:"Spinello Vincenzo",data:"",strumento:"Mans. Bidello"},
+  {n:364,nome:"Stazzone Antonella Salvatrice",data:"31/03/1972",strumento:"Flicorno Contr."},
+  {n:365,nome:"Stazzone Antonino",data:"",strumento:"Flicorno Contralto"},
+  {n:366,nome:"Stazzone Gaetano",data:"",strumento:"Clarinetto Piccolo Mib"},
+  {n:367,nome:"Stazzone Nicola Vito",data:"03/06/1975",strumento:"Clarinetto"},
+  {n:368,nome:"Stazzone Pina",data:"30/07/1970",strumento:"Flauto"},
+  {n:369,nome:"Stazzone Manazza Antonella",data:"01/01/1976",strumento:"Clarinetto"},
+  {n:370,nome:"Stazzone Manazza Aurelio",data:"12/09/1974",strumento:"Clarinetto"},
+  {n:371,nome:"Stazzone Manazza Gaetano",data:"22/07/1961",strumento:"Clarinetto"},
+  {n:372,nome:"Stazzone Manazza Salvatore",data:"09/03/1955",strumento:"Trombone"},
+  {n:373,nome:"Stazzone Manazza Vincenzo",data:"06/11/1952",strumento:"Sax Baritono"},
+  {n:374,nome:"Todaro Giuseppina",data:"26/03/1966",strumento:"Clarinetto"},
+  {n:375,nome:"Todaro Lucia",data:"05/11/1967",strumento:"Flauto"},
+  {n:376,nome:"Tomasi Lucia",data:"18/01/1967",strumento:"Tromba"},
+  {n:377,nome:"Tomasi Salvatore",data:"08/01/1972",strumento:"Sax Contralto"},
+  {n:378,nome:"Vaneria Alice",data:"28/12/2011",strumento:"Sax Soprano"},
+  {n:379,nome:"Vaneria Antonina",data:"14/08/1977",strumento:"Sax Contralto"},
+  {n:380,nome:"Vaneria Antonino",data:"11/02/1941",strumento:"Percussioni"},
+  {n:381,nome:"Vaneria Antonino",data:"03/09/2007",strumento:"Percussioni"},
+  {n:382,nome:"Vaneria Giuseppe",data:"16/03/1935",strumento:"Trombone"},
+  {n:383,nome:"Vaneria Nicola",data:"18/11/1974",strumento:"Clarinetto"},
+  {n:384,nome:"Vaneria Nicolino",data:"07/11/1901",strumento:"Flicorno Contralto"},
+  {n:385,nome:"Vasi Enrico",data:"26/01/1999",strumento:"Clarinetto"},
+  {n:386,nome:"Vasi Nicolò",data:"06/02/1955",strumento:"Flicorno Soprano"},
+  {n:387,nome:"Vasi Salvatore",data:"29/06/1955",strumento:"Percussioni"},
+  {n:388,nome:"Vicario Vincenzo",data:"",strumento:"Flicorno Contralto"},
+  {n:389,nome:"Vinci Gaetano",data:"",strumento:"Flicorno Contralto"},
+  {n:390,nome:"Virzì Antonio",data:"17/02/1975",strumento:"Tromba"},
+  {n:391,nome:"Virzì Antonino",data:"25/02/1966",strumento:"Clarinetto"},
+  {n:392,nome:"Virzì Giuseppe Gaetano",data:"03/11/1949",strumento:"Sax Tenore"},
+  {n:393,nome:"Virzì Nicola",data:"22/04/1970",strumento:"Tromba"},
+  {n:394,nome:"Virzì Salvatore",data:"",strumento:"Flicorno Contralto"},
+  {n:395,nome:"Virzì Serafina",data:"16/11/1964",strumento:"Sax Tenore"},
+  {n:396,nome:"Virzì Vincenzo",data:"",strumento:"Sax Baritono"},
+  {n:397,nome:"Vitale Calogero",data:"08/01/1959",strumento:"Trombone - Percussioni"},
+  {n:398,nome:"Zaiti Antonino",data:"",strumento:"Clarinetto"},
+  {n:399,nome:"Zaiti Giuseppe",data:"11/05/1910",strumento:"Clarinetto"},
+  {n:400,nome:"Zaiti Nicolino",data:"28/01/1934",strumento:"Clarinetto"}
+];
+
+const tbody = document.getElementById("alboBody");
+const search = document.getElementById("search");
+const resultCount = document.getElementById("resultCount");
+
+function mostraComponenti(lista) {
+
+  tbody.innerHTML = "";
+
+  lista.forEach(persona => {
+
+    const riga = document.createElement("tr");
+
+    riga.innerHTML = `
+      <td class="number">${persona.n}</td>
+      <td>${persona.nome}</td>
+      <td>${persona.data}</td>
+      <td>${persona.strumento}</td>
+    `;
+
+    tbody.appendChild(riga);
+  });
+
+  resultCount.textContent =
+    lista.length === 1
+      ? "1 componente trovato"
+      : `${lista.length} componenti trovati`;
+}
+
+search.addEventListener("input", function() {
+
+  const termine = this.value.toLowerCase().trim();
+
+  const filtrati = componenti.filter(persona =>
+    `${persona.n} ${persona.nome} ${persona.data} ${persona.strumento}`
+      .toLowerCase()
+      .includes(termine)
+  );
+
+  mostraComponenti(filtrati);
+});
+
+mostraComponenti(componenti);
+
+</script>
+
+</body>
+</html>
