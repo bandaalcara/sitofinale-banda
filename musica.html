@@ -127,6 +127,33 @@
   font-size: 18px;
   text-align: center;
 }
+    .galleria-evento {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.galleria-evento img {
+  width: 75%;
+  height: 400px;
+  object-fit: contain;
+  background: #e9e3d6;
+  cursor: zoom-in;
+}
+
+.galleria-evento button {
+  background: #1e332d;
+  color: #f7f3ea;
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  font-size: 18px;
+  flex-shrink: 0;
+}
     blockquote {
   margin: 30px 0;
   padding: 20px 25px;
@@ -536,9 +563,14 @@ function cambiaParrino(direzione) {
         con gioia questi ragazzi meravigliosi nel mondo "dei grandi".
       </p>
 
-      <div class="photo-placeholder">
-        📷 Foto del concorso
-      </div>
+   <div style="margin-top:25px; text-align:center;">
+  <img
+    src="foto-eventi/percacciolo.jpg"
+    alt="Premio Salvuccio Percacciolo 2026"
+    onclick="ingrandisciFoto(this.src)"
+    style="width:100%; max-width:650px; max-height:500px; object-fit:contain; cursor:zoom-in;"
+  >
+</div>
 
     </div>
 
@@ -593,9 +625,21 @@ function cambiaParrino(direzione) {
         a suonare con questo entusiasmo e a farci emozionare!
       </p>
 
-      <div class="photo-placeholder">
-        📷 Foto del concorso
-      </div>
+  
+<div class="galleria-evento">
+  <button type="button" onclick="scorriFoto('cutuli', -1)">❮</button>
+
+  <img
+    id="foto-cutuli"
+    src="foto-eventi/499708553-1293897372741684-3626934576983418496-n_orig.jpg"
+    alt="Concorso Maria Grazia Cutuli"
+    onclick="ingrandisciFoto(this.src)"
+  >
+
+  <button type="button" onclick="scorriFoto('cutuli', 1)">❯</button>
+</div>
+<p id="contatore-cutuli" style="text-align:center;">Foto 1 di 5</p>
+
 
     </div>
 
@@ -644,13 +688,32 @@ function cambiaParrino(direzione) {
         partecipanti, siete il nostro avvenire.
       </p>
 
-      <div class="photo-placeholder">
-        📷 Foto del concorso
-      </div>
+  
+<div class="galleria-evento">
+  <button type="button" onclick="scorriFoto('percacciolo2025', -1)">❮</button>
 
+  <img
+    id="foto-percacciolo2025"
+    src="foto-eventi/500461192-1293897376075017-632198432798670353-n.jpg"
+    alt="Premio Salvuccio Percacciolo 2025"
+    onclick="ingrandisciFoto(this.src)"
+  >
+
+  <button type="button" onclick="scorriFoto('percacciolo2025', 1)">❯</button>
+</div>
+<p id="contatore-percacciolo2025" style="text-align:center;">Foto 1 di 5</p>
     </div>
-
+<div class="card">
+  <h2>La Scuola di Musica</h2>
+  <div style="text-align:center;">
+    <img
+      src="foto-eventi/locandina-scuola-di-musica-2022-23.jpeg"
+      alt="Locandina della Scuola di Musica"
+      onclick="ingrandisciFoto(this.src)"
+      style="width:100%; max-width:450px; cursor:zoom-in;"
+    >
   </div>
+</div>
 </section>
 
 <footer>
