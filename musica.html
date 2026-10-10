@@ -725,6 +725,56 @@ function cambiaParrino(direzione) {
     Dal 1911, musica e tradizione.
   </p>
 </footer>
+<script>
+const fotoEventi = {
+  cutuli: [
+    "foto-eventi/499708553-1293897372741684-3626934576983418496-n_orig.jpg",
+    "foto-eventi/499785628-1293897379408350-6099964464217998868-n_orig.jpg",
+    "foto-eventi/500035244-1293897369408351-5147766654060393707-n_orig.jpg",
+    "foto-eventi/698990281-1623511926446892-948983126384039020-n.jpg",
+    "foto-eventi/699084263-1623511883113563-7417324054538264152-n.jpg"
+  ],
 
+  percacciolo2025: [
+    "foto-eventi/500461192-1293897376075017-632198432798670353-n.jpg",
+    "foto-eventi/667473774-946127171361876-3645817900863798513-n.jpg",
+    "foto-eventi/700708317-1623511949780223-6917267274862951879-n.jpg",
+    "foto-eventi/698990281-1623511926446892-948983126384039020-n.jpg",
+    "foto-eventi/699084263-1623511883113563-7417324054538264152-n.jpg"
+  ]
+};
+
+const indiciFotoEvento = {
+  cutuli: 0,
+  percacciolo2025: 0
+};
+
+function scorriFoto(galleria, direzione) {
+  const immagini = fotoEventi[galleria];
+
+  indiciFotoEvento[galleria] =
+    (indiciFotoEvento[galleria] + direzione + immagini.length)
+    % immagini.length;
+
+  document.getElementById("foto-" + galleria).src =
+    immagini[indiciFotoEvento[galleria]];
+
+  document.getElementById("contatore-" + galleria).textContent =
+    "Foto " + (indiciFotoEvento[galleria] + 1) +
+    " di " + immagini.length;
+}
+</script>
+
+
+
+Le due gallerie useranno cinque immagini ciascuna. Alcuni file sono condivisi tra le gallerie perché nell'elenco che mi hai mandato risultano otto fotografie numerate disponibili: potrai sostituire i nomi quando individui le altre.
+2. Sistema la chiusura della sezione
+Prima del </section> che chiude la sezione dei risultati della Scuola, subito dopo la card della locandina, aggiungi un altro </div>.
+La parte finale deve risultare così:
+  </div>
+</div>
+</section>
+
+<footer>
 </body>
 </html>
