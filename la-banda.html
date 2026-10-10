@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Banda | Corpo Bandistico Municipale “G. Verdi”</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      color: #24332f;
+      background: #f7f3eb;
+      line-height: 1.7;
+    }
+    header {
+      background: #173f38;
+      color: white;
+      padding: 22px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+    nav {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    nav a:hover {
+      color: #d6b46a;
+    }
+    .hero {
+      min-height: 55vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+      background:
+        linear-gradient(rgba(23,63,56,0.72), rgba(23,63,56,0.72)),
+        url("primafoto.jpeg")
+        center/cover;
+      color: white;
+    }
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      margin-bottom: 15px;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 700px;
+      margin: auto;
+    }
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 7%;
+    }
+    .section-title {
+      font-family: Georgia, serif;
+      color: #173f38;
+      font-size: 2.4rem;
+      margin-bottom: 25px;
+    }
+    .intro {
+      font-size: 1.08rem;
+      color: #4c5955;
+      max-width: 850px;
+    }
+    .history {
+      background: #fffdf8;
+    }
+    .history p {
+      margin-bottom: 20px;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 45px;
+    }
+    .stat {
+      background: white;
+      border-top: 4px solid #c8a45d;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    }
+    .stat strong {
+      display: block;
+      font-family: Georgia, serif;
+      font-size: 2.5rem;
+      color: #173f38;
+      margin-bottom: 5px;
+    }
+    .stat span {
+      color: #66716d;
+    }
+    .director {
+      background: #173f38;
+      color: white;
+    }
+    .director .section-title {
+      color: #d6b46a;
+    }
+    .director-content {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 45px;
+      align-items: start;
+    }
+    .director-photo {
+      min-height: 350px;
+      background:
+        linear-gradient(rgba(23,63,56,0.15), rgba(23,63,56,0.15)),
+        url("https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&w=900&q=80")
+        center/cover;
+    }
+    .director-text p {
+      margin-bottom: 18px;
+    }
+    .board {
+      background: #fffdf8;
+    }
+    .people {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 35px;
+    }
+    .person {
+      background: white;
+      padding: 22px;
+      border-left: 4px solid #c8a45d;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+    }
+    .person strong {
+      display: block;
+      color: #173f38;
+      font-family: Georgia, serif;
+      font-size: 1.15rem;
+    }
+    .person span {
+      color: #69736f;
+      font-size: 0.95rem;
+    }
+    .archive {
+      text-align: center;
+      background: #f0ebe1;
+    }
+    .archive-box {
+      max-width: 750px;
+      margin: 35px auto 0;
+      background: #173f38;
+      color: white;
+      padding: 45px 30px;
+      border-radius: 4px;
+    }
+    .archive-box h3 {
+      font-family: Georgia, serif;
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+    .archive-box p {
+      margin-bottom: 25px;
+      color: #e7e2d8;
+    }
+    .button {
+      display: inline-block;
+      padding: 13px 25px;
+      background: #d6b46a;
+      color: #173f38;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 2px;
+    }
+    footer {
+      background: #102e29;
+      color: #d8dfdc;
+      text-align: center;
+      padding: 35px 20px;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 750px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        gap: 14px;
+      }
+      .stats,
+      .people,
+      .director-content {
+        grid-template-columns: 1fr;
+      }
+      .director-photo {
+        min-height: 280px;
+      }
+      section {
+        padding: 60px 6%;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">Corpo Bandistico Municipale “G. Verdi”</div>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="la-banda.html">La Banda</a>
+  <a href="musica.html">Musica</a>
+  <a href="eventi.html">Eventi</a>
+  <a href="index.html#galleria">Galleria</a>
+  <a href="index.html#contatti">Contatti</a>
+</nav>
+</header>
+<section class="hero">
+  <div>
+    <h1>La Banda</h1>
+    <p>
+      Una storia iniziata nel 1911, costruita attraverso generazioni
+      di musicisti, tradizione, passione e cultura.
+    </p>
+  </div>
+</section>
+<section class="history">
+  <h2 class="section-title">La nostra storia</h2>
+  <p class="intro">
+    L'Associazione Musicale Alcarese fu fondata ad Alcara Li Fusi (ME)
+    nel 1911 per interessamento del sindaco Giuseppe Mileti, che ne affidò
+    la direzione organizzativa e musicale al maestro Giacomo Zurlino.
+  </p>
+  <p>
+    Oltre allo Statuto e agli atti della Giunta Comunale del tempo,
+    la fondazione è attestata anche da una preziosa fotografia d'epoca
+    che mostra il Corpo Bandistico Municipale con una imponente uniforme
+    commissionata dal sindaco Mileti, composto da 42 elementi più il maestro,
+    schierati per l'occasione sul sagrato della Chiesa Madre.
+  </p>
+  <p>
+    Quel gruppo di amanti della cultura scommise che Alcara, un giorno,
+    avrebbe avuto un ruolo importante nell'ambito culturale, così come
+    la sua tradizione, i suoi personaggi e la sua storia volevano e meritavano.
+    Quel loro sogno si è realizzato.
+  </p>
+  <p>
+    Da allora questa istituzione locale ha favorito lo sviluppo nella comunità
+    di una forte tradizione, passione e cultura musicale e, da oltre un secolo,
+    rappresenta un importante veicolo di divulgazione della musica.
+    Nel corso della sua storia ha coinvolto quasi 400 persone, contribuendo
+    fortemente all'educazione musicale di tanti alcaresi.
+  </p>
+  <p>
+    Molti di coloro che hanno iniziato il proprio percorso musicale nella Banda
+    hanno poi proseguito gli studi con successo, diplomandosi al Conservatorio
+    e raggiungendo importanti livelli professionali, fino a entrare a far parte
+    di orchestre e bande di prestigio nazionale.
+  </p>
+  <p>
+    Dopo più di 110 anni, la nostra associazione è una realtà culturale
+    fortemente radicata nella comunità. Insieme alla sua Scuola di Musica,
+    svolge un ruolo fondamentale di interazione e aggregazione sociale,
+    mettendo a confronto generazioni, esperienze e professionalità diverse.
+  </p>
+  <p>
+    La Banda partecipa con stile e impegno alle manifestazioni pubbliche
+    ufficiali, locali e non, sia religiose che civili: dalle feste patronali
+    alle celebrazioni della Settimana Santa, dai concerti di musica classica
+    alle commemorazioni dei Caduti.
+  </p>
+  <p>
+    Il repertorio comprende, oltre alle tradizionali marce militari,
+    brani originali e trascrizioni di musica classica, jazz e contemporanea.
+    L'associazione organizza inoltre eventi musicali, culturali e ricreativi.
+  </p>
+  <div class="stats">
+    <div class="stat">
+      <strong>1911</strong>
+      <span>Anno di fondazione</span>
+    </div>
+<div class="stat">
+  <strong>400+</strong>
+  <span>Componenti coinvolti nella storia</span>
+</div>
+<div class="stat">
+  <strong>50</strong>
+  <span>Componenti effettivi attuali</span>
+</div>
+  </div>
+</section>
+<section class="director">
+  <div class="director-content">
+<div class="director-photo"></div>
+<div class="director-text">
+  <h2 class="section-title">Il Direttore</h2>
+  <h3 style="font-family: Georgia, serif; font-size: 1.8rem; margin-bottom: 20px;">
+    M° Michele Saccone
+  </h3>
+  <p>
+    Nato a Messina il 1° maggio 1962, Michele Saccone si avvicina
+    alla musica all'età di undici anni, entrando nella Scuola di Musica
+    Municipale Alcarese. Nel 1975 entra ufficialmente a far parte della
+    Banda, iniziando a suonare il sax contralto.
+  </p>
+  <p>
+    Nel 1977 intraprende gli studi presso il Conservatorio
+    “A. Corelli” di Messina, nella classe di fagotto del M° Dante Pavarini,
+    conseguendo il diploma nel 1984 con il M° Aldo Terzo.
+  </p>
+  <p>
+    Nel 1981 viene nominato Maestro Direttore della Banda Municipale
+    Alcarese, incarico che ricopre tuttora, diventando una figura centrale
+    nella continuità musicale e nella crescita dell'associazione.
+  </p>
+  <p>
+    Ha approfondito lo studio del fagotto a Milano con il M° Ovidio Danzi,
+    primo fagotto dell'Orchestra del Teatro alla Scala, e successivamente
+    a Winterthur, in Svizzera, con il M° Janos Meszaros.
+  </p>
+  <p>
+    Nel corso della sua attività professionale ha collaborato con importanti
+    formazioni orchestrali e cameristiche, prendendo parte a numerosi
+    concerti in Italia e a prestigiose produzioni musicali.
+  </p>
+  <p>
+    La sua attività comprende anche la musica antica, la ricerca e la
+    valorizzazione del patrimonio etnomusicologico, oltre all'insegnamento
+    dell'Educazione Musicale nelle scuole.
+  </p>
+</div>
+  </div>
+</section>
+<section class="board">
+  <h2 class="section-title">Il Direttivo</h2>
+  <p class="intro">
+    Il Direttivo dell'Associazione Musicale, eletto nel gennaio 2026,
+    guida l'associazione nella gestione delle attività culturali, musicali
+    e organizzative.
+  </p>
+  <div class="people">
+<div class="person">
+  <strong>M° Giuseppe Calanni Macchio</strong>
+  <span>Presidente</span>
+</div>
+<div class="person">
+  <strong>M° Antonino Santoro</strong>
+  <span>Vice Presidente</span>
+</div>
+<div class="person">
+  <strong>Alexander Pio Collica</strong>
+  <span>Segretario – Consigliere</span>
+</div>
+<div class="person">
+  <strong>Dott.ssa Melissa Dottore</strong>
+  <span>Componente del Direttivo</span>
+</div>
+<div class="person">
+  <strong>Dott.ssa Mariapia Faraci</strong>
+  <span>Componente del Direttivo</span>
+</div>
+<div class="person">
+  <strong>Salvatore Gioitta</strong>
+  <span>Componente del Direttivo</span>
+</div>
+<div class="person">
+  <strong>Alisia Oriti</strong>
+  <span>Componente del Direttivo</span>
+</div>
+<div class="person">
+  <strong>M° Santino Santoro</strong>
+  <span>Componente del Direttivo</span>
+</div>
+<div class="person">
+  <strong>M° Michele Saccone</strong>
+  <span>Maestro Direttore – in carica dal 1981</span>
+</div>
+<div class="person">
+  <strong>M° Antonio Mannanici</strong>
+  <span>Capo Banda</span>
+</div>
+<div class="person">
+  <strong>Maria Saccone</strong>
+  <span>Tesoriere</span>
+</div>
+<div class="person">
+  <strong>M° Salvatore Saccone</strong>
+  <span>Vice-Tesoriere</span>
+</div>
+  </div>
+</section>
+<section class="archive">
+  <h2 class="section-title">Albo storico</h2>
+  <div class="archive-box">
+    <h3>Dal 1911 ad oggi</h3>
+<p>
+  L'Albo storico raccoglie i nomi dei componenti che hanno fatto parte
+  del Corpo Bandistico Municipale nel corso della sua lunga storia.
+  Un patrimonio di persone, strumenti e generazioni che racconta
+  più di un secolo di musica ad Alcara Li Fusi.
+</p>
+<a href="albo.html" class="button">Consulta l'Albo storico</a>
+  </div>
+</section>
+<footer>
+  <p>© 2026 Associazione Musicale Alcarese – Corpo Bandistico Municipale “G. Verdi”</p>
+  <p>Dal 1911, musica e tradizione.</p>
+</footer>
+</body>
+</html>
