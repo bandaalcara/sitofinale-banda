@@ -330,9 +330,43 @@
         <strong>La sua cara Banda.</strong>
       </p>
 
-      <p>
-        <strong>📷 Qui inseriremo la fotografia del Maestro.</strong>
-      </p>
+     ```html
+<div class="parrino-foto-principale">
+  <img src="foto-parrino/donpippo1.jpg"
+       alt="Il Maestro Onorario Giuseppe Parrino"
+       onclick="apriFoto(this.src, this.alt)">
+  <p>Il Maestro Onorario Giuseppe Parrino</p>
+</div>
+
+<h3 class="parrino-galleria-titolo">Ricordi del Maestro</h3>
+
+<div class="parrino-galleria">
+  <img src="foto-parrino/2.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
+  <img src="foto-parrino/3.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
+  <img src="foto-parrino/4.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
+  <img src="foto-parrino/5.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
+  <img src="foto-parrino/6.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
+  <img src="foto-parrino/7.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
+  <img src="foto-parrino/8.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
+  <img src="foto-parrino/9.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
+  <img src="foto-parrino/10.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
+  <img src="foto-parrino/11.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
+  <img src="foto-parrino/14.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
+  <img src="foto-parrino/15.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
+  <img src="foto-parrino/16.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
+  <img src="foto-parrino/17.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
+  <img src="foto-parrino/20.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
+  <img src="foto-parrino/21.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
+  <img src="foto-parrino/23.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
+  <img src="foto-parrino/24.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
+  <img src="foto-parrino/25.jpg" alt="Ricordo del Maestro Giuseppe Parrino" onclick="apriFoto(this.src, this.alt)">
+</div>
+
+<div id="parrino-lightbox" onclick="chiudiFoto()">
+  <button type="button" aria-label="Chiudi" onclick="event.stopPropagation(); chiudiFoto()">×</button>
+  <img id="parrino-lightbox-img" src="" alt="">
+</div>
+```
 
     </div>
 
