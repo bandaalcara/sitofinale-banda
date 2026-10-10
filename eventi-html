@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Eventi & News – Corpo Bandistico Municipale “G. Verdi”</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #e9e3d6;
+  color: #1e332d;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+  background: #1e332d;
+  color: #f7f3ea;
+  padding: 22px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #f7f3ea;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #c9a45c;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  padding: 110px 7%;
+  background:
+    linear-gradient(rgba(20, 45, 39, 0.94), rgba(20, 45, 39, 0.94));
+  color: #f7f3ea;
+}
+
+.hero-content {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.section-label {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 12px;
+  color: #c9a45c;
+  margin-bottom: 18px;
+}
+
+h1 {
+  font-family: Georgia, serif;
+  font-size: 64px;
+  line-height: 1.05;
+  margin: 0 0 25px;
+}
+
+.hero p {
+  max-width: 750px;
+  line-height: 1.8;
+  font-size: 18px;
+  color: #d7dedb;
+}
+
+/* =========================
+   GENERALE
+========================= */
+
+section {
+  padding: 80px 7%;
+}
+
+.content {
+  max-width: 1050px;
+  margin: auto;
+}
+
+h2 {
+  font-family: Georgia, serif;
+  font-size: 40px;
+  margin: 0 0 25px;
+  color: #1e332d;
+}
+
+p {
+  line-height: 1.8;
+  color: #4d514d;
+}
+
+/* =========================
+   ANNI
+========================= */
+
+.year {
+  padding-top: 90px;
+}
+
+.year-header {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.year-number {
+  font-family: Georgia, serif;
+  font-size: 58px;
+  color: #c9a45c;
+  line-height: 1;
+}
+
+.year-title {
+  font-family: Georgia, serif;
+  font-size: 28px;
+  color: #1e332d;
+}
+
+.year-line {
+  height: 1px;
+  background: rgba(30, 51, 45, 0.18);
+  flex: 1;
+}
+
+/* =========================
+   EVENTI
+========================= */
+
+.event-card {
+  background: #f7f3ea;
+  padding: 38px;
+  margin-bottom: 35px;
+  border: 1px solid rgba(30, 51, 45, 0.12);
+  box-shadow: 0 10px 30px rgba(30, 51, 45, 0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(30, 51, 45, 0.12);
+}
+
+.event-date {
+  color: #a1813d;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.event-card h3 {
+  font-family: Georgia, serif;
+  font-size: 29px;
+  color: #1e332d;
+  margin: 0 0 20px;
+}
+
+.event-card p {
+  margin-bottom: 18px;
+}
+
+/* =========================
+   EVENTI SPECIALI
+========================= */
+
+.featured {
+  border-left: 5px solid #c9a45c;
+}
+
+.featured h3 {
+  font-size: 34px;
+}
+
+.score {
+  display: inline-block;
+  margin: 15px 0;
+  padding: 12px 18px;
+  background: #1e332d;
+  color: #f7f3ea;
+  font-family: Georgia, serif;
+  font-size: 20px;
+}
+
+/* =========================
+   FOTO
+========================= */
+
+.photo-placeholder {
+  margin-top: 30px;
+  min-height: 230px;
+  background: #e9e3d6;
+  border: 2px dashed #c9a45c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1e332d;
+  font-family: Georgia, serif;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* =========================
+   LINK
+========================= */
+
+.event-links {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(30, 51, 45, 0.12);
+}
+
+.event-links a {
+  color: #8b6d32;
+  text-decoration: none;
+  display: block;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.event-links a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   CITAZIONI
+========================= */
+
+blockquote {
+  margin: 30px 0;
+  padding: 22px 25px;
+  border-left: 4px solid #c9a45c;
+  background: rgba(233, 227, 214, 0.7);
+  font-family: Georgia, serif;
+  font-style: italic;
+  line-height: 1.8;
+  color: #1e332d;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  background: #1e332d;
+  color: #f7f3ea;
+  text-align: center;
+  padding: 40px 7%;
+  margin-top: 70px;
+}
+
+footer p {
+  color: #d7dedb;
+  margin: 8px 0;
+}
+
+footer strong {
+  color: #f7f3ea;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    gap: 15px;
+  }
+
+  .hero {
+    padding: 80px 6%;
+  }
+
+  h1 {
+    font-size: 44px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  section {
+    padding: 60px 6%;
+  }
+
+  .event-card {
+    padding: 25px 20px;
+  }
+
+  .year-header {
+    gap: 15px;
+  }
+
+  .year-number {
+    font-size: 42px;
+  }
+
+  .year-title {
+    font-size: 22px;
+  }
+
+  .year-line {
+    display: none;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+  <div class="logo">
+    G. VERDI · 1911
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="la-banda.html">La Banda</a>
+    <a href="musica.html">Musica</a>
+    <a href="eventi.html">Eventi</a>
+    <a href="index.html#galleria">Galleria</a>
+    <a href="index.html#contatti">Contatti</a>
+  </nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="section-label">
+      Archivio
+    </div>
+
+    <h1>
+      Eventi & News
+    </h1>
+
+    <p>
+      Concerti, concorsi, manifestazioni, incontri e momenti
+      che hanno segnato la storia del Corpo Bandistico
+      Municipale “G. Verdi” di Alcara Li Fusi.
+    </p>
+
+    <p>
+      Un viaggio attraverso gli anni, la musica e le esperienze
+      che hanno contribuito a costruire la nostra grande famiglia.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     2026
+========================= -->
+
+<section class="year">
+
+  <div class="content">
+
+    <div class="year-header">
+      <div class="year-number">2026</div>
+      <div class="year-title">Gli eventi più recenti</div>
+      <div class="year-line"></div>
+    </div>
+
+    <div class="event-card">
+
+      <div class="event-date">
+        2026 · Evento
+      </div>
+
+      <h3>
+        Evento e manifestazione musicale
+      </h3>
+
+      <p>
+        In questa sezione saranno raccolti gli appuntamenti,
+        i concerti e le manifestazioni del Corpo Bandistico
+        Municipale “G. Verdi” svolti nel corso del 2026.
+      </p>
+
+      <div class="photo-placeholder">
+        📷 Locandina / foto dell'evento
+      </div>
+
+    </div>
+
+    <div class="event-card">
+
+      <div class="event-date">
+        2026 · Evento
+      </div>
+
+      <h3>
+        Evento e manifestazione musicale
+      </h3>
+
+      <div class="photo-placeholder">
+        📷 Locandina / foto dell'evento
+      </div>
+
+    </div>
+
+    <div class="event-card">
+
+      <div class="event-date">
+        2026 · Evento
+      </div>
+
+      <h3>
+        Evento e manifestazione musicale
+      </h3>
+
+      <div class="photo-placeholder">
+        📷 Locandina / foto dell'evento
+      </div>
+
+    </div>
+
+    <div class="event-card">
+
+      <div class="event-date">
+        2026 · Evento
+      </div>
+
+      <h3>
+        Evento e manifestazione musicale
+      </h3>
+
+      <div class="photo-placeholder">
+        📷 Locandina / foto dell'evento
+      </div>
+
+    </div>
+
+    <div class="event-card">
+
+      <div class="event-date">
+        2026 · Evento
+      </div>
+
+      <h3>
+        Evento e manifestazione musicale
+      </h3>
+
+      <div class="photo-placeholder">
+        📷 Locandina / foto dell'evento
+      </div>
+
+    </div>
+
+    <div class="event-card">
+
+      <div class="event-date">
+        2026 · Evento
+      </div>
+
+      <h3>
+        Evento e manifestazione musicale
+      </h3>
+
+      <div class="photo-placeholder">
+        📷 Locandina / foto dell'evento
+      </div>
+
+    </div>
+
+    <div class="event-card">
+
+      <div class="event-date">
+        2026 · Evento
+      </div>
+
+      <h3>
+        Evento e manifestazione musicale
+      </h3>
+
+      <div class="photo-placeholder">
+        📷 Locandina / foto dell'evento
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     2025
+========================= -->
+
+<section class="year">
+
+  <div class="content">
+
+    <div class="year-header">
+      <div class="year-number">2025</div>
+      <div class="year-title">Musica, concorsi e crescita</div>
+      <div class="year-line"></div>
+    </div>
+
+
+    <div class="event-card">
+
+      <div class="event-date">
+        13 aprile 2025 · Riva del Garda
+      </div>
+
+      <h3>
+        Flicorno d'Oro — Prima Categoria
+      </h3>
+
+      <p>
+        Partecipazione alla First Category del Concorso Bandistico
+        Internazionale “Flicorno d'Oro” di Riva del Garda.
+      </p>
+
+      <p>
+        Anche quest'anno l'amore per la musica ci ha spinto
+        a metterci in gioco, partecipando alla Prima Categoria
+        del Concorso Internazionale Flicorno d'Oro.
+      </p>
+
+      <p>
+        Nessuna presunzione, nessuna superficialità, solo la forte
+        convinzione che questo tipo di percorso non si costruisca
+        solo sulla base dei trofei vinti, ma sulla perseveranza
+        dello studio e del confronto costante con i migliori.
+      </p>
+
+      <p>
+        Partecipare alla Prima Categoria è stata una fantastica
+        esperienza di crescita musicale e individuale, un'occasione
+        per mettersi a confronto con le migliori orchestre di fiati
+        d'Europa.
+      </p>
+
+      <div class="score">
+        91,88 punti · 6° posto su 40 bande
+      </div>
+
+      <p>
+        Un punteggio altissimo, frutto di tanti sacrifici e tanto
+        impegno, con l'esecuzione di brani tanto belli quanto
+        complessi.
+      </p>
+
+      <p>
+        La Banda si è classificata <strong>6ª su 40 bande</strong>
+        e <strong>5ª nella classifica della Prima Categoria</strong>,
+        a soli tre punti dai vincitori assoluti.
+      </p>
+
+      <p>
+        Siamo orgogliosi di essere stati la Banda Italiana ad aver
+        ottenuto il punteggio più alto della competizione.
+      </p>
+
+      <p>
+        Ringraziamo i ragazzi esterni che hanno preso parte
+        all'iniziativa e che ormai consideriamo parte integrante
+        della nostra grande famiglia.
+      </p>
+
+      <p>
+        Un sentito ringraziamento va al Comune di Alcara Li Fusi,
+        all'Associazione InChorus e alla BCC Valle del Fitalia –
+        Longi per il sostegno alla partecipazione al Concorso.
+      </p>
+
+      <p>
+        In particolare, si ringrazia l'Amministrazione Comunale,
+        nelle persone del sindaco Ettore Dottore, dell'assessore
+        Luca Dottore e del consigliere Gerardo Galati, per essere
+        stati presenti e aver sostenuto la Banda durante il concorso.
+      </p>
+
+      <p>
+        Un pensiero ai nostri autisti Paolo e Gaetano per la
+        professionalità e la pazienza e un grazie di cuore
+        a tutti gli Alcaresi per essere sempre al nostro fianco.
+      </p>
+
+      <blockquote>
+        Vogliamo fortemente dedicare questo risultato meraviglioso
+        al nostro caro Marco, che ha suonato, festeggiato e riso
+        con noi, e al grande Pippo, che sicuramente avrà dato
+        qualche colpo di grancassa da lassù.
+      </blockquote>
+
+      <p>
+        Un ringraziamento speciale va a tutti noi, a ogni singolo
+        componente, al Maestro e a tutto il Direttivo per aver reso
+        indimenticabile anche questa esperienza.
+      </p>
+
+      <p>
+        <strong>
+          Viva la nostra splendida Banda!
+        </strong>
+      </p>
+
+      <div class="photo-placeholder">
+        📷 Foto e immagini del Flicorno d'Oro 2025
+      </div>
+
+      <div class="event-links">
+
+        <a href="https://www.facebook.com/reel/720308754022983"
+           target="_blank">
+          ▶ Guarda il video su Facebook
+        </a>
+
+        <a href="https://www.facebook.com/reel/648836284590377"
+           target="_blank">
+          ▶ Guarda il secondo video su Facebook
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="event-card">
+
+      <div class="event-date">
+        2025 · Concorso musicale
+      </div>
+
+      <h3>
+        Partecipazione a concorsi e attività della Scuola di Musica
+      </h3>
+
+      <p>
+        Nel corso del 2025 i giovani musicisti della Scuola di
+        Musica hanno continuato il loro percorso di formazione,
+        confronto e crescita attraverso importanti esperienze
+        musicali.
+      </p>
+
+      <div class="photo-placeholder">
+        📷 Locandina / foto dell'evento
+      </div>
+
+    </div>
+
+
+    <div class="event-card">
+
+      <div class="event-date">
+        2025 · Attività musicale
+      </div>
+
+      <h3>
+        Eventi e manifestazioni
+      </h3>
+
+      <p>
+        Una selezione delle attività musicali e delle manifestazioni
+        alle quali ha preso parte la nostra Banda nel corso del 2025.
+      </p>
+
+      <div class="photo-placeholder">
+        📷 Locandina / foto dell'evento
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     2024
+========================= -->
+
+<section class="year">
+
+  <div class="content">
+
+    <div class="year-header">
+      <div class="year-number">2024</div>
+      <div class="year-title">Il successo al Flicorno d'Oro</div>
+      <div class="year-line"></div>
+    </div>
+
+    <div class="event-card featured">
+
+      <div class="event-date">
+        22–24 marzo 2024 · Riva del Garda
+      </div>
+
+      <h3>
+        1° posto nella Second Category al Flicorno d'Oro
+      </h3>
+
+      <p>
+        Dal 22 al 24 marzo la nostra Banda ha partecipato alla
+        24ª edizione del Concorso Bandistico Internazionale
+        “Flicorno d'Oro” di Riva del Garda (TN), aggiudicandosi
+        il <strong>1° premio per la Seconda Categoria</strong>
+        con un punteggio di <strong>91,71</strong>.
+      </p>
+
+      <div class="score">
+        🥇 1° PREMIO · 91,71
+      </div>
+
+      <p>
+        Il “Flicorno d'Oro” è uno dei concorsi più importanti
+        a livello europeo e nel 2024 ha visto la partecipazione
+        di ben 60 bande musicali internazionali.
+      </p>
+
+      <p>
+        La nostra Banda, diretta dal maestro Michele Saccone,
+        ha eseguito i brani <strong>NOVEM</strong> di Michele Mangani
+        e <strong>RIKUDIM</strong> di Jan Van Der Roost.
+      </p>
+
+      <p>
+        Momenti di grande entusiasmo hanno seguito l'annuncio
+        della classifica e la premiazione della nostra Banda.
+        I tanti musicisti presenti e, a distanza, la comunità
+        alcarese tutta, hanno gioito e festeggiato la vittoria.
+      </p>
+
+      <p>
+        Un risultato che rappresenta un riconoscimento al grande
+        impegno, alla costanza, alla passione e ai sacrifici
+        fatti negli anni, dando ulteriore stimolo e motivazione
+        a proseguire con sempre maggiore determinazione.
+      </p>
+
+      <div class="photo-placeholder">
+        📷 Foto del Flicorno d'Oro 2024
+      </div>
+
+      <div class="event-links">
+
+        <a href="https://www.instagram.com/bandamunicipalealcara/reel/C471xbOMC2z/"
+           target="_blank">
+          ▶ Video ufficiale della premiazione
+        </a>
+
+        <a href="https://www.flicornodoro.it/assets/pdf/classifica2024.pdf"
+           target="_blank">
+          📄 Classifica finale dell'edizione 2024
+        </a>
+
+        <a href="https://corpobandisticomunicipalealcara.weebly.com/2024-concorso-flicorno-doro.html"
+           target="_blank">
+          📷 Fotogallery completa
+        </a>
+
+        <a href="https://www.facebook.com/bandamunicipalealcara/videos/1423616548259453/"
+           target="_blank">
+          ▶ Video della prima esibizione
+        </a>
+
+        <a href="https://www.facebook.com/watch/?v=768628398558516"
+           target="_blank">
+          ▶ Video della seconda esibizione
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="event-card">
+
+      <div class="event-date">
+        2024 · Evento musicale
+      </div>
+
+      <h3>
+        Concerti e manifestazioni
+      </h3>
+
+      <p>
+        Altri momenti musicali e appuntamenti che hanno caratterizzato
+        il 2024 della nostra Associazione.
+      </p>
+
+      <div class="photo-placeholder">
+        📷 Foto dell'evento
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     2023
+========================= -->
+
+<section class="year">
+
+  <div class="content">
+
+    <div class="year-header">
+      <div class="year-number">2023</div>
+      <div class="year-title">Musica e tradizione</div>
+      <div class="year-line"></div>
+    </div>
+
+    <div class="event-card">
+
+      <div class="event-date">2023</div>
+
+      <h3>
+        Eventi e manifestazioni musicali
+      </h3>
+
+      <div class="photo-placeholder">
+        📷 Foto dell'evento
+      </div>
+
+    </div>
+
+    <div class="event-card">
+
+      <div class="event-date">2023</div>
+
+      <h3>
+        Concerti e attività della Banda
+      </h3>
+
+      <div class="photo-placeholder">
+        📷 Foto dell'evento
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     2022
+========================= -->
+
+<section class="year">
+
+  <div class="content">
+
+    <div class="year-header">
+      <div class="year-number">2022</div>
+      <div class="year-title">La nostra storia continua</div>
+      <div class="year-line"></div>
+    </div>
+
+    <div class="event-card">
+
+      <div class="event-date">2022</div>
+
+      <h3>
+        Eventi e manifestazioni musicali
+      </h3>
+
+      <div class="photo-placeholder">
+        📷 Foto dell'evento
+      </div>
+
+    </div>
+
+    <div class="event-card">
+
+      <div class="event-date">2022</div>
+
+      <h3>
+        Concerti e attività della Banda
+      </h3>
+
+      <div class="photo-placeholder">
+        📷 Foto dell'evento
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     2021
+========================= -->
+
+<section class="year">
+
+  <div class="content">
+
+    <div class="year-header">
+      <div class="year-number">2021</div>
+      <div class="year-title">110 anni di storia</div>
+      <div class="year-line"></div>
+    </div>
+
+    <div class="event-card featured">
+
+      <div class="event-date">
+        14 agosto 2021 · 110° anniversario
+      </div>
+
+      <h3>
+        110 anni di storia, musica e passione
+      </h3>
+
+      <p>
+        Il Corpo Bandistico Municipale “Giuseppe Verdi” di
+        Alcara Li Fusi il 14 agosto 2021 festeggia
+        <strong>110 anni di storia</strong>, di musica ma soprattutto
+        110 anni di passione e impegno a beneficio della comunità
+        alcarese.
+      </p>
+
+      <p>
+        Negli anni siamo cresciuti e abbiamo cercato di migliorarci
+        sempre di più.
+      </p>
+
+      <p>
+        Tra i nostri componenti c'è chi ha fatto della musica
+        la sua passione più grande, chi l'ha scelta come lavoro,
+        chi ha deciso di studiarla da professionista, ma tutti noi
+        siamo accomunati da un forte senso di appartenenza alla
+        Banda e da un profondo rispetto verso di essa,
+        considerata un'istituzione.
+      </p>
+
+      <p>
+        Tutti noi siamo cresciuti con le melodie delle marce,
+        tutti siamo felici di sentire la Banda quando passa
+        e suona per le strade.
+      </p>
+
+      <p>
+        Noi cerchiamo di svolgere il nostro lavoro con la massima
+        dedizione possibile, cercando di allietarvi con la nostra
+        musica nel migliore dei modi.
+      </p>
+
+      <blockquote>
+        Dal canto nostro, continuiamo a essere uniti e a essere
+        orgogliosi di far parte di questa grande famiglia che è
+        la nostra meravigliosa Banda! ❤️
+      </blockquote>
+
+      <div class="photo-placeholder">
+        📷 Foto dei 110 anni
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     2020
+========================= -->
+
+<section class="year">
+
+  <div class="content">
+
+    <div class="year-header">
+      <div class="year-number">2020</div>
+      <div class="year-title">Concerti e giovani musicisti</div>
+      <div class="year-line"></div>
+    </div>
+
+    <div class="event-card">
+
+      <div class="event-date">
+        1 gennaio 2020
+      </div>
+
+      <h3>
+        Concerto di Capodanno 2020
+      </h3>
+
+      <p>
+        Giorno 1 gennaio 2020, in Chiesa Madre, si è svolto
+        il tradizionale Concerto di Capodanno, durante il quale
+        abbiamo avuto il piacere di augurare alla comunità
+        un “Buon Anno 2020”.
+      </p>
+
+      <p>
+        Tante sono state le novità, dall'esibizione degli allievi
+        della Scuola di Musica, diretti dal M° Santino Santoro,
+        agli assoli che hanno visto impegnati i nostri giovani
+        musicisti “in carriera” e la Banda Municipale tutta,
+        diretta dal maestro Michele Saccone.
+      </p>
+
+      <p>
+        <strong>Solisti:</strong> M° Giuseppe Calanni Macchio
+        (tromba e trombino), Luca Santoro (corno),
+        Elia Pirronello (trombone), Antonio Santoro (clarinetto).
+      </p>
+
+      <div class="photo-placeholder">
+        📷 Foto del Concerto di Capodanno
+      </div>
+
+    </div>
+
+
+    <div class="event-card">
+
+      <div class="event-date">
+        1 gennaio 2019
+      </div>
+
+      <h3>
+        Concerto di Capodanno 2019
+      </h3>
+
+      <p>
+        Anche quest'anno è stata la nostra Banda ad aprire
+        gli eventi annuali alcaresi.
+      </p>
+
+      <p>
+        La sera di Capodanno, nella Chiesa Madre, si sono esibiti
+        gli allievi della Scuola di Musica diretti dal M° Santino
+        Santoro, il duo clarinetto-fagotto Antonio Santoro e
+        Salvatore Oriti, l'ensemble di ottoni e percussioni
+        diretto dal M° Giuseppe Calanni Macchio e la Banda al
+        gran completo.
+      </p>
+
+      <p>
+        La Banda è stata diretta dal M° Santino Santoro.
+        Il M° Michele Saccone, impegnato in Cina con un'orchestra
+        sinfonica italiana, ha seguito le esibizioni tramite internet.
+      </p>
+
+      <div class="photo-placeholder">
+        📷 Foto del Concerto di Capodanno 2019
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     2018
+========================= -->
+
+<section class="year">
+
+  <div class="content">
+
+    <div class="year-header">
+      <div class="year-number">2018</div>
+      <div class="year-title">Tradizione, devozione e cultura</div>
+      <div class="year-line"></div>
+    </div>
+
+
+    <div class="event-card">
+
+      <div class="event-date">2018</div>
+
+      <h3>
+        Muzzuni World Festival
+      </h3>
+
+      <p>
+        Il “Muzzuni World Festival” si svolge ad Alcara Li Fusi.
+        Già dal 2012 al 2014 l'evento musicale si era concretizzato
+        sotto forma di “Rassegna di canti popolari”, coordinata
+        artisticamente dal nostro maestro Michele Saccone e
+        patrocinata dal Comune di Alcara Li Fusi.
+      </p>
+
+      <p>
+        Dal 2017 l'evento è stato organizzato e coordinato
+        direttamente dalla nostra Associazione Musicale,
+        in collaborazione e con il patrocinio delle istituzioni
+        coinvolte, sempre con la direzione artistica del
+        maestro Michele Saccone.
+      </p>
+
+      <div class="photo-placeholder">
+        📷 Foto del Muzzuni World Festival
+      </div>
+
+    </div>
+
+
+    <div class="event-card">
+
+      <div class="event-date">3 maggio 2018</div>
+
+      <h3>
+        Consegna del Dono Votivo a San Nicolò Politi
+      </h3>
+
+      <p>
+        In occasione della festività del 3 maggio 2018, la Banda
+        ha voluto donare un medaglione in oro recante da un lato
+        l'incisione dello stemma del Corpo Bandistico Municipale
+        e, sul retro, la frase:
+      </p>
+
+      <blockquote>
+        “Con profonda devozione al nostro San Nicolò Politi,
+        a ricordo del 23 ottobre 2017”.
+      </blockquote>
+
+      <p>
+        Dopo 107 anni dalla fondazione della nostra Banda,
+        abbiamo ritenuto naturale rimarcare, con vera fede
+        e devozione, il legame che ci unisce da sempre a
+        San Nicolò Politi, patrono e protettore di Alcara Li Fusi.
+      </p>
+
+      <div class="photo-placeholder">
+        📷 Foto del Dono Votivo
+      </div>
+
+    </div>
+
+
+    <div class="event-card">
+
+      <div class="event-date">2018</div>
+
+      <h3>
+        Natale in Musica e Concerto di Capodanno
+      </h3>
+
+      <div class="photo-placeholder">
+        📷 Foto dell'evento
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     2017
+========================= -->
+
+<section class="year">
+
+  <div class="content">
+
+    <div class="year-header">
+      <div class="year-number">2017</div>
+      <div class="year-title">Alcara Jazz Music</div>
+      <div class="year-line"></div>
+    </div>
+
+
+    <div class="event-card featured">
+
+      <div class="event-date">
+        Agosto 2017
+      </div>
+
+      <h3>
+        Alcara Jazz Music — 2ª edizione con Joe Lovano
+      </h3>
+
+      <p>
+        Dopo il grande successo della prima edizione dell'evento
+        “Alcara Jazz Music - Joe Lovano in concert”, svoltosi
+        nell'estate del 2016, è ritornato l'interessante programma
+        musicale alcarese dedicato al Jazz.
+      </p>
+
+      <p>
+        Al fianco del grande e indiscusso big mondiale del sax,
+        Joe Lovano, si sono esibiti alcuni tra i musicisti più
+        apprezzati del jazz internazionale.
+      </p>
+
+      <p>
+        <strong>13 e 14 Agosto 2017:</strong> Workshop con Joe Lovano
+      </p>
+
+      <p>
+        <strong>14 Agosto 2017:</strong> Joe Lovano in concert —
+        2ª edizione
+      </p>
+
+      <p>
+        <strong>16 Agosto 2017:</strong> Concerto della Banda
+        Municipale di Alcara Li Fusi con la partecipazione
+        di Joe Lovano.
+      </p>
+
+      <div class="photo-placeholder">
+        📷 Foto di Alcara Jazz Music
+      </div>
+
+    </div>
+
+
+    <div class="event-card">
+
+      <div class="event-date">
+        1 gennaio 2017
+      </div>
+
+      <h3>
+        Il Concerto di Capodanno 2017
+      </h3>
+
+      <p>
+        Giorno 1 gennaio 2017, il Corpo Bandistico Municipale
+        di Alcara Li Fusi si è esibito nel tradizionale Concerto
+        di Capodanno, svoltosi in Chiesa Madre ad Alcara Li Fusi.
+      </p>
+
+      <p>
+        La serata è stata dedicata al giovane Dario Patroniti,
+        scomparso la scorsa estate a causa di un tragico incidente,
+        come segno di vicinanza, affetto e solidarietà nei confronti
+        della famiglia.
+      </p>
+
+      <div class="photo-placeholder">
+        📷 Foto del Concerto di Capodanno
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     2016
+========================= -->
+
+<section class="year">
+
+  <div class="content">
+
+    <div class="year-header">
+      <div class="year-number">2016</div>
+      <div class="year-title">La musica oltre i confini</div>
+      <div class="year-line"></div>
+    </div>
+
+
+    <div class="event-card featured">
+
+      <div class="event-date">
+        19 agosto 2016
+      </div>
+
+      <h3>
+        Alcara Jazz Music — Joe Lovano in Concert
+      </h3>
+
+      <p>
+        Il Corpo Bandistico Municipale “G. Verdi” di Alcara Li Fusi
+        ha organizzato, in collaborazione con il Comune di Alcara
+        Li Fusi e con il patrocinio della BCC della Valle del Fitalia,
+        un grande evento musicale con il sassofonista statunitense
+        Joe Lovano.
+      </p>
+
+      <p>
+        Joe Lovano, uno dei più sorprendenti e apprezzati musicisti
+        del jazz contemporaneo, ha omaggiato la cittadina natale
+        del padre, Alcara Li Fusi, con un magnifico concerto gratuito.
+      </p>
+
+      <p>
+        Il 16 agosto 2016 ha inoltre suonato due brani insieme
+        al Corpo Bandistico Municipale “G. Verdi” durante il
+        tradizionale concerto in onore del santo protettore
+        di Alcara, San Nicolò Politi.
+      </p>
+
+      <p>
+        Il 19 agosto si è esibito al sax e batteria, accompagnato
+        dalla cantante Judi Silvano e dal pianista M° Salvatore Bonafede.
+      </p>
+
+      <div class="photo-placeholder">
+        📷 Foto di Joe Lovano ad Alcara
+      </div>
+
+    </div>
+
+
+    <div class="event-card">
+
+      <div class="event-date">
+        1 gennaio 2016
+      </div>
+
+      <h3>
+        Concerto di Capodanno 2016
+      </h3>
+
+      <p>
+        Anche quest'anno il nuovo anno ad Alcara Li Fusi è stato
+        inaugurato dal Corpo Bandistico “G. Verdi”, con il patrocinio
+        del Comune di Alcara Li Fusi.
+      </p>
+
+      <p>
+        Il concerto si è svolto presso una gremita Chiesa
+        Maria SS. Assunta.
+      </p>
+
+      <div class="photo-placeholder">
+        📷 Foto del Concerto di Capodanno
+      </div>
+
+    </div>
+
+
+    <div class="event-card">
+
+      <div class="event-date">
+        23 agosto 2015
+      </div>
+
+      <h3>
+        Sulle Note del Ricordo
+      </h3>
+
+      <p>
+        In occasione del 30° anno dall'ultimo concerto diretto
+        dal maestro Gaetano Patroniti, il Corpo Bandistico
+        Municipale “G. Verdi”, con il patrocinio del Comune
+        di Alcara Li Fusi e della famiglia Patroniti, ha organizzato
+        il concerto musicale “Sulle Note del Ricordo”.
+      </p>
+
+      <p>
+        L'evento si è svolto domenica 23 agosto 2015 alle ore
+        21.30 in Chiesa Madre ad Alcara Li Fusi.
+      </p>
+
+      <div class="photo-placeholder">
+        📷 Foto dell'evento
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     2014
+========================= -->
+
+<section class="year">
+
+  <div class="content">
+
+    <div class="year-header">
+      <div class="year-number">2014</div>
+      <div class="year-title">Memoria e grandi esperienze</div>
+      <div class="year-line"></div>
+    </div>
+
+
+    <div class="event-card">
+
+      <div class="event-date">
+        8 ottobre 2014
+      </div>
+
+      <h3>
+        La Banda in udienza da Papa Francesco
+      </h3>
+
+      <p>
+        Emozionante ed esaltante: queste poche parole possono
+        riassumere le forti sensazioni vissute dai componenti
+        della Banda Municipale “G. Verdi” di Alcara Li Fusi
+        che hanno preso parte al viaggio per assistere all'udienza
+        che Papa Francesco ha tenuto mercoledì 8 ottobre 2014
+        in Piazza San Pietro, nello Stato del Vaticano.
+      </p>
+
+      <div class="photo-placeholder">
+        📷 Foto dell'udienza
+      </div>
+
+    </div>
+
+
+    <div class="event-card">
+
+      <div class="event-date">
+        4 novembre 2014
+      </div>
+
+      <h3>
+        Alcara Li Fusi e la sua Banda Municipale celebrano
+        il centenario della Grande Guerra
+      </h3>
+
+      <p>
+        Nella giornata dell'Unità Nazionale e della Festa delle
+        Forze Armate, Alcara Li Fusi ha dedicato un intero pomeriggio
+        al ricordo degli eventi che hanno contraddistinto e segnato
+        le fasi del grande conflitto mondiale del 1914–1918.
+      </p>
+
+      <p>
+        Alla manifestazione hanno preso parte gli alunni di ogni
+        ordine e grado della scuola locale. L'evento è stato
+        patrocinato dal Comune di Alcara Li Fusi e interamente
+        organizzato dalla locale Banda Municipale “G. Verdi”,
+        diretta dal Maestro Michele Saccone.
+      </p>
+
+      <div class="photo-placeholder">
+        📷 Foto della manifestazione
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     1991
+========================= -->
+
+<section class="year">
+
+  <div class="content">
+
+    <div class="year-header">
+      <div class="year-number">1991</div>
+      <div class="year-title">Una storia che continua</div>
+      <div class="year-line"></div>
+    </div>
+
+    <div class="event-card">
+
+      <div class="event-date">
+        22 novembre 1991 · Santo Stefano di Camastra
+      </div>
+
+      <h3>
+        Raduno bandistico per la Festa di Santa Cecilia
+      </h3>
+
+      <p>
+        Un'emozionante giornata di festa e di musica trascorsa
+        insieme ad altre tre bande nel 1991, a Santo Stefano
+        di Camastra, in occasione della Festa di Santa Cecilia.
+      </p>
+
+      <p>
+        La musica e la vita bandistica sono meravigliose, perché
+        portano a vivere mille esperienze di confronto e di emozioni
+        diverse e sempre nuove, specialmente per i giovanissimi.
+      </p>
+
+      <p>
+        È possibile assistere alle esibizioni della nostra Banda
+        durante la sfilata, la processione e l'esibizione serale,
+        diretta inizialmente dal nostro caro e storico capobanda
+        Don Pippo e subito dopo dal maestro direttore Michele Saccone.
+      </p>
+
+      <blockquote>
+        La musica è un linguaggio globale di passione,
+        condivisione e allegria.
+      </blockquote>
+
+      <div class="photo-placeholder">
+        🎥 Video storico
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     2011
+========================= -->
+
+<section class="year">
+
+  <div class="content">
+
+    <div class="year-header">
+      <div class="year-number">2011</div>
+      <div class="year-title">100 anni della Banda</div>
+      <div class="year-line"></div>
+    </div>
+
+    <div class="event-card featured">
+
+      <div class="event-date">
+        2011 · Centenario
+      </div>
+
+      <h3>
+        I festeggiamenti del 100° anno dalla fondazione
+      </h3>
+
+      <p>
+        Nel 2011, ricorrendo il <strong>100° anno dalla fondazione</strong>,
+        la Banda Municipale Alcarese ha organizzato una serie di
+        eventi che hanno visto la partecipazione degli attuali
+        e degli ex componenti della Banda, nonché quella di tutta
+        la comunità.
+      </p>
+
+      <div class="photo-placeholder">
+        📷 Foto dei festeggiamenti del centenario
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CHIUSURA
+========================= -->
+
+<section>
+
+  <div class="content">
+
+    <div class="event-card">
+
+      <div class="section-label">
+        Dal 1911
+      </div>
+
+      <h2>
+        Una storia fatta di musica
+      </h2>
+
+      <p>
+        Dai primi anni del Novecento alle esperienze più recenti,
+        ogni evento racconta un pezzo della storia del Corpo
+        Bandistico Municipale “G. Verdi” e della comunità di
+        Alcara Li Fusi.
+      </p>
+
+      <p>
+        Concerti, concorsi, tradizioni, incontri e generazioni
+        di musicisti hanno costruito, anno dopo anno, una realtà
+        culturale profondamente radicata nel territorio.
+      </p>
+
+      <p>
+        <strong>
+          Dal 1911, musica e tradizione.
+        </strong>
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <p>
+    <strong>
+      © 2026 Associazione Musicale Alcarese
+    </strong>
+  </p>
+
+  <p>
+    Corpo Bandistico Municipale “G. Verdi”
+  </p>
+
+  <p>
+    Dal 1911, musica e tradizione.
+  </p>
+
+</footer>
+
+</body>
+</html>
