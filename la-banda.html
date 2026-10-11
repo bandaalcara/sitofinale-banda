@@ -103,17 +103,6 @@ nav a:hover {
   color: #AFC8E1;
 }
 
-    nav a {
-      color: var(--white);
-      text-decoration: none;
-      font-size: 0.91rem;
-      transition: color 0.2s ease;
-    }
-
-    nav a:hover {
-      color: #BFD7F0;
-    }
-
     .hero {
       min-height: 55vh;
       display: flex;
@@ -166,9 +155,28 @@ nav a:hover {
       margin-bottom: 25px;
     }
 
-    .history {
-      background: var(--white);
-    }
+    
+.history {
+  max-width: none;
+  position: relative;
+  isolation: isolate;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+
+.history::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, 0.90),
+      rgba(255, 255, 255, 0.94)
+    ),
+    url("fotostorica.jpg") center / cover no-repeat;
+  z-index: -1;
+}
+
 
     .history p {
       margin-bottom: 18px;
@@ -223,15 +231,14 @@ nav a:hover {
       align-items: start;
     }
 
-    .director-photo {
-      min-height: 390px;
-      border-radius: 12px;
-      background:
-        linear-gradient(rgba(23,42,67,0.08), rgba(23,42,67,0.08)),
-        url("https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&w=900&q=80")
-        center/cover no-repeat;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
-    }
+  
+.director-photo {
+  min-height: 390px;
+  border-radius: 12px;
+  background: url("maestro.jpg") center 25% / cover no-repeat;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
 
     .director-text h3 {
       font-family: Georgia, serif;
