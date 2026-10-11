@@ -718,6 +718,118 @@
         transition-duration: 0.01ms !important;
       }
     }
+    ```css
+.maestro-gallery {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 25px 20px;
+  text-align: center;
+}
+
+.maestro-gallery h2 {
+  margin-bottom: 8px;
+}
+
+.maestro-gallery p {
+  margin-bottom: 22px;
+  color: #666;
+}
+
+.gallery-slider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gallery-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  flex: 1;
+  padding: 10px 2px 18px;
+}
+
+.gallery-track img {
+  flex: 0 0 280px;
+  width: 280px;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  scroll-snap-align: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+  transition: transform 0.2s;
+}
+
+.gallery-track img:hover {
+  transform: scale(1.03);
+}
+
+.gallery-arrow {
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: #1e332d;
+  color: #f5f1e8;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.foto-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.foto-modal.aperta {
+  display: flex;
+}
+
+.foto-modal img {
+  max-width: 92%;
+  max-height: 88vh;
+  object-fit: contain;
+}
+
+.chiudi-modal {
+  position: absolute;
+  top: 15px;
+  right: 28px;
+  color: white;
+  background: transparent;
+  border: none;
+  font-size: 42px;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .gallery-track img {
+    flex-basis: 230px;
+    width: 230px;
+    height: 180px;
+  }
+
+  .gallery-arrow {
+    flex-basis: 32px;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .maestro-gallery {
+    padding: 20px 8px;
+  }
+}
+
   </style>
 </head>
 
@@ -1092,24 +1204,37 @@
       Scorri le fotografie in orizzontale per visualizzarle.
     </p>
 
-    <div class="photo-gallery">
-      <figure>
-        <img src="maestro-foto-1.jpg" alt="Michele Saccone - fotografia 1" loading="lazy">
-        <figcaption>Michele Saccone</figcaption>
-      </figure>
+<section class="maestro-gallery">
+  <h2>Il Maestro Michele Saccone</h2>
+  <p>Immagini, ricordi e momenti della nostra storia musicale.</p>
 
-      <figure>
-        <img src="maestro-foto-2.jpg" alt="Michele Saccone - fotografia 2" loading="lazy">
-        <figcaption>Il percorso musicale</figcaption>
-      </figure>
+  <div class="gallery-slider">
+    <button class="gallery-arrow" onclick="scorriFoto(-1)" aria-label="Foto precedente">&#10094;</button>
 
-      <figure>
-        <img src="maestro-foto-3.jpg" alt="Michele Saccone - fotografia 3" loading="lazy">
-        <figcaption>La musica e la Banda</figcaption>
-      </figure>
+    <div class="gallery-track" id="galleryTrack">
+      <img src="foto-maestro-c/550097_orig.jpg" alt="Maestro Michele Saccone" onclick="ingrandisciFoto(this)">
+      <img src="foto-maestro-c/566216_orig.jpg" alt="Maestro Michele Saccone" onclick="ingrandisciFoto(this)">
+      <img src="foto-maestro-c/1553366_orig.jpg" alt="Maestro Michele Saccone" onclick="ingrandisciFoto(this)">
+      <img src="foto-maestro-c/2933263_orig.jpg" alt="Maestro Michele Saccone" onclick="ingrandisciFoto(this)">
+      <img src="foto-maestro-c/4543629_orig.jpg" alt="Maestro Michele Saccone" onclick="ingrandisciFoto(this)">
+      <img src="foto-maestro-c/5928479_orig.jpg" alt="Maestro Michele Saccone" onclick="ingrandisciFoto(this)">
+      <img src="foto-maestro-c/6004133_orig.jpg" alt="Maestro Michele Saccone" onclick="ingrandisciFoto(this)">
+      <img src="foto-maestro-c/6772327_orig.jpg" alt="Maestro Michele Saccone" onclick="ingrandisciFoto(this)">
+      <img src="foto-maestro-c/6792338_orig.jpg" alt="Maestro Michele Saccone" onclick="ingrandisciFoto(this)">
+      <img src="foto-maestro-c/7426260_orig.jpg" alt="Maestro Michele Saccone" onclick="ingrandisciFoto(this)">
+      <img src="foto-maestro-c/9535713_orig.jpg" alt="Maestro Michele Saccone" onclick="ingrandisciFoto(this)">
+      <img src="foto-maestro-c/9579556_orig.jpg" alt="Maestro Michele Saccone" onclick="ingrandisciFoto(this)">
+      <img src="foto-maestro-c/9924121_orig.jpg" alt="Maestro Michele Saccone" onclick="ingrandisciFoto(this)">
     </div>
+
+    <button class="gallery-arrow" onclick="scorriFoto(1)" aria-label="Foto successiva">&#10095;</button>
   </div>
 </section>
+
+<div id="fotoModal" class="foto-modal" onclick="chiudiFoto()">
+  <button class="chiudi-modal" onclick="chiudiFoto()" aria-label="Chiudi">&times;</button>
+  <img id="fotoIngrandita" alt="Fotografia ingrandita">
+</div>
 
 <footer>
   <p>
@@ -1597,6 +1722,32 @@ function cercaNellAlbo() {
 }
 
 mostraComponenti(componenti);
+</script>
+
+<script>
+  function scorriFoto(direzione) {
+    const track = document.getElementById("galleryTrack");
+    track.scrollBy({
+      left: direzione * 300,
+      behavior: "smooth"
+    });
+  }
+
+  function ingrandisciFoto(img) {
+    const modal = document.getElementById("fotoModal");
+    document.getElementById("fotoIngrandita").src = img.src;
+    modal.classList.add("aperta");
+  }
+
+  function chiudiFoto() {
+    document.getElementById("fotoModal").classList.remove("aperta");
+  }
+
+  document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+      chiudiFoto();
+    }
+  });
 </script>
 
 </body>
