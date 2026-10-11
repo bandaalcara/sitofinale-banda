@@ -1,1 +1,921 @@
 
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maestri Direttori | Corpo Bandistico Municipale “G. Verdi”</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --navy: #172A43;
+      --navy-dark: #102035;
+      --blue: #53799F;
+      --blue-hover: #3F6488;
+      --light: #EDF2F7;
+      --white: #FFFFFF;
+      --text: #303943;
+      --muted: #647184;
+      --border: #DCE4ED;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 24px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #FFFFFF;
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    header {
+      position: relative;
+      width: 100%;
+      padding: 17px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      background: var(--navy);
+      color: var(--white);
+      z-index: 10;
+      flex-wrap: wrap;
+    }
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+      color: var(--white);
+      text-decoration: none;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 19px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .logo-img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: var(--white);
+      padding: 3px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+    }
+
+    nav a {
+      color: #F0F4F8;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a[aria-current="page"] {
+      color: #AFC8E1;
+    }
+
+    .hero {
+      min-height: 42vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 75px 20px;
+      background-color: var(--navy);
+      background-image:
+        linear-gradient(rgba(23, 42, 67, 0.35), rgba(23, 42, 67, 0.45)),
+        url("./fotostorica.jpg");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      color: var(--white);
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.85rem;
+      margin-bottom: 14px;
+      color: #D6E5F5;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 7vw, 4.6rem);
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      max-width: 720px;
+      margin: auto;
+      color: #F0F4F9;
+    }
+
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 55px 7%;
+    }
+
+    .section-label {
+      display: inline-block;
+      color: var(--blue);
+      font-size: 0.78rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      color: var(--navy);
+      font-size: clamp(1.9rem, 4vw, 2.5rem);
+      margin-bottom: 18px;
+    }
+
+    .intro {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 900px;
+      margin-bottom: 28px;
+    }
+
+    .directors-intro {
+      padding-bottom: 25px;
+    }
+
+    .directors-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 25px;
+    }
+
+    .director-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--blue);
+      border-radius: 9px;
+      padding: 22px;
+      min-width: 0;
+      box-shadow: 0 4px 14px rgba(23, 42, 67, 0.045);
+    }
+
+    .director-card.featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr minmax(180px, 0.7fr);
+      column-gap: 28px;
+      align-items: start;
+      background: var(--light);
+      padding: 28px;
+    }
+
+    .director-card.featured .director-years,
+    .director-card.featured h3,
+    .director-card.featured .featured-description,
+    .director-card.featured .director-buttons {
+      grid-column: 1;
+    }
+
+    .director-years {
+      color: var(--blue);
+      font-weight: bold;
+      font-size: 0.82rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .director-card h3 {
+      color: var(--navy);
+      font-size: 1.22rem;
+      margin-bottom: 8px;
+    }
+
+    .director-card p {
+      color: var(--muted);
+      font-size: 0.94rem;
+      margin-bottom: 12px;
+    }
+
+    .featured-photo {
+      grid-column: 2;
+      grid-row: 1 / span 4;
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      object-position: center 25%;
+      border-radius: 8px;
+      background: #DCE4ED;
+    }
+
+    .director-buttons {
+      margin-top: 8px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 11px 20px;
+      background: var(--navy);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: bold;
+      border: 1px solid var(--navy);
+      border-radius: 6px;
+      transition: background 0.2s ease;
+    }
+
+    .button:hover {
+      background: var(--blue-hover);
+    }
+
+    .curriculum {
+      max-width: none;
+      background: var(--light);
+    }
+
+    .curriculum-inner {
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .curriculum-subtitle {
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .curriculum-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 280px;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .curriculum-text p {
+      margin-bottom: 17px;
+    }
+
+    .curriculum-portrait {
+      position: sticky;
+      top: 20px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .curriculum-portrait img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 390px;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .portrait-caption {
+      padding: 14px;
+      text-align: center;
+      color: var(--navy);
+      font-family: Georgia, serif;
+      font-size: 1.05rem;
+    }
+
+    .gallery-section {
+      max-width: 1050px;
+      padding-top: 30px;
+      padding-bottom: 60px;
+    }
+
+    .gallery-heading {
+      color: var(--navy);
+      font-size: 1.7rem;
+      margin-bottom: 8px;
+    }
+
+    .gallery-help {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .gallery-slider {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr) 42px;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .gallery-track {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      padding: 6px 2px 14px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--blue) var(--light);
+    }
+
+    .gallery-track img {
+      flex: 0 0 240px;
+      width: 240px;
+      height: 190px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      cursor: zoom-in;
+      scroll-snap-align: start;
+      background: var(--light);
+      transition: transform 0.2s ease;
+    }
+
+    .gallery-track img:hover {
+      transform: translateY(-3px);
+    }
+
+    .gallery-arrow {
+      width: 42px;
+      height: 42px;
+      border: none;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 1.15rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .gallery-arrow:hover {
+      background: var(--blue-hover);
+    }
+
+    .foto-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      padding: 55px 20px 25px;
+      background: rgba(8, 17, 29, 0.94);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .foto-modal.open {
+      display: flex;
+    }
+
+    .foto-modal img {
+      display: block;
+      max-width: min(1100px, 95vw);
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 5px;
+    }
+
+    .chiudi-modal {
+      position: absolute;
+      top: 12px;
+      right: 24px;
+      border: none;
+      background: transparent;
+      color: white;
+      font-size: 2.6rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    footer {
+      background: var(--navy-dark);
+      color: #D9E2EC;
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 0.9rem;
+    }
+
+    footer p + p {
+      margin-top: 4px;
+    }
+
+    @media (max-width: 850px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 18px 5%;
+      }
+
+      nav {
+        justify-content: flex-start;
+        gap: 12px 18px;
+      }
+
+      .directors-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .curriculum-layout {
+        grid-template-columns: minmax(0, 1fr) 230px;
+        gap: 24px;
+      }
+
+      .director-card.featured {
+        grid-template-columns: 1fr 0.65fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      section {
+        padding: 40px 6%;
+      }
+
+      .hero {
+        min-height: 36vh;
+        padding: 55px 20px;
+        background-size: cover;
+      }
+
+      .directors-list {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .director-card.featured {
+        display: flex;
+        padding: 22px;
+      }
+
+      .featured-photo {
+        order: 4;
+        height: auto;
+        max-height: 360px;
+        object-fit: contain;
+        background: #DCE4ED;
+      }
+
+      .director-buttons {
+        order: 5;
+      }
+
+      .curriculum-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .curriculum-portrait {
+        position: static;
+        max-width: 340px;
+        margin: 0 auto;
+        grid-row: 1;
+      }
+
+      .gallery-slider {
+        grid-template-columns: 34px minmax(0, 1fr) 34px;
+        gap: 6px;
+      }
+
+      .gallery-arrow {
+        width: 34px;
+        height: 34px;
+      }
+
+      .gallery-track img {
+        flex-basis: 78%;
+        width: 78%;
+        height: 190px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.2rem, 10vw, 3.2rem);
+      }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <a class="logo-link" href="index.html" aria-label="Torna alla Home">
+    <img class="logo-img" src="logo.jpeg" alt="Logo Corpo Bandistico Municipale G. Verdi">
+    <span>G. VERDI · 1911</span>
+  </a>
+
+  <nav aria-label="Navigazione principale">
+    <a href="index.html">Home</a>
+    <a href="la-banda.html">La Banda</a>
+    <a href="musica.html">La Scuola di Musica</a>
+    <a href="eventi.html">Eventi</a>
+    <a href="maestri-direttori.html" aria-current="page">Maestri Direttori</a>
+    <a href="albo.html">Albo Storico</a>
+    <a href="index.html#galleria">Galleria</a>
+    <a href="index.html#contatti">Contatti</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <p class="eyebrow">Dal 1911 a oggi</p>
+    <h1>Maestri Direttori</h1>
+    <p>
+      Gli uomini che, attraverso generazioni diverse, hanno guidato
+      il percorso musicale del Corpo Bandistico Municipale “G. Verdi”
+      di Alcara Li Fusi.
+    </p>
+  </div>
+</section>
+
+<section class="directors-intro">
+  <div class="section-label">La nostra memoria musicale</div>
+  <h2 class="section-title">I direttori nella storia</h2>
+  <p class="intro">
+    Un percorso attraverso i maestri che hanno contribuito alla crescita
+    e alla continuità della banda. Per ciascuno riportiamo gli anni
+    disponibili nella documentazione storica.
+  </p>
+
+  <div class="directors-list">
+
+    <article class="director-card featured">
+      <div class="director-years">1981 – oggi</div>
+      <h3>M° Michele Saccone</h3>
+
+      <div class="featured-description">
+        <p>
+          Nato a Messina il 1° maggio 1962, si avvicina alla musica
+          attraverso la Scuola di Musica Municipale Alcarese. Nel 1975
+          entra ufficialmente nella banda suonando il sax contralto.
+        </p>
+        <p>
+          Dopo gli studi al Conservatorio “A. Corelli” di Messina,
+          si dedica all'attività concertistica e alla direzione del
+          Corpo Bandistico Municipale, incarico che ricopre dal 1981.
+        </p>
+      </div>
+
+      <img class="featured-photo"
+           src="maestro.jpg"
+           alt="Maestro Michele Saccone"
+           loading="lazy">
+
+      <div class="director-buttons">
+        <a class="button" href="#curriculum-michele">Leggi il curriculum</a>
+      </div>
+    </article>
+
+    <article class="director-card">
+      <div class="director-years">1973 – 1980</div>
+      <h3>M° Biagio Amata</h3>
+    </article>
+
+    <article class="director-card">
+      <div class="director-years">1962 – 1972</div>
+      <h3>M° Salvatore Cipitì</h3>
+    </article>
+
+    <article class="director-card">
+      <div class="director-years">1962</div>
+      <h3>M° Lombardo</h3>
+    </article>
+
+    <article class="director-card">
+      <div class="director-years">1960 – 1962</div>
+      <h3>M° Salvatore Cipitì</h3>
+    </article>
+
+    <article class="director-card">
+      <div class="director-years">1951 – 1960</div>
+      <h3>M° Francesco Seminara</h3>
+    </article>
+
+    <article class="director-card">
+      <div class="director-years">1949 – 1951</div>
+      <h3>M° Cascio</h3>
+    </article>
+
+    <article class="director-card">
+      <div class="director-years">1948 – 1949</div>
+      <h3>M° Pancrazio</h3>
+    </article>
+
+    <article class="director-card">
+      <div class="director-years">1947 – 1948</div>
+      <h3>M° Lo Presti</h3>
+    </article>
+
+    <article class="director-card">
+      <div class="director-years">1944 – 1947</div>
+      <h3>M° Giuseppe Lo Schivo</h3>
+    </article>
+
+    <article class="director-card">
+      <div class="director-years">1941 – 1942</div>
+      <h3>M° Bonzì</h3>
+    </article>
+
+    <article class="director-card">
+      <div class="director-years">1940 – 1941</div>
+      <h3>M° Lo Schiavo</h3>
+    </article>
+
+    <article class="director-card">
+      <div class="director-years">1933 – 1935</div>
+      <h3>M° Salvatore D'Agata</h3>
+    </article>
+
+    <article class="director-card">
+      <div class="director-years">1932 – 1933</div>
+      <h3>M° Rivela</h3>
+    </article>
+
+    <article class="director-card">
+      <div class="director-years">1930 – 1932</div>
+      <h3>M° Mario La Rocca</h3>
+    </article>
+
+    <article class="director-card">
+      <div class="director-years">1929 – 1930</div>
+      <h3>M° Pistretto</h3>
+    </article>
+
+    <article class="director-card">
+      <div class="director-years">1925 – 1929</div>
+      <h3>M° Amedeo Caponetto</h3>
+    </article>
+
+    <article class="director-card">
+      <div class="director-years">1924 – 1925</div>
+      <h3>M° Salvatore D'Agata</h3>
+    </article>
+
+    <article class="director-card">
+      <div class="director-years">1922 – 1924</div>
+      <h3>M° Vitello</h3>
+    </article>
+
+    <article class="director-card">
+      <div class="director-years">1921 – 1922</div>
+      <h3>M° Salvatore D'Agata</h3>
+    </article>
+
+    <article class="director-card">
+      <div class="director-years">1916 – 1917</div>
+      <h3>M° Francesco Iervolino</h3>
+    </article>
+
+    <article class="director-card">
+      <div class="director-years">1914 – 1915</div>
+      <h3>M° Giuseppe Novazio</h3>
+    </article>
+
+    <article class="director-card">
+      <div class="director-years">1911 – 1914</div>
+      <h3>M° Giacomo Zurlino</h3>
+    </article>
+
+  </div>
+</section>
+
+<section class="curriculum" id="curriculum-michele">
+  <div class="curriculum-inner">
+    <div class="section-label">Il percorso artistico e professionale</div>
+    <h2 class="section-title">Curriculum del M° Michele Saccone</h2>
+    <p class="curriculum-subtitle">
+      Maestro Direttore del Corpo Bandistico Municipale “G. Verdi” dal 1981.
+    </p>
+
+    <div class="curriculum-layout">
+      <div class="curriculum-text">
+        <p>
+          <strong>Michele Saccone</strong> nasce a Messina l'1 maggio 1962.
+          A 11 anni si iscrive alla Scuola di Musica Municipale Alcarese e
+          nel 1975 entra ufficialmente a far parte della Banda suonando
+          il sax contralto.
+        </p>
+
+        <p>
+          Nel 1977 inizia gli studi presso il
+          <strong>Conservatorio Musicale “A. Corelli” di Messina</strong>,
+          nella classe di <strong>fagotto</strong>, sotto la guida del
+          M° Dante Pavarini, diplomandosi nel <strong>1984</strong>
+          con il M° Aldo Terzo.
+        </p>
+
+        <p>
+          Intanto, <strong>nel 1981 è stato nominato Maestro Direttore
+          della Banda Municipale Alcarese</strong>, incarico che ricopre
+          ancora oggi con soddisfazione e orgoglio.
+        </p>
+
+        <p>
+          Si perfeziona in fagotto prima a Milano sotto la guida del
+          M° Ovidio Danzi, primo fagotto alla Scala, e successivamente
+          a Winterthur, in Svizzera, con il M° Janos Meszaros.
+        </p>
+
+        <p>
+          Inizia la carriera concertistica con il gruppo da camera
+          “Complesso Strumentale a Fiato di Messina” dal 1984 al 1986
+          e con il gruppo “Petite Ensemble” dal 1986 in poi, con i quali
+          si è esibito in oltre 300 concerti in tutta Italia e nelle più
+          prestigiose associazioni concertistiche.
+        </p>
+
+        <p>
+          Relativamente alla musica da camera, ha frequentato i corsi
+          annuali di perfezionamento con il M° Michele Marvulli presso
+          l'Accademia Musicale Pescarese e successivamente presso la
+          Scuola di Musica di Fiesole, sotto la guida del
+          M° Giuseppe Garbarino.
+        </p>
+
+        <p>
+          Ha collaborato per diversi anni con l'orchestra dell'Ente
+          Teatro Massimo Bellini di Catania. Nel corso di questa
+          collaborazione, oltre a partecipare a numerose opere di autori
+          vari, ha preso parte alla prima esecuzione assoluta dell'opera
+          <em>Zaira</em> di Bellini, con la realizzazione del relativo CD.
+        </p>
+
+        <p>
+          Ha suonato in qualità di primo fagotto nell'orchestra
+          “J. Tomadini” di Udine e, con la stessa qualifica,
+          nell'orchestra del Teatro Comunale di Treviso.
+        </p>
+
+        <p>
+          In seguito all'idoneità ottenuta presso l'Ars Nova di Palermo,
+          si è esibito con la stessa in diversi concerti.
+        </p>
+
+        <p>
+          È stato per tre anni primo fagotto nell'orchestra
+          <em>Progetto Arte</em> del Teatro Vittorio Emanuele di Messina,
+          dove si è esibito anche come solista nella sinfonia concertante
+          di W. A. Mozart.
+        </p>
+
+        <p>
+          Ha partecipato, sempre in qualità di primo fagotto, alla
+          realizzazione e ai concerti della Conferenza Musicale
+          Mediterranea (Compositori del nostro tempo), tenutasi a
+          Palermo, Messina e Catania nel 1997, con l'incisione dal vivo
+          di un CD.
+        </p>
+
+        <p>
+          Attualmente si esibisce anche con la
+          <em>Nebrodi Symphonic Band</em>, diretta dal Maestro
+          Nunzio Ortolano.
+        </p>
+
+        <p>
+          Oltre alla carriera di fagottista, si occupa di musica antica
+          come flautista, con flauto rinascimentale e barocco, esibendosi
+          in duo con il clavicembalo.
+        </p>
+
+        <p>
+          Da diversi anni si occupa anche della ricerca e della
+          salvaguardia dell'etnomusicologia, collaborando con esperti
+          del settore, anche universitario, ed esibendosi in Italia e
+          all'estero con il gruppo da lui guidato, “Antichi Suoni”.
+          Con questo gruppo ha realizzato numerose incisioni, riscuotendo
+          sempre lusinghieri consensi.
+        </p>
+
+        <p>
+          Oltre alla carriera concertistica e di ricerca, dal 1987 è
+          anche docente di Educazione Musicale presso gli istituti
+          scolastici provinciali.
+        </p>
+      </div>
+
+      <aside class="curriculum-portrait">
+        <img src="maestro.jpg"
+             alt="Michele Saccone, Maestro Direttore"
+             loading="lazy">
+        <div class="portrait-caption">M° Michele Saccone</div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <div class="section-label">Immagini e ricordi</div>
+  <h2 class="gallery-heading">Il Maestro Michele Saccone</h2>
+  <p class="gallery-help">
+    Usa le frecce per scorrere le fotografie. Seleziona un'immagine per ingrandirla.
+  </p>
+
+  <div class="gallery-slider">
+    <button class="gallery-arrow" type="button"
+            onclick="scorriFoto(-1)"
+            aria-label="Fotografia precedente">&#10094;</button>
+
+    <div class="gallery-track" id="galleryTrack">
+      <img src="foto-maestro-c/550097_orig.jpg" alt="Michele Saccone - fotografia 1" loading="lazy" onclick="ingrandisciFoto(this)">
+      <img src="foto-maestro-c/566216_orig.jpg" alt="Michele Saccone - fotografia 2" loading="lazy" onclick="ingrandisciFoto(this)">
+      <img src="foto-maestro-c/1553366_orig.jpg" alt="Michele Saccone - fotografia 3" loading="lazy" onclick="ingrandisciFoto(this)">
+      <img src="foto-maestro-c/2933263_orig.jpg" alt="Michele Saccone - fotografia 4" loading="lazy" onclick="ingrandisciFoto(this)">
+      <img src="foto-maestro-c/4543629_orig.jpg" alt="Michele Saccone - fotografia 5" loading="lazy" onclick="ingrandisciFoto(this)">
+      <img src="foto-maestro-c/5928479_orig.jpg" alt="Michele Saccone - fotografia 6" loading="lazy" onclick="ingrandisciFoto(this)">
+      <img src="foto-maestro-c/6004133_orig.jpg" alt="Michele Saccone - fotografia 7" loading="lazy" onclick="ingrandisciFoto(this)">
+      <img src="foto-maestro-c/6772327_orig.jpg" alt="Michele Saccone - fotografia 8" loading="lazy" onclick="ingrandisciFoto(this)">
+      <img src="foto-maestro-c/6792338_orig.jpg" alt="Michele Saccone - fotografia 9" loading="lazy" onclick="ingrandisciFoto(this)">
+      <img src="foto-maestro-c/7426260_orig.jpg" alt="Michele Saccone - fotografia 10" loading="lazy" onclick="ingrandisciFoto(this)">
+      <img src="foto-maestro-c/9535713_orig.jpg" alt="Michele Saccone - fotografia 11" loading="lazy" onclick="ingrandisciFoto(this)">
+      <img src="foto-maestro-c/9579556_orig.jpg" alt="Michele Saccone - fotografia 12" loading="lazy" onclick="ingrandisciFoto(this)">
+      <img src="foto-maestro-c/9924121_orig.jpg" alt="Michele Saccone - fotografia 13" loading="lazy" onclick="ingrandisciFoto(this)">
+    </div>
+
+    <button class="gallery-arrow" type="button"
+            onclick="scorriFoto(1)"
+            aria-label="Fotografia successiva">&#10095;</button>
+  </div>
+</section>
+
+<div id="fotoModal" class="foto-modal"
+     role="dialog" aria-modal="true"
+     aria-label="Fotografia ingrandita"
+     onclick="chiudiFoto()">
+  <button class="chiudi-modal" type="button"
+          onclick="chiudiFoto()"
+          aria-label="Chiudi fotografia">&times;</button>
+  <img id="fotoIngrandita" alt="Fotografia ingrandita">
+</div>
+
+<footer>
+  <p><strong>Corpo Bandistico Municipale “G. Verdi”</strong></p>
+  <p>© 2026 Associazione Musicale Alcarese – Alcara Li Fusi, Messina</p>
+  <p>Dal 1911, musica e tradizione.</p>
+</footer>
+
+<script>
+  function scorriFoto(direzione) {
+    const track = document.getElementById("galleryTrack");
+    const foto = track.querySelector("img");
+    if (!foto) return;
+
+    const spazio = foto.getBoundingClientRect().width + 14;
+    track.scrollBy({
+      left: direzione * spazio * 2,
+      behavior: "smooth"
+    });
+  }
+
+  function ingrandisciFoto(img) {
+    const modal = document.getElementById("fotoModal");
+    const immagine = document.getElementById("fotoIngrandita");
+    immagine.src = img.src;
+    immagine.alt = img.alt;
+    modal.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function chiudiFoto() {
+    document.getElementById("fotoModal").classList.remove("open");
+    document.body.style.overflow = "";
+  }
+
+  document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") chiudiFoto();
+  });
+</script>
+
+</body>
+</html>
