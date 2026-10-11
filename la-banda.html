@@ -102,22 +102,24 @@
 
     /* FOTO STORICA: VISIBILE PER INTERO */
 
-    .hero {
-      min-height: 55vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 60px 20px;
-      background-color: var(--navy);
-      background-image:
-        linear-gradient(rgba(23, 42, 67, 0.22), rgba(23, 42, 67, 0.22)),
-        url("./fotostorica.jpg");
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-      color: var(--white);
-    }
+    
+.hero {
+  min-height: 55vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  background-color: var(--navy);
+  background-image:
+    linear-gradient(rgba(23, 42, 67, 0.45), rgba(23, 42, 67, 0.45)),
+    url("./fotostorica.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--white);
+}
+
 
     .hero-content {
       max-width: 850px;
@@ -221,17 +223,20 @@
 
     /* FOTO DIRETTORE: NON TAGLIATA */
 
-    .director-photo {
-      width: 100%;
-      min-height: 390px;
-      border-radius: 12px;
-      background-color: var(--navy-dark);
-      background-image: url("maestro.jpg");
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
-    }
+    
+.director-photo {
+  width: 100%;
+  min-height: 390px;
+  height: 100%;
+  border-radius: 12px;
+  background-color: var(--navy-dark);
+  background-image: url("maestro.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
 
     .director-text h3 {
       font-family: Georgia, serif;
