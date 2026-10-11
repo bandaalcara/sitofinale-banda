@@ -29,97 +29,95 @@
       scroll-behavior: smooth;
     }
 
-    
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #FFFFFF;
-  color: #303943;
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
 
-h1, h2, h3 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 500;
-  line-height: 1.2;
-}
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      line-height: 1.2;
+    }
 
+    header {
+      position: relative;
+      width: 100%;
+      padding: 17px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      background: var(--navy);
+      color: var(--white);
+      z-index: 10;
+      flex-wrap: wrap;
+    }
 
-  
-header {
-  position: relative;
-  width: 100%;
-  padding: 17px 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 25px;
-  background: #172A43;
-  color: #FFFFFF;
-  z-index: 10;
-  flex-wrap: wrap;
-}
+    .logo-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+      color: var(--white);
+      text-decoration: none;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 19px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
 
-.logo-link {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-shrink: 0;
-  color: #FFFFFF;
-  text-decoration: none;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 19px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
+    .logo-img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: var(--white);
+      padding: 3px;
+    }
 
-.logo-img {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  border-radius: 50%;
-  background: #FFFFFF;
-  padding: 3px;
-}
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+    }
 
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  gap: 8px 20px;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.7px;
-}
+    nav a {
+      color: #F0F4F8;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
 
-nav a {
-  color: #F0F4F8;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
+    nav a:hover {
+      color: #AFC8E1;
+    }
 
-nav a:hover {
-  color: #AFC8E1;
-}
+    /* FOTO STORICA: VISIBILE PER INTERO */
 
-.hero {
-  min-height: 55vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 80px 20px;
-  background-color: #172A43;
-  background-image:
-    linear-gradient(rgba(23, 42, 67, 0.25), rgba(23, 42, 67, 0.25)),
-    url("./fotostorica.jpg");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  color: #FFFFFF;
-}
-
+    .hero {
+      min-height: 55vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+      background-color: var(--navy);
+      background-image:
+        linear-gradient(rgba(23, 42, 67, 0.22), rgba(23, 42, 67, 0.22)),
+        url("./fotostorica.jpg");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      color: var(--white);
+    }
 
     .hero-content {
       max-width: 850px;
@@ -160,19 +158,13 @@ nav a:hover {
       margin-bottom: 25px;
     }
 
-    
-.history {
-  max-width: none;
-  position: relative;
-  isolation: isolate;
-  background: #FFFFFF;
-  overflow: hidden;
-}
-
-.history {
-  background: var(--white);
-}
-
+    .history {
+      max-width: none;
+      position: relative;
+      isolation: isolate;
+      background: var(--white);
+      overflow: hidden;
+    }
 
     .history p {
       margin-bottom: 18px;
@@ -227,14 +219,19 @@ nav a:hover {
       align-items: start;
     }
 
-  
-.director-photo {
-  min-height: 390px;
-  border-radius: 12px;
-  background: url("maestro.jpg") center 25% / cover no-repeat;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
-}
+    /* FOTO DIRETTORE: NON TAGLIATA */
 
+    .director-photo {
+      width: 100%;
+      min-height: 390px;
+      border-radius: 12px;
+      background-color: var(--navy-dark);
+      background-image: url("maestro.jpg");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    }
 
     .director-text h3 {
       font-family: Georgia, serif;
@@ -310,6 +307,13 @@ nav a:hover {
       color: #E3EAF2;
     }
 
+    .archive-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
     .button {
       display: inline-block;
       padding: 12px 24px;
@@ -378,7 +382,7 @@ nav a:hover {
         height: 46px;
       }
 
-      .logo {
+      .logo-link {
         font-size: 0.95rem;
       }
 
@@ -396,18 +400,22 @@ nav a:hover {
 
       .hero {
         min-height: 45vh;
-        padding: 60px 20px;
+        padding: 45px 20px;
       }
 
       .archive-box {
         padding: 30px 20px;
+      }
+
+      .archive-buttons {
+        flex-direction: column;
+        align-items: center;
       }
     }
   </style>
 </head>
 
 <body>
-
 
 <header>
   <a class="logo-link" href="index.html" aria-label="Torna alla Home">
@@ -421,11 +429,11 @@ nav a:hover {
     <a href="musica.html">La Scuola di Musica</a>
     <a href="eventi.html">Eventi</a>
     <a href="albo.html">Albo Storico</a>
+    <a href="maestri-direttori.html">Maestri Direttori</a>
     <a href="index.html#galleria">Galleria</a>
     <a href="index.html#contatti">Contatti</a>
   </nav>
 </header>
-
 
 <section class="hero">
   <div class="hero-content">
@@ -516,7 +524,7 @@ nav a:hover {
 
 <section class="director">
   <div class="director-content">
-    <div class="director-photo" role="img" aria-label="Immagine dedicata alla musica"></div>
+    <div class="director-photo" role="img" aria-label="Immagine dedicata al Maestro Michele Saccone"></div>
 
     <div class="director-text">
       <h2 class="section-title">Il Direttore</h2>
@@ -636,19 +644,22 @@ nav a:hover {
 </section>
 
 <section class="archive">
-  <h2 class="section-title">Albo storico</h2>
+  <h2 class="section-title">Archivio e direttori</h2>
 
   <div class="archive-box">
     <h3>Dal 1911 ad oggi</h3>
 
     <p>
-      L'Albo storico raccoglie i nomi dei componenti che hanno fatto parte
-      del Corpo Bandistico Municipale nel corso della sua lunga storia.
+      Consulta l'Albo Storico e scopri i Maestri Direttori che hanno
+      guidato il Corpo Bandistico Municipale nel corso della sua storia.
       Un patrimonio di persone, strumenti e generazioni che racconta
       più di un secolo di musica ad Alcara Li Fusi.
     </p>
 
-    <a href="albo.html" class="button">Consulta l'Albo storico</a>
+    <div class="archive-buttons">
+      <a href="albo.html" class="button">Consulta l'Albo Storico</a>
+      <a href="maestri-direttori.html" class="button">Scopri i Maestri Direttori</a>
+    </div>
   </div>
 </section>
 
