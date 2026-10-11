@@ -102,7 +102,18 @@ nav a {
 nav a:hover {
   color: #AFC8E1;
 }
-
+.hero {
+  min-height: 55vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+  background:
+    linear-gradient(rgba(23, 42, 67, 0.55), rgba(23, 42, 67, 0.55)),
+    url("fotostorica.jpg") center / cover no-repeat;
+  color: var(--white);
+}
     .hero {
       min-height: 55vh;
       display: flex;
@@ -164,17 +175,8 @@ nav a:hover {
   overflow: hidden;
 }
 
-.history::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      rgba(255, 255, 255, 0.90),
-      rgba(255, 255, 255, 0.94)
-    ),
-    url("fotostorica.jpg") center / cover no-repeat;
-  z-index: -1;
+.history {
+  background: var(--white);
 }
 
 
