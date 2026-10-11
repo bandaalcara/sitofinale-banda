@@ -1,143 +1,228 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Albo Storico | Corpo Bandistico Municipale “G. Verdi”</title>
+  <meta name="theme-color" content="#172A43">
+  <meta name="description" content="Albo Storico del Corpo Bandistico Municipale G. Verdi di Alcara Li Fusi. Dal 1911, musica, tradizione e passione.">
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     :root {
       --navy: #172A43;
       --navy-dark: #102035;
+      --navy-light: #243D5B;
       --blue: #53799F;
       --blue-hover: #3F6488;
       --light: #EDF2F7;
+      --light-blue: #F5F8FB;
       --white: #FFFFFF;
       --text: #303943;
-      --muted: #647184;
-      --border: #DCE4ED;
+      --muted: #657181;
+      --border: #DCE4EC;
+      --shadow: 0 10px 30px rgba(23, 42, 67, 0.08);
     }
 
-    
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: var(--white);
-  color: var(--text);
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 24px;
+    }
 
-    /* HEADER E MENU */
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    /* HEADER */
 
     header {
-      background: var(--navy);
-      color: var(--white);
-      padding: 18px 5%;
+      position: relative;
+      width: 100%;
+      padding: 17px 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 25px;
-      flex-wrap: wrap;
+      background: var(--navy);
+      color: var(--white);
+      z-index: 10;
     }
 
     .logo-link {
       display: flex;
       align-items: center;
       gap: 12px;
+      flex-shrink: 0;
       color: var(--white);
-      text-decoration: none;
-      font-size: 1rem;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 19px;
       font-weight: bold;
       letter-spacing: 1px;
       white-space: nowrap;
     }
 
     .logo-img {
-      width: 52px;
-      height: 52px;
+      width: 48px;
+      height: 48px;
       object-fit: contain;
       border-radius: 50%;
       background: var(--white);
+      padding: 3px;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 22px;
+      min-width: 0;
     }
 
     nav {
       display: flex;
       align-items: center;
-      gap: 20px;
+      justify-content: flex-end;
       flex-wrap: wrap;
+      gap: 8px 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
     }
 
     nav a {
-      color: #F0F4F9;
-      text-decoration: none;
-      font-size: 0.82rem;
+      color: #F0F4F8;
       transition: color 0.2s ease;
     }
 
     nav a:hover,
     nav a[aria-current="page"] {
-      color: #AFC8E2;
+      color: #AFC8E1;
+    }
+
+    .search-box-header input {
+      width: 135px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.08);
+      color: var(--white);
+      outline: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+    }
+
+    .search-box-header input::placeholder {
+      color: #D5DFE9;
+    }
+
+    .search-box-header input:focus {
+      border-color: #AFC8E1;
+      background: rgba(255,255,255,0.14);
     }
 
     /* HERO */
 
     .hero {
+      min-height: 330px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 75px 8%;
       background: var(--navy);
       color: var(--white);
       text-align: center;
-      padding: 75px 20px;
     }
 
-   
-h1, h2, h3 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 500;
-  line-height: 1.2;
-}
+    .hero .eyebrow {
+      color: #BDD1E5;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      letter-spacing: 4px;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
 
+    .hero h1 {
+      font-size: clamp(42px, 6.3vw, 68px);
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
 
     .hero p {
       max-width: 700px;
-      margin: auto;
-      color: #F0F4F9;
-      font-size: 1.08rem;
+      margin: 0 auto;
+      color: #E5EBF2;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 19px;
+      line-height: 1.8;
     }
 
     /* CONTENUTO PRINCIPALE */
 
     main {
       max-width: 1200px;
-      margin: auto;
-      padding: 65px 5%;
+      margin: 0 auto;
+      padding: 78px 5%;
     }
 
     .intro {
-      text-align: center;
       max-width: 800px;
       margin: 0 auto 38px;
+      text-align: center;
+    }
+
+    .section-label {
+      color: var(--blue);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      margin-bottom: 12px;
     }
 
     .intro h2 {
-      font-family: Georgia, "Times New Roman", serif;
       color: var(--navy);
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      line-height: 1.25;
-      margin-bottom: 16px;
+      font-size: clamp(32px, 4vw, 43px);
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
     }
 
     .intro p {
       color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.85;
     }
 
-    /* RICERCA */
+    /* RICERCA ALBO */
 
     .search-box {
       background: var(--white);
@@ -150,6 +235,8 @@ h1, h2, h3 {
 
     .search-box label {
       display: block;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
       font-weight: bold;
       color: var(--navy);
       margin-bottom: 10px;
@@ -162,7 +249,7 @@ h1, h2, h3 {
       border: 1px solid var(--border);
       border-radius: 4px;
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 1rem;
+      font-size: 16px;
       color: var(--text);
       background: var(--white);
       outline: none;
@@ -177,10 +264,11 @@ h1, h2, h3 {
     .result-count {
       margin-top: 12px;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
     }
 
-    /* TABELLA ALBO */
+    /* TABELLA */
 
     .table-wrapper {
       overflow-x: auto;
@@ -193,6 +281,8 @@ h1, h2, h3 {
       width: 100%;
       border-collapse: collapse;
       min-width: 700px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
     }
 
     th {
@@ -200,15 +290,17 @@ h1, h2, h3 {
       color: var(--white);
       padding: 15px 14px;
       text-align: left;
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: normal;
-      font-size: 1rem;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 12px;
+      letter-spacing: 0.5px;
     }
 
     td {
       padding: 12px 14px;
       border-bottom: 1px solid var(--border);
       vertical-align: top;
+      line-height: 1.6;
     }
 
     tbody tr:nth-child(even) {
@@ -228,35 +320,27 @@ h1, h2, h3 {
     /* MAESTRI DIRETTORI */
 
     .directors {
-      padding: 75px 5%;
+      padding: 78px 8%;
       background: var(--light);
     }
 
     .directors .content {
       max-width: 1100px;
-      margin: auto;
-    }
-
-    .directors .section-label {
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 0.75rem;
-      color: var(--blue);
-      font-weight: bold;
-      margin-bottom: 12px;
+      margin: 0 auto;
     }
 
     .directors h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2rem, 4vw, 2.7rem);
-      line-height: 1.2;
       color: var(--navy);
-      margin-bottom: 18px;
+      font-size: clamp(32px, 4vw, 43px);
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
     }
 
     .directors .intro-text {
       max-width: 750px;
-      line-height: 1.8;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.85;
       color: var(--muted);
       margin-bottom: 35px;
     }
@@ -268,6 +352,7 @@ h1, h2, h3 {
     }
 
     .director-card {
+      min-width: 0;
       background: var(--white);
       padding: 27px;
       border: 1px solid var(--border);
@@ -282,45 +367,48 @@ h1, h2, h3 {
 
     .director-years {
       color: var(--blue);
+      font-family: Arial, Helvetica, sans-serif;
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      font-size: 0.75rem;
+      font-size: 12px;
       font-weight: bold;
       margin-bottom: 10px;
     }
 
     .director-card h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.5rem;
+      font-size: 24px;
       line-height: 1.3;
       color: var(--navy);
       margin-bottom: 15px;
     }
 
     .director-card p {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
       line-height: 1.8;
       color: var(--text);
       margin-bottom: 12px;
     }
 
-   .director-photo {
-  margin-top: 22px;
-  min-height: 220px;
-  background: var(--light);
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
+    .director-photo {
+      margin-top: 22px;
+      min-height: 220px;
+      background: var(--light);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
 
-.director-photo img {
-  display: block;
-  width: 100%;
-  max-height: 500px;
-  object-fit: contain;
-  object-position: center;
-}
+    .director-photo img {
+      display: block;
+      width: 100%;
+      max-height: 500px;
+      object-fit: contain;
+      object-position: center;
+    }
+
     .director-buttons {
       display: flex;
       gap: 12px;
@@ -328,77 +416,236 @@ h1, h2, h3 {
       margin-top: 20px;
     }
 
-    .director-buttons a {
+    .director-buttons a,
+    .button {
       display: inline-block;
-      padding: 11px 17px;
-      background: var(--navy);
+      padding: 13px 24px;
+      border: 1px solid var(--blue);
+      border-radius: 4px;
+      background: var(--blue);
       color: var(--white);
-      text-decoration: none;
-      font-size: 0.85rem;
-      border-radius: 3px;
-      transition: background 0.2s ease;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: background 0.25s, border-color 0.25s,
+                  transform 0.25s;
     }
 
-    .director-buttons a:hover {
+    .director-buttons a:hover,
+    .button:hover {
       background: var(--blue-hover);
+      border-color: var(--blue-hover);
+      transform: translateY(-2px);
+    }
+
+    /* CURRICULUM IN FONDO ALLA PAGINA */
+
+    .curriculum {
+      padding: 78px 8%;
+      background: var(--white);
+      scroll-margin-top: 24px;
+    }
+
+    .curriculum-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .curriculum h2 {
+      color: var(--navy);
+      font-size: clamp(32px, 4vw, 43px);
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .curriculum-subtitle {
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    .curriculum-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.8fr);
+      gap: 35px;
+      align-items: start;
+    }
+
+    .curriculum-text p {
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.85;
+      margin-bottom: 17px;
+    }
+
+    .curriculum-text strong {
+      color: var(--navy);
+    }
+
+    .curriculum-portrait {
+      border: 1px solid var(--border);
+      background: var(--light);
+      padding: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .curriculum-portrait img {
+      display: block;
+      width: 100%;
+      max-height: 600px;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .portrait-caption {
+      padding: 12px 5px 3px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* GALLERIA SCORREVOLE */
+
+    .gallery-heading {
+      margin-top: 55px;
+      margin-bottom: 18px;
+      color: var(--navy);
+      font-size: 27px;
+    }
+
+    .gallery-help {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .photo-gallery {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      padding: 5px 2px 18px;
+      scroll-snap-type: x mandatory;
+      overscroll-behavior-x: contain;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .photo-gallery figure {
+      flex: 0 0 260px;
+      scroll-snap-align: start;
+      background: var(--light);
+      border: 1px solid var(--border);
+      padding: 8px;
+    }
+
+    .photo-gallery img {
+      display: block;
+      width: 100%;
+      height: 220px;
+      object-fit: contain;
+      background: var(--white);
+    }
+
+    .photo-gallery figcaption {
+      padding: 10px 3px 3px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
     }
 
     /* FOOTER */
 
     footer {
       background: var(--navy-dark);
-      color: #DCE4ED;
+      color: #B8C5D4;
       text-align: center;
-      padding: 32px 20px;
-      font-size: 0.9rem;
+      padding: 25px 7%;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    footer strong {
+      color: var(--white);
+      font-size: 13px;
     }
 
     footer p + p {
       margin-top: 5px;
     }
 
-    /* TABLET */
+    /* RESPONSIVE */
 
-    @media (max-width: 900px) {
+    @media (max-width: 1100px) {
       header {
-        flex-direction: column;
         align-items: flex-start;
-        padding: 20px 5%;
+        flex-wrap: wrap;
+      }
+
+      .header-right {
+        flex: 1 1 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
       }
 
       nav {
-        gap: 12px 18px;
+        justify-content: flex-start;
+        gap: 10px 17px;
       }
     }
 
-    /* SMARTPHONE */
+    @media (max-width: 800px) {
+      header {
+        padding: 15px 5%;
+        gap: 15px;
+      }
 
-    @media (max-width: 600px) {
       .logo-link {
-        font-size: 0.9rem;
-        white-space: normal;
+        font-size: 17px;
       }
 
       .logo-img {
-        width: 45px;
-        height: 45px;
-        flex-shrink: 0;
+        width: 42px;
+        height: 42px;
+      }
+
+      .header-right {
+        gap: 12px;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 10px 16px;
+        font-size: 11px;
+      }
+
+      .search-box-header {
+        display: none;
       }
 
       .hero {
-        padding: 58px 20px;
+        min-height: 280px;
+        padding: 65px 7%;
+      }
+
+      .hero h1 {
+        font-size: clamp(39px, 8vw, 57px);
+      }
+
+      .hero p {
+        font-size: 17px;
       }
 
       main {
-        padding: 45px 4%;
+        padding: 58px 7%;
       }
 
-      .search-box {
-        padding: 18px;
-      }
-
-      .directors {
-        padding: 50px 5%;
+      .directors,
+      .curriculum {
+        padding: 58px 7%;
       }
 
       .directors-list {
@@ -410,8 +657,65 @@ h1, h2, h3 {
         padding: 25px 20px;
       }
 
+      .curriculum-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .curriculum-portrait {
+        max-width: 500px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .photo-gallery figure {
+        flex-basis: 230px;
+      }
+
+      .photo-gallery img {
+        height: 190px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .logo-link {
+        font-size: 15px;
+        gap: 9px;
+      }
+
+      nav {
+        gap: 8px 12px;
+        font-size: 10px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .search-box {
+        padding: 18px;
+      }
+
       .director-card {
         padding: 22px;
+      }
+
+      .director-card.featured {
+        padding: 22px 17px;
+      }
+
+      .photo-gallery figure {
+        flex-basis: 205px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
@@ -429,19 +733,32 @@ h1, h2, h3 {
     <span>G. VERDI · 1911</span>
   </a>
 
-  <nav aria-label="Navigazione principale">
-    <a href="index.html">Home</a>
-    <a href="la-banda.html">La Banda</a>
-    <a href="musica.html">La Scuola di Musica</a>
-    <a href="eventi.html">Eventi</a>
-    <a href="albo.html" aria-current="page">Albo Storico</a>
-    <a href="index.html#galleria">Galleria</a>
-    <a href="index.html#contatti">Contatti</a>
-  </nav>
+  <div class="header-right">
+    <nav aria-label="Navigazione principale">
+      <a href="index.html">Home</a>
+      <a href="la-banda.html">La Banda</a>
+      <a href="musica.html">La Scuola di Musica</a>
+      <a href="eventi.html">Eventi</a>
+      <a href="albo.html" aria-current="page">Albo Storico</a>
+      <a href="index.html#galleria">Galleria</a>
+      <a href="index.html#contatti">Contatti</a>
+    </nav>
+
+    <div class="search-box-header">
+      <input
+        type="text"
+        id="siteSearch"
+        placeholder="Cerca nell'Albo..."
+        aria-label="Cerca nell'Albo"
+        onkeydown="if(event.key === 'Enter') cercaNellAlbo()"
+      >
+    </div>
+  </div>
 </header>
 
 <section class="hero">
-  <h1>Albo storico</h1>
+  <div class="eyebrow">DAL 1911</div>
+  <h1>Albo Storico</h1>
   <p>
     Tutti i componenti del Corpo Bandistico Municipale
     dal 1911 ad oggi
@@ -449,8 +766,8 @@ h1, h2, h3 {
 </section>
 
 <main>
-
   <div class="intro">
+    <div class="section-label">La memoria della Banda</div>
     <h2>400 nomi, oltre un secolo di musica</h2>
     <p>
       L'Albo storico raccoglie i componenti che hanno fatto parte
@@ -462,16 +779,12 @@ h1, h2, h3 {
 
   <div class="search-box">
     <label for="search">Cerca nell'Albo</label>
-
     <input
       type="text"
       id="search"
       placeholder="Cerca per nome, cognome, data o strumento..."
     >
-
-    <div class="result-count" id="resultCount">
-      400 componenti
-    </div>
+    <div class="result-count" id="resultCount">400 componenti</div>
   </div>
 
   <div class="table-wrapper">
@@ -484,20 +797,15 @@ h1, h2, h3 {
           <th>Strumento / ruolo</th>
         </tr>
       </thead>
-
       <tbody id="alboBody"></tbody>
     </table>
   </div>
-
 </main>
 
 <section class="directors">
   <div class="content">
-
     <div class="section-label">Dal 1911 ad oggi</div>
-
     <h2>Maestri Direttori</h2>
-
     <p class="intro-text">
       L'elenco dei Maestri Direttori che hanno guidato il
       Corpo Bandistico Municipale “G. Verdi” di Alcara Li Fusi
@@ -508,38 +816,33 @@ h1, h2, h3 {
 
       <div class="director-card featured">
         <div class="director-years">1981 – oggi</div>
-
         <h3>M° Michele Saccone</h3>
-
         <p>
           Michele Saccone nasce a Messina l'1/5/1962.
         </p>
-
         <p>
           Nel 1977 inizia gli studi presso il Conservatorio Musicale
           “A. Corelli” di Messina nella classe di Fagotto,
           diplomandosi nel 1984.
         </p>
-
         <p>
           Nel 1981 viene nominato Maestro Direttore della Banda
           Municipale Alcarese, incarico che ricopre ancora oggi
           con soddisfazione e orgoglio.
         </p>
 
-       <div class="director-photo">
-  <img
-    src="maestro.jpg"
-    alt="Maestro Michele Saccone"
-    loading="lazy"
-  >
-</div>
+        <div class="director-photo">
+          <img
+            src="maestro.jpg"
+            alt="Maestro Michele Saccone"
+            loading="lazy"
+          >
+        </div>
 
         <div class="director-buttons">
-  <a href="la-banda.html#curriculum-maestro">
-    Leggi il curriculum
-  </a>
-</div>
+          <a href="#curriculum-michele">Leggi il curriculum</a>
+        </div>
+      </div>
 
       <div class="director-card">
         <div class="director-years">1973 – 1980</div>
@@ -655,15 +958,182 @@ h1, h2, h3 {
   </div>
 </section>
 
+<!-- CURRICULUM: ALLA FINE DELLA PAGINA, DOPO TUTTI I MAESTRI -->
+
+<section class="curriculum" id="curriculum-michele">
+  <div class="curriculum-inner">
+    <div class="section-label">Il percorso artistico e professionale</div>
+    <h2>Curriculum del M° Michele Saccone</h2>
+    <p class="curriculum-subtitle">
+      Maestro Direttore del Corpo Bandistico Municipale “G. Verdi” dal 1981.
+    </p>
+
+    <div class="curriculum-layout">
+      <div class="curriculum-text">
+        <p>
+          <strong>Michele Saccone</strong> nasce a Messina l'1 maggio 1962.
+          A 11 anni si iscrive alla Scuola di Musica Municipale Alcarese e
+          nel 1975 entra ufficialmente a far parte della Banda suonando
+          il sax contralto.
+        </p>
+
+        <p>
+          Nel 1977 inizia gli studi presso il
+          <strong>Conservatorio Musicale “A. Corelli” di Messina</strong>,
+          nella classe di <strong>fagotto</strong>, sotto la guida del
+          M° Dante Pavarini, diplomandosi nel <strong>1984</strong>
+          con il M° Aldo Terzo.
+        </p>
+
+        <p>
+          Intanto, <strong>nel 1981 è stato nominato Maestro Direttore
+          della Banda Municipale Alcarese</strong>, incarico che ricopre
+          ancora oggi con soddisfazione e orgoglio.
+        </p>
+
+        <p>
+          Si perfeziona in fagotto prima a Milano sotto la guida del
+          M° Ovidio Danzi, primo fagotto alla Scala, e successivamente
+          a Winterthur, in Svizzera, con il M° Janos Meszaros.
+        </p>
+
+        <p>
+          Inizia la carriera concertistica con il gruppo da camera
+          “Complesso Strumentale a Fiato di Messina” dal 1984 al 1986
+          e con il gruppo “Petite Ensemble” dal 1986 in poi, con i quali
+          si è esibito in oltre 300 concerti in tutta Italia e nelle più
+          prestigiose associazioni concertistiche.
+        </p>
+
+        <p>
+          Relativamente alla musica da camera, ha frequentato i corsi
+          annuali di perfezionamento con il M° Michele Marvulli presso
+          l'Accademia Musicale Pescarese e successivamente presso la
+          Scuola di Musica di Fiesole, sotto la guida del
+          M° Giuseppe Garbarino.
+        </p>
+
+        <p>
+          Ha collaborato per diversi anni con l'orchestra dell'Ente
+          Teatro Massimo Bellini di Catania. Nel corso di questa
+          collaborazione, oltre a partecipare a numerose opere di autori
+          vari, ha preso parte alla prima esecuzione assoluta dell'opera
+          <em>Zaira</em> di Bellini, con la realizzazione del relativo CD.
+        </p>
+
+        <p>
+          Ha suonato in qualità di primo fagotto nell'orchestra
+          “J. Tomadini” di Udine e, con la stessa qualifica,
+          nell'orchestra del Teatro Comunale di Treviso.
+        </p>
+
+        <p>
+          In seguito all'idoneità ottenuta presso l'Ars Nova di Palermo,
+          si è esibito con la stessa in diversi concerti.
+        </p>
+
+        <p>
+          È stato per tre anni primo fagotto nell'orchestra
+          <em>Progetto Arte</em> del Teatro Vittorio Emanuele di Messina,
+          dove si è esibito anche come solista nella sinfonia concertante
+          di W. A. Mozart.
+        </p>
+
+        <p>
+          Ha partecipato, sempre in qualità di primo fagotto, alla
+          realizzazione e ai concerti della Conferenza Musicale
+          Mediterranea (Compositori del nostro tempo), tenutasi a
+          Palermo, Messina e Catania nel 1997, con l'incisione dal vivo
+          di un CD.
+        </p>
+
+        <p>
+          Attualmente si esibisce anche con la
+          <em>Nebrodi Symphonic Band</em>, diretta dal Maestro
+          Nunzio Ortolano.
+        </p>
+
+        <p>
+          Oltre alla carriera di fagottista, si occupa di musica antica
+          come flautista, con flauto rinascimentale e barocco, esibendosi
+          in duo con il clavicembalo.
+        </p>
+
+        <p>
+          Da diversi anni si occupa anche della ricerca e della
+          salvaguardia dell'etnomusicologia, collaborando con esperti
+          del settore, anche universitario, ed esibendosi in Italia e
+          all'estero con il gruppo da lui guidato, “Antichi Suoni”.
+          Con questo gruppo ha realizzato numerose incisioni, riscuotendo
+          sempre lusinghieri consensi.
+        </p>
+
+        <p>
+          Oltre alla carriera concertistica e di ricerca, dal 1987 è
+          anche docente di Educazione Musicale presso gli istituti
+          scolastici provinciali.
+        </p>
+      </div>
+
+      <aside class="curriculum-portrait">
+        <img
+          src="maestro.jpg"
+          alt="Michele Saccone, Maestro Direttore"
+          loading="lazy"
+        >
+        <div class="portrait-caption">
+          M° Michele Saccone
+        </div>
+      </aside>
+    </div>
+
+    <h3 class="gallery-heading">Galleria fotografica</h3>
+    <p class="gallery-help">
+      Scorri le fotografie in orizzontale per visualizzarle.
+    </p>
+
+    <div class="photo-gallery">
+      <figure>
+        <img src="maestro-foto-1.jpg" alt="Michele Saccone - fotografia 1" loading="lazy">
+        <figcaption>Michele Saccone</figcaption>
+      </figure>
+
+      <figure>
+        <img src="maestro-foto-2.jpg" alt="Michele Saccone - fotografia 2" loading="lazy">
+        <figcaption>Il percorso musicale</figcaption>
+      </figure>
+
+      <figure>
+        <img src="maestro-foto-3.jpg" alt="Michele Saccone - fotografia 3" loading="lazy">
+        <figcaption>La musica e la Banda</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <footer>
   <p>
-    © 2026 Associazione Musicale Alcarese –
-    Corpo Bandistico Municipale “G. Verdi”
+    <strong>Corpo Bandistico Municipale “G. Verdi”</strong>
+  </p>
+  <p>
+    © 2026 Associazione Musicale Alcarese – Alcara Li Fusi, Messina
   </p>
   <p>Dal 1911, musica e tradizione.</p>
 </footer>
 
 <script>
+/*
+  NOTA IMPORTANTE:
+  Qui va mantenuto l'array originale "componenti" con tutti i 400 nominativi.
+  Per evitare di alterare o perdere dati, incolla al posto del commento
+  l'intero array originale che inizia con:
+  const componenti = [
+    {n:1,nome:"Agliolo Gallitto Giovanni", ...
+  e termina con:
+    {n:400,nome:"Zaiti Nicolino",data:"28/01/1934",strumento:"Clarinetto"}
+  ];
+*/
+
 const componenti = [
   {n:1,nome:"Agliolo Gallitto Giovanni",data:"24/06/1961",strumento:"Flicorno Contralto"},
   {n:2,nome:"Agliolo Gallitto Nicolino",data:"16/04/1962",strumento:"Trombone"},
@@ -1070,6 +1540,7 @@ const componenti = [
 const tbody = document.getElementById("alboBody");
 const search = document.getElementById("search");
 const resultCount = document.getElementById("resultCount");
+const siteSearch = document.getElementById("siteSearch");
 
 function mostraComponenti(lista) {
   tbody.innerHTML = "";
@@ -1093,17 +1564,37 @@ function mostraComponenti(lista) {
       : `${lista.length} componenti trovati`;
 }
 
-search.addEventListener("input", function() {
-  const termine = this.value.toLowerCase().trim();
+function filtraAlbo(termine) {
+  const testo = termine.toLowerCase().trim();
 
   const filtrati = componenti.filter(persona =>
     `${persona.n} ${persona.nome} ${persona.data} ${persona.strumento}`
       .toLowerCase()
-      .includes(termine)
+      .includes(testo)
   );
 
   mostraComponenti(filtrati);
+}
+
+search.addEventListener("input", function() {
+  filtraAlbo(this.value);
 });
+
+function cercaNellAlbo() {
+  const termine = siteSearch.value.trim();
+
+  if (!termine) return;
+
+  search.value = termine;
+  filtraAlbo(termine);
+
+  document.querySelector(".search-box").scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+
+  search.focus();
+}
 
 mostraComponenti(componenti);
 </script>
