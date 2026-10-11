@@ -1,782 +1,1235 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Musica | Corpo Bandistico Municipale “G. Verdi”</title>
+  <title>La Scuola di Musica | Corpo Bandistico Municipale “G. Verdi”</title>
+  <meta name="theme-color" content="#172A43">
+  <meta name="description" content="La Scuola di Musica dell'Associazione Musicale Alcarese: formazione, passione e tradizione dal 1911.">
 
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #e9e3d6;
-      color: #1e332d;
+    :root {
+      --navy: #172A43;
+      --navy-light: #243D5B;
+      --blue: #53799F;
+      --blue-hover: #3F6488;
+      --white: #FFFFFF;
+      --light: #EDF2F7;
+      --light-blue: #F5F8FB;
+      --text: #303943;
+      --muted: #657181;
+      --border: #DCE4EC;
+      --shadow: 0 10px 30px rgba(23, 42, 67, 0.09);
     }
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 24px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    /* HEADER */
+
     header {
-      background: #1e332d;
-      color: #f7f3ea;
-      padding: 22px 7%;
+      position: relative;
+      width: 100%;
+      padding: 17px 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 30px;
+      gap: 25px;
+      background: var(--navy);
+      color: var(--white);
+      z-index: 10;
     }
 
     .logo {
-      font-family: Georgia, serif;
-      font-size: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 19px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .logo img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: var(--white);
+      padding: 3px;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 22px;
+      min-width: 0;
     }
 
     nav {
       display: flex;
-      gap: 25px;
+      align-items: center;
+      justify-content: flex-end;
       flex-wrap: wrap;
+      gap: 8px 18px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
     }
 
     nav a {
-      color: #f7f3ea;
-      text-decoration: none;
-      font-size: 14px;
+      color: #F0F4F8;
+      transition: color 0.2s ease;
     }
 
-    nav a:hover {
-      color: #c9a45c;
+    nav a:hover,
+    nav a[aria-current="page"] {
+      color: #AFC8E1;
     }
+
+    /* HERO */
 
     .hero {
-      padding: 100px 7%;
-      background: #1e332d;
-      color: #f7f3ea;
+      min-height: 42vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 7%;
+      background:
+        linear-gradient(rgba(23, 42, 67, 0.62), rgba(23, 42, 67, 0.62)),
+        url("home.jpeg") center center / cover no-repeat;
+      color: var(--white);
     }
 
-    .section-label {
-      text-transform: uppercase;
-      letter-spacing: 3px;
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .eyebrow {
+      color: #BDD1E5;
       font-size: 12px;
-      color: #c9a45c;
-      margin-bottom: 15px;
+      letter-spacing: 4px;
+      font-weight: bold;
+      margin-bottom: 22px;
+      text-transform: uppercase;
     }
 
-    h1 {
-      font-family: Georgia, serif;
-      font-size: 58px;
-      margin: 0 0 20px;
+    .hero h1 {
+      font-size: clamp(42px, 6.3vw, 72px);
+      line-height: 1.08;
+      margin-bottom: 24px;
+      letter-spacing: -1px;
     }
 
     .hero p {
-      max-width: 700px;
-      line-height: 1.7;
+      max-width: 750px;
+      margin: 0 auto;
       font-size: 18px;
+      color: #E5EBF2;
+      line-height: 1.8;
     }
 
-    section {
-      padding: 40px 7%;
+    /* GENERAL SECTIONS */
+
+    section.content-section {
+      padding: 72px 8%;
     }
 
     .content {
-      max-width: 1000px;
-      margin: auto;
+      max-width: 1050px;
+      margin: 0 auto;
     }
 
-    h2 {
-      font-family: Georgia, serif;
-      font-size: 38px;
-      margin-bottom: 25px;
+    .section-label {
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      font-size: 11px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(30px, 4vw, 43px);
+      margin-bottom: 23px;
+      color: var(--navy);
+      letter-spacing: -0.5px;
     }
 
     p {
-      line-height: 1.8;
-      color: #4d514d;
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 17px;
     }
 
-   .card {
-  background: #f7f3ea;
-  padding: 40px;
-  margin-top: 18px;
-  border: 1px solid rgba(30, 51, 45, 0.12);
-  box-shadow: 0 8px 25px rgba(30, 51, 45, 0.06);
-}
+    p:last-child {
+      margin-bottom: 0;
+    }
 
-.card h2 {
-  color: #1e332d;
-  margin-top: 0;
-  margin-bottom: 25px;
-}
+    .intro-section {
+      background: var(--white);
+    }
 
-.card h3 {
-  color: #1e332d;
-  font-family: Georgia, serif;
-  margin-top: 30px;
-}
+    .intro-section .content {
+      max-width: 900px;
+    }
 
-.card p {
-  margin-bottom: 18px;
-}
-.photo-placeholder {
-  margin-top: 30px;
-  min-height: 220px;
-  background: #e9e3d6;
-  border: 2px dashed #c9a45c;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #1e332d;
-  font-family: Georgia, serif;
-  font-size: 18px;
-  text-align: center;
-}
-    .galleria-evento {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 25px;
-}
+    /* CARDS */
 
-.galleria-evento img {
-  width: 75%;
-  height: 400px;
-  object-fit: contain;
-  background: #e9e3d6;
-  cursor: zoom-in;
-}
+    .card {
+      background: var(--white);
+      padding: 34px;
+      margin-top: 25px;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      box-shadow: var(--shadow);
+    }
 
-.galleria-evento button {
-  background: #1e332d;
-  color: #f7f3ea;
-  border: none;
-  border-radius: 50%;
-  width: 42px;
-  height: 42px;
-  cursor: pointer;
-  font-size: 18px;
-  flex-shrink: 0;
-}
+    .card h2 {
+      color: var(--navy);
+      font-size: 29px;
+      margin: 0 0 22px;
+    }
+
+    .card h3 {
+      color: var(--navy);
+      font-size: 24px;
+      margin: 32px 0 15px;
+    }
+
+    .card ul {
+      padding-left: 23px;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .card li {
+      padding-left: 4px;
+      margin-bottom: 5px;
+    }
+
+    strong {
+      color: var(--navy);
+    }
+
     blockquote {
-  margin: 30px 0;
-  padding: 20px 25px;
-  border-left: 4px solid #c9a45c;
-  background: rgba(233, 227, 214, 0.6);
-  font-family: Georgia, serif;
-  font-style: italic;
-  line-height: 1.8;
-  color: #1e332d;
-}
-    footer {
-      background: #1e332d;
-      color: #f7f3ea;
-      text-align: center;
-      padding: 35px 7%;
+      margin: 26px 0;
+      padding: 22px 26px;
+      border-left: 4px solid var(--blue);
+      background: var(--light);
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: italic;
+      line-height: 1.85;
+      color: var(--navy);
     }
 
- @media (max-width: 800px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+    /* MAESTRO PARRINO */
 
-  nav {
-    gap: 15px;
-  }
+    .parrino-portrait {
+      margin-top: 30px;
+      text-align: center;
+    }
 
-  h1 {
-    font-size: 42px;
-  }
+    .parrino-portrait img {
+      width: 100%;
+      max-width: 450px;
+      max-height: 520px;
+      object-fit: contain;
+      background: var(--light);
+      border-radius: 4px;
+      cursor: zoom-in;
+    }
 
-  h2 {
-    font-size: 30px;
-  }
+    .parrino-portrait p {
+      margin-top: 10px;
+      font-size: 14px;
+      font-style: italic;
+    }
 
-  section {
-    padding: 30px 6%;
-  }
+    /* GALLERIE */
 
-  .card {
-    padding: 25px 20px;
-  }
+    .gallery {
+      margin-top: 22px;
+    }
 
-  .photo-placeholder {
-    min-height: 180px;
-  }
-}
+    .gallery-image-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .gallery-image {
+      display: block;
+      width: 100%;
+      height: 420px;
+      object-fit: contain;
+      background: var(--light);
+      border-radius: 4px;
+      cursor: zoom-in;
+    }
+
+    .gallery-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 43px;
+      height: 43px;
+      border: 1px solid var(--navy);
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 20px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .gallery-arrow:hover {
+      background: var(--blue);
+      transform: scale(1.05);
+    }
+
+    .gallery-counter {
+      margin: 15px 0 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* TESTIMONIANZA */
+
+    .testimonial-section {
+      background: var(--light-blue);
+    }
+
+    .testimonial-name {
+      color: var(--navy);
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    /* RISULTATI */
+
+    .results-section {
+      background: var(--light);
+    }
+
+    .results-section > .content > .section-title {
+      margin-bottom: 30px;
+    }
+
+    .award-card {
+      background: var(--white);
+      padding: 32px;
+      margin-top: 24px;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      box-shadow: var(--shadow);
+    }
+
+    .award-card h2 {
+      color: var(--navy);
+      font-size: clamp(23px, 3vw, 30px);
+      margin-bottom: 20px;
+    }
+
+    .award-image {
+      margin-top: 24px;
+      text-align: center;
+    }
+
+    .award-image img {
+      width: 100%;
+      max-width: 650px;
+      max-height: 520px;
+      object-fit: contain;
+      cursor: zoom-in;
+      border-radius: 4px;
+    }
+
+    .school-poster img {
+      width: 100%;
+      max-width: 450px;
+      max-height: 650px;
+      object-fit: contain;
+      cursor: zoom-in;
+    }
+
+    /* PULSANTI */
+
+    .button {
+      display: inline-block;
+      padding: 12px 21px;
+      border: 1px solid var(--blue);
+      border-radius: 4px;
+      background: var(--blue);
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      font-size: 11px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .button:hover {
+      background: var(--blue-hover);
+      transform: translateY(-2px);
+    }
+
+    /* INGRANDIMENTO FOTO */
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 35px;
+      background: rgba(8, 17, 29, 0.94);
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      display: block;
+      max-width: 92vw;
+      max-height: 88vh;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 14px;
+      right: 22px;
+      width: 45px;
+      height: 45px;
+      border: 1px solid rgba(255,255,255,0.45);
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #102035;
+      color: #B8C5D4;
+      text-align: center;
+      padding: 28px 7%;
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    footer strong {
+      color: var(--white);
+      font-size: 13px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 1100px) {
+      header {
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+
+      .header-right {
+        flex: 1 1 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+
+      nav {
+        justify-content: flex-start;
+        gap: 10px 16px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      header {
+        padding: 15px 5%;
+        gap: 15px;
+      }
+
+      .logo {
+        font-size: 17px;
+      }
+
+      .logo img {
+        width: 42px;
+        height: 42px;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 10px 14px;
+        font-size: 10px;
+      }
+
+      section.content-section {
+        padding: 55px 6%;
+      }
+
+      .hero {
+        min-height: 45vh;
+        padding: 70px 7%;
+      }
+
+      .hero h1 {
+        font-size: clamp(38px, 8vw, 56px);
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .card,
+      .award-card {
+        padding: 24px 20px;
+      }
+
+      .card h2 {
+        font-size: 25px;
+      }
+
+      .card h3 {
+        font-size: 22px;
+      }
+
+      .gallery-image {
+        height: 300px;
+      }
+
+      .gallery-image-wrap {
+        gap: 8px;
+      }
+
+      .gallery-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 17px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .logo {
+        font-size: 15px;
+        gap: 9px;
+      }
+
+      nav {
+        gap: 8px 11px;
+        font-size: 9px;
+      }
+
+      .hero h1 {
+        font-size: 37px;
+      }
+
+      .gallery-image {
+        height: 230px;
+      }
+
+      .gallery-arrow {
+        width: 31px;
+        height: 31px;
+      }
+
+      blockquote {
+        padding: 17px 19px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">Corpo Bandistico Municipale “G. Verdi”</div>
+  <!-- HEADER -->
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="la-banda.html">La Banda</a>
-  <a href="musica.html">La Scuola di Musica</a>
-  <a href="eventi.html">Eventi</a>
-  <a href="index.html#galleria">Galleria</a>
-  <a href="index.html#contatti">Contatti</a>
-</nav>
-</header>
+  <header>
+    <a class="logo" href="index.html" aria-label="Torna alla Home">
+      <img src="logo.jpeg" alt="Logo Corpo Bandistico Municipale G. Verdi">
+      <span>G. VERDI · 1911</span>
+    </a>
 
-<section class="hero">
-  <div class="content">
-    <div class="section-label">Musica e formazione</div>
+    <div class="header-right">
+      <nav aria-label="Navigazione principale">
+        <a href="index.html">Home</a>
+        <a href="la-banda.html">La Banda</a>
+        <a href="musica.html" aria-current="page">La Scuola di Musica</a>
+        <a href="eventi.html">Eventi</a>
+        <a href="albo.html">Albo Storico</a>
+        <a href="maestri-direttori.html">Maestri Direttori</a>
+        <a href="index.html#galleria">Galleria</a>
+        <a href="index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
 
-    <h1>La Scuola di Musica</h1>
+  <!-- HERO -->
 
-    <p>
-      Musica, formazione, passione e condivisione.
-      Un percorso aperto a tutte le età, guidato dai Maestri
-      del Corpo Bandistico Municipale “G. Verdi”.
-    </p>
-  </div>
-</section>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">ASSOCIAZIONE MUSICALE ALCARESE · DAL 1911</div>
 
-<section>
-  <div class="content">
-
-    <div class="section-label">La nostra scuola</div>
-
-    <h2>La musica si impara, si vive e si trasmette.</h2>
-
-    <p>
-      La Scuola di Musica dell’Associazione Musicale Alcarese
-      è aperta a persone di tutte le età.
-    </p>
-
-    <p>
-      Le attività sono curate dai Maestri della nostra Banda,
-      che accompagnano gli allievi nel loro percorso di
-      apprendimento e crescita musicale.
-    </p>
-
-    <p>
-      La Scuola rappresenta un importante punto di incontro
-      tra generazioni diverse e contribuisce a mantenere viva
-      la tradizione musicale della nostra Associazione.
-    </p>
-
-  </div>
-</section>
-
-<section>
-  <div class="content">
-
-    <div class="section-label">Una figura fondamentale</div>
-
-    <h2>Il Maestro Onorario Giuseppe Parrino</h2>
-
-    <div class="card">
+      <h1>La Scuola<br>di Musica</h1>
 
       <p>
-        Il Maestro Onorario Giuseppe Parrino è nato nel 1929
-        ad Alcara li Fusi ed è morto l'8 ottobre 2021.
+        Musica, formazione, passione e condivisione.
+        Un percorso aperto a tutte le età, guidato dai Maestri
+        del Corpo Bandistico Municipale “G. Verdi”.
+      </p>
+    </div>
+  </section>
+
+  <!-- PRESENTAZIONE -->
+
+  <section class="content-section intro-section">
+    <div class="content">
+      <div class="section-label">La nostra scuola</div>
+
+      <h2 class="section-title">
+        La musica si impara, si vive e si trasmette.
+      </h2>
+
+      <p>
+        La Scuola di Musica dell’Associazione Musicale Alcarese
+        è aperta a persone di tutte le età.
       </p>
 
       <p>
-        Ha studiato inizialmente nella scuola di musica bandistica
-        con il maestro Cipitì e ha proseguito gli studi con il
-        Piccolo Mi♭ con il maestro Seminara, entrando a far parte
-        della Banda Municipale Alcarese a 17 anni, nel 1946.
+        Le attività sono curate dai Maestri della nostra Banda,
+        che accompagnano gli allievi nel loro percorso di
+        apprendimento e crescita musicale.
       </p>
 
       <p>
-        Nel 1977 è stato nominato Capo Banda e da allora ha svolto
-        anche la funzione di insegnante della Scuola di Musica
-        della Banda. Fino al 2013 ha formato con successo
-        <strong>90 allievi</strong>, consentendo il loro inserimento
-        in Banda.
+        La Scuola rappresenta un importante punto di incontro
+        tra generazioni diverse e contribuisce a mantenere viva
+        la tradizione musicale della nostra Associazione.
+      </p>
+    </div>
+  </section>
+
+  <!-- MAESTRO GIUSEPPE PARRINO -->
+
+  <section class="content-section" style="background: var(--light-blue);">
+    <div class="content">
+      <div class="section-label">Una figura fondamentale</div>
+
+      <h2 class="section-title">Il Maestro Onorario Giuseppe Parrino</h2>
+
+      <div class="card">
+
+        <p>
+          Il Maestro Onorario Giuseppe Parrino è nato nel 1929
+          ad Alcara li Fusi ed è morto l'8 ottobre 2021.
+        </p>
+
+        <p>
+          Ha studiato inizialmente nella scuola di musica bandistica
+          con il maestro Cipitì e ha proseguito gli studi con il
+          Piccolo Mi♭ con il maestro Seminara, entrando a far parte
+          della Banda Municipale Alcarese a 17 anni, nel 1946.
+        </p>
+
+        <p>
+          Nel 1977 è stato nominato Capo Banda e da allora ha svolto
+          anche la funzione di insegnante della Scuola di Musica
+          della Banda. Fino al 2013 ha formato con successo
+          <strong>90 allievi</strong>, consentendo il loro inserimento
+          in Banda.
+        </p>
+
+        <p>
+          In occasione dell'ottantesimo anniversario della fondazione
+          della Banda, nel 1991, gli è stato conferito un attestato
+          in riconoscimento del suo impegno, del suo sapere e
+          dell'opera svolta per il progresso musicale alcarese.
+        </p>
+
+        <p>
+          Nell'agosto del 1996 gli è stato riconosciuto dalla Banda
+          il <strong>Diploma di Maestro Onorario</strong>, su iniziativa
+          del maestro direttore M. Saccone.
+        </p>
+
+        <blockquote>
+          «Titolo di riconoscenza artistica per una vita dedicata
+          con passione e virtù al servizio reso con esemplare talento
+          nel Corpo Bandistico Municipale».
+        </blockquote>
+
+        <h3>Le sue composizioni</h3>
+
+        <ul>
+          <li><strong>Vecchia banda musicale Alcarese</strong> — marcia sinfonica</li>
+          <li><strong>Desy</strong> — marcia sinfonica</li>
+          <li><strong>Nicolas</strong> — marcia sinfonica</li>
+          <li><strong>Argentina</strong> — marcia militare</li>
+          <li><strong>Due Novembre</strong> — marcia funebre</li>
+        </ul>
+
+        <h3>Un'eredità che continua</h3>
+
+        <p>
+          Al Maestro Giuseppe Parrino il Corpo Bandistico Municipale
+          deve moltissimo. Ha educato all'arte musicale intere
+          generazioni di nostri componenti, trasmettendo loro con
+          passione, lavoro e impegno assoluto un grande amore
+          per la musica.
+        </p>
+
+        <p>
+          Ci ha trasmesso i valori della dedizione e dell'impegno
+          e ci ha fatto capire quanto sia bello e importante vivere
+          la musica in tutte le sue forme, soprattutto nella
+          condivisione, come in una grande famiglia.
+        </p>
+
+        <p><strong>Noi possiamo solo dirgli GRAZIE!</strong></p>
+
+        <p>
+          Grazie per tutto quello che ci ha dato e per tutto il lavoro
+          svolto per il bene della nostra Banda.
+        </p>
+
+        <p>Grazie per la sua gentilezza e per la sua umiltà.</p>
+
+        <p>
+          Grazie, infine, per essere stato un modello da seguire
+          per tutti noi.
+        </p>
+
+        <p><strong>La sua cara Banda.</strong></p>
+
+        <div class="parrino-portrait">
+          <img
+            src="foto-parrino/donpippo1.jpg"
+            alt="Il Maestro Giuseppe Parrino"
+            onclick="ingrandisciFoto(this.src)"
+          >
+          <p>Il Maestro Onorario Giuseppe Parrino</p>
+        </div>
+
+        <h3>Ricordi del Maestro</h3>
+
+        <div class="gallery">
+          <div class="gallery-image-wrap">
+            <button class="gallery-arrow" type="button"
+              onclick="cambiaParrino(-1)" aria-label="Foto precedente">❮</button>
+
+            <img
+              id="foto-parrino-grande"
+              class="gallery-image"
+              src="foto-parrino/2.jpg"
+              alt="Ricordo del Maestro Giuseppe Parrino"
+              onclick="ingrandisciFoto(this.src)"
+            >
+
+            <button class="gallery-arrow" type="button"
+              onclick="cambiaParrino(1)" aria-label="Foto successiva">❯</button>
+          </div>
+
+          <p id="numero-foto-parrino" class="gallery-counter">Foto 1 di 19</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- VALORI -->
+
+  <section class="content-section">
+    <div class="content">
+      <div class="section-label">Valori</div>
+
+      <h2 class="section-title">
+        Perché scegliere la Scuola di Musica della Banda
+      </h2>
+
+      <p>
+        La Banda è un’importante realtà di aggregazione, dove
+        si imparano il rispetto, il decoro e soprattutto il valore
+        dello stare insieme.
       </p>
 
       <p>
-        In occasione dell'ottantesimo anniversario della fondazione
-        della Banda, nel 1991, gli è stato conferito un attestato
-        in riconoscimento del suo impegno, del suo sapere e
-        dell'opera svolta per il progresso musicale alcarese.
+        La nostra Scuola non si limita alla semplice lezione:
+        accompagna gli allievi all’interno di un gruppo nel quale
+        persone di età e professioni diverse imparano a collaborare,
+        sostenersi e condividere la passione per la musica.
+      </p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIANZA -->
+
+  <section class="content-section testimonial-section">
+    <div class="content">
+      <div class="section-label">Una testimonianza</div>
+
+      <h2 class="section-title">La Banda è famiglia</h2>
+
+      <div class="card">
+        <p class="testimonial-name">
+          <strong>Rosaria Gianguzzo</strong>
+        </p>
+
+        <p>Componente della Banda Municipale — Sax Contralto</p>
+
+        <blockquote>
+          «La banda non è solo un insieme di persone, suonare non
+          significa conoscere quelle 7 note.
+        </blockquote>
+
+        <blockquote>
+          La banda è collaborare, rispettare i tempi degli altri,
+          capire che ognuno di noi ha un ruolo ed è importante,
+          ma che non è nessuno senza gli altri.
+        </blockquote>
+
+        <blockquote>
+          La banda è famiglia, è amicizia, è rispetto.
+        </blockquote>
+
+        <blockquote>
+          Quindi, cari ragazzi e genitori, pensateci.
+          Iscrivere un figlio alla scuola di musica non è solo
+          fargli suonare uno strumento ma è anche farlo entrare
+          in un mondo di gioia e allegria che porterà sempre
+          nel cuore!»
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- PATRIMONIO CULTURALE -->
+
+  <section class="content-section">
+    <div class="content">
+      <div class="section-label">Cultura musicale</div>
+
+      <h2 class="section-title">La Banda come patrimonio culturale</h2>
+
+      <p>
+        La Banda è una vera e propria realtà culturale che non si
+        limita alla divulgazione musicale, ma svolge anche un ruolo
+        importante nella promozione della cultura, nella formazione
+        e nella crescita della comunità.
       </p>
 
       <p>
-        Nell'agosto del 1996 gli è stato riconosciuto dalla Banda
-        il <strong>Diploma di Maestro Onorario</strong>, su iniziativa
-        del maestro direttore M. Saccone.
+        Attraverso la propria Scuola di Musica, la Banda trasmette
+        alle nuove generazioni non soltanto la conoscenza musicale,
+        ma anche valori come la collaborazione, il rispetto,
+        la disciplina e il senso di appartenenza.
       </p>
 
-      <blockquote>
-        «Titolo di riconoscenza artistica per una vita dedicata
-        con passione e virtù al servizio reso con esemplare talento
-        nel Corpo Bandistico Municipale».
-      </blockquote>
+      <div class="card">
+        <h2>L'importanza delle bande</h2>
 
-      <h3>Le sue composizioni</h3>
+        <p>
+          Il Maestro Riccardo Muti ha più volte sottolineato
+          l'importanza delle bande e delle realtà musicali
+          amatoriali nella formazione culturale e sociale.
+        </p>
 
-      <ul>
-        <li><strong>Vecchia banda musicale Alcarese</strong> — marcia sinfonica</li>
-        <li><strong>Desy</strong> — marcia sinfonica</li>
-        <li><strong>Nicolas</strong> — marcia sinfonica</li>
-        <li><strong>Argentina</strong> — marcia militare</li>
-        <li><strong>Due Novembre</strong> — marcia funebre</li>
-      </ul>
+        <p>
+          Le bande possono essere considerate vere e proprie
+          piccole orchestre di fiati, capaci di avvicinare alla
+          musica persone di età e provenienze diverse e di creare
+          occasioni di incontro e condivisione.
+        </p>
 
-      <h3>Un'eredità che continua</h3>
+        <blockquote>
+          «Imparare a stare in un coro, in una banda, in un'orchestra,
+          significa imparare a stare in una società dove l'armonia
+          nasce dalla differenza».
+        </blockquote>
 
-      <p>
-        Al Maestro Giuseppe Parrino il Corpo Bandistico Municipale
-        deve moltissimo. Ha educato all'arte musicale intere
-        generazioni di nostri componenti, trasmettendo loro con
-        passione, lavoro e impegno assoluto un grande amore
-        per la musica.
-      </p>
+        <p>
+          È proprio questo uno dei valori più profondi della nostra
+          Banda: persone diverse, con età, professioni e percorsi
+          differenti, che attraverso la musica imparano a suonare
+          insieme e a costruire qualcosa di comune.
+        </p>
+      </div>
+    </div>
+  </section>
 
-      <p>
-        Ci ha trasmesso i valori della dedizione e dell'impegno
-        e ci ha fatto capire quanto sia bello e importante vivere
-        la musica in tutte le sue forme, soprattutto nella
-        condivisione, come in una grande famiglia.
-      </p>
+  <!-- RISULTATI DELLA SCUOLA -->
 
-      <p>
-        <strong>Noi possiamo solo dirgli GRAZIE!</strong>
-      </p>
+  <section class="content-section results-section">
+    <div class="content">
+      <div class="section-label">I nostri giovani musicisti</div>
 
-      <p>
-        Grazie per tutto quello che ci ha dato e per tutto il lavoro
-        svolto per il bene della nostra Banda.
-      </p>
+      <h2 class="section-title">I risultati della nostra Scuola</h2>
 
-      <p>
-        Grazie per la sua gentilezza e per la sua umiltà.
-      </p>
+      <!-- CONCORSO 2026 - MIRTO -->
 
-      <p>
-        Grazie, infine, per essere stato un modello da seguire
-        per tutti noi.
-      </p>
+      <div class="award-card">
+        <h2>🥇 Primo Premio al Concorso Musicale Nazionale "Salvuccio Percacciolo" 2026</h2>
 
-      <p>
-        <strong>La sua cara Banda.</strong>
-      </p>
+        <p>
+          Congratulazioni ai nostri Ragazzi e al M° S. Santoro per aver
+          conseguito un altro importante risultato.
+        </p>
 
-<div style="margin-top:25px; text-align:center;">
-  <img
-    src="foto-parrino/donpippo1.jpg"
-    alt="Il Maestro Giuseppe Parrino"
-    style="width:100%; max-width:450px; max-height:500px; object-fit:contain;"
-  >
-  <p><em>Il Maestro Onorario Giuseppe Parrino</em></p>
-</div>
+        <p>
+          La Scuola di Musica del Corpo Bandistico Municipale Alcarese
+          conferma la propria voglia di migliorarsi, misurarsi e divertirsi
+          all'insegna della musica aggiudicandosi, con punti
+          <strong>100/100</strong>, il <strong>1° premio assoluto</strong>
+          al Concorso Nazionale "Salvuccio Percacciolo" di Mirto.
+        </p>
 
-<h3>Ricordi del Maestro</h3>
+        <p>
+          Questo successo, frutto di impegno e determinazione, dà lustro
+          alla cultura musicale Alcarese e crea un continuum con il lavoro
+          e l'ambizione del nostro Corpo Bandistico, pronto ad accogliere
+          con gioia questi ragazzi meravigliosi nel mondo "dei grandi".
+        </p>
 
-<div id="galleria-parrino" style="margin-top:20px;">
-  <img
-    id="foto-parrino-grande"
-    src="foto-parrino/2.jpg"
-    alt="Ricordo del Maestro"
-    style="display:block; width:100%; height:400px; object-fit:contain; background:#e9e3d6;"
-  >
+        <div class="award-image">
+          <img
+            src="foto-eventi/percacciolo.jpg"
+            alt="Premio Salvuccio Percacciolo 2026"
+            onclick="ingrandisciFoto(this.src)"
+          >
+        </div>
+      </div>
 
-  <div style="display:flex; justify-content:center; gap:15px; margin:15px 0;">
-    <button type="button" onclick="cambiaParrino(-1)">❮ Precedente</button>
-    <button type="button" onclick="cambiaParrino(1)">Successiva ❯</button>
-  </div>
+      <!-- CONCORSO 2026 - CROTONE -->
 
-  <p id="numero-foto-parrino" style="text-align:center;">Foto 1 di 19</p>
-</div>
+      <div class="award-card">
+        <h2>🥇 Primo Premio alla XVIII Edizione del Concorso Musicale Nazionale "Maria Grazia Cutuli"</h2>
 
-<script>
-const fotoParrino = [
-  "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg",
-  "7.jpg", "8.jpg", "9.jpg", "10.jpg", "11.jpg",
-  "14.jpg", "15.jpg", "16.jpg", "17.jpg", "20.jpg",
-  "21.jpg", "23.jpg", "24.jpg", "25.jpg"
-];
+        <p>
+          <strong>ORGOGLIO ALCARESE: I NOSTRI RAGAZZI CONQUISTANO
+          IL PRIMO PREMIO!</strong>
+        </p>
 
-let indiceParrino = 0;
+        <p>
+          La gioia è immensa e l'emozione ancora di più! Con immenso
+          orgoglio, noi, Corpo Bandistico Municipale “G. Verdi” di
+          Alcara li Fusi festeggiamo i ragazzi della nostra Scuola
+          di Musica, che hanno conquistato il
+          <strong>Primo Premio</strong> alla XVIII Edizione del
+          Concorso Musicale Nazionale “Maria Grazia Cutuli” che si
+          è svolta nel mese di maggio del <strong>2026 a Crotone</strong>!
+        </p>
 
-function cambiaParrino(direzione) {
-  indiceParrino = (indiceParrino + direzione + fotoParrino.length) % fotoParrino.length;
+        <p>
+          Partiti con la voglia di mettersi in gioco e di vivere
+          un'importante esperienza di crescita, i nostri giovani
+          musicisti hanno superato ogni aspettativa, dimostrando sul
+          palco non solo un grandissimo talento, ma anche una maturità
+          e una passione straordinarie.
+        </p>
 
-  document.getElementById("foto-parrino-grande").src =
-    "foto-parrino/" + fotoParrino[indiceParrino];
+        <p>
+          Un ringraziamento speciale va al M° Santino Santoro, che con
+          dedizione, pazienza e guida sapiente ha accompagnato i ragazzi
+          in questo percorso, valorizzando il lavoro svolto durante
+          tutto l'anno.
+        </p>
 
-  document.getElementById("numero-foto-parrino").textContent =
-    "Foto " + (indiceParrino + 1) + " di " + fotoParrino.length;
-}
-</script>
+        <p>
+          Questo traguardo non è solo una vittoria in una competizione,
+          ma la conferma che l'impegno, il sacrificio e l'amore per la
+          musica ripagano sempre. Siete il futuro della nostra
+          associazione e della nostra tradizione bandistica, e non
+          potremmo essere più fieri di voi!
+        </p>
+
+        <p>
+          Grazie ragazzi per aver portato così in alto il nome di
+          Alcara Li Fusi e della nostra realtà musicale. Continuate
+          a suonare con questo entusiasmo e a farci emozionare!
+        </p>
+
+        <div class="gallery">
+          <div class="gallery-image-wrap">
+            <button class="gallery-arrow" type="button"
+              onclick="scorriFoto('cutuli', -1)" aria-label="Foto precedente">❮</button>
+
+            <img
+              id="foto-cutuli"
+              class="gallery-image"
+              src="foto-eventi/499708553-1293897372741684-3626934576983418496-n_orig.jpg"
+              alt="Concorso Maria Grazia Cutuli"
+              onclick="ingrandisciFoto(this.src)"
+            >
+
+            <button class="gallery-arrow" type="button"
+              onclick="scorriFoto('cutuli', 1)" aria-label="Foto successiva">❯</button>
+          </div>
+
+          <p id="contatore-cutuli" class="gallery-counter">Foto 1 di 5</p>
+        </div>
+      </div>
+
+      <!-- CONCORSO 2025 - MIRTO -->
+
+      <div class="award-card">
+        <h2>🥈 Secondo Premio — 22 maggio 2025</h2>
+
+        <p>
+          <strong>
+            Partecipazione degli studenti della nostra Scuola di Musica
+            alla Rassegna musicale scolastica Premio Internazionale
+            "Salvuccio Percacciolo" di Mirto.
+          </strong>
+        </p>
+
+        <p><strong>Piccoli Grandi "Banditi" crescono!</strong></p>
+
+        <p>
+          Congratulazioni ai meravigliosi ragazzi della scuola di musica
+          del nostro Corpo Bandistico, guidati dal Maestro Santino Santoro,
+          per essersi aggiudicati il <strong>2° premio</strong>, con
+          votazione <strong>94/100</strong>, al Premio Internazionale
+          "Salvuccio Percacciolo"!
+        </p>
+
+        <p>
+          La musica è un essenziale mezzo di educazione e di crescita
+          musicale ma soprattutto umana.
+        </p>
+
+        <p>
+          Siamo felici che tanti giovanissimi credano fortemente in
+          questi valori, nel potere della musica di unire la passione
+          alla dedizione e alla cultura del lavoro, ma soprattutto di
+          congiungere tanti ragazzi che condividono lo stesso amore
+          per il pentagramma.
+        </p>
+
+        <p>
+          Complimenti dunque ai nostri piccoli Bandisti e a tutti i
+          partecipanti, siete il nostro avvenire.
+        </p>
+
+        <div class="gallery">
+          <div class="gallery-image-wrap">
+            <button class="gallery-arrow" type="button"
+              onclick="scorriFoto('percacciolo2025', -1)" aria-label="Foto precedente">❮</button>
+
+            <img
+              id="foto-percacciolo2025"
+              class="gallery-image"
+              src="foto-eventi/500461192-1293897376075017-632198432798670353-n.jpg"
+              alt="Premio Salvuccio Percacciolo 2025"
+              onclick="ingrandisciFoto(this.src)"
+            >
+
+            <button class="gallery-arrow" type="button"
+              onclick="scorriFoto('percacciolo2025', 1)" aria-label="Foto successiva">❯</button>
+          </div>
+
+          <p id="contatore-percacciolo2025" class="gallery-counter">Foto 1 di 5</p>
+        </div>
+      </div>
+
+      <!-- LOCANDINA -->
+
+      <div class="award-card">
+        <h2>La Scuola di Musica</h2>
+
+        <div class="award-image school-poster">
+          <img
+            src="foto-eventi/locandina-scuola-di-musica-2022-23.jpeg"
+            alt="Locandina della Scuola di Musica"
+            onclick="ingrandisciFoto(this.src)"
+          >
+        </div>
+      </div>
 
     </div>
-
-  </div>
-</section>
-
-<section>
-  <div class="content">
-
-    <div class="section-label">Valori</div>
-
-    <h2>Perché scegliere la Scuola di Musica della Banda</h2>
-
-    <p>
-      La Banda è un’importante realtà di aggregazione, dove
-      si imparano il rispetto, il decoro e soprattutto il valore
-      dello stare insieme.
-    </p>
-
-    <p>
-      La nostra Scuola non si limita alla semplice lezione:
-      accompagna gli allievi all’interno di un gruppo nel quale
-      persone di età e professioni diverse imparano a collaborare,
-      sostenersi e condividere la passione per la musica.
-    </p>
-
-  </div>
-</section>
-
-<section>
-  <div class="content">
-
-    <div class="section-label">Una testimonianza</div>
-
-    <h2>La Banda è famiglia</h2>
-
-    <div class="card">
-
-      <p>
-        <strong>Rosaria Gianguzzo</strong><br>
-        Componente della Banda Municipale — Sax Contralto
-      </p>
-
-      <blockquote>
-        «La banda non è solo un insieme di persone, suonare non
-        significa conoscere quelle 7 note.
-      </blockquote>
-
-      <blockquote>
-        La banda è collaborare, rispettare i tempi degli altri,
-        capire che ognuno di noi ha un ruolo ed è importante,
-        ma che non è nessuno senza gli altri.
-      </blockquote>
-
-      <blockquote>
-        La banda è famiglia, è amicizia, è rispetto.
-      </blockquote>
-
-      <blockquote>
-        Quindi, cari ragazzi e genitori, pensateci.
-        Iscrivere un figlio alla scuola di musica non è solo
-        fargli suonare uno strumento ma è anche farlo entrare
-        in un mondo di gioia e allegria che porterà sempre
-        nel cuore!
-        »
-      </blockquote>
-
-    </div>
-
-  </div>
-</section>
-<section>
-  <div class="content">
-
-    <div class="section-label">Cultura musicale</div>
-
-    <h2>La Banda come patrimonio culturale</h2>
-
-    <p>
-      La Banda è una vera e propria realtà culturale che non si
-      limita alla divulgazione musicale, ma svolge anche un ruolo
-      importante nella promozione della cultura, nella formazione
-      e nella crescita della comunità.
-    </p>
-
-    <p>
-      Attraverso la propria Scuola di Musica, la Banda trasmette
-      alle nuove generazioni non soltanto la conoscenza musicale,
-      ma anche valori come la collaborazione, il rispetto,
-      la disciplina e il senso di appartenenza.
-    </p>
-
-    <div class="card">
-
-      <h2>L'importanza delle bande</h2>
-
-      <p>
-        Il Maestro Riccardo Muti ha più volte sottolineato
-        l'importanza delle bande e delle realtà musicali
-        amatoriali nella formazione culturale e sociale.
-      </p>
-
-      <p>
-        Le bande possono essere considerate vere e proprie
-        piccole orchestre di fiati, capaci di avvicinare alla
-        musica persone di età e provenienze diverse e di creare
-        occasioni di incontro e condivisione.
-      </p>
-
-      <blockquote>
-        «Imparare a stare in un coro, in una banda, in un'orchestra,
-        significa imparare a stare in una società dove l'armonia
-        nasce dalla differenza».
-      </blockquote>
-
-      <p>
-        È proprio questo uno dei valori più profondi della nostra
-        Banda: persone diverse, con età, professioni e percorsi
-        differenti, che attraverso la musica imparano a suonare
-        insieme e a costruire qualcosa di comune.
-      </p>
-
-    </div>
-
-  </div>
-</section>
-<section>
-  <div class="content">
-
-    <div class="section-label">I nostri giovani musicisti</div>
-
-    <h2>I risultati della nostra Scuola</h2>
-
-    <!-- CONCORSO 2026 - MIRTO -->
-
-    <div class="card">
-
-      <h2>🥇 Primo Premio al Concorso Musicale Nazionale "Salvuccio Percacciolo" 2026</h2>
-
-      <p>
-        Congratulazioni ai nostri Ragazzi e al M° S. Santoro per aver
-        conseguito un altro importante risultato.
-      </p>
-
-      <p>
-        La Scuola di Musica del Corpo Bandistico Municipale Alcarese
-        conferma la propria voglia di migliorarsi, misurarsi e divertirsi
-        all'insegna della musica aggiudicandosi, con punti
-        <strong>100/100</strong>, il <strong>1° premio assoluto</strong>
-        al Concorso Nazionale "Salvuccio Percacciolo" di Mirto.
-      </p>
-
-      <p>
-        Questo successo, frutto di impegno e determinazione, dà lustro
-        alla cultura musicale Alcarese e crea un continuum con il lavoro
-        e l'ambizione del nostro Corpo Bandistico, pronto ad accogliere
-        con gioia questi ragazzi meravigliosi nel mondo "dei grandi".
-      </p>
-
-   <div style="margin-top:25px; text-align:center;">
-  <img
-    src="foto-eventi/percacciolo.jpg"
-    alt="Premio Salvuccio Percacciolo 2026"
-    onclick="ingrandisciFoto(this.src)"
-    style="width:100%; max-width:650px; max-height:500px; object-fit:contain; cursor:zoom-in;"
-  >
-</div>
-
-    </div>
-
-
-    <!-- CONCORSO 2026 - CROTONE -->
-
-    <div class="card">
-
-      <h2>🥇 Primo Premio alla XVIII Edizione del Concorso Musicale Nazionale "Maria Grazia Cutuli"</h2>
-
-      <p>
-        <strong>ORGOGLIO ALCARESE: I NOSTRI RAGAZZI CONQUISTANO
-        IL PRIMO PREMIO!</strong>
-      </p>
-
-      <p>
-        La gioia è immensa e l'emozione ancora di più! Con immenso
-        orgoglio, noi, Corpo Bandistico Municipale “G.Verdi” di
-        Alcara li Fusi festeggiamo i ragazzi della nostra Scuola
-        di Musica, che hanno conquistato il
-        <strong>Primo Premio</strong> alla XVIII Edizione del
-        Concorso Musicale Nazionale “Maria Grazia Cutuli” che si
-        è svolta nel mese di maggio del <strong>2026 a Crotone</strong>!
-      </p>
-
-      <p>
-        Partiti con la voglia di mettersi in gioco e di vivere
-        un'importante esperienza di crescita, i nostri giovani
-        musicisti hanno superato ogni aspettativa, dimostrando sul
-        palco non solo un grandissimo talento, ma anche una maturità
-        e una passione straordinarie.
-      </p>
-
-      <p>
-        Un ringraziamento speciale va al M° Santino Santoro, che con
-        dedizione, pazienza e guida sapiente ha accompagnato i ragazzi
-        in questo percorso, valorizzando il lavoro svolto durante
-        tutto l'anno.
-      </p>
-
-      <p>
-        Questo traguardo non è solo una vittoria in una competizione,
-        ma la conferma che l'impegno, il sacrificio e l'amore per la
-        musica ripagano sempre. Siete il futuro della nostra
-        associazione e della nostra tradizione bandistica, e non
-        potremmo essere più fieri di voi!
-      </p>
-
-      <p>
-        Grazie ragazzi per aver portato così in alto il nome di
-        Alcara Li Fusi e della nostra realtà musicale. Continuate
-        a suonare con questo entusiasmo e a farci emozionare!
-      </p>
-
-  
-<div class="galleria-evento">
-  <button type="button" onclick="scorriFoto('cutuli', -1)">❮</button>
-
-  <img
-    id="foto-cutuli"
-    src="foto-eventi/499708553-1293897372741684-3626934576983418496-n_orig.jpg"
-    alt="Concorso Maria Grazia Cutuli"
-    onclick="ingrandisciFoto(this.src)"
-  >
-
-  <button type="button" onclick="scorriFoto('cutuli', 1)">❯</button>
-</div>
-<p id="contatore-cutuli" style="text-align:center;">Foto 1 di 5</p>
-
-
-    </div>
-
-
-    <!-- CONCORSO 2025 - MIRTO -->
-
-    <div class="card">
-
-      <h2>🥈 Secondo Premio — 22 maggio 2025</h2>
-
-      <p>
-        <strong>
-          Partecipazione degli studenti della nostra Scuola di Musica
-          alla Rassegna musicale scolastica Premio Internazionale
-          "Salvuccio Percacciolo" di Mirto.
-        </strong>
-      </p>
-
-      <p>
-        <strong>Piccoli Grandi "Banditi" crescono!</strong>
-      </p>
-
-      <p>
-        Congratulazioni ai meravigliosi ragazzi della scuola di musica
-        del nostro Corpo Bandistico, guidati dal Maestro Santino Santoro,
-        per essersi aggiudicati il <strong>2° premio</strong>, con
-        votazione <strong>94/100</strong>, al Premio Internazionale
-        "Salvuccio Percacciolo"!
-      </p>
-
-      <p>
-        La musica è un essenziale mezzo di educazione e di crescita
-        musicale ma soprattutto umana.
-      </p>
-
-      <p>
-        Siamo felici che tanti giovanissimi credano fortemente in
-        questi valori, nel potere della musica di unire la passione
-        alla dedizione e alla cultura del lavoro, ma soprattutto di
-        congiungere tanti ragazzi che condividono lo stesso amore
-        per il pentagramma.
-      </p>
-
-      <p>
-        Complimenti dunque ai nostri piccoli Bandisti e a tutti i
-        partecipanti, siete il nostro avvenire.
-      </p>
-
-  
-<div class="galleria-evento">
-  <button type="button" onclick="scorriFoto('percacciolo2025', -1)">❮</button>
-
-  <img
-    id="foto-percacciolo2025"
-    src="foto-eventi/500461192-1293897376075017-632198432798670353-n.jpg"
-    alt="Premio Salvuccio Percacciolo 2025"
-    onclick="ingrandisciFoto(this.src)"
-  >
-
-  <button type="button" onclick="scorriFoto('percacciolo2025', 1)">❯</button>
-</div>
-<p id="contatore-percacciolo2025" style="text-align:center;">Foto 1 di 5</p>
-    </div>
-<div class="card">
-  <h2>La Scuola di Musica</h2>
-  <div style="text-align:center;">
-    <img
-      src="foto-eventi/locandina-scuola-di-musica-2022-23.jpeg"
-      alt="Locandina della Scuola di Musica"
-      onclick="ingrandisciFoto(this.src)"
-      style="width:100%; max-width:450px; cursor:zoom-in;"
-    >
-  </div>
-</div>
-</section>
-
-<footer>
-  <p>
-    © 2026 Associazione Musicale Alcarese – Corpo Bandistico Municipale “G. Verdi”
-  </p>
-
-  <p>
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <strong>Corpo Bandistico Municipale “G. Verdi”</strong>
+    <br>
+    Associazione Musicale Alcarese · Alcara Li Fusi · Messina
+    <br>
     Dal 1911, musica e tradizione.
-  </p>
-</footer>
-<script>
-const fotoEventi = {
-  cutuli: [
-    "foto-eventi/698990281-1623511926446892-948983126384039020-n.jpg",
-    "foto-eventi/4(1).jpg",  
-    "foto-eventi/700708317-1623511949780223-6917267274862951879-n.jpg",
-    "foto-eventi/667473774-946127171361876-3645817900863798513-n.jpg",
-    "foto-eventi/699084263-1623511883113563-7417324054538264152-n.jpg"
-  ],
+  </footer>
 
-  percacciolo2025: [
-    "foto-eventi/500461192-1293897376075017-632198432798670353-n.jpg",
-    "foto-eventi/499785628-1293897379408350-6099964464217998868-n_orig.jpg",
-   "foto-eventi/499708553-1293897372741684-3626934576983418496-n_orig.jpg",
-    "foto-eventi/698990281-1623511926446892-948983126384039020-n.jpg",
-    "foto-eventi/500035244-1293897369408351-5147766654060393707-n_orig.jpg",
-    "foto-eventi/699084263-1623511883113563-7417324054538264152-n.jpg",
-    "foto-eventi/499554390-1293897362741685-300458054207010660-n_orig.jpg"
-  ]
-};
+  <!-- INGRANDIMENTO FOTO -->
 
-const indiciFotoEvento = {
-  cutuli: 0,
-  percacciolo2025: 0
-};
+  <div
+    id="lightbox"
+    class="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Fotografia ingrandita"
+    onclick="chiudiFoto(event)"
+  >
+    <button
+      type="button"
+      class="lightbox-close"
+      onclick="chiudiFoto()"
+      aria-label="Chiudi fotografia"
+    >×</button>
 
-function scorriFoto(galleria, direzione) {
-  const immagini = fotoEventi[galleria];
-
-  indiciFotoEvento[galleria] =
-    (indiciFotoEvento[galleria] + direzione + immagini.length)
-    % immagini.length;
-
-  document.getElementById("foto-" + galleria).src =
-    immagini[indiciFotoEvento[galleria]];
-
-  document.getElementById("contatore-" + galleria).textContent =
-    "Foto " + (indiciFotoEvento[galleria] + 1) +
-    " di " + immagini.length;
-}
-</script>
-
-
-
-Le due gallerie useranno cinque immagini ciascuna. Alcuni file sono condivisi tra le gallerie perché nell'elenco che mi hai mandato risultano otto fotografie numerate disponibili: potrai sostituire i nomi quando individui le altre.
-2. Sistema la chiusura della sezione
-Prima del </section> che chiude la sezione dei risultati della Scuola, subito dopo la card della locandina, aggiungi un altro </div>.
-La parte finale deve risultare così:
+    <img id="lightbox-image" src="" alt="Fotografia ingrandita">
   </div>
-</div>
-</section>
 
-<footer>
+  <script>
+    /* GALLERIA GIUSEPPE PARRINO */
+
+    const fotoParrino = [
+      "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg",
+      "7.jpg", "8.jpg", "9.jpg", "10.jpg", "11.jpg",
+      "14.jpg", "15.jpg", "16.jpg", "17.jpg", "20.jpg",
+      "21.jpg", "23.jpg", "24.jpg", "25.jpg"
+    ];
+
+    let indiceParrino = 0;
+
+    function cambiaParrino(direzione) {
+      indiceParrino =
+        (indiceParrino + direzione + fotoParrino.length) % fotoParrino.length;
+
+      const immagine = document.getElementById("foto-parrino-grande");
+
+      immagine.src = "foto-parrino/" + fotoParrino[indiceParrino];
+
+      document.getElementById("numero-foto-parrino").textContent =
+        "Foto " + (indiceParrino + 1) + " di " + fotoParrino.length;
+    }
+
+    /* GALLERIE DEI CONCORSI */
+
+    const fotoEventi = {
+      cutuli: [
+        "foto-eventi/698990281-1623511926446892-948983126384039020-n.jpg",
+        "foto-eventi/4(1).jpg",
+        "foto-eventi/700708317-1623511949780223-6917267274862951879-n.jpg",
+        "foto-eventi/667473774-946127171361876-3645817900863798513-n.jpg",
+        "foto-eventi/699084263-1623511883113563-7417324054538264152-n.jpg"
+      ],
+
+      percacciolo2025: [
+        "foto-eventi/500461192-1293897376075017-632198432798670353-n.jpg",
+        "foto-eventi/499785628-1293897379408350-6099964464217998868-n_orig.jpg",
+        "foto-eventi/499708553-1293897372741684-3626934576983418496-n_orig.jpg",
+        "foto-eventi/698990281-1623511926446892-948983126384039020-n.jpg",
+        "foto-eventi/500035244-1293897369408351-5147766654060393707-n_orig.jpg"
+      ]
+    };
+
+    const indiciFotoEvento = {
+      cutuli: 0,
+      percacciolo2025: 0
+    };
+
+    function scorriFoto(galleria, direzione) {
+      const immagini = fotoEventi[galleria];
+
+      indiciFotoEvento[galleria] =
+        (indiciFotoEvento[galleria] + direzione + immagini.length) % immagini.length;
+
+      document.getElementById("foto-" + galleria).src =
+        immagini[indiciFotoEvento[galleria]];
+
+      document.getElementById("contatore-" + galleria).textContent =
+        "Foto " + (indiciFotoEvento[galleria] + 1) + " di " + immagini.length;
+    }
+
+    /* INGRANDIMENTO FOTO */
+
+    function ingrandisciFoto(src) {
+      const lightbox = document.getElementById("lightbox");
+      document.getElementById("lightbox-image").src = src;
+      lightbox.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function chiudiFoto(event) {
+      if (
+        event &&
+        event.target !== document.getElementById("lightbox") &&
+        !event.target.classList.contains("lightbox-close")
+      ) {
+        return;
+      }
+
+      document.getElementById("lightbox").classList.remove("open");
+      document.getElementById("lightbox-image").src = "";
+      document.body.style.overflow = "";
+    }
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        document.getElementById("lightbox").classList.remove("open");
+        document.getElementById("lightbox-image").src = "";
+        document.body.style.overflow = "";
+      }
+    });
+  </script>
+
 </body>
 </html>
