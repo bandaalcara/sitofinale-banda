@@ -29,66 +29,79 @@
       scroll-behavior: smooth;
     }
 
-    body {
-      font-family: Arial, sans-serif;
-      color: var(--text);
-      background: var(--white);
-      line-height: 1.7;
-    }
+    
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #FFFFFF;
+  color: #303943;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
 
-    header {
-      background: var(--navy);
-      color: var(--white);
-      padding: 18px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 24px;
-      flex-wrap: wrap;
-      position: static;
-    }
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  line-height: 1.2;
+}
 
-    .logo-link {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--white);
-      text-decoration: none;
-      min-width: 0;
-    }
 
-    .logo-img {
-      width: 54px;
-      height: 54px;
-      object-fit: contain;
-      flex-shrink: 0;
-      border-radius: 50%;
-      background: var(--white);
-    }
+  
+header {
+  position: relative;
+  width: 100%;
+  padding: 17px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  background: #172A43;
+  color: #FFFFFF;
+  z-index: 10;
+  flex-wrap: wrap;
+}
 
-    .logo {
-      font-family: Georgia, serif;
-      font-size: 1.05rem;
-      font-weight: bold;
-      line-height: 1.35;
-    }
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
 
-    .logo small {
-      display: block;
-      font-family: Arial, sans-serif;
-      font-size: 0.72rem;
-      font-weight: normal;
-      letter-spacing: 1.5px;
-      margin-top: 3px;
-      color: #D6E2F0;
-    }
+.logo-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #FFFFFF;
+  padding: 3px;
+}
 
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+nav a {
+  color: #F0F4F8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #AFC8E1;
+}
 
     nav a {
       color: var(--white);
@@ -392,16 +405,14 @@
 
 <body>
 
+
 <header>
   <a class="logo-link" href="index.html" aria-label="Torna alla Home">
     <img class="logo-img" src="logo.jpeg" alt="Logo Corpo Bandistico Municipale G. Verdi">
-    <span class="logo">
-      G. VERDI
-      <small>CORPO BANDISTICO · 1911</small>
-    </span>
+    <span>G. VERDI · 1911</span>
   </a>
 
-  <nav>
+  <nav aria-label="Navigazione principale">
     <a href="index.html">Home</a>
     <a href="la-banda.html">La Banda</a>
     <a href="musica.html">La Scuola di Musica</a>
@@ -411,6 +422,7 @@
     <a href="index.html#contatti">Contatti</a>
   </nav>
 </header>
+
 
 <section class="hero">
   <div class="hero-content">
