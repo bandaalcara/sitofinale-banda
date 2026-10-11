@@ -299,20 +299,24 @@
       margin-bottom: 12px;
     }
 
-    .director-photo {
-      margin-top: 22px;
-      min-height: 220px;
-      background: var(--light);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--muted);
-      font-family: Georgia, "Times New Roman", serif;
-      text-align: center;
-      padding: 20px;
-    }
+   .director-photo {
+  margin-top: 22px;
+  min-height: 220px;
+  background: var(--light);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
 
+.director-photo img {
+  display: block;
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  object-position: center;
+}
     .director-buttons {
       display: flex;
       gap: 12px;
@@ -519,15 +523,19 @@
           con soddisfazione e orgoglio.
         </p>
 
-        <div class="director-photo">
-          📷 Foto del Maestro Michele Saccone
-        </div>
+       <div class="director-photo">
+  <img
+    src="maestro.jpg"
+    alt="Maestro Michele Saccone"
+    loading="lazy"
+  >
+</div>
 
         <div class="director-buttons">
-          <a href="la-banda.html">Leggi il curriculum</a>
-          <a href="index.html#galleria">Guarda la fotogallery</a>
-        </div>
-      </div>
+  <a href="la-banda.html#curriculum-maestro">
+    Leggi il curriculum
+  </a>
+</div>
 
       <div class="director-card">
         <div class="director-years">1973 – 1980</div>
