@@ -128,17 +128,21 @@
 
     /* HERO */
 
-    .hero {
-      min-height: 42vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 80px 7%;
-      background:
-        linear-gradient(rgba(23, 42, 67, 0.62), rgba(23, 42, 67, 0.62)),
-      color: var(--white);
-    }
+.hero {
+  min-height: 42vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 7%;
+  background-color: var(--navy);
+  background-image: linear-gradient(
+    rgba(23, 42, 67, 0.15),
+    rgba(23, 42, 67, 0.15)
+  );
+  color: var(--white);
+}
+
 
     .hero-content {
       max-width: 900px;
@@ -507,11 +511,15 @@
       }
 
       nav {
-        width: 100%;
-        justify-content: flex-start;
-        gap: 10px 14px;
-        font-size: 10px;
-      }
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
 
       section.content-section {
         padding: 55px 6%;
@@ -1014,7 +1022,7 @@
             <img
               id="foto-cutuli"
               class="gallery-image"
-              src="foto-eventi/499708553-1293897372741684-3626934576983418496-n_orig.jpg"
+              src="foto-eventi/698990281-1623511926446892-948983126384039020-n.jpg"
               alt="Concorso Maria Grazia Cutuli"
               onclick="ingrandisciFoto(this.src)"
             >
