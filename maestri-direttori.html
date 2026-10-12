@@ -22,11 +22,72 @@ header{position:relative;width:100%;padding:17px 5%;display:flex;justify-content
 nav{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:8px 20px;font-size:12px;text-transform:uppercase;letter-spacing:.7px}
 nav a{color:#F0F4F8;text-decoration:none;transition:color .2s}
 nav a:hover,nav a[aria-current="page"]{color:#AFC8E1}
-.hero{min-height:42vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:75px 20px;background:#172A43;color:#fff}
-.hero-content{max-width:850px}
-.hero .eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:.85rem;margin-bottom:14px;color:#D6E5F5}
-.hero h1{font-size:clamp(2.5rem,7vw,4.6rem);line-height:1.15;margin-bottom:18px}
-.hero p{font-size:1.08rem;max-width:720px;margin:auto;color:#F0F4F9}
+
+/* HERO */
+
+.hero {
+  background: var(--navy);
+  color: var(--white);
+  width: calc(100% - 56px);
+  max-width: 1400px;
+  margin: 28px auto 0;
+  padding: 55px 24px 50px;
+  text-align: center;
+  border-radius: 0;
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero .section-label {
+  color: #AFC8E1;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 11px;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+.hero h1 {
+  font-size: clamp(34px, 5vw, 54px);
+  font-weight: normal;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.hero p {
+  max-width: 750px;
+  margin: 0 auto 12px;
+  color: #DCE4EC;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.hero-line {
+  width: 65px;
+  height: 2px;
+  background: var(--blue);
+  margin: 25px auto 0;
+}
+
+@media (max-width: 650px) {
+  .hero {
+    width: calc(100% - 30px);
+    margin: 18px auto 0;
+    padding: 38px 18px;
+  }
+
+  .hero h1 {
+    font-size: clamp(32px, 8vw, 42px);
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+}
+
 section{max-width:1200px;margin:auto;padding:55px 7%}
 .section-label{display:inline-block;color:var(--blue);font-size:.78rem;font-weight:bold;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px}
 .section-title{color:var(--navy);font-size:clamp(1.9rem,4vw,2.5rem);margin-bottom:18px}
