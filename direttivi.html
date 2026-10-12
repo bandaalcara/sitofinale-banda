@@ -1,648 +1,1120 @@
 
+
+
 <!DOCTYPE html>
+
 <html lang="it">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>I Direttivi | Corpo Bandistico Municipale “G. Verdi”</title>
+
   <meta name="theme-color" content="#172A43">
+
   <meta name="description" content="Il direttivo attuale e i precedenti direttivi dell'Associazione Musicale Alcarese di Alcara Li Fusi.">
 
   <style>
+
     * {
+
       box-sizing: border-box;
+
       margin: 0;
+
       padding: 0;
+
     }
 
     :root {
+
       --navy: #172A43;
+
       --navy-dark: #102035;
+
+      --navy-light: #243D5B;
+
       --blue: #53799F;
-      --light: #EDF2F7;
+
+      --blue-hover: #3F6488;
+
       --white: #FFFFFF;
+
+      --light: #EDF2F7;
+
+      --light-blue: #F5F8FB;
+
       --text: #303943;
-      --muted: #647184;
-      --border: #DCE4ED;
+
+      --muted: #657181;
+
+      --border: #DCE4EC;
+
       --gold: #C9A45C;
+
     }
 
     html {
+
       scroll-behavior: smooth;
+
       scroll-padding-top: 25px;
+
     }
 
     body {
+
       font-family: Arial, Helvetica, sans-serif;
+
       background: var(--white);
+
       color: var(--text);
+
       line-height: 1.7;
+
       -webkit-font-smoothing: antialiased;
+
     }
 
     h1, h2, h3, h4 {
+
       font-family: Georgia, "Times New Roman", serif;
+
       font-weight: 500;
+
       line-height: 1.25;
+
     }
 
     a {
+
       color: inherit;
+
     }
 
-    /* HEADER */
+    /* HEADER - STESSO STILE DE LA SCUOLA DI MUSICA */
 
     header {
+
       position: relative;
+
       width: 100%;
+
       padding: 17px 5%;
+
       display: flex;
+
       justify-content: space-between;
+
       align-items: center;
+
       gap: 25px;
+
       background: var(--navy);
+
       color: var(--white);
-      flex-wrap: wrap;
+
+      z-index: 10;
+
     }
 
     .logo-link {
+
       display: flex;
+
       align-items: center;
+
       gap: 12px;
+
       flex-shrink: 0;
+
       color: var(--white);
+
       text-decoration: none;
+
       font-family: Georgia, "Times New Roman", serif;
+
       font-size: 19px;
+
       font-weight: bold;
+
       letter-spacing: 1px;
+
     }
 
     .logo-img {
+
       width: 48px;
+
       height: 48px;
+
       object-fit: contain;
+
       border-radius: 50%;
+
       background: var(--white);
+
       padding: 3px;
+
+    }
+
+    .header-right {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: flex-end;
+
+      gap: 22px;
+
+      min-width: 0;
+
     }
 
     nav {
+
       display: flex;
+
       align-items: center;
+
       justify-content: flex-end;
+
       flex-wrap: wrap;
+
       gap: 8px 20px;
+
       font-size: 12px;
+
       text-transform: uppercase;
+
       letter-spacing: 0.7px;
+
     }
 
     nav a {
+
       color: #F0F4F8;
+
       text-decoration: none;
+
       transition: color 0.2s ease;
+
     }
 
-    nav a:hover {
-      color: var(--gold);
+    nav a:hover,
+
+    nav a[aria-current="page"] {
+
+      color: #AFC8E1;
+
     }
 
-    /* HERO */
+    /* HERO - STESSO RIQUADRO DE LA SCUOLA DI MUSICA */
 
     .hero {
-      position: relative;
-      isolation: isolate;
-      min-height: 240px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 60px 20px;
+
+      background: var(--navy);
+
       color: var(--white);
-      background:
-        linear-gradient(rgba(16, 32, 53, 0.78),
-                        rgba(23, 42, 67, 0.82)),
-        var(--navy);
-      overflow: hidden;
+
+      width: calc(100% - 56px);
+
+      max-width: 1400px;
+
+      margin: 28px auto 0;
+
+      padding: 55px 24px 50px;
+
+      text-align: center;
+
     }
 
     .hero-content {
+
       max-width: 900px;
+
+      margin: 0 auto;
+
+    }
+
+    .hero .section-label {
+
+      color: #AFC8E1;
+
+      text-transform: uppercase;
+
+      letter-spacing: 3px;
+
+      font-size: 11px;
+
+      font-weight: bold;
+
+      margin-bottom: 14px;
+
     }
 
     .hero h1 {
-      font-size: clamp(2.2rem, 5vw, 3.6rem);
-      margin-bottom: 12px;
+
+      font-size: clamp(34px, 5vw, 54px);
+
+      font-weight: normal;
+
+      line-height: 1.2;
+
+      margin-bottom: 18px;
+
     }
 
     .hero p {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.2rem;
-      color: #E5EBF2;
+
+      max-width: 750px;
+
+      margin: 0 auto 12px;
+
+      color: #DCE4EC;
+
+      font-size: 15px;
+
+      line-height: 1.8;
+
     }
 
     .hero-line {
+
       width: 65px;
-      height: 3px;
-      background: var(--gold);
+
+      height: 2px;
+
+      background: var(--blue);
+
       margin: 25px auto 0;
-      border-radius: 3px;
+
     }
 
     /* SEZIONI */
 
     section {
+
       max-width: 1200px;
+
       margin: auto;
+
       padding: 55px 5%;
+
     }
 
     .section-title {
+
       font-family: Georgia, "Times New Roman", serif;
+
       color: var(--navy);
+
       font-size: clamp(1.9rem, 4vw, 2.5rem);
+
       margin-bottom: 12px;
+
     }
 
     .section-intro {
+
       color: var(--muted);
+
       margin-bottom: 30px;
+
       max-width: 850px;
+
     }
 
     .section-heading {
+
       display: flex;
+
       align-items: center;
+
       gap: 18px;
+
       margin-bottom: 28px;
+
     }
 
     .section-heading::after {
+
       content: "";
+
       height: 1px;
+
       flex: 1;
+
       background: var(--border);
+
     }
 
     /* DIRETTIVO ATTUALE */
 
     .current-board {
+
       max-width: none;
+
       padding-left: max(5%, calc((100% - 1120px) / 2));
+
       padding-right: max(5%, calc((100% - 1120px) / 2));
+
       background: var(--white);
+
     }
 
     .leadership-grid {
+
       display: grid;
+
       grid-template-columns: 1.15fr 0.85fr 0.85fr;
+
       gap: 28px;
+
       align-items: start;
+
     }
 
     .leader-main {
+
       min-width: 0;
+
     }
 
     .leader-main h3,
+
     .role-block h3 {
+
       color: var(--navy);
+
       font-family: Georgia, "Times New Roman", serif;
+
       font-size: 1.25rem;
+
       margin-bottom: 12px;
+
     }
 
     .leader-profile {
+
       display: grid;
+
       grid-template-columns: 145px minmax(0, 1fr);
+
       gap: 18px;
+
       align-items: center;
+
     }
 
     .portrait {
+
       width: 100%;
+
       height: 190px;
+
       object-fit: cover;
+
       object-position: center;
+
       border-radius: 7px;
+
       background: var(--light);
+
       border: 1px solid var(--border);
+
     }
 
     .leader-name {
+
       color: var(--navy);
+
       font-family: Georgia, "Times New Roman", serif;
+
       font-size: 1.18rem;
+
       font-weight: bold;
+
       margin-bottom: 7px;
+
     }
 
     .qualification {
+
       color: var(--muted);
+
       font-size: 0.91rem;
+
       font-style: italic;
+
       line-height: 1.6;
+
     }
 
     .role-column {
+
       padding-left: 23px;
+
       border-left: 1px solid var(--border);
+
       display: flex;
+
       flex-direction: column;
+
       gap: 28px;
+
     }
 
     .role-block h3 {
+
       font-size: 1.1rem;
+
       margin-bottom: 6px;
+
     }
 
     .role-block p {
+
       margin-bottom: 5px;
+
     }
 
     .role-block .qualification {
+
       display: block;
+
     }
 
     .component-list {
+
       list-style: none;
+
     }
 
     .component-list li {
+
       padding: 4px 0;
+
     }
 
     .gold-label {
+
       display: inline-block;
+
       color: var(--navy);
+
       font-weight: bold;
+
       border-bottom: 2px solid var(--gold);
+
       padding-bottom: 2px;
+
       margin-bottom: 8px;
+
     }
 
     /* MAESTRO DIRETTORE */
 
     .director-section {
+
       max-width: none;
+
       background: #F8FAFC;
+
       padding-left: max(5%, calc((100% - 1120px) / 2));
+
       padding-right: max(5%, calc((100% - 1120px) / 2));
+
       border-top: 1px solid var(--border);
+
       border-bottom: 1px solid var(--border);
+
     }
 
     .director-grid {
+
       display: grid;
+
       grid-template-columns: 1.15fr 0.85fr 0.85fr;
+
       gap: 28px;
+
       align-items: start;
+
     }
 
     .director-profile {
+
       display: grid;
+
       grid-template-columns: 145px minmax(0, 1fr);
+
       gap: 18px;
+
       align-items: center;
+
     }
 
     .director-profile .portrait {
+
       height: 210px;
+
     }
 
     .director-name {
+
       font-family: Georgia, "Times New Roman", serif;
+
       color: var(--navy);
+
       font-size: 1.3rem;
+
       font-weight: bold;
+
       margin-bottom: 7px;
+
     }
 
     .service-note {
+
       display: inline-block;
+
       margin-top: 9px;
+
       font-size: 0.94rem;
+
       color: var(--navy);
+
     }
 
     /* RESPONSABILI COMUNICAZIONE */
 
     .communication {
+
       margin-top: 0;
+
     }
 
     /* PRECEDENTI DIRETTIVI */
 
     .past-boards {
+
       max-width: none;
+
       background: var(--light);
+
       padding-left: max(4%, calc((100% - 1200px) / 2));
+
       padding-right: max(4%, calc((100% - 1200px) / 2));
+
     }
 
     .past-boards .section-title {
+
       margin-bottom: 10px;
+
     }
 
     .past-intro {
+
       color: var(--muted);
+
       margin-bottom: 30px;
+
     }
 
     .past-grid {
+
       display: grid;
+
       grid-template-columns: repeat(3, minmax(0, 1fr));
+
       gap: 18px;
+
       align-items: stretch;
+
     }
 
     .past-card {
+
       background: var(--white);
+
       border: 1px solid var(--border);
+
       border-top: 4px solid var(--blue);
+
       border-radius: 9px;
+
       padding: 24px 20px;
+
       box-shadow: 0 4px 16px rgba(23, 42, 67, 0.04);
+
       min-width: 0;
+
     }
 
     .past-card h3 {
+
       color: var(--navy);
+
       font-size: 1.18rem;
+
       line-height: 1.45;
+
       padding-bottom: 14px;
+
       margin-bottom: 17px;
+
       border-bottom: 1px solid var(--border);
+
     }
 
     .past-card h4 {
+
       font-family: Arial, Helvetica, sans-serif;
+
       font-size: 0.96rem;
+
       color: var(--navy);
+
       margin: 20px 0 8px;
+
     }
 
     .past-card h4:first-of-type {
+
       margin-top: 0;
+
     }
 
     .past-card p {
+
       font-size: 0.91rem;
+
       margin-bottom: 8px;
+
       overflow-wrap: anywhere;
+
     }
 
     .past-card strong {
+
       color: var(--navy);
+
     }
 
     .past-card ul {
+
       list-style: none;
+
       margin: 6px 0 12px;
+
       padding-left: 12px;
+
     }
 
     .past-card li {
+
       font-size: 0.91rem;
+
       margin-bottom: 5px;
+
       overflow-wrap: anywhere;
+
     }
 
     .past-card .note {
+
       color: var(--muted);
+
       font-size: 0.86rem;
+
       font-style: italic;
+
     }
 
     /* NAVIGAZIONE IN FONDO */
 
     .page-links {
+
       display: flex;
+
       justify-content: center;
+
       flex-wrap: wrap;
+
       gap: 12px;
+
       margin-top: 35px;
+
     }
 
     .button {
+
       display: inline-block;
+
       padding: 12px 23px;
+
       background: var(--navy);
+
       color: var(--white);
+
       text-decoration: none;
+
       font-weight: bold;
+
       border: 1px solid var(--navy);
+
       border-radius: 6px;
+
       text-align: center;
+
       transition: background 0.2s ease, color 0.2s ease;
+
     }
 
     .button:hover {
+
       background: var(--blue);
+
       border-color: var(--blue);
+
     }
 
     .button-outline {
+
       background: transparent;
+
       color: var(--navy);
+
     }
 
     .button-outline:hover {
+
       color: var(--white);
+
     }
 
-    /* FOOTER */
+    /* FOOTER - STESSO STILE DE LA SCUOLA DI MUSICA */
 
     footer {
-      background: var(--navy-dark);
-      color: #D9E2EC;
+
+      background: #102035;
+
+      color: #B8C5D4;
+
       text-align: center;
-      padding: 28px 20px;
-      font-size: 0.9rem;
+
+      padding: 25px 7%;
+
+      font-size: 12px;
+
+      line-height: 1.9;
+
     }
 
-    footer p + p {
-      margin-top: 4px;
-    }
+    footer strong {
 
-    .footer-socials {
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      margin-top: 12px;
-    }
-
-    .footer-socials a {
       color: var(--white);
-      text-decoration: none;
+
+      font-size: 13px;
+
     }
 
-    .footer-socials a:hover {
-      color: var(--gold);
+    footer p:last-child {
+
+      font-size: 10px;
+
+      border-top: 1px solid rgba(184, 197, 212, 0.25);
+
+      margin-top: 10px;
+
+      padding-top: 10px;
+
     }
 
     /* TABLET */
 
     @media (max-width: 1000px) {
+
       .leadership-grid,
+
       .director-grid {
+
         grid-template-columns: 1fr 1fr;
+
       }
 
       .leader-main,
+
       .director-grid > .leader-main {
+
         grid-column: 1 / -1;
+
       }
 
       .role-column {
+
         padding-left: 18px;
+
       }
 
       .past-grid {
+
         grid-template-columns: 1fr 1fr;
+
       }
 
       .past-card:last-child {
+
         grid-column: 1 / -1;
+
       }
+
     }
 
     /* SMARTPHONE */
 
     @media (max-width: 700px) {
+
       header {
+
         flex-direction: column;
+
         align-items: flex-start;
+
         padding: 18px 5%;
+
+      }
+
+      .header-right {
+
+        width: 100%;
+
+        justify-content: flex-start;
+
       }
 
       nav {
+
         justify-content: flex-start;
+
         gap: 12px 18px;
+
       }
 
       nav a {
+
         font-size: 11px;
+
       }
 
       .hero {
-        min-height: 210px;
-        padding: 45px 20px;
+
+        width: calc(100% - 30px);
+
+        margin: 18px auto 0;
+
+        padding: 38px 18px;
+
+      }
+
+      .hero h1 {
+
+        font-size: clamp(32px, 8vw, 42px);
+
       }
 
       .hero p {
-        font-size: 1.05rem;
+
+        font-size: 14px;
+
       }
 
       section {
+
         padding: 42px 6%;
+
       }
 
       .leadership-grid,
+
       .director-grid {
+
         grid-template-columns: 1fr;
+
         gap: 25px;
+
       }
 
       .leader-main,
+
       .director-grid > .leader-main {
+
         grid-column: auto;
+
       }
 
       .role-column {
+
         border-left: 0;
+
         border-top: 1px solid var(--border);
+
         padding: 22px 0 0;
+
         gap: 22px;
+
       }
 
       .leader-profile,
+
       .director-profile {
+
         grid-template-columns: 115px minmax(0, 1fr);
+
         gap: 15px;
+
       }
 
       .portrait {
+
         height: 160px;
+
       }
 
       .director-profile .portrait {
+
         height: 175px;
+
       }
 
       .past-grid {
+
         grid-template-columns: 1fr;
+
       }
 
       .past-card:last-child {
+
         grid-column: auto;
+
       }
 
       .past-card {
+
         padding: 22px 18px;
+
       }
 
       .page-links {
+
         flex-direction: column;
+
         align-items: stretch;
+
       }
 
       .button {
+
         width: 100%;
+
       }
+
     }
 
     @media (max-width: 380px) {
+
       .leader-profile,
+
       .director-profile {
+
         grid-template-columns: 1fr;
+
       }
 
       .portrait,
+
       .director-profile .portrait {
+
         width: 155px;
+
         height: 190px;
+
       }
 
       .logo-link {
+
         font-size: 0.95rem;
+
       }
+
     }
+
   </style>
+
 </head>
 
 <body>
 
 <header>
+
   <a class="logo-link" href="index.html" aria-label="Torna alla Home">
+
     <img class="logo-img" src="logo.jpeg"
+
          alt="Logo Corpo Bandistico Municipale G. Verdi">
+
     <span>G. VERDI · 1911</span>
+
   </a>
 
-  <nav aria-label="Navigazione principale">
-    <a href="index.html">Home</a>
-    <a href="la-banda.html">La Banda</a>
-    <a href="musica.html">La Scuola di Musica</a>
-    <a href="eventi.html">Eventi</a>
-    <a href="albo.html">Albo Storico</a>
-    <a href="maestri-direttori.html">Maestri Direttori</a>
-    <a href="galleria.html">Galleria</a>
-    <a href="contatti.html">Contatti</a>
-  </nav>
+  <div class="header-right">
+
+    <nav aria-label="Navigazione principale">
+
+      <a href="index.html">Home</a>
+
+      <a href="la-banda.html">La Banda</a>
+
+      <a href="musica.html">La Scuola di Musica</a>
+
+      <a href="eventi.html">Eventi</a>
+
+      <a href="albo.html">Albo Storico</a>
+
+      <a href="maestri-direttori.html">Maestri Direttori</a>
+
+      <a href="galleria.html">Galleria</a>
+
+      <a href="index.html#contatti">Contatti</a>
+
+    </nav>
+
+  </div>
+
 </header>
 
 <main>
 
   <section class="hero">
+
     <div class="hero-content">
+
+      <p class="section-label">Associazione Musicale Alcarese · Dal 1911</p>
+
       <h1>Direttivo dell'Associazione Musicale</h1>
+
       <p>Eletto nel gennaio 2026</p>
+
       <div class="hero-line"></div>
+
     </div>
+
   </section>
 
   <!-- DIRETTIVO IN CARICA -->
@@ -650,13 +1122,19 @@
   <section class="current-board" id="direttivo-attuale">
 
     <div class="section-heading">
+
       <h2 class="section-title">Il Direttivo in carica</h2>
+
     </div>
 
     <p class="section-intro">
+
       Il Direttivo dell'Associazione Musicale Alcarese guida le attività
+
       organizzative, culturali e musicali del Corpo Bandistico Municipale
+
       “G. Verdi”.
+
     </p>
 
     <div class="leadership-grid">
@@ -664,23 +1142,37 @@
       <!-- PRESIDENTE -->
 
       <div class="leader-main">
+
         <h3>Presidente</h3>
 
         <div class="leader-profile">
+
           <img
+
             class="portrait"
+
             src="https://corpobandisticomunicipalealcara.weebly.com/uploads/5/5/4/7/55474777/published/51513480-2168584566534186-5910570771113050112-o.jpg?1581439818"
+
             alt="M° Giuseppe Calanni Macchio"
+
             loading="lazy">
 
           <div>
+
             <p class="leader-name">M° Giuseppe Calanni Macchio</p>
+
             <p class="qualification">
+
               Diplomato in Tromba al Conservatorio “A. Corelli”
+
               di Messina nel 2019.
+
             </p>
+
           </div>
+
         </div>
+
       </div>
 
       <!-- VICEPRESIDENTE E SEGRETARIO -->
@@ -688,17 +1180,27 @@
       <div class="role-column">
 
         <div class="role-block">
+
           <h3>Vice Presidente</h3>
+
           <p><strong>M° Antonino Santoro</strong></p>
+
           <p class="qualification">
+
             Diplomato in Clarinetto al Conservatorio “A. Corelli”
+
             di Messina.
+
           </p>
+
         </div>
 
         <div class="role-block">
+
           <h3>Segretario – Consigliere</h3>
+
           <p><strong>Alexander Pio Collica</strong></p>
+
         </div>
 
       </div>
@@ -708,20 +1210,29 @@
       <div class="role-column">
 
         <div class="role-block">
+
           <h3>Altri componenti del Direttivo</h3>
 
           <ul class="component-list">
+
             <li>Dott.ssa Melissa Dottore</li>
+
             <li>Dott.ssa Mariapia Faraci</li>
+
             <li>Sig. Salvatore Gioitta</li>
+
             <li>Sig.ra Alisia Oriti</li>
+
             <li>M° Santino Santoro</li>
+
           </ul>
+
         </div>
 
       </div>
 
     </div>
+
   </section>
 
   <!-- MAESTRO DIRETTORE E ALTRE CARICHE -->
@@ -729,52 +1240,83 @@
   <section class="director-section" id="maestro-direttore">
 
     <div class="section-heading">
+
       <h2 class="section-title">Maestro Direttore</h2>
+
     </div>
 
     <div class="director-grid">
 
       <div class="leader-main">
+
         <div class="director-profile">
 
           <img
+
             class="portrait"
+
             src="https://corpobandisticomunicipalealcara.weebly.com/uploads/5/5/4/7/55474777/published/1345446_2.jpg?1581441074"
+
             alt="M° Michele Saccone"
+
             loading="lazy">
 
           <div>
+
             <p class="director-name">M° Michele Saccone</p>
+
             <p class="qualification">
+
               Diplomato in Fagotto al Conservatorio “A. Corelli”
+
               di Messina nel 1984.
+
             </p>
+
             <p class="service-note">In carica dal 1981.</p>
+
           </div>
 
         </div>
+
       </div>
 
       <div class="role-column">
 
         <div class="role-block">
+
           <h3>Capo Banda</h3>
+
           <p><strong>M° Antonio Mannanici</strong></p>
+
           <p class="qualification">
+
             Diplomato in Tuba al Conservatorio “A. Corelli”
+
             di Messina.
+
           </p>
+
         </div>
 
         <div class="role-block communication">
+
           <h3>Responsabili della Comunicazione</h3>
+
           <ul class="component-list">
+
             <li>Alisia Oriti</li>
+
             <li>Alexander Pio Collica</li>
+
             <li>Maria Pia Faraci</li>
+
             <li>Maria Saccone</li>
+
             <li>Antonino Santoro</li>
+
           </ul>
+
         </div>
 
       </div>
@@ -782,9 +1324,13 @@
       <div class="role-column">
 
         <div class="role-block">
+
           <h3>Tesoriere e Vice-Tesoriere</h3>
+
           <p>Sig.ra Maria Saccone</p>
+
           <p>M° Salvatore Saccone</p>
+
         </div>
 
       </div>
@@ -792,9 +1338,13 @@
     </div>
 
     <div class="page-links">
+
       <a class="button" href="maestri-direttori.html">
+
         Scopri i Maestri Direttori
+
       </a>
+
     </div>
 
   </section>
@@ -804,12 +1354,17 @@
   <section class="past-boards" id="precedenti-direttivi">
 
     <div class="section-heading">
+
       <h2 class="section-title">Precedenti Direttivi</h2>
+
     </div>
 
     <p class="past-intro">
+
       I direttivi che hanno guidato l'Associazione Musicale Alcarese
+
       negli anni precedenti, con le rispettive cariche e responsabilità.
+
     </p>
 
     <div class="past-grid">
@@ -817,153 +1372,231 @@
       <!-- DIRETTIVO 2020-2023 -->
 
       <article class="past-card">
+
         <h3>Dal 10 gennaio 2020 al 26 gennaio 2023</h3>
 
         <h4>Cariche principali</h4>
 
         <p><strong>Presidente:</strong><br>
+
           M° Giuseppe Calanni Macchio
+
         </p>
 
         <p><strong>Vice Presidente:</strong><br>
+
           M° Antonio Mannanici
+
         </p>
 
         <p><strong>Segretario:</strong><br>
+
           Dott. Marco Oriti
+
         </p>
 
         <h4>Consiglieri</h4>
+
         <ul>
+
           <li>M° Sandro Galati Casmiro</li>
+
           <li>M° Antonio Mannanici</li>
+
           <li>M° Salvatore Oriti</li>
+
           <li>M° Elia Pirronello</li>
+
           <li>Antonio Santoro</li>
+
           <li>M° Santino Santoro</li>
+
         </ul>
 
         <h4>Altre cariche assegnate</h4>
 
         <p><strong>Capobanda:</strong><br>
+
           M° Antonio Mannanici
+
         </p>
 
         <p><strong>Vice Capobanda:</strong><br>
+
           M° Luca Santoro
+
         </p>
 
         <p><strong>Tesoriere:</strong><br>
+
           Dott. Marco Oriti
+
         </p>
 
         <p><strong>Addetto Stampa:</strong><br>
+
           Maria Pia Faraci
+
         </p>
+
       </article>
 
       <!-- DIRETTIVO 2017-2020 -->
 
       <article class="past-card">
+
         <h3>Dal 7 gennaio 2017 al 9 gennaio 2020</h3>
 
         <h4>Cariche principali</h4>
 
         <p><strong>Presidente:</strong><br>
+
           M° Pina Stazzone
+
         </p>
 
         <p><strong>Vice Presidente:</strong><br>
+
           M° Antonio Mannanici
+
         </p>
 
         <p><strong>Segretario:</strong><br>
+
           Dott. Marco Oriti
+
         </p>
 
         <h4>Consiglieri</h4>
+
         <ul>
+
           <li>M° Sandro Galati Casmiro</li>
+
           <li>M° Salvatore Oriti</li>
+
           <li>M° Elia Pirronello</li>
+
           <li>M° Michele Saccone</li>
+
           <li>M° Santino Santoro</li>
+
           <li>Dott.ssa Antonina Vaneria</li>
+
         </ul>
 
         <h4>Altre cariche assegnate</h4>
 
         <p><strong>Capobanda:</strong><br>
+
           M° Sandro Galati Casmiro
+
         </p>
 
         <p><strong>Tesoriere:</strong><br>
+
           Dott. Marco Oriti
+
         </p>
 
         <p><strong>Addetto Stampa:</strong><br>
+
           Dott.ssa Antonina Vaneria
+
         </p>
+
       </article>
 
       <!-- DIRETTIVO 2014-2017 -->
 
       <article class="past-card">
+
         <h3>Dal gennaio 2014 al 6 gennaio 2017</h3>
 
         <h4>Cariche principali</h4>
 
         <p><strong>Presidente:</strong><br>
+
           M° Pina Stazzone
+
         </p>
 
         <p><strong>Vice Presidente:</strong><br>
+
           Ivano Oriti
+
         </p>
 
         <p><strong>Segretario:</strong><br>
+
           Dott. Marco Oriti
+
         </p>
 
         <h4>Consiglieri</h4>
+
         <ul>
+
           <li>M° Andrea Restifo</li>
+
           <li>Maria Saccone</li>
+
           <li>M° Michele Saccone</li>
+
           <li>
+
             M° Santino Santoro
+
             <span class="note">
+
               (subentrato ad Alessandro Gioitta)
+
             </span>
+
           </li>
+
         </ul>
 
         <h4>Altre cariche assegnate</h4>
 
         <p><strong>Capobanda:</strong><br>
+
           M° Andrea Restifo
+
         </p>
 
         <p><strong>Tesoriere:</strong><br>
+
           Dott. Marco Oriti
+
         </p>
 
         <p><strong>Addetto Stampa:</strong><br>
+
           Dott.ssa Antonina Vaneria
+
           <span class="note">(dal 2015)</span>
+
         </p>
+
       </article>
 
     </div>
 
     <div class="page-links">
+
       <a class="button" href="albo.html">
+
         Consulta l'Albo Storico
+
       </a>
 
       <a class="button button-outline" href="la-banda.html">
+
         Torna a La Banda
+
       </a>
+
     </div>
 
   </section>
@@ -971,23 +1604,23 @@
 </main>
 
 <footer>
-  <p>
-    © 2026 Associazione Musicale Alcarese –
-    Corpo Bandistico Municipale “G. Verdi”
-  </p>
+
+  <p><strong>Corpo Bandistico Municipale “G. Verdi”</strong></p>
+
+  <p>© 2026 Associazione Musicale Alcarese – Alcara Li Fusi, Messina</p>
+
   <p>Dal 1911, musica e tradizione.</p>
 
-  <div class="footer-socials">
-    <a href="https://www.facebook.com/"
-       target="_blank" rel="noopener noreferrer">
-      Facebook
-    </a>
-    <a href="https://www.instagram.com/"
-       target="_blank" rel="noopener noreferrer">
-      Instagram
-    </a>
-  </div>
+  <p>
+
+    Sito web creato e curato da Antonina Vaneria
+
+    e dai Responsabili della Comunicazione del Direttivo.
+
+  </p>
+
 </footer>
 
 </body>
+
 </html>
