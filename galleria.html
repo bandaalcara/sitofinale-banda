@@ -58,13 +58,14 @@
     header {
       background: var(--navy);
       color: var(--white);
+      border-bottom: none;
       position: relative;
       z-index: 10;
+      padding: 17px 4%;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 25px;
-      padding: 17px 5%;
     }
 
     .logo {
@@ -72,6 +73,7 @@
       align-items: center;
       gap: 12px;
       color: var(--white);
+      text-decoration: none;
       flex-shrink: 0;
     }
 
@@ -156,6 +158,7 @@
     }
 
     .hero h1 {
+      font-family: Georgia, "Times New Roman", serif;
       font-size: clamp(34px, 5vw, 54px);
       font-weight: normal;
       line-height: 1.2;
@@ -176,8 +179,689 @@
       margin: 25px auto 0;
     }
 
-    /* GALLERIA */
+    /* CONTENUTO */
 
     main {
       max-width: none;
       margin: 0 auto;
+      padding: 45px max(28px, calc((100% - 1400px) / 2)) 70px;
+      background: var(--light);
+    }
+
+    .gallery-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .gallery-heading h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--navy);
+      font-size: 29px;
+      font-weight: normal;
+    }
+
+    .gallery-heading p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    .photo-count {
+      font-size: 12px;
+      color: var(--navy);
+      border-bottom: 1px solid var(--blue);
+      padding-bottom: 5px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 26px 20px;
+    }
+
+    .photo-card {
+      min-width: 0;
+      cursor: pointer;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      overflow: hidden;
+      text-align: left;
+      color: inherit;
+      font: inherit;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .photo-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgba(23, 42, 67, 0.13);
+    }
+
+    .photo-frame {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: var(--light);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .photo-frame img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .photo-card:hover .photo-frame img {
+      transform: scale(1.045);
+    }
+
+    .photo-card:focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 4px;
+    }
+
+    .photo-info {
+      padding: 12px 13px 15px;
+    }
+
+    .photo-year {
+      display: block;
+      font-size: 11px;
+      font-weight: bold;
+      color: var(--blue);
+      letter-spacing: 1.3px;
+      margin-bottom: 3px;
+    }
+
+    .photo-caption {
+      font-size: 13px;
+      line-height: 1.45;
+      color: var(--navy);
+      overflow-wrap: anywhere;
+    }
+
+    .photo-card[hidden] {
+      display: none;
+    }
+
+    .empty-message {
+      display: none;
+      text-align: center;
+      color: var(--muted);
+      padding: 40px 0;
+    }
+
+    /* FOTO NON DISPONIBILE */
+
+    .photo-frame img.image-error {
+      display: none;
+    }
+
+    .image-placeholder {
+      display: none;
+      width: 100%;
+      height: 100%;
+      min-height: 130px;
+      padding: 15px;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    .image-placeholder.visible {
+      display: flex;
+    }
+
+    /* VISUALIZZAZIONE INGRANDITA */
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(10, 19, 32, 0.96);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 65px 75px 80px;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      min-height: 0;
+    }
+
+    .lightbox img {
+      max-width: 100%;
+      max-height: calc(100% - 65px);
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .lightbox-caption {
+      color: var(--white);
+      text-align: center;
+      margin-top: 15px;
+      font-size: 13px;
+      max-width: 850px;
+    }
+
+    .lightbox-year {
+      color: var(--blue);
+      margin-right: 8px;
+      font-weight: bold;
+    }
+
+    .lightbox-close,
+    .lightbox-arrow {
+      position: absolute;
+      background: transparent;
+      color: white;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.2s;
+    }
+
+    .lightbox-close:hover,
+    .lightbox-arrow:hover {
+      color: var(--blue);
+    }
+
+    .lightbox-close {
+      top: 20px;
+      right: 28px;
+      font-size: 38px;
+      width: 45px;
+      height: 45px;
+    }
+
+    .lightbox-arrow {
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 48px;
+      width: 55px;
+      height: 70px;
+    }
+
+    .lightbox-prev {
+      left: 10px;
+    }
+
+    .lightbox-next {
+      right: 10px;
+    }
+
+    .lightbox-position {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: #AFC0D3;
+      font-size: 12px;
+    }
+
+    /* PIEDE PAGINA */
+
+    footer {
+      background: #102035;
+      color: #DCE4EC;
+      padding: 27px 20px;
+      text-align: center;
+      border-top: 2px solid var(--blue);
+      font-size: 12px;
+    }
+
+    footer strong {
+      color: var(--blue);
+      font-weight: normal;
+    }
+
+    @media (max-width: 1000px) {
+      .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      header {
+        padding: 17px 4%;
+      }
+
+      .header-right {
+        justify-content: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 650px) {
+      header {
+        padding: 16px 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .logo span {
+        font-size: 14px;
+      }
+
+      .header-right {
+        width: 100%;
+        gap: 13px;
+      }
+
+      nav {
+        gap: 12px;
+      }
+
+      nav a {
+        font-size: 10px;
+      }
+
+      .search-box input {
+        width: min(230px, 80vw);
+      }
+
+      .hero {
+        padding: 45px 20px;
+      }
+
+      main {
+        padding: 32px 15px 45px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px 13px;
+      }
+
+      .photo-caption {
+        font-size: 12px;
+      }
+
+      .lightbox {
+        padding: 55px 12px 75px;
+      }
+
+      .lightbox-arrow {
+        top: auto;
+        bottom: 13px;
+        transform: none;
+        font-size: 34px;
+        width: 45px;
+        height: 42px;
+      }
+
+      .lightbox-prev {
+        left: 20px;
+      }
+
+      .lightbox-next {
+        right: 20px;
+      }
+
+      .lightbox-close {
+        top: 7px;
+        right: 13px;
+      }
+
+      .lightbox img {
+        max-height: calc(100% - 80px);
+      }
+
+      .lightbox-caption {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a class="logo" href="index.html" aria-label="Torna alla Home">
+    <img src="logo.jpeg" alt="Logo Corpo Bandistico Municipale G. Verdi">
+    <span>G. VERDI · 1911</span>
+  </a>
+
+  <div class="header-right">
+    <nav aria-label="Navigazione principale">
+      <a href="index.html">Home</a>
+      <a href="la-banda.html">La Banda</a>
+      <a href="musica.html">La Scuola di Musica</a>
+      <a href="eventi.html">Eventi</a>
+      <a href="albo.html">Albo Storico</a>
+      <a href="maestri-direttori.html">Maestri Direttori</a>
+      <a href="galleria.html" style="color:#AFC8E1;">Galleria</a>
+      <a href="index.html#contatti">Contatti</a>
+    </nav>
+
+    <div class="search-box">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Cerca nel sito..."
+        aria-label="Cerca nel sito"
+        onkeydown="if(event.key === 'Enter') cercaNelSito()"
+      >
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="eyebrow">1911 – Oggi</div>
+  <h1>La nostra memoria in immagini</h1>
+  <p>
+    Un viaggio nella storia del Corpo Bandistico Municipale
+    “G. Verdi” di Alcara Li Fusi, attraverso fotografie,
+    concerti, manifestazioni e ricordi di oltre un secolo di musica.
+  </p>
+  <div class="hero-line"></div>
+</section>
+
+<main>
+  <div class="gallery-heading">
+    <div>
+      <h2>Archivio fotografico</h2>
+      <p>Le immagini della nostra storia, ordinate cronologicamente.</p>
+    </div>
+    <div class="photo-count" id="photo-count"></div>
+  </div>
+
+  <div class="gallery-grid" id="gallery-grid"></div>
+
+  <div class="empty-message" id="empty-message">
+    Nessuna fotografia disponibile.
+  </div>
+</main>
+
+<footer>
+  <strong>Corpo Bandistico Municipale “G. Verdi”</strong>
+  <div>Associazione Musicale Alcarese · Alcara Li Fusi · Dal 1911</div>
+</footer>
+
+<!-- FOTO INGRANDITA -->
+
+<div
+  class="lightbox"
+  id="lightbox"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Visualizzazione fotografia"
+  aria-hidden="true"
+>
+  <button class="lightbox-close" id="close-lightbox"
+    aria-label="Chiudi">&times;</button>
+
+  <button class="lightbox-arrow lightbox-prev" id="prev-photo"
+    aria-label="Fotografia precedente">&#8249;</button>
+
+  <div class="lightbox-content">
+    <img id="lightbox-image" src="" alt="">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+
+  <button class="lightbox-arrow lightbox-next" id="next-photo"
+    aria-label="Fotografia successiva">&#8250;</button>
+
+  <div class="lightbox-position" id="lightbox-position"></div>
+</div>
+
+<script>
+  /*
+    I nomi dei file devono corrispondere esattamente
+    a quelli presenti nella cartella GitHub "fotostoriche".
+  */
+
+  const photos = [
+    { file: "1911.jpg", year: 1911, caption: "La banda nel 1911" },
+    { file: "1911(2).jpg", year: 1911, caption: "Fotografia storica del 1911" },
+    { file: "1948.jpg", year: 1948, caption: "La banda nel 1948" },
+    { file: "1953.jpg", year: 1953, caption: "La banda nel 1953" },
+    { file: "Metà anni 60.jpg", year: 1965, caption: "Metà degli anni Sessanta" },
+    { file: "1964.jpg", year: 1964, caption: "La banda nel 1964" },
+    { file: "1965.jpg", year: 1965, caption: "La banda nel 1965" },
+    { file: "fine anni '60.jpg", year: 1968, caption: "Fine degli anni Sessanta" },
+    { file: "Anni '70.jpg", year: 1970, caption: "Gli anni Settanta" },
+    { file: "1974.jpg", year: 1974, caption: "La banda nel 1974" },
+    { file: "1985.jpg", year: 1985, caption: "La banda nel 1985" },
+    { file: "Anno 1985.jpg", year: 1985, caption: "Fotografia del 1985" },
+    { file: "1988.jpg", year: 1988, caption: "La banda nel 1988" },
+    { file: "1991.jpg", year: 1991, caption: "La banda nel 1991" },
+    { file: "1997.jpg", year: 1997, caption: "La banda nel 1997" },
+    { file: "Febbraio 1997.jpg", year: 1997, caption: "Febbraio 1997" },
+    { file: "22008.jpg", year: 2008, caption: "Fotografia del 2008" },
+    { file: "2011.jpg", year: 2011, caption: "La banda nel 2011" },
+    { file: "2011,.jpg", year: 2011, caption: "Fotografia del 2011" },
+    { file: "anno 2011.jpg", year: 2011, caption: "Fotografia del 2011" },
+    { file: "Anno 2011..jpg", year: 2011, caption: "Fotografia del 2011" },
+    { file: "Centenario.jpg", year: 2011, caption: "Il centenario della banda" },
+    { file: "2012.jpg", year: 2012, caption: "La banda nel 2012" },
+    { file: "3 Maggio 2012.jpg", year: 2012, caption: "3 maggio 2012" },
+    { file: "2013.jpg", year: 2013, caption: "La banda nel 2013" },
+    { file: "1 Maggio 2013.jpg", year: 2013, caption: "1 maggio 2013" },
+    { file: "4 novembre 2014.jpg", year: 2014, caption: "4 novembre 2014" },
+    { file: "Sagrato di Piazza S.Pietro, udienza papale, 8 ottobre 2014.jpg", year: 2014, caption: "Udienza papale, Piazza San Pietro · 8 ottobre 2014" },
+    { file: "17 agosto 2014, concerto Roy Paci.jpg", year: 2014, caption: "Concerto con Roy Paci · 17 agosto 2014" },
+    { file: "2015.jpg", year: 2015, caption: "La banda nel 2015" },
+    { file: "16 agosto 2015.jpg", year: 2015, caption: "16 agosto 2015" },
+    { file: "23 agosto 2015.jpg", year: 2015, caption: "23 agosto 2015" },
+    { file: "23 agosto 2015. Concerto Sulle Note del Ricordo.jpg", year: 2015, caption: "Concerto Sulle Note del Ricordo · 23 agosto 2015" },
+    { file: "Venerdì Santo, 25 marzo 2016.jpg", year: 2016, caption: "Venerdì Santo · 25 marzo 2016" },
+    { file: "16 agosto 2016, Joe Lovano.jpg", year: 2016, caption: "Joe Lovano · 16 agosto 2016" },
+    { file: "19 agosto 2016.jpg", year: 2016, caption: "19 agosto 2016" },
+    { file: "Concerto Joe Lovano 19 agosto 2016.jpg", year: 2016, caption: "Concerto con Joe Lovano · 19 agosto 2016" },
+    { file: "1 maggio 2017.jpg", year: 2017, caption: "1 maggio 2017" },
+    { file: "16 agosto 2017.jpg", year: 2017, caption: "16 agosto 2017" },
+    { file: "Capodanno 2017.jpg", year: 2017, caption: "Concerto di Capodanno 2017" },
+    { file: "Festa della Banda 2017.jpg", year: 2017, caption: "Festa della Banda 2017" },
+    { file: "Pasqua 2017.jpg", year: 2017, caption: "Pasqua 2017" },
+    { file: "Consegna del Dono Votivo a San Nicolò 3 maggio 2018.jpg", year: 2018, caption: "Consegna del Dono Votivo a San Nicolò · 3 maggio 2018" },
+    { file: "Raduno delle Bande Musicali dei Nebrodi 28 ottobre 2018.jpg", year: 2018, caption: "Raduno delle Bande Musicali dei Nebrodi · 28 ottobre 2018" },
+    { file: "Capodanno 2019.jpg", year: 2019, caption: "Concerto di Capodanno 2019" },
+    { file: "Flicorno d'oro 2025.jpeg", year: 2025, caption: "Flicorno d'Oro 2025" }
+  ];
+
+  /*
+    Ordinamento cronologico stabile:
+    a parità di anno viene rispettato l'ordine qui sopra.
+  */
+
+  photos.sort((a, b) => a.year - b.year);
+
+  const grid = document.getElementById("gallery-grid");
+  const count = document.getElementById("photo-count");
+  const emptyMessage = document.getElementById("empty-message");
+
+  function cercaNelSito() {
+    const input = document.getElementById("searchInput");
+    const query = input.value.trim().toLocaleLowerCase("it");
+    const cards = Array.from(grid.querySelectorAll(".photo-card"));
+    let firstMatch = null;
+
+    cards.forEach(card => {
+      const matches = !query || card.textContent.toLocaleLowerCase("it").includes(query);
+      card.hidden = !matches;
+      if (matches && !firstMatch) firstMatch = card;
+    });
+
+    emptyMessage.style.display = firstMatch ? "none" : "block";
+
+    if (query && firstMatch) {
+      firstMatch.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    count.textContent = query
+      ? cards.filter(card => !card.hidden).length + " fotografie trovate"
+      : photos.length + " fotografie";
+  }
+
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImage = document.getElementById("lightbox-image");
+  const lightboxCaption = document.getElementById("lightbox-caption");
+  const lightboxPosition = document.getElementById("lightbox-position");
+
+  let currentIndex = 0;
+  let lastFocusedElement = null;
+
+  function imagePath(filename) {
+    return "fotostoriche/" +
+      filename.split("/").map(part => encodeURIComponent(part)).join("/");
+  }
+
+  photos.forEach((photo, index) => {
+    const card = document.createElement("button");
+    card.type = "button";
+    card.className = "photo-card";
+    card.setAttribute("aria-label", photo.year + ": " + photo.caption);
+
+    const frame = document.createElement("div");
+    frame.className = "photo-frame";
+
+    const img = document.createElement("img");
+    img.src = imagePath(photo.file);
+    img.alt = photo.caption;
+    img.loading = "lazy";
+    img.decoding = "async";
+
+    const placeholder = document.createElement("div");
+    placeholder.className = "image-placeholder";
+    placeholder.textContent = "Immagine non disponibile: " + photo.file;
+
+    img.addEventListener("error", () => {
+      img.classList.add("image-error");
+      placeholder.classList.add("visible");
+    });
+
+    frame.append(img, placeholder);
+
+    const info = document.createElement("div");
+    info.className = "photo-info";
+
+    const year = document.createElement("span");
+    year.className = "photo-year";
+    year.textContent = photo.year;
+
+    const caption = document.createElement("div");
+    caption.className = "photo-caption";
+    caption.textContent = photo.caption;
+
+    info.append(year, caption);
+    card.append(frame, info);
+
+    card.addEventListener("click", () => openLightbox(index));
+
+    grid.appendChild(card);
+  });
+
+  count.textContent = photos.length + " fotografie";
+
+  document.getElementById("searchInput").addEventListener("input", cercaNelSito);
+
+  function openLightbox(index) {
+    currentIndex = index;
+    lastFocusedElement = document.activeElement;
+    updateLightbox();
+
+    lightbox.classList.add("open");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+
+    document.getElementById("close-lightbox").focus();
+  }
+
+  function updateLightbox() {
+    const photo = photos[currentIndex];
+
+    lightboxImage.src = imagePath(photo.file);
+    lightboxImage.alt = photo.caption;
+
+    lightboxCaption.replaceChildren();
+
+    const year = document.createElement("span");
+    year.className = "lightbox-year";
+    year.textContent = photo.year;
+
+    const caption = document.createElement("span");
+    caption.textContent = photo.caption;
+
+    lightboxCaption.append(year, caption);
+
+    lightboxPosition.textContent =
+      (currentIndex + 1) + " / " + photos.length;
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+
+    lightboxImage.src = "";
+
+    if (lastFocusedElement) {
+      lastFocusedElement.focus();
+    }
+  }
+
+  function nextPhoto() {
+    currentIndex = (currentIndex + 1) % photos.length;
+    updateLightbox();
+  }
+
+  function previousPhoto() {
+    currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+    updateLightbox();
+  }
+
+  document.getElementById("close-lightbox")
+    .addEventListener("click", closeLightbox);
+
+  document.getElementById("next-photo")
+    .addEventListener("click", nextPhoto);
+
+  document.getElementById("prev-photo")
+    .addEventListener("click", previousPhoto);
+
+  lightbox.addEventListener("click", event => {
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener("keydown", event => {
+    if (!lightbox.classList.contains("open")) return;
+
+    if (event.key === "Escape") closeLightbox();
+    if (event.key === "ArrowRight") nextPhoto();
+    if (event.key === "ArrowLeft") previousPhoto();
+  });
+</script>
+
+</body>
+</html>
