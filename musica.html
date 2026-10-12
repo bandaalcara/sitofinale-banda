@@ -126,48 +126,62 @@
       color: #AFC8E1;
     }
 
-/* HERO */
-
+/* INTRODUZIONE */
 .hero {
-width: 100%;
-min-height: 0;
-margin: 0;
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
-padding: 60px 20px;
-background-color: var(–navy);
-color: var(–white);
-border-radius: 0;
+  background: var(--navy);
+  color: var(--white);
+  width: calc(100% - 56px);
+  max-width: 1400px;
+  margin: 28px auto 0;
+  padding: 55px 24px 50px;
+  text-align: center;
 }
 
-.hero-content {
-max-width: 900px;
-}
-
-.eyebrow {
-color: #BDD1E5;
-font-size: 12px;
-letter-spacing: 4px;
-font-weight: bold;
-margin-bottom: 22px;
-text-transform: uppercase;
+.hero .section-label {
+  color: #AFC8E1;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 11px;
+  font-weight: bold;
+  margin-bottom: 14px;
 }
 
 .hero h1 {
-font-size: clamp(42px, 6.3vw, 72px);
-line-height: 1.08;
-margin-bottom: 24px;
-letter-spacing: -1px;
+  font-size: clamp(34px, 5vw, 54px);
+  font-weight: normal;
+  line-height: 1.2;
+  margin-bottom: 18px;
 }
 
 .hero p {
-max-width: 750px;
-margin: 0 auto;
-font-size: 18px;
-color: #E5EBF2;
-line-height: 1.8;
+  max-width: 750px;
+  margin: 0 auto 12px;
+  color: #DCE4EC;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.hero-line {
+  width: 65px;
+  height: 2px;
+  background: var(--blue);
+  margin: 25px auto 0;
+}
+
+@media (max-width: 650px) {
+  .hero {
+    width: calc(100% - 30px);
+    margin: 18px auto 0;
+    padding: 38px 18px;
+  }
+
+  .hero h1 {
+    font-size: clamp(32px, 8vw, 42px);
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
 }
 
     /* CARDS */
@@ -602,18 +616,20 @@ footer .site-credit {
   <!-- HERO -->
 
   <section class="hero">
-    <div class="hero-content">
-      <div class="eyebrow">ASSOCIAZIONE MUSICALE ALCARESE · DAL 1911</div>
+  <div class="hero-content">
+    <div class="section-label">ASSOCIAZIONE MUSICALE ALCARESE · DAL 1911</div>
 
-      <h1>La Scuola<br>di Musica</h1>
+    <h1>La Scuola<br>di Musica</h1>
 
-      <p>
-        Musica, formazione, passione e condivisione.
-        Un percorso aperto a tutte le età, guidato dai Maestri
-        del Corpo Bandistico Municipale “G. Verdi”.
-      </p>
-    </div>
-  </section>
+    <p>
+      Musica, formazione, passione e condivisione.
+      Un percorso aperto a tutte le età, guidato dai Maestri
+      del Corpo Bandistico Municipale “G. Verdi”.
+    </p>
+
+    <div class="hero-line"></div>
+  </div>
+</section>
 
   <!-- PRESENTAZIONE -->
 
