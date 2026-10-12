@@ -561,24 +561,35 @@
 
     /* FOOTER */
 
-    footer {
-      background: var(--navy-dark);
-      color: #B8C5D4;
-      text-align: center;
-      padding: 25px 7%;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 12px;
-      line-height: 1.9;
-    }
+   
+/* FOOTER */
 
-    footer strong {
-      color: var(--white);
-      font-size: 13px;
-    }
+footer {
+  background: #102035;
+  color: #B8C5D4;
+  text-align: center;
+  padding: 25px 7%;
+  font-size: 12px;
+  line-height: 1.9;
+}
 
-    footer p + p {
-      margin-top: 5px;
-    }
+footer strong {
+  color: var(--white);
+  font-size: 13px;
+}
+
+footer p:last-child {
+  font-size: 10px;
+}
+
+footer .site-credit {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(184, 197, 212, 0.2);
+  font-size: 10px;
+  color: #B8C5D4;
+}
+
 
     /* RESPONSIVE */
 
@@ -922,14 +933,24 @@
 
 
 <footer>
+
+<!-- FOOTER -->
+<footer>
   <p>
     <strong>Corpo Bandistico Municipale “G. Verdi”</strong>
   </p>
+
   <p>
     © 2026 Associazione Musicale Alcarese – Alcara Li Fusi, Messina
   </p>
+
   <p>Dal 1911, musica e tradizione.</p>
+
+  <p class="site-credit">
+    Sito web realizzato da Antonina Vaneria e dai Responsabili della Comunicazione del Direttivo
+  </p>
 </footer>
+
 
 <script>
 /*
