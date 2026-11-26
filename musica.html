@@ -186,7 +186,7 @@
     }
 
     .intro-section .content {
-      max-width: 900px;
+      max-width: 1200px;
     }
 
     .section-label {
@@ -210,6 +210,45 @@
       line-height: 1.9;
       color: var(--text);
       margin-bottom: 16px;
+    }
+
+    /* PRESENTAZIONE + LOCANDINA */
+
+    .intro-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.75fr);
+      align-items: center;
+      gap: 55px;
+    }
+
+    .intro-text {
+      min-width: 0;
+    }
+
+    .intro-poster {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      background: var(--light-blue);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      box-shadow: var(--shadow);
+    }
+
+    .intro-poster img {
+      display: block;
+      width: 100%;
+      max-width: 380px;
+      max-height: 480px;
+      object-fit: contain;
+      border-radius: 5px;
+      cursor: zoom-in;
+      transition: transform 0.25s ease;
+    }
+
+    .intro-poster img:hover {
+      transform: scale(1.02);
     }
 
     /* CARDS */
@@ -348,7 +387,7 @@
       margin-bottom: 4px;
     }
 
-    /* NUOVA SEZIONE CIAK, SI SUONA! */
+    /* ATTIVITÀ E INIZIATIVE */
 
     .activities-section {
       background: #F5F8FB;
@@ -418,6 +457,8 @@
       margin-bottom: 0 !important;
     }
 
+    /* GALLERIA CIAK */
+
     .ciak-gallery {
       max-width: 1100px;
       margin: 0 auto;
@@ -425,7 +466,7 @@
 
     .ciak-gallery-heading {
       text-align: center;
-      margin-bottom: 22px;
+      margin-bottom: 28px;
     }
 
     .ciak-gallery-heading h3 {
@@ -439,100 +480,32 @@
       font-size: 14px;
     }
 
-    .ciak-main {
-      position: relative;
-      width: 100%;
-      height: clamp(300px, 58vw, 620px);
-      background: #101E30;
-      border-radius: 9px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 12px 35px rgba(15, 34, 57, 0.15);
+    .ciak-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 17px;
     }
 
-    .ciak-main img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
+    .ciak-grid-item {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      background: var(--light);
+      border-radius: 7px;
+      box-shadow: 0 5px 18px rgba(23, 42, 67, 0.10);
       cursor: zoom-in;
     }
 
-    .ciak-arrow {
-      position: absolute;
-      z-index: 2;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 48px;
-      height: 48px;
-      border: 1px solid rgba(255,255,255,0.35);
-      border-radius: 50%;
-      background: rgba(15, 34, 57, 0.78);
-      color: white;
-      font-size: 25px;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
-    }
-
-    .ciak-arrow:hover {
-      background: var(--blue);
-      transform: translateY(-50%) scale(1.06);
-    }
-
-    .ciak-prev {
-      left: 17px;
-    }
-
-    .ciak-next {
-      right: 17px;
-    }
-
-    .ciak-counter {
-      text-align: center;
-      color: var(--muted);
-      font-size: 13px;
-      margin: 15px 0 18px;
-    }
-
-    .ciak-thumbnails {
-      display: flex;
-      gap: 11px;
-      overflow-x: auto;
-      padding: 5px 2px 15px;
-      scroll-behavior: smooth;
-      scrollbar-width: thin;
-      scrollbar-color: var(--blue) var(--light);
-    }
-
-    .ciak-thumbnails button {
-      flex: 0 0 115px;
-      height: 82px;
-      padding: 0;
-      border: 3px solid transparent;
-      border-radius: 6px;
-      overflow: hidden;
-      background: var(--light);
-      cursor: pointer;
-      opacity: 0.65;
-      transition: opacity 0.2s, border-color 0.2s;
-    }
-
-    .ciak-thumbnails button:hover {
-      opacity: 1;
-    }
-
-    .ciak-thumbnails button.active {
-      opacity: 1;
-      border-color: var(--blue);
-    }
-
-    .ciak-thumbnails img {
+    .ciak-grid-item img {
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .ciak-grid-item:hover img {
+      transform: scale(1.045);
     }
 
     /* RISULTATI */
@@ -572,14 +545,6 @@
       object-fit: contain;
       cursor: zoom-in;
       border-radius: 7px;
-    }
-
-    .school-poster img {
-      width: 100%;
-      max-width: 450px;
-      max-height: 650px;
-      object-fit: contain;
-      cursor: zoom-in;
     }
 
     /* FOOTER */
@@ -733,6 +698,25 @@
       .ciak-story {
         padding: 28px 24px;
       }
+
+      .ciak-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 13px;
+      }
+
+      .intro-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .intro-poster {
+        max-width: 480px;
+        margin: 0 auto;
+      }
+
+      .intro-poster img {
+        max-height: 550px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -771,27 +755,17 @@
         font-size: 14px;
       }
 
-      .ciak-main {
-        height: 300px;
+      .ciak-grid {
+        grid-template-columns: 1fr;
+        gap: 13px;
       }
 
-      .ciak-arrow {
-        width: 38px;
-        height: 38px;
-        font-size: 21px;
+      .ciak-grid-item {
+        aspect-ratio: 4 / 3;
       }
 
-      .ciak-prev {
-        left: 9px;
-      }
-
-      .ciak-next {
-        right: 9px;
-      }
-
-      .ciak-thumbnails button {
-        flex-basis: 88px;
-        height: 66px;
+      .intro-poster {
+        padding: 12px;
       }
     }
 
@@ -849,32 +823,49 @@
     </div>
   </section>
 
-  <!-- PRESENTAZIONE -->
+  <!-- PRESENTAZIONE + LOCANDINA -->
 
   <section class="content-section intro-section">
     <div class="content">
-      <div class="section-label">La nostra scuola</div>
 
-      <h2 class="section-title">
-        La musica si impara, si vive e si trasmette.
-      </h2>
+      <div class="intro-layout">
 
-      <p>
-        La Scuola di Musica dell’Associazione Musicale Alcarese
-        è aperta a persone di tutte le età.
-      </p>
+        <div class="intro-text">
+          <div class="section-label">La nostra scuola</div>
 
-      <p>
-        Le attività sono curate dai Maestri della nostra Banda,
-        che accompagnano gli allievi nel loro percorso di
-        apprendimento e crescita musicale.
-      </p>
+          <h2 class="section-title">
+            La musica si impara, si vive e si trasmette.
+          </h2>
 
-      <p>
-        La Scuola rappresenta un importante punto di incontro
-        tra generazioni diverse e contribuisce a mantenere viva
-        la tradizione musicale della nostra Associazione.
-      </p>
+          <p>
+            La Scuola di Musica dell’Associazione Musicale Alcarese
+            è aperta a persone di tutte le età.
+          </p>
+
+          <p>
+            Le attività sono curate dai Maestri della nostra Banda,
+            che accompagnano gli allievi nel loro percorso di
+            apprendimento e crescita musicale.
+          </p>
+
+          <p>
+            La Scuola rappresenta un importante punto di incontro
+            tra generazioni diverse e contribuisce a mantenere viva
+            la tradizione musicale della nostra Associazione.
+          </p>
+        </div>
+
+        <div class="intro-poster">
+          <img
+            src="foto-eventi/scuoladimusica.jpg"
+            alt="Locandina della Scuola di Musica"
+            loading="lazy"
+            onclick="ingrandisciFoto(this.src)"
+          >
+        </div>
+
+      </div>
+
     </div>
   </section>
 
@@ -1175,49 +1166,118 @@
 
       </div>
 
+      <!-- GALLERIA COMPLETA CIAK -->
+
       <div class="ciak-gallery">
 
         <div class="ciak-gallery-heading">
           <h3>La giornata in immagini</h3>
-          <p>Alcuni momenti di CIAK, SI SUONA!</p>
+          <p>Tutti i momenti di CIAK, SI SUONA!</p>
         </div>
 
-        <div class="ciak-main" id="ciak-main">
+        <div class="ciak-grid">
 
-          <button
-            class="ciak-arrow ciak-prev"
-            type="button"
-            onclick="cambiaCiak(-1)"
-            aria-label="Fotografia precedente"
-          >‹</button>
+          <div class="ciak-grid-item">
+            <img src="foto-eventi/813923299_18440931493131587_7528346578999758601_n.jpg"
+                 alt="CIAK, SI SUONA! - Fotografia 1"
+                 loading="lazy"
+                 onclick="ingrandisciFoto(this.src)">
+          </div>
 
-          <img
-            id="ciak-current"
-            src="foto-scuola/ciak-1.jpg"
-            alt="CIAK, SI SUONA! - Fotografia 1"
-            onclick="ingrandisciFoto(this.src)"
-          >
+          <div class="ciak-grid-item">
+            <img src="foto-eventi/813987078_18440931418131587_4239156655046501289_n.jpg"
+                 alt="CIAK, SI SUONA! - Fotografia 2"
+                 loading="lazy"
+                 onclick="ingrandisciFoto(this.src)">
+          </div>
 
-          <button
-            class="ciak-arrow ciak-next"
-            type="button"
-            onclick="cambiaCiak(1)"
-            aria-label="Fotografia successiva"
-          >›</button>
+          <div class="ciak-grid-item">
+            <img src="foto-eventi/814086114_18440931316131587_945695719456408618_n.jpg"
+                 alt="CIAK, SI SUONA! - Fotografia 3"
+                 loading="lazy"
+                 onclick="ingrandisciFoto(this.src)">
+          </div>
+
+          <div class="ciak-grid-item">
+            <img src="foto-eventi/814339179_18440931346131587_8543452811096287639_n.jpg"
+                 alt="CIAK, SI SUONA! - Fotografia 4"
+                 loading="lazy"
+                 onclick="ingrandisciFoto(this.src)">
+          </div>
+
+          <div class="ciak-grid-item">
+            <img src="foto-eventi/814364950_18440931325131587_6096093319054158529_n.jpg"
+                 alt="CIAK, SI SUONA! - Fotografia 5"
+                 loading="lazy"
+                 onclick="ingrandisciFoto(this.src)">
+          </div>
+
+          <div class="ciak-grid-item">
+            <img src="foto-eventi/814381857_18440931463131587_3481236781457697101_n.jpg"
+                 alt="CIAK, SI SUONA! - Fotografia 6"
+                 loading="lazy"
+                 onclick="ingrandisciFoto(this.src)">
+          </div>
+
+          <div class="ciak-grid-item">
+            <img src="foto-eventi/814535083_18440931361131587_6280593480539962481_n.jpg"
+                 alt="CIAK, SI SUONA! - Fotografia 7"
+                 loading="lazy"
+                 onclick="ingrandisciFoto(this.src)">
+          </div>
+
+          <div class="ciak-grid-item">
+            <img src="foto-eventi/814575416_18440931385131587_7594603602484681504_n.jpg"
+                 alt="CIAK, SI SUONA! - Fotografia 8"
+                 loading="lazy"
+                 onclick="ingrandisciFoto(this.src)">
+          </div>
+
+          <div class="ciak-grid-item">
+            <img src="foto-eventi/814695528_18440931382131587_4855359373968887534_n.jpg"
+                 alt="CIAK, SI SUONA! - Fotografia 9"
+                 loading="lazy"
+                 onclick="ingrandisciFoto(this.src)">
+          </div>
+
+          <div class="ciak-grid-item">
+            <img src="foto-eventi/814768823_18440931511131587_483419872695225980_n.jpg"
+                 alt="CIAK, SI SUONA! - Fotografia 10"
+                 loading="lazy"
+                 onclick="ingrandisciFoto(this.src)">
+          </div>
+
+          <div class="ciak-grid-item">
+            <img src="foto-eventi/814818348_18440931394131587_7761606483491561043_n.jpg"
+                 alt="CIAK, SI SUONA! - Fotografia 11"
+                 loading="lazy"
+                 onclick="ingrandisciFoto(this.src)">
+          </div>
+
+          <div class="ciak-grid-item">
+            <img src="foto-eventi/814908130_18440931433131587_329848320124586274_n.jpg"
+                 alt="CIAK, SI SUONA! - Fotografia 12"
+                 loading="lazy"
+                 onclick="ingrandisciFoto(this.src)">
+          </div>
+
+          <div class="ciak-grid-item">
+            <img src="foto-eventi/814926288_18440931415131587_1933472902691021730_n.jpg"
+                 alt="CIAK, SI SUONA! - Fotografia 13"
+                 loading="lazy"
+                 onclick="ingrandisciFoto(this.src)">
+          </div>
+
+          <div class="ciak-grid-item">
+            <img src="foto-eventi/815157646_18440931460131587_1716126028973800124_n.jpg"
+                 alt="CIAK, SI SUONA! - Fotografia 14"
+                 loading="lazy"
+                 onclick="ingrandisciFoto(this.src)">
+          </div>
 
         </div>
-
-        <p class="ciak-counter" id="ciak-counter">
-          Foto 1 di 16
-        </p>
-
-        <div
-          class="ciak-thumbnails"
-          id="ciak-thumbnails"
-          aria-label="Anteprime delle fotografie"
-        ></div>
-
       </div>
+
     </div>
   </section>
 
@@ -1395,20 +1455,6 @@
         </div>
       </div>
 
-      <!-- LOCANDINA -->
-
-      <div class="award-card">
-        <h2>La Scuola di Musica</h2>
-
-        <div class="award-image school-poster">
-          <img
-            src="foto-eventi/scuoladimusica.jpg"
-            alt="Locandina della Scuola di Musica"
-            onclick="ingrandisciFoto(this.src)"
-          >
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -1510,90 +1556,7 @@
         "Foto " + (indiciFotoEvento[galleria] + 1) + " di " + immagini.length;
     }
 
-    /* GALLERIA CIAK, SI SUONA! */
-
-    const fotoCiak = Array.from(
-      { length: 16 },
-      (_, indice) => `foto-scuola/ciak-${indice + 1}.jpg`
-    );
-
-    let indiceCiak = 0;
-
-    const immagineCiak = document.getElementById("ciak-current");
-    const contatoreCiak = document.getElementById("ciak-counter");
-    const miniatureCiak = document.getElementById("ciak-thumbnails");
-
-    function mostraCiak(indice) {
-      indiceCiak = (indice + fotoCiak.length) % fotoCiak.length;
-
-      immagineCiak.src = fotoCiak[indiceCiak];
-      immagineCiak.alt = "CIAK, SI SUONA! - Fotografia " + (indiceCiak + 1);
-
-      contatoreCiak.textContent =
-        "Foto " + (indiceCiak + 1) + " di " + fotoCiak.length;
-
-      const miniature = miniatureCiak.querySelectorAll("button");
-
-      miniature.forEach((miniatura, i) => {
-        miniatura.classList.toggle("active", i === indiceCiak);
-
-        if (i === indiceCiak) {
-          miniatura.scrollIntoView({
-            behavior: "smooth",
-            block: "nearest",
-            inline: "nearest"
-          });
-        }
-      });
-    }
-
-    function cambiaCiak(direzione) {
-      mostraCiak(indiceCiak + direzione);
-    }
-
-    fotoCiak.forEach((percorso, indice) => {
-      const pulsante = document.createElement("button");
-      pulsante.type = "button";
-      pulsante.setAttribute(
-        "aria-label",
-        "Visualizza fotografia " + (indice + 1)
-      );
-
-      const miniatura = document.createElement("img");
-      miniatura.src = percorso;
-      miniatura.alt = "Anteprima fotografia " + (indice + 1);
-      miniatura.loading = "lazy";
-
-      pulsante.appendChild(miniatura);
-
-      pulsante.addEventListener("click", () => {
-        mostraCiak(indice);
-      });
-
-      miniatureCiak.appendChild(pulsante);
-    });
-
-    mostraCiak(0);
-
-    /* SCORRIMENTO CON IL DITO SU SMARTPHONE */
-
-    const areaCiak = document.getElementById("ciak-main");
-    let inizioTouch = 0;
-
-    areaCiak.addEventListener("touchstart", (event) => {
-      inizioTouch = event.changedTouches[0].screenX;
-    }, { passive: true });
-
-    areaCiak.addEventListener("touchend", (event) => {
-      const fineTouch = event.changedTouches[0].screenX;
-      const differenza = fineTouch - inizioTouch;
-
-      if (Math.abs(differenza) > 45) {
-        cambiaCiak(differenza < 0 ? 1 : -1);
-      }
-    }, { passive: true });
-
-    /* INGRANDIMENTO FOTO */
+    /* INGRANDIMENTO E CHIUSURA FOTO */
 
     function ingrandisciFoto(src) {
       const lightbox = document.getElementById("lightbox");
