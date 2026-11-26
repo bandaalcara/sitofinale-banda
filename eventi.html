@@ -1,11 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Eventi | Corpo Bandistico Municipale “G. Verdi”</title>
   <meta name="theme-color" content="#14263D">
-  <meta name="description" content="Eventi 2026, commemorazioni e ricorrenze storiche del Corpo Bandistico Municipale G. Verdi di Alcara Li Fusi.">
+  <meta name="description" content="Scopri gli eventi, i concerti e le ricorrenze storiche del Corpo Bandistico Municipale G. Verdi di Alcara Li Fusi.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,7 +38,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 90px;
+      scroll-padding-top: 100px;
     }
 
     body {
@@ -64,10 +66,6 @@
       display: block;
     }
 
-    button {
-      font: inherit;
-    }
-
     /* HEADER */
 
     header {
@@ -77,7 +75,7 @@
       background: rgba(20, 38, 61, .97);
       backdrop-filter: blur(12px);
       color: var(--white);
-      border-bottom: 1px solid rgba(255, 255, 255, .09);
+      border-bottom: 1px solid rgba(255,255,255,.09);
     }
 
     .header-inner {
@@ -136,13 +134,12 @@
       color: #E8EDF2;
       font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 0.8px;
-      transition: color 0.25s ease;
+      letter-spacing: .8px;
+      transition: color .25s ease;
       white-space: nowrap;
     }
 
     nav a:hover,
-    nav a[aria-current="page"],
     nav a.active {
       color: var(--gold-light);
     }
@@ -156,14 +153,14 @@
     .hero {
       position: relative;
       overflow: hidden;
-      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 65%, var(--navy-soft) 100%);
+      background: linear-gradient(135deg, var(--navy-deep), var(--navy) 65%, var(--navy-soft));
       color: var(--white);
       width: calc(100% - 56px);
       max-width: 1400px;
       margin: 28px auto 0;
-      padding: 78px 24px 72px;
+      padding: 85px 24px;
       text-align: center;
-      border: 1px solid rgba(197, 166, 107, .25);
+      border: 1px solid rgba(197,166,107,.25);
     }
 
     .hero::before {
@@ -172,8 +169,8 @@
       right: -25px;
       bottom: -45px;
       font-family: 'Playfair Display', serif;
-      font-size: clamp(110px, 20vw, 250px);
-      color: rgba(255, 255, 255, .03);
+      font-size: clamp(110px,20vw,250px);
+      color: rgba(255,255,255,.03);
       pointer-events: none;
       line-height: 1;
     }
@@ -183,36 +180,40 @@
       z-index: 1;
     }
 
-    .hero .section-label {
-      color: var(--gold-light);
+    .section-label {
+      color: var(--burgundy);
       text-transform: uppercase;
-      letter-spacing: 4px;
+      letter-spacing: 3px;
       font-size: 11px;
       font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .hero .section-label {
+      color: var(--gold-light);
+      letter-spacing: 4px;
       margin-bottom: 16px;
     }
 
     .hero h1 {
-      font-size: clamp(38px, 5.5vw, 64px);
-      font-weight: 500;
-      line-height: 1.15;
-      margin-bottom: 18px;
+      font-size: clamp(40px,5.5vw,66px);
+      margin-bottom: 20px;
       letter-spacing: -1px;
     }
 
     .hero p {
-      max-width: 720px;
-      margin: 0 auto 12px;
+      max-width: 740px;
+      margin: auto;
       color: #DCE5EC;
       font-size: 16px;
-      line-height: 1.85;
+      line-height: 1.9;
     }
 
     .hero-line {
       width: 65px;
       height: 1px;
       background: var(--gold);
-      margin: 26px auto 0;
+      margin: 28px auto 0;
     }
 
     /* SEZIONI */
@@ -229,492 +230,194 @@
 
     .content {
       max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-label {
-      color: var(--burgundy);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 11px;
-      font-weight: 700;
-      margin-bottom: 12px;
+      margin: auto;
     }
 
     .section-title {
       color: var(--navy);
-      font-size: clamp(30px, 4vw, 44px);
-      line-height: 1.2;
+      font-size: clamp(30px,4vw,44px);
       margin-bottom: 18px;
-      letter-spacing: -0.4px;
     }
 
     .intro {
       font-size: 16px;
       color: var(--muted);
-      max-width: 840px;
+      max-width: 850px;
       line-height: 1.85;
-      margin-bottom: 34px;
+      margin-bottom: 38px;
     }
 
-    /* SCHEDA EVENTO 2026 (MULTI-FOTO) */
+    /* ARCHIVIO ANNUALE */
 
-    .event-2026-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-top: 4px solid var(--gold);
-      padding: 38px 40px;
-      box-shadow: var(--shadow);
-      margin-bottom: 32px;
-    }
-
-    .event-2026-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
+    .years-grid {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
       gap: 24px;
-      flex-wrap: wrap;
-      margin-bottom: 18px;
     }
 
-    .event-date-badge {
-      display: inline-block;
-      background: var(--navy);
-      color: var(--gold-light);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 7px 14px;
-      border-left: 3px solid var(--gold);
-      margin-bottom: 12px;
-    }
-
-    .event-2026-card h3 {
-      color: var(--navy);
-      font-size: clamp(26px, 3.3vw, 36px);
-      margin-bottom: 6px;
-    }
-
-    .event-subtitle {
-      color: var(--burgundy);
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 0.3px;
-    }
-
-    .event-description {
-      color: var(--text);
-      font-size: 16px;
-      line-height: 1.9;
-      max-width: 920px;
-      margin-bottom: 26px;
-    }
-
-    .event-description p + p {
-      margin-top: 14px;
-    }
-
-    .event-photos-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
-      margin-bottom: 26px;
-    }
-
-    /* SCHEDA EVENTO 2026 (FOTO SINGOLA ACCANTO AL TESTO) */
-
-    .event-single-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-top: 4px solid var(--gold);
-      padding: 36px 40px;
-      box-shadow: var(--shadow);
-      margin-bottom: 32px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.85fr);
-      gap: 36px;
-      align-items: center;
-    }
-
-    .event-single-card.reverse .event-single-body {
-      order: 2;
-    }
-
-    .event-single-card.reverse .event-single-media {
-      order: 1;
-    }
-
-    .event-single-body h3 {
-      color: var(--navy);
-      font-size: clamp(25px, 3.1vw, 34px);
-      margin-bottom: 8px;
-    }
-
-    .event-single-body .event-subtitle {
-      margin-bottom: 16px;
-    }
-
-    .event-single-text {
-      color: var(--text);
-      font-size: 16px;
-      line-height: 1.9;
-      margin-bottom: 22px;
-    }
-
-    .event-single-text p + p {
-      margin-top: 14px;
-    }
-
-    .event-single-text:last-child {
-      margin-bottom: 0;
-    }
-
-    .event-single-media {
-      background: var(--cream);
-      border: 1px solid var(--border);
-      padding: 10px;
-    }
-
-    .single-photo-btn {
-      display: block;
-      width: 100%;
-      padding: 0;
-      border: 0;
-      background: transparent;
-      cursor: zoom-in;
-      overflow: hidden;
-    }
-
-    .single-photo-btn img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      transition: transform 0.35s ease;
-    }
-
-    .single-photo-btn:hover img {
-      transform: scale(1.03);
-    }
-
-    .single-photo-caption {
-      padding: 10px 6px 2px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .event-actions {
+    .year-card {
+      position: relative;
       display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 14px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
-    }
-
-    .btn-navy {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 13px 24px;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 310px;
+      padding: 32px 29px;
       background: var(--navy);
       color: var(--white);
+      border: 1px solid rgba(197,166,107,.4);
+      border-top: 4px solid var(--gold);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform .3s ease, background .3s ease;
+    }
+
+    .year-card::after {
+      content: attr(data-year);
+      position: absolute;
+      right: -8px;
+      bottom: -30px;
+      font-family: 'Playfair Display', serif;
+      font-size: 125px;
+      font-weight: 600;
+      color: rgba(255,255,255,.045);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .year-card:hover {
+      transform: translateY(-6px);
+      background: var(--navy-soft);
+    }
+
+    .year-card.current {
+      background: linear-gradient(140deg,var(--navy-deep),var(--navy-soft));
+    }
+
+    .year-top,
+    .year-bottom {
+      position: relative;
+      z-index: 1;
+    }
+
+    .year-label {
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .year-number {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 64px;
+      line-height: 1;
+      margin: 18px 0;
+      color: var(--white);
+    }
+
+    .year-description {
+      color: #DCE5EC;
+      font-size: 14px;
+      line-height: 1.8;
+      max-width: 290px;
+    }
+
+    .year-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 28px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid var(--gold);
+      color: var(--gold-light);
       font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      border: 1px solid var(--navy);
-      transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+      width: fit-content;
     }
 
-    .btn-navy:hover {
-      background: var(--gold);
-      border-color: var(--gold);
-      color: var(--navy-deep);
-      transform: translateY(-2px);
+    .year-link span {
+      transition: transform .25s ease;
     }
 
-    .event-actions-note {
+    .year-card:hover .year-link span {
+      transform: translateX(5px);
+    }
+
+    /* ARCHIVIO STORICO */
+
+    .history-intro {
+      max-width: 850px;
       color: var(--muted);
-      font-size: 13px;
+      margin-bottom: 35px;
+      line-height: 1.9;
     }
 
-    /* 100 ANNI */
-
-    .centenario-box {
-      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
-      color: var(--white);
-      border: 1px solid rgba(197, 166, 107, .35);
-      border-left: 5px solid var(--gold);
-      padding: 40px;
+    .history-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(240px, 0.85fr);
-      gap: 36px;
-      align-items: center;
-      box-shadow: var(--shadow);
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 25px;
     }
 
-    .centenario-tag {
-      color: var(--gold-light);
+    .history-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--gold);
+      padding: 32px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .history-date {
+      color: var(--burgundy);
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
-    .centenario-text h2 {
-      color: var(--white);
-      font-size: clamp(28px, 3.6vw, 40px);
-      margin-bottom: 16px;
+    .history-card h3 {
+      color: var(--navy);
+      font-size: 28px;
+      margin-bottom: 15px;
     }
 
-    .centenario-text p {
-      color: #DCE5EC;
-      font-size: 16px;
+    .history-card p {
+      color: var(--text);
+      font-size: 15px;
       line-height: 1.9;
       margin-bottom: 24px;
     }
 
-    .btn-gold {
-      display: inline-block;
-      padding: 13px 26px;
-      background: var(--gold);
-      color: var(--navy-deep);
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.6px;
-      border: 1px solid var(--gold);
-      transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
-    }
-
-    .btn-gold:hover {
-      background: var(--gold-light);
-      border-color: var(--gold-light);
-      transform: translateY(-2px);
-    }
-
-    .centenario-media {
-      background: var(--navy-deep);
-      border: 1px solid rgba(197, 166, 107, .4);
-      padding: 10px;
-    }
-
-    .centenario-photo-btn {
-      display: block;
+    .history-image {
       width: 100%;
-      padding: 0;
-      border: 0;
-      background: transparent;
-      cursor: zoom-in;
-      text-align: left;
-    }
-
-    .centenario-photo-btn img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 16/9;
       object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    .centenario-photo-btn:hover img {
-      transform: scale(1.02);
-    }
-
-    .centenario-caption {
-      padding: 10px 4px 2px;
-      color: var(--gold-light);
-      font-size: 11px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      text-align: center;
-    }
-
-    /* 80° ANNO DALLA FONDAZIONE */
-
-    .ottanta-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .event-photo-card {
-      display: flex;
-      flex-direction: column;
-      background: var(--white);
       border: 1px solid var(--border);
-      border-top: 3px solid var(--gold);
-      padding: 0;
-      text-align: left;
-      cursor: zoom-in;
-      box-shadow: var(--shadow);
-      transition: transform 0.25s ease, border-top-color 0.25s ease;
+      margin-bottom: 22px;
+      background: var(--cream);
     }
 
-    .event-photo-card:hover {
-      transform: translateY(-3px);
-      border-top-color: var(--navy);
-    }
-
-    .event-photo-card:focus-visible,
-    .single-photo-btn:focus-visible,
-    .centenario-photo-btn:focus-visible {
-      outline: 2px solid var(--gold);
-      outline-offset: 3px;
-    }
-
-    .event-photo-frame {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      background: var(--cream-dark);
-      overflow: hidden;
-    }
-
-    .event-photo-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.35s ease;
-    }
-
-    .event-photo-card:hover .event-photo-frame img {
-      transform: scale(1.04);
-    }
-
-    .event-photo-body {
-      padding: 14px 16px 16px;
-    }
-
-    .event-photo-tag {
-      display: block;
+    .history-link {
+      display: inline-block;
+      width: fit-content;
+      padding: 12px 20px;
+      background: var(--navy);
+      color: var(--white);
       font-size: 10px;
       font-weight: 700;
-      color: var(--burgundy);
-      letter-spacing: 1.6px;
       text-transform: uppercase;
-      margin-bottom: 4px;
+      letter-spacing: 1.4px;
+      transition: background .25s ease;
     }
 
-    .event-photo-title {
-      color: var(--navy);
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 16px;
-      font-weight: 500;
-      line-height: 1.35;
-    }
-
-    /* LIGHTBOX CON SCORRIMENTO */
-
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      z-index: 1000;
-      background: rgba(10, 23, 39, 0.96);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 65px 76px 82px;
-    }
-
-    .lightbox.open {
-      display: flex;
-    }
-
-    .lightbox-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      height: 100%;
-      justify-content: center;
-      min-height: 0;
-    }
-
-    .lightbox img {
-      max-width: 100%;
-      max-height: calc(100% - 65px);
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      border: 1px solid rgba(197, 166, 107, .35);
-      background: var(--navy-deep);
-    }
-
-    .lightbox-caption {
-      color: var(--white);
-      text-align: center;
-      margin-top: 15px;
-      font-size: 14px;
-      max-width: 850px;
-    }
-
-    .lightbox-year {
-      color: var(--gold-light);
-      margin-right: 8px;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    .lightbox-close,
-    .lightbox-arrow {
-      position: absolute;
-      background: rgba(20, 38, 61, 0.88);
-      color: var(--gold-light);
-      border: 1px solid var(--gold);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-
-    .lightbox-close:hover,
-    .lightbox-arrow:hover {
+    .history-link:hover {
       background: var(--gold);
       color: var(--navy-deep);
-    }
-
-    .lightbox-close {
-      top: 18px;
-      right: 24px;
-      font-size: 32px;
-      line-height: 1;
-      width: 45px;
-      height: 45px;
-    }
-
-    .lightbox-arrow {
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 22px;
-      width: 48px;
-      height: 48px;
-    }
-
-    .lightbox-prev {
-      left: 16px;
-    }
-
-    .lightbox-next {
-      right: 16px;
-    }
-
-    .lightbox-position {
-      position: absolute;
-      bottom: 22px;
-      left: 0;
-      right: 0;
-      text-align: center;
-      color: var(--gold-light);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
     }
 
     /* FOOTER */
@@ -750,21 +453,18 @@
 
     /* RESPONSIVE */
 
-    @media (max-width: 1100px) {
-      nav {
-        gap: 10px 12px;
-      }
+    @media(max-width:1100px) {
+      nav { gap: 10px 12px; }
+      nav a { font-size: 10px; }
+    }
 
-      nav a {
-        font-size: 10px;
-      }
-
-      .ottanta-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    @media(max-width:900px) {
+      .years-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
       }
     }
 
-    @media (max-width: 850px) {
+    @media(max-width:850px) {
       .header-inner {
         width: 90%;
         flex-wrap: wrap;
@@ -774,7 +474,7 @@
       .mobile-menu {
         display: block;
         background: transparent;
-        border: 1px solid rgba(255, 255, 255, .35);
+        border: 1px solid rgba(255,255,255,.35);
         color: white;
         padding: 9px 13px;
         cursor: pointer;
@@ -802,127 +502,45 @@
         width: 100%;
         padding: 10px 0;
         font-size: 11px;
-        border-bottom: 1px solid rgba(255, 255, 255, .08);
+        border-bottom: 1px solid rgba(255,255,255,.08);
       }
 
       .hero {
         width: calc(100% - 30px);
-        margin: 18px auto 0;
-        padding: 55px 20px;
-      }
-
-      .hero h1 {
-        font-size: clamp(38px, 8vw, 56px);
-      }
-
-      .hero p {
-        font-size: 15px;
+        margin-top: 18px;
+        padding: 60px 20px;
       }
 
       .content-section {
         padding: 65px 6%;
       }
 
-      .event-2026-card,
-      .event-single-card {
-        padding: 26px 20px;
-      }
-
-      .event-single-card {
+      .history-grid {
         grid-template-columns: 1fr;
-        gap: 24px;
-      }
-
-      .event-single-card.reverse .event-single-body,
-      .event-single-card.reverse .event-single-media {
-        order: unset;
-      }
-
-      .event-photos-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
-      }
-
-      .centenario-box {
-        grid-template-columns: 1fr;
-        padding: 28px 22px;
-        gap: 26px;
       }
     }
 
-    @media (max-width: 650px) {
-      .event-photos-grid,
-      .ottanta-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px 13px;
+    @media(max-width:560px) {
+      .years-grid {
+        grid-template-columns: 1fr;
       }
 
-      .lightbox {
-        padding: 60px 14px 82px;
-      }
-
-      .lightbox-arrow {
-        top: auto;
-        bottom: 14px;
-        transform: none;
-        font-size: 16px;
-        width: 42px;
-        height: 40px;
-      }
-
-      .lightbox-prev {
-        left: 20px;
-      }
-
-      .lightbox-next {
-        right: 20px;
-      }
-
-      .lightbox-close {
-        top: 10px;
-        right: 14px;
-        width: 40px;
-        height: 40px;
-        font-size: 28px;
-      }
-
-      .lightbox img {
-        max-height: calc(100% - 82px);
-      }
-
-      .lightbox-caption {
-        font-size: 13px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .logo img {
-        width: 43px;
-        height: 43px;
-      }
-
-      .logo-text {
-        font-size: 16px;
+      .year-card {
+        min-height: 270px;
       }
 
       .hero h1 {
-        font-size: 37px;
+        font-size: 39px;
       }
 
-      .event-photos-grid,
-      .ottanta-grid {
-        grid-template-columns: 1fr;
+      .history-card {
+        padding: 25px 21px;
       }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *, *::before, *::after {
-        transition-duration: 0.01ms !important;
-      }
+    @media(prefers-reduced-motion:reduce) {
+      html { scroll-behavior: auto; }
+      *,*::before,*::after { transition-duration: .01ms !important; }
     }
   </style>
 </head>
@@ -933,6 +551,7 @@
 
   <header>
     <div class="header-inner">
+
       <a class="logo" href="index.html" aria-label="Torna alla Home">
         <img src="logo.jpeg" alt="Logo Corpo Bandistico Municipale G. Verdi">
         <span class="logo-text">
@@ -942,12 +561,12 @@
       </a>
 
       <button class="mobile-menu" id="menuButton"
-              aria-expanded="false" aria-controls="headerRight">
+        aria-expanded="false" aria-controls="headerRight">
         MENU ☰
       </button>
 
       <div class="header-right" id="headerRight">
-        <nav id="mainNav" aria-label="Navigazione principale">
+        <nav aria-label="Navigazione principale">
           <a href="index.html">Home</a>
           <a href="la-banda.html">La Banda</a>
           <a href="musica.html">La Scuola di Musica</a>
@@ -958,6 +577,7 @@
           <a href="index.html#contatti">Contatti</a>
         </nav>
       </div>
+
     </div>
   </header>
 
@@ -965,399 +585,224 @@
 
   <section class="hero">
     <div class="hero-content">
-      <div class="section-label">ASSOCIAZIONE MUSICALE ALCARESE · DAL 1911</div>
+      <div class="section-label">
+        ASSOCIAZIONE MUSICALE ALCARESE · DAL 1911
+      </div>
+
       <h1>Eventi e ricorrenze</h1>
+
       <p>
-        Gli appuntamenti del 2026, i momenti celebrativi e i traguardi
-        storici che hanno segnato il cammino del Corpo Bandistico Municipale
-        “G. Verdi” di Alcara Li Fusi.
+        La musica, le manifestazioni e i momenti che raccontano
+        il cammino del Corpo Bandistico Municipale “G. Verdi”
+        di Alcara Li Fusi. Un viaggio attraverso gli appuntamenti
+        più recenti e la memoria della nostra storia.
       </p>
+
       <div class="hero-line"></div>
     </div>
   </section>
 
-  <!-- EVENTI 2026 -->
+  <!-- ARCHIVIO PER ANNO -->
 
-  <section class="content-section" id="eventi-2026">
+  <section class="content-section" id="archivio">
     <div class="content">
-      <div class="section-label">Stagione 2026</div>
-      <h2 class="section-title">Gli eventi del 2026</h2>
+
+      <div class="section-label">Il nostro percorso</div>
+      <h2 class="section-title">Gli eventi negli anni</h2>
+
       <p class="intro">
-        I concerti, le rassegne e le iniziative musicali realizzate dal Corpo
-        Bandistico Municipale “G. Verdi” nel corso del 2026. 
+        Ogni anno è fatto di concerti, incontri, celebrazioni e occasioni
+        di condivisione. Seleziona un anno per scoprire gli eventi,
+        le fotografie e i momenti più significativi della nostra attività.
       </p>
 
-      <!-- EVENTO 1: SULLE NOTE DEL RICORDO -->
+      <div class="years-grid">
 
-      <article class="event-2026-card">
-        <div class="event-2026-header">
-          <div>
-            <span class="event-date-badge">Evento 2026</span>
-            <h3>“Sulle note del Ricordo”</h3>
-            <p class="event-subtitle">Concerto in memoria di Gaetano Patroniti</p>
-          </div>
-        </div>
+        <a href="eventi/2026.html"
+           class="year-card current"
+           data-year="2026">
 
-        <p class="event-description">
-          Un tributo toccante e vibrante alla memoria del Maestro Gaetano
-          Patroniti, reso indimenticabile dalla straordinaria maestria del
-          Maestro Marco Gironi — suo allievo e musicista di grande spessore —
-          e di tutti gli artisti che hanno condiviso il palco con lui, unendo
-          il talento a un profondo legame umano e artistico.
-        </p>
-
-        <div class="event-photos-grid">
-          <button
-            type="button"
-            class="event-photo-card"
-            aria-label="Sulle note del Ricordo"
-            onclick="apriLightboxDaIndice(0)"
-          >
-            <div class="event-photo-frame">
-              <img
-                src="eventi/2026.jpg"
-                alt="Sulle note del Ricordo – Concerto in memoria di Gaetano Patroniti"
-                loading="lazy"
-                onerror="fallbackEstensione(this, 'eventi/2026')"
-              >
-            </div>
-            <div class="event-photo-body">
-              <span class="event-photo-tag">2026 · Sulle note del Ricordo</span>
-              <h4 class="event-photo-title">Concerto in memoria di Gaetano Patroniti </h4>
-            </div>
-          </button>
-
-          <button
-            type="button"
-            class="event-photo-card"
-            onclick="apriLightboxDaIndice(1)"
-          >
-            <div class="event-photo-frame">
-              <img
-                src="eventi/2026%201.jpg"
-                alt="Sulle note del Ricordo – Concerto in memoria di Gaetano Patroniti"
-                loading="lazy"
-                onerror="fallbackEstensione(this, 'eventi/2026%201')"
-              >
-            </div>
-            <div class="event-photo-body">
-              <span class="event-photo-tag">2026 · Sulle note del Ricordo</span>
-              <h4 class="event-photo-title">Concerto in memoria di Gaetano Patroniti</h4>
-            </div>
-          </button>
-
-          <button
-            type="button"
-            class="event-photo-card"
-            onclick="apriLightboxDaIndice(2)"
-          >
-            <div class="event-photo-frame">
-              <img
-                src="eventi/2026%202.jpg"
-                alt="Sulle note del Ricordo – Concerto in memoria di Gaetano Patroniti"
-                loading="lazy"
-                onerror="fallbackEstensione(this, 'eventi/2026%202')"
-              >
-            </div>
-            <div class="event-photo-body">
-              <span class="event-photo-tag">2026 · Sulle note del Ricordo</span>
-              <h4 class="event-photo-title">Concerto in memoria di Gaetano Patroniti</h4>
-            </div>
-          </button>
-        </div>
-
-        <div class="event-actions">
-          <a
-            class="btn-navy"
-            href="https://www.facebook.com/bandamunicipalealcara/posts/pfbid02us5QR7e33k3u52WuJYWA1Y87gQBRtiqgmKTdCYkqEyVRk34hG4boru8wVoqXm95ul"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Guarda tutte le foto su Facebook ↗
-          </a>
-          <span class="event-actions-note">
-            Apre l'album completo dell'evento sulla pagina Facebook ufficiale della Banda.
-          </span>
-        </div>
-      </article>
-
-      <!-- EVENTO 2: L'HISTOIRE DU SOLDAT -->
-
-      <article class="event-single-card">
-        <div class="event-single-body">
-          <span class="event-date-badge">Evento 2026</span>
-          <h3>L’Histoire du Soldat</h3>
-          <p class="event-subtitle">di Igor Stravinskij</p>
-
-          <div class="event-single-text">
-            <p>
-              Un progetto impegnativo, nato dalla passione e dalla voglia di
-              sperimentare, che ci ha regalato una serata che porteremo con
-              noi a lungo.
+          <div class="year-top">
+            <span class="year-label">Stagione corrente</span>
+            <div class="year-number">2026</div>
+            <p class="year-description">
+              Concerti, progetti musicali, manifestazioni e il
+              115° anniversario della Banda.
             </p>
           </div>
 
-          <div class="event-actions">
-            <a
-              class="btn-navy"
-              href="https://www.facebook.com/bandamunicipalealcara/posts/pfbid0XRQKfyVX5mXoKowGVQkLhLjyezTQxv1Dp8AiDDmScwE6QsvT8V4TgNm4Fgiv6dzHl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Guarda le foto su Facebook ↗
-            </a>
+          <div class="year-bottom">
+            <span class="year-link">
+              Scopri gli eventi <span>→</span>
+            </span>
           </div>
-        </div>
 
-        <div class="event-single-media">
-          <button
-            type="button"
-            class="single-photo-btn"
-            onclick="apriLightboxDaIndice(3)"
-          >
-            <img
-              src="eventi/2026%205.jpg"
-              alt="L’Histoire du Soldat di Igor Stravinskij"
-              loading="lazy"
-              onerror="fallbackEstensione(this, 'eventi/2026%205')"
-            >
-          </button>
-          <div class="single-photo-caption">Clicca per ingrandire</div>
-        </div>
-      </article>
+        </a>
 
-      <!-- EVENTO 3: CIAK SI SUONA -->
+        <a href="eventi/2025.html"
+           class="year-card"
+           data-year="2025">
 
-      <article class="event-single-card reverse">
-        <div class="event-single-body">
-          <span class="event-date-badge">Scuola di Musica · 2026</span>
-          <h3>Ciak si suona</h3>
-          <p class="event-subtitle">Gli allievi della Scuola di Musica protagonisti</p>
-
-          <div class="event-single-text">
-            <p>
-              Un appuntamento dedicato ai giovani allievi e alla passione per la
-              musica da film, raccontato nella sezione dedicata alla Scuola di
-              Musica del Corpo Bandistico Municipale “G. Verdi”.
+          <div class="year-top">
+            <span class="year-label">Archivio annuale</span>
+            <div class="year-number">2025</div>
+            <p class="year-description">
+              Rivivi i concerti, le iniziative e gli appuntamenti
+              del Corpo Bandistico durante il 2025.
             </p>
           </div>
 
-          <div class="event-actions">
-            <a class="btn-navy" href="musica.html">
-              Leggi l'articolo nella Scuola di Musica →
-            </a>
+          <div class="year-bottom">
+            <span class="year-link">
+              Scopri gli eventi <span>→</span>
+            </span>
           </div>
-        </div>
 
-        <div class="event-single-media">
-          <button
-            type="button"
-            class="single-photo-btn"
-            onclick="apriLightboxDaIndice(4)"
-          >
-            <img
-              src="eventi/2026%203.jpg"
-              alt="Ciak si suona – Scuola di Musica"
-              loading="lazy"
-              onerror="fallbackEstensione(this, 'eventi/2026%203')"
-            >
-          </button>
-          <div class="single-photo-caption">Clicca per ingrandire</div>
-        </div>
-      </article>
+        </a>
 
-      <!-- EVENTO 4: OLTRE L'ORIZZONTE (16 AGOSTO) -->
+        <a href="eventi/2024.html"
+           class="year-card"
+           data-year="2024">
 
-      <article class="event-single-card">
-        <div class="event-single-body">
-          <span class="event-date-badge">16 Agosto 2026 · 115° Anniversario</span>
-          <h3>Oltre l'orizzonte</h3>
-          <p class="event-subtitle">Il consueto appuntamento della sera del 16 agosto</p>
-
-          <div class="event-single-text">
-            <p>
-              Un viaggio attraverso luoghi lontani, culture diverse e atmosfere
-              senza tempo, dove ogni nota diventa una nuova direzione e ogni
-              melodia ci porta un po’ più lontano.
-            </p>
-            <p>
-              Quest’anno, però, il viaggio assume un significato ancora più
-              speciale: 115 anni di storia ci separano da quel 1911 in cui
-              iniziò il cammino della nostra Banda. Un cammino fatto di musica,
-              tradizione, passione e generazioni che, ancora oggi, continuano
-              a suonare insieme.
+          <div class="year-top">
+            <span class="year-label">Archivio annuale</span>
+            <div class="year-number">2024</div>
+            <p class="year-description">
+              Una raccolta dei momenti musicali e delle
+              manifestazioni che hanno caratterizzato il 2024.
             </p>
           </div>
-        </div>
 
-        <div class="event-single-media">
-          <button
-            type="button"
-            class="single-photo-btn"
-            onclick="apriLightboxDaIndice(5)"
-          >
-            <img
-              src="eventi/2026%204.jpg"
-              alt="Oltre l'orizzonte – Concerto del 16 agosto 2026"
-              loading="lazy"
-              onerror="fallbackEstensione(this, 'eventi/2026%204')"
-            >
-          </button>
-          <div class="single-photo-caption">Clicca per ingrandire</div>
-        </div>
-      </article>
-
-      <!-- EVENTO 5: LA BANDA A TEATRO -->
-
-      <article class="event-single-card reverse">
-        <div class="event-single-body">
-          <span class="event-date-badge">Evento 2026</span>
-          <h3>La Banda a Teatro</h3>
-          <p class="event-subtitle">Grande musica Operistica Italiana e d'Oltralpe</p>
-
-          <div class="event-single-text">
-            <p>
-              Un concerto totalmente dedicato alla grande musica Operistica
-              Italiana e d'Oltralpe: immergendoci in un'atmosfera senza tempo,
-              vivremo nella loro versione per Orchestra di Fiati l'appassionata
-              storia d'amore tra Alfredo e Violetta, protagonisti de
-              <em>“La Traviata”</em>, raccontata dai suoni vellutati dei Solisti
-              e di tutta la Banda.
-            </p>
-            <p>
-              L'Opera di Verdi, l'esplosività della <em>“Norma”</em>,
-              l'intensità del <em>“Barbiere di Siviglia”</em>, la tensione
-              scenica di <em>“Masquerade”</em> sono solo una parte del ricco
-              programma proposto dal M° M. Saccone e dal nostro Corpo
-              Bandistico.
-            </p>
+          <div class="year-bottom">
+            <span class="year-link">
+              Scopri gli eventi <span>→</span>
+            </span>
           </div>
-        </div>
 
-        <div class="event-single-media">
-          <button
-            type="button"
-            class="single-photo-btn"
-            aria-label="Ingrandisci La Banda a Teatro"
-            onclick="apriLightboxDaIndice(6)"
-          >
-            <img
-              src="eventi/2026%206.jpg"
-              alt="La Banda a Teatro – Concerto lirico-sinfonico diretto dal M° Michele Saccone"
-              loading="lazy"
-              onerror="fallbackEstensione(this, 'eventi/2026%206')"
-            >
-          </button>
-          <div class="single-photo-caption">Clicca per ingrandire</div>
-        </div>
-      </article>
-    </div>
-  </section>
+        </a>
 
-  <!-- 100 ANNI -->
-
-  <section class="content-section cream" id="centenario">
-    <div class="content">
-      <div class="centenario-box">
-        <div class="centenario-text">
-          <div class="centenario-tag">1911 – 2011 · Primo Secolo di Storia</div>
-          <h2>I 100 anni dalla fondazione</h2>
-          <p>
-            Nel 2011, ricorrendo il 100° anno dalla fondazione, la Banda
-            Municipale Alcarese ha organizzato una serie di eventi che hanno
-            visto la partecipazione degli attuali e degli ex componenti della
-            Banda, nonché quella di tutta la comunità.
-          </p>
-          <a class="btn-gold" href="centenario.html">Scopri l'approfondimento sui 100 anni</a>
-        </div>
-
-        <div class="centenario-media">
-          <button
-            type="button"
-            class="centenario-photo-btn"
-            aria-label="Ingrandisci la fotografia dei 100 anni della Banda"
-            onclick="apriLightboxDaIndice(7)"
-          >
-            <img src="eventi/100 anni.jpg" alt="Celebrazioni dei 100 anni del Corpo Bandistico Municipale G. Verdi" loading="lazy">
-          </button>
-          <div class="centenario-caption">100° Anniversario · 2011</div>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- FESTEGGIAMENTI DELL'80° ANNO DALLA FONDAZIONE -->
+  <!-- ARCHIVIO STORICO -->
 
-  <section class="content-section" id="ottanta-anni">
+  <section class="content-section cream" id="archivio-storico">
     <div class="content">
-      <div class="section-label">Memoria storica</div>
-      <h2 class="section-title">Festeggiamenti dell'80° anno dalla fondazione</h2>
-      <p class="intro">
-        Le immagini e l'attestato commemorativo dedicati all'80° anniversario
-        del Corpo Bandistico Municipale “G. Verdi”. Seleziona una fotografia
-        per ingrandirla e scorrere l'album.
+
+      <div class="section-label">La memoria della Banda</div>
+      <h2 class="section-title">La nostra storia, attraverso gli eventi</h2>
+
+      <p class="history-intro">
+        Accanto agli appuntamenti più recenti, conserviamo il ricordo
+        delle celebrazioni e dei traguardi che hanno segnato la storia
+        del Corpo Bandistico Municipale “G. Verdi”.
+        Questi momenti rappresentano una parte preziosa della nostra
+        identità e della tradizione musicale alcarese.
       </p>
 
-      <div class="ottanta-grid">
-        <button
-          type="button"
-          class="event-photo-card"
-          aria-label="Ingrandisci Festeggiamenti 80° anno - Foto 1"
-          onclick="apriLightboxDaIndice(8)"
-        >
-          <div class="event-photo-frame">
-            <img src="eventi/80%201.jpg" alt="Festeggiamenti dell'80° anno dalla fondazione - immagine 1" loading="lazy">
-          </div>
-          <div class="event-photo-body">
-            <span class="event-photo-tag">80° Anniversario</span>
-            <h3 class="event-photo-title">Celebrazioni – Immagine 1</h3>
-          </div>
-        </button>
+      <div class="history-grid">
 
-        <button
-          type="button"
-          class="event-photo-card"
-          aria-label="Ingrandisci Festeggiamenti 80° anno - Foto 2"
-          onclick="apriLightboxDaIndice(9)"
-        >
-          <div class="event-photo-frame">
-            <img src="eventi/80%202.jpg" alt="Festeggiamenti dell'80° anno dalla fondazione - immagine 2" loading="lazy">
-          </div>
-          <div class="event-photo-body">
-            <span class="event-photo-tag">80° Anniversario</span>
-            <h3 class="event-photo-title">Celebrazioni – Immagine 2</h3>
-          </div>
-        </button>
+        <!-- CENTENARIO -->
 
-        <button
-          type="button"
-          class="event-photo-card"
-          aria-label="Ingrandisci Festeggiamenti 80° anno - Foto 3"
-          onclick="apriLightboxDaIndice(10)"
-        >
-          <div class="event-photo-frame">
-            <img src="eventi/80%203.jpg" alt="Festeggiamenti dell'80° anno dalla fondazione - immagine 3" loading="lazy">
-          </div>
-          <div class="event-photo-body">
-            <span class="event-photo-tag">80° Anniversario</span>
-            <h3 class="event-photo-title">Celebrazioni – Immagine 3</h3>
-          </div>
-        </button>
+        <article class="history-card">
 
-        <button
-          type="button"
-          class="event-photo-card"
-          aria-label="Ingrandisci Attestato 80° anno della Banda"
-          onclick="apriLightboxDaIndice(11)"
-        >
-          <div class="event-photo-frame">
-            <img src="eventi/attestato-80-banda_orig.jpg" alt="Attestato dell'80° anno dalla fondazione della Banda" loading="lazy">
+          <div>
+            <div class="history-date">1911 – 2011 · Primo secolo di storia</div>
+
+            <h3>I 100 anni dalla fondazione</h3>
+
+            <p>
+              Nel 2011, ricorrendo il 100° anno dalla fondazione,
+              la Banda Municipale Alcarese ha organizzato una serie
+              di eventi che hanno visto la partecipazione degli
+              attuali e degli ex componenti della Banda, nonché
+              quella di tutta la comunità.
+            </p>
+
+            <img
+              class="history-image"
+              src="eventi/100 anni.jpg"
+              alt="Celebrazioni del centenario del Corpo Bandistico Municipale G. Verdi"
+              loading="lazy"
+            >
           </div>
-          <div class="event-photo-body">
-            <span class="event-photo-tag">Documento commemorativo</span>
-            <h3 class="event-photo-title">Attestato 80° anno della Banda</h3>
+
+          <a class="history-link" href="centenario.html">
+            Scopri il centenario →
+          </a>
+
+        </article>
+
+        <!-- OTTANTESIMO -->
+
+        <article class="history-card">
+
+          <div>
+            <div class="history-date">Memoria storica · 80° anniversario</div>
+
+            <h3>Festeggiamenti dell'80° anno</h3>
+
+            <p>
+              Le immagini e l'attestato commemorativo dedicati
+              all'80° anniversario della fondazione del Corpo
+              Bandistico Municipale “G. Verdi”: testimonianze
+              di una storia musicale costruita nel tempo.
+            </p>
+
+            <img
+              class="history-image"
+              src="eventi/80%201.jpg"
+              alt="Festeggiamenti dell'80° anno dalla fondazione della Banda"
+              loading="lazy"
+            >
           </div>
-        </button>
+
+          <a class="history-link" href="#album-ottantesimo">
+            Guarda le fotografie →
+          </a>
+
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ALBUM OTTANTESIMO -->
+
+  <section class="content-section" id="album-ottantesimo">
+    <div class="content">
+
+      <div class="section-label">Documenti e fotografie</div>
+      <h2 class="section-title">L'80° anniversario in immagini</h2>
+
+      <p class="intro">
+        Una piccola raccolta di testimonianze fotografiche e documentali
+        dei festeggiamenti dell'80° anno dalla fondazione della Banda.
+      </p>
+
+      <div class="history-grid">
+
+        <img class="history-image"
+          src="eventi/80%201.jpg"
+          alt="Celebrazioni dell'80° anniversario - fotografia 1"
+          loading="lazy">
+
+        <img class="history-image"
+          src="eventi/80%202.jpg"
+          alt="Celebrazioni dell'80° anniversario - fotografia 2"
+          loading="lazy">
+
+        <img class="history-image"
+          src="eventi/80%203.jpg"
+          alt="Celebrazioni dell'80° anniversario - fotografia 3"
+          loading="lazy">
+
+        <img class="history-image"
+          src="eventi/attestato-80-banda_orig.jpg"
+          alt="Attestato commemorativo dell'80° anniversario"
+          loading="lazy">
+
       </div>
     </div>
   </section>
@@ -1368,49 +813,31 @@
     <p>
       <strong>Corpo Bandistico Municipale “G. Verdi”</strong>
     </p>
+
     <div class="footer-line"></div>
+
     <p>
       © 2026 Associazione Musicale Alcarese – Alcara Li Fusi, Messina
     </p>
+
     <p>Dal 1911, musica e tradizione.</p>
+
     <p>
       Sito web creato e curato da Antonina Vaneria
       e dai Responsabili della Comunicazione del Direttivo.
     </p>
   </footer>
 
-  <!-- LIGHTBOX CON SCORRIMENTO -->
-
-  <div
-    class="lightbox"
-    id="lightbox"
-    role="dialog"
-    aria-modal="true"
-    aria-label="Visualizzazione fotografia"
-    aria-hidden="true"
-  >
-    <button class="lightbox-close" id="close-lightbox"
-      aria-label="Chiudi">×</button>
-    <button class="lightbox-arrow lightbox-prev" id="prev-photo"
-      aria-label="Fotografia precedente">❮</button>
-    <div class="lightbox-content">
-      <img id="lightbox-image" src="" alt="">
-      <div class="lightbox-caption" id="lightbox-caption"></div>
-    </div>
-    <button class="lightbox-arrow lightbox-next" id="next-photo"
-      aria-label="Fotografia successiva">❯</button>
-    <div class="lightbox-position" id="lightbox-position"></div>
-  </div>
+  <!-- MENU MOBILE -->
 
   <script>
-    /* MENU MOBILE */
-
     const menuButton = document.getElementById("menuButton");
     const headerRight = document.getElementById("headerRight");
 
     if (menuButton && headerRight) {
       menuButton.addEventListener("click", () => {
         const isOpen = headerRight.classList.toggle("open");
+
         menuButton.setAttribute("aria-expanded", isOpen);
         menuButton.textContent = isOpen ? "CHIUDI ✕" : "MENU ☰";
       });
@@ -1423,169 +850,6 @@
         });
       });
     }
-
-    /* FALLBACK ESTENSIONE FOTO (.jpg -> .jpeg -> .png) */
-
-    function fallbackEstensione(img, basePath) {
-      const tentativi = [".jpeg", ".png", ".JPG"];
-      const step = parseInt(img.dataset.step || "0", 10);
-      if (step < tentativi.length) {
-        img.dataset.step = String(step + 1);
-        img.src = basePath + tentativi[step];
-      }
-    }
-
-    /* GALLERIA LIGHTBOX EVENTI */
-
-    const eventPhotos = [
-      {
-        src: "eventi/2026.jpg",
-        basePath: "eventi/2026",
-        tag: "2026 · SULLE NOTE DEL RICORDO",
-        caption: "Sulle note del Ricordo – Concerto in memoria di Gaetano Patroniti (1)"
-      },
-      {
-        src: "eventi/2026%201.jpg",
-        basePath: "eventi/2026%201",
-        tag: "2026 · SULLE NOTE DEL RICORDO",
-        caption: "Sulle note del Ricordo – Concerto in memoria di Gaetano Patroniti (2)"
-      },
-      {
-        src: "eventi/2026%202.jpg",
-        basePath: "eventi/2026%202",
-        tag: "2026 · SULLE NOTE DEL RICORDO",
-        caption: "Sulle note del Ricordo – Concerto in memoria di Gaetano Patroniti (3)"
-      },
-      {
-        src: "eventi/2026%205.jpg",
-        basePath: "eventi/2026%205",
-        tag: "2026 · L’HISTOIRE DU SOLDAT",
-        caption: "L’Histoire du Soldat di Igor Stravinskij"
-      },
-      {
-        src: "eventi/2026%203.jpg",
-        basePath: "eventi/2026%203",
-        tag: "2026 · CIAK SI SUONA",
-        caption: "Ciak si suona – Scuola di Musica"
-      },
-      {
-        src: "eventi/2026%204.jpg",
-        basePath: "eventi/2026%204",
-        tag: "16 AGOSTO 2026 · OLTRE L'ORIZZONTE",
-        caption: "Oltre l'orizzonte – Concerto della sera del 16 agosto nel 115° anniversario"
-      },
-      {
-        src: "eventi/2026%206.jpg",
-        basePath: "eventi/2026%206",
-        tag: "2026 · LA BANDA A TEATRO",
-        caption: "La Banda a Teatro – Grande musica Operistica Italiana e d'Oltralpe"
-      },
-      {
-        src: "eventi/100anni.jpg",
-        tag: "100° ANNO · 2011",
-        caption: "Celebrazioni del centenario dalla fondazione della Banda Municipale Alcarese"
-      },
-      {
-        src: "eventi/80%201.jpg",
-        tag: "80° ANNO DALLA FONDAZIONE",
-        caption: "Festeggiamenti dell'80° anno dalla fondazione – Immagine 1"
-      },
-      {
-        src: "eventi/80%202.jpg",
-        tag: "80° ANNO DALLA FONDAZIONE",
-        caption: "Festeggiamenti dell'80° anno dalla fondazione – Immagine 2"
-      },
-      {
-        src: "eventi/80%203.jpg",
-        tag: "80° ANNO DALLA FONDAZIONE",
-        caption: "Festeggiamenti dell'80° anno dalla fondazione – Immagine 3"
-      },
-      {
-        src: "eventi/attestato-80-banda_orig.jpg",
-        tag: "80° ANNO DALLA FONDAZIONE",
-        caption: "Attestato commemorativo dell'80° anno dalla fondazione"
-      }
-    ];
-
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImage = document.getElementById("lightbox-image");
-    const lightboxCaption = document.getElementById("lightbox-caption");
-    const lightboxPosition = document.getElementById("lightbox-position");
-
-    let currentIndex = 0;
-    let lastFocusedElement = null;
-
-    function updateLightbox() {
-      const photo = eventPhotos[currentIndex];
-      lightboxImage.dataset.step = "0";
-      lightboxImage.onerror = photo.basePath
-        ? () => fallbackEstensione(lightboxImage, photo.basePath)
-        : null;
-      lightboxImage.src = photo.src;
-      lightboxImage.alt = photo.caption;
-      lightboxCaption.replaceChildren();
-
-      const tagSpan = document.createElement("span");
-      tagSpan.className = "lightbox-year";
-      tagSpan.textContent = photo.tag;
-
-      const capSpan = document.createElement("span");
-      capSpan.textContent = photo.caption;
-
-      lightboxCaption.append(tagSpan, capSpan);
-      lightboxPosition.textContent =
-        (currentIndex + 1) + " / " + eventPhotos.length;
-    }
-
-    function apriLightboxDaIndice(index) {
-      currentIndex = index;
-      lastFocusedElement = document.activeElement;
-      updateLightbox();
-      lightbox.classList.add("open");
-      lightbox.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
-      document.getElementById("close-lightbox").focus();
-    }
-
-    function closeLightbox() {
-      lightbox.classList.remove("open");
-      lightbox.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
-      lightboxImage.src = "";
-      if (lastFocusedElement) {
-        lastFocusedElement.focus();
-      }
-    }
-
-    function nextPhoto() {
-      currentIndex = (currentIndex + 1) % eventPhotos.length;
-      updateLightbox();
-    }
-
-    function previousPhoto() {
-      currentIndex = (currentIndex - 1 + eventPhotos.length) % eventPhotos.length;
-      updateLightbox();
-    }
-
-    document.getElementById("close-lightbox")
-      .addEventListener("click", closeLightbox);
-    document.getElementById("next-photo")
-      .addEventListener("click", nextPhoto);
-    document.getElementById("prev-photo")
-      .addEventListener("click", previousPhoto);
-
-    lightbox.addEventListener("click", event => {
-      if (event.target === lightbox) {
-        closeLightbox();
-      }
-    });
-
-    document.addEventListener("keydown", event => {
-      if (!lightbox.classList.contains("open")) return;
-      if (event.key === "Escape") closeLightbox();
-      if (event.key === "ArrowRight") nextPhoto();
-      if (event.key === "ArrowLeft") previousPhoto();
-    });
   </script>
 
 </body>
