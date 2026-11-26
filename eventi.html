@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eventi | Corpo Bandistico Municipale “G. Verdi”</title>
   <meta name="theme-color" content="#14263D">
-  <meta name="description" content="Eventi storici e commemorazioni del Corpo Bandistico Municipale G. Verdi di Alcara Li Fusi: gli 80 anni, i 100 anni e i momenti principali della storia.">
+  <meta name="description" content="Eventi 2026, commemorazioni e ricorrenze storiche del Corpo Bandistico Municipale G. Verdi di Alcara Li Fusi.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -255,6 +255,103 @@
       max-width: 840px;
       line-height: 1.85;
       margin-bottom: 34px;
+    }
+
+    /* SCHEDA EVENTO 2026 */
+
+    .event-2026-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--gold);
+      padding: 38px 40px;
+      box-shadow: var(--shadow);
+      margin-bottom: 32px;
+    }
+
+    .event-2026-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .event-date-badge {
+      display: inline-block;
+      background: var(--navy);
+      color: var(--gold-light);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 7px 14px;
+      border-left: 3px solid var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .event-2026-card h3 {
+      color: var(--navy);
+      font-size: clamp(26px, 3.3vw, 36px);
+      margin-bottom: 6px;
+    }
+
+    .event-subtitle {
+      color: var(--burgundy);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    .event-description {
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.9;
+      max-width: 920px;
+      margin-bottom: 26px;
+    }
+
+    .event-photos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      margin-bottom: 26px;
+    }
+
+    .event-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .btn-navy {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 24px;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border: 1px solid var(--navy);
+      transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+    }
+
+    .btn-navy:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--navy-deep);
+      transform: translateY(-2px);
+    }
+
+    .event-actions-note {
+      color: var(--muted);
+      font-size: 13px;
     }
 
     /* 100 ANNI */
@@ -635,6 +732,15 @@
         padding: 65px 6%;
       }
 
+      .event-2026-card {
+        padding: 26px 20px;
+      }
+
+      .event-photos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
       .centenario-box {
         grid-template-columns: 1fr;
         padding: 28px 22px;
@@ -643,6 +749,7 @@
     }
 
     @media (max-width: 650px) {
+      .event-photos-grid,
       .ottanta-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 16px 13px;
@@ -700,6 +807,7 @@
         font-size: 37px;
       }
 
+      .event-photos-grid,
       .ottanta-grid {
         grid-template-columns: 1fr;
       }
@@ -758,11 +866,121 @@
       <div class="section-label">ASSOCIAZIONE MUSICALE ALCARESE · DAL 1911</div>
       <h1>Eventi e ricorrenze</h1>
       <p>
-        I momenti celebrativi, i traguardi storici e gli appuntamenti che
-        hanno segnato il cammino del Corpo Bandistico Municipale “G. Verdi”
-        di Alcara Li Fusi.
+        Gli appuntamenti del 2026, i momenti celebrativi e i traguardi
+        storici che hanno segnato il cammino del Corpo Bandistico Municipale
+        “G. Verdi” di Alcara Li Fusi.
       </p>
       <div class="hero-line"></div>
+    </div>
+  </section>
+
+  <!-- EVENTI 2026 -->
+
+  <section class="content-section" id="eventi-2026">
+    <div class="content">
+      <div class="section-label">Stagione 2026</div>
+      <h2 class="section-title">Gli eventi del 2026</h2>
+      <p class="intro">
+        I concerti, le rassegne e le iniziative musicali realizzate dal Corpo
+        Bandistico Municipale “G. Verdi” nel corso del 2026. Seleziona una
+        fotografia per ingrandirla.
+      </p>
+
+      <!-- EVENTO 1 - 2026: SULLE NOTE DEL RICORDO -->
+
+      <article class="event-2026-card">
+        <div class="event-2026-header">
+          <div>
+            <span class="event-date-badge">Evento 2026</span>
+            <h3>“Sulle note del Ricordo”</h3>
+            <p class="event-subtitle">Concerto in memoria di Gaetano Patroniti</p>
+          </div>
+        </div>
+
+        <p class="event-description">
+          Un tributo toccante e vibrante alla memoria del Maestro Gaetano
+          Patroniti, reso indimenticabile dalla straordinaria maestria del
+          Maestro Marco Gironi — suo allievo e musicista di grande spessore —
+          e di tutti gli artisti che hanno condiviso il palco con lui, unendo
+          il talento a un profondo legame umano e artistico.
+        </p>
+
+        <div class="event-photos-grid">
+          <button
+            type="button"
+            class="event-photo-card"
+            aria-label="Ingrandisci Sulle note del Ricordo - Foto 1"
+            onclick="apriLightboxDaIndice(0)"
+          >
+            <div class="event-photo-frame">
+              <img
+                src="eventi/2026.jpg"
+                alt="Sulle note del Ricordo – Concerto in memoria di Gaetano Patroniti (foto 1)"
+                loading="lazy"
+                onerror="fallbackEstensione(this, 'eventi/2026')"
+              >
+            </div>
+            <div class="event-photo-body">
+              <span class="event-photo-tag">2026 · Sulle note del Ricordo</span>
+              <h4 class="event-photo-title">Concerto in memoria di Gaetano Patroniti – 1</h4>
+            </div>
+          </button>
+
+          <button
+            type="button"
+            class="event-photo-card"
+            aria-label="Ingrandisci Sulle note del Ricordo - Foto 2"
+            onclick="apriLightboxDaIndice(1)"
+          >
+            <div class="event-photo-frame">
+              <img
+                src="eventi/2026%201.jpg"
+                alt="Sulle note del Ricordo – Concerto in memoria di Gaetano Patroniti (foto 2)"
+                loading="lazy"
+                onerror="fallbackEstensione(this, 'eventi/2026%201')"
+              >
+            </div>
+            <div class="event-photo-body">
+              <span class="event-photo-tag">2026 · Sulle note del Ricordo</span>
+              <h4 class="event-photo-title">Concerto in memoria di Gaetano Patroniti – 2</h4>
+            </div>
+          </button>
+
+          <button
+            type="button"
+            class="event-photo-card"
+            aria-label="Ingrandisci Sulle note del Ricordo - Foto 3"
+            onclick="apriLightboxDaIndice(2)"
+          >
+            <div class="event-photo-frame">
+              <img
+                src="eventi/2026%202.jpg"
+                alt="Sulle note del Ricordo – Concerto in memoria di Gaetano Patroniti (foto 3)"
+                loading="lazy"
+                onerror="fallbackEstensione(this, 'eventi/2026%202')"
+              >
+            </div>
+            <div class="event-photo-body">
+              <span class="event-photo-tag">2026 · Sulle note del Ricordo</span>
+              <h4 class="event-photo-title">Concerto in memoria di Gaetano Patroniti – 3</h4>
+            </div>
+          </button>
+        </div>
+
+        <div class="event-actions">
+          <a
+            class="btn-navy"
+            href="https://www.facebook.com/bandamunicipalealcara/posts/pfbid02us5QR7e33k3u52WuJYWA1Y87gQBRtiqgmKTdCYkqEyVRk34hG4boru8wVoqXm95ul"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Guarda tutte le foto su Facebook ↗
+          </a>
+          <span class="event-actions-note">
+            Apre l'album completo dell'evento sulla pagina Facebook ufficiale della Banda.
+          </span>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -788,7 +1006,7 @@
             type="button"
             class="centenario-photo-btn"
             aria-label="Ingrandisci la fotografia dei 100 anni della Banda"
-            onclick="apriLightboxDaIndice(0)"
+            onclick="apriLightboxDaIndice(3)"
           >
             <img src="eventi/100anni.jpg" alt="Celebrazioni dei 100 anni del Corpo Bandistico Municipale G. Verdi" loading="lazy">
           </button>
@@ -815,7 +1033,7 @@
           type="button"
           class="event-photo-card"
           aria-label="Ingrandisci Festeggiamenti 80° anno - Foto 1"
-          onclick="apriLightboxDaIndice(1)"
+          onclick="apriLightboxDaIndice(4)"
         >
           <div class="event-photo-frame">
             <img src="eventi/80%201.jpg" alt="Festeggiamenti dell'80° anno dalla fondazione - immagine 1" loading="lazy">
@@ -830,7 +1048,7 @@
           type="button"
           class="event-photo-card"
           aria-label="Ingrandisci Festeggiamenti 80° anno - Foto 2"
-          onclick="apriLightboxDaIndice(2)"
+          onclick="apriLightboxDaIndice(5)"
         >
           <div class="event-photo-frame">
             <img src="eventi/80%202.jpg" alt="Festeggiamenti dell'80° anno dalla fondazione - immagine 2" loading="lazy">
@@ -845,7 +1063,7 @@
           type="button"
           class="event-photo-card"
           aria-label="Ingrandisci Festeggiamenti 80° anno - Foto 3"
-          onclick="apriLightboxDaIndice(3)"
+          onclick="apriLightboxDaIndice(6)"
         >
           <div class="event-photo-frame">
             <img src="eventi/80%203.jpg" alt="Festeggiamenti dell'80° anno dalla fondazione - immagine 3" loading="lazy">
@@ -860,7 +1078,7 @@
           type="button"
           class="event-photo-card"
           aria-label="Ingrandisci Attestato 80° anno della Banda"
-          onclick="apriLightboxDaIndice(4)"
+          onclick="apriLightboxDaIndice(7)"
         >
           <div class="event-photo-frame">
             <img src="eventi/attestato-80-banda_orig.jpg" alt="Attestato dell'80° anno dalla fondazione della Banda" loading="lazy">
@@ -936,9 +1154,38 @@
       });
     }
 
+    /* FALLBACK ESTENSIONE FOTO (.jpg -> .jpeg -> .png) */
+
+    function fallbackEstensione(img, basePath) {
+      const tentativi = [".jpeg", ".png", ".JPG"];
+      const step = parseInt(img.dataset.step || "0", 10);
+      if (step < tentativi.length) {
+        img.dataset.step = String(step + 1);
+        img.src = basePath + tentativi[step];
+      }
+    }
+
     /* GALLERIA LIGHTBOX EVENTI */
 
     const eventPhotos = [
+      {
+        src: "eventi/2026.jpg",
+        basePath: "eventi/2026",
+        tag: "2026 · SULLE NOTE DEL RICORDO",
+        caption: "Sulle note del Ricordo – Concerto in memoria di Gaetano Patroniti (1)"
+      },
+      {
+        src: "eventi/2026%201.jpg",
+        basePath: "eventi/2026%201",
+        tag: "2026 · SULLE NOTE DEL RICORDO",
+        caption: "Sulle note del Ricordo – Concerto in memoria di Gaetano Patroniti (2)"
+      },
+      {
+        src: "eventi/2026%202.jpg",
+        basePath: "eventi/2026%202",
+        tag: "2026 · SULLE NOTE DEL RICORDO",
+        caption: "Sulle note del Ricordo – Concerto in memoria di Gaetano Patroniti (3)"
+      },
       {
         src: "eventi/100anni.jpg",
         tag: "100° ANNO · 2011",
@@ -976,6 +1223,10 @@
 
     function updateLightbox() {
       const photo = eventPhotos[currentIndex];
+      lightboxImage.dataset.step = "0";
+      lightboxImage.onerror = photo.basePath
+        ? () => fallbackEstensione(lightboxImage, photo.basePath)
+        : null;
       lightboxImage.src = photo.src;
       lightboxImage.alt = photo.caption;
       lightboxCaption.replaceChildren();
