@@ -121,43 +121,20 @@
       color: #AFC8E1;
     }
 
-    .search-box input {
-      width: 135px;
-      padding: 8px 12px;
-      border: 1px solid rgba(255,255,255,0.35);
-      border-radius: 24px;
-      background: rgba(255,255,255,0.08);
-      color: var(--white);
-      outline: none;
-      font-size: 12px;
-    }
-
-    .search-box input::placeholder {
-      color: #D5DFE9;
-    }
-
-    .search-box input:focus {
-      border-color: #AFC8E1;
-      background: rgba(255,255,255,0.14);
-    }
-
     /* HERO */
 
-   
-
-.hero {
-  min-height: 42vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 75px 20px;
-  background:
-    linear-gradient(rgba(23, 42, 67, 0.58), rgba(23, 42, 67, 0.58)),
-    url("home.jpeg") center center / cover no-repeat;
-  color: #FFFFFF;
-}
-
+    .hero {
+      min-height: 42vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 75px 20px;
+      background:
+        linear-gradient(rgba(23, 42, 67, 0.58), rgba(23, 42, 67, 0.58)),
+        url("home.jpeg") center center / cover no-repeat;
+      color: #FFFFFF;
+    }
 
     .hero-content {
       max-width: 850px;
@@ -438,29 +415,21 @@
     /* FOOTER */
 
     footer {
-  background: #102035;
-  color: #B8C5D4;
-  text-align: center;
-  padding: 25px 7%;
-  font-size: 12px;
-  line-height: 1.9;
-}
+      background: #102035;
+      color: #B8C5D4;
+      text-align: center;
+      padding: 25px 7%;
+      font-size: 12px;
+      line-height: 1.9;
+    }
 
-footer strong {
-  color: var(--white);
-  font-size: 13px;
-}
+    footer strong {
+      color: var(--white);
+      font-size: 13px;
+    }
 
-footer p:last-child {
-  font-size: 10px;
-}
-
-    /* RICERCA */
-
-    .search-highlight {
-      outline: 3px solid #8BAED1;
-      outline-offset: 5px;
-      border-radius: 3px;
+    footer p:last-child {
+      font-size: 10px;
     }
 
     /* RESPONSIVE */
@@ -507,10 +476,6 @@ footer p:last-child {
         justify-content: flex-start;
         gap: 10px 16px;
         font-size: 11px;
-      }
-
-      .search-box {
-        display: none;
       }
 
       .hero {
@@ -616,16 +581,6 @@ footer p:last-child {
         <a href="galleria.html">Galleria</a>
         <a href="#contatti">Contatti</a>
       </nav>
-
-      <div class="search-box">
-        <input
-          type="text"
-          id="searchInput"
-          placeholder="Cerca nel sito..."
-          aria-label="Cerca nel sito"
-          onkeydown="if(event.key === 'Enter') cercaNelSito()"
-        >
-      </div>
     </div>
   </header>
 
@@ -693,11 +648,10 @@ footer p:last-child {
           Alcarese.
         </p>
 
-<div class="band-links">
-  <a href="albo.html">Albo Storico</a>
-  <a href="maestri-direttori.html">Maestri Direttori</a>
-</div>
-
+        <div class="band-links">
+          <a href="albo.html">Albo Storico</a>
+          <a href="maestri-direttori.html">Maestri Direttori</a>
+        </div>
       </div>
     </div>
   </section>
@@ -818,54 +772,19 @@ footer p:last-child {
 
   <!-- FOOTER -->
 
-<footer>
-  <p>
-    <strong>Corpo Bandistico Municipale “G. Verdi”</strong>
-  </p>
-  <p>
-    © 2026 Associazione Musicale Alcarese – Alcara Li Fusi, Messina
-  </p>
-  <p>Dal 1911, musica e tradizione.</p>
-  <p>
-    Sito web creato e curato da Antonina Vaneria
-    e dai Responsabili della Comunicazione del Direttivo.
-  </p>
-</footer>
-  <script>
-    function cercaNelSito() {
-      const input = document.getElementById("searchInput");
-      const testo = input.value.toLowerCase().trim();
-
-      if (!testo) return;
-
-      const elementi = document.querySelectorAll(
-        "h1, h2, h3, p, .section-label, .years"
-      );
-
-      for (const elemento of elementi) {
-        if (elemento.textContent.toLowerCase().includes(testo)) {
-          document.querySelectorAll(".search-highlight").forEach(el => {
-            el.classList.remove("search-highlight");
-          });
-
-          elemento.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-          });
-
-          elemento.classList.add("search-highlight");
-
-          window.setTimeout(() => {
-            elemento.classList.remove("search-highlight");
-          }, 1800);
-
-          return;
-        }
-      }
-
-      alert("Nessun risultato trovato in questa pagina.");
-    }
-  </script>
+  <footer>
+    <p>
+      <strong>Corpo Bandistico Municipale “G. Verdi”</strong>
+    </p>
+    <p>
+      © 2026 Associazione Musicale Alcarese – Alcara Li Fusi, Messina
+    </p>
+    <p>Dal 1911, musica e tradizione.</p>
+    <p>
+      Sito web creato e curato da Antonina Vaneria
+      e dai Responsabili della Comunicazione del Direttivo.
+    </p>
+  </footer>
 
 </body>
 </html>
