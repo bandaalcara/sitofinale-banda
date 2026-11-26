@@ -7,7 +7,6 @@
   <meta name="theme-color" content="#172A43">
 
   <title>Eventi e News | Corpo Bandistico Municipale “G. Verdi”</title>
-
   <meta name="description" content="Eventi, concerti, concorsi e manifestazioni del Corpo Bandistico Municipale G. Verdi di Alcara Li Fusi, dal 1911 a oggi.">
 
   <style>
@@ -112,36 +111,22 @@
       align-items: center;
     }
 
-    nav a {
+    /* NUOVO FONT DEL MENU */
+
+    header nav a {
       color: var(--white);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.45px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.35px;
       text-transform: uppercase;
       transition: color 0.2s;
       white-space: nowrap;
     }
 
-    nav a:hover,
-    nav a.active {
+    header nav a:hover,
+    header nav a.active {
       color: #AFC8E1;
-    }
-
-    .search-box input {
-      width: 145px;
-      padding: 9px 13px;
-      border: 1px solid rgba(255,255,255,0.35);
-      border-radius: 24px;
-      outline: none;
-      background: rgba(255,255,255,0.08);
-      color: var(--white);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 12px;
-    }
-
-    .search-box input::placeholder {
-      color: #DCE4EC;
     }
 
     /* INTRODUZIONE */
@@ -420,7 +405,7 @@
       margin-bottom: 15px;
     }
 
-    /* FOOTER UGUALE ALL'ALBO */
+    /* FOOTER */
 
     footer {
       background: #102035;
@@ -521,12 +506,8 @@
         gap: 12px;
       }
 
-      nav a {
-        font-size: 10px;
-      }
-
-      .search-box input {
-        width: min(230px, 80vw);
+      header nav a {
+        font-size: 11px;
       }
 
       .hero {
@@ -643,22 +624,12 @@
       <a href="galleria.html">Galleria</a>
       <a href="index.html#contatti">Contatti</a>
     </nav>
-
-    <div class="search-box">
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="Cerca negli eventi..."
-        aria-label="Cerca negli eventi"
-      >
-    </div>
   </div>
 </header>
 
 <section class="hero">
   <div class="hero-content">
     <div class="section-label">1911 – Oggi</div>
-
     <h1>Eventi e News</h1>
 
     <p>
@@ -1499,54 +1470,6 @@
   <p>Dal 1911, musica e tradizione.</p>
   <p>Sito web realizzato da Antonina Vaneria e dai Responsabili della Comunicazione del Direttivo</p>
 </footer>
-
-<script>
-  const searchInput = document.getElementById("searchInput");
-  const eventCards = Array.from(document.querySelectorAll(".event-card"));
-  const yearSections = Array.from(document.querySelectorAll(".year"));
-
-  function searchEvents() {
-    const query = searchInput.value.trim().toLocaleLowerCase("it");
-    let totalMatches = 0;
-
-    eventCards.forEach(card => {
-      const matches = !query ||
-        card.textContent.toLocaleLowerCase("it").includes(query);
-
-      card.hidden = !matches;
-
-      if (matches) totalMatches++;
-    });
-
-    yearSections.forEach(section => {
-      const cards = Array.from(section.querySelectorAll(".event-card"));
-      const hasVisibleCard = cards.some(card => !card.hidden);
-
-      // La sezione conclusiva non contiene schede evento.
-      if (cards.length > 0) {
-        section.hidden = !hasVisibleCard;
-      }
-    });
-
-    const intro = document.querySelector(".page-intro");
-    const yearNavigation = document.querySelector(".year-navigation");
-    const closingCard = document.querySelector(".closing-card");
-    const closingSection = closingCard ? closingCard.closest(".year") : null;
-
-    if (intro) intro.hidden = Boolean(query);
-    if (yearNavigation) yearNavigation.hidden = Boolean(query);
-    if (closingSection) closingSection.hidden = Boolean(query);
-
-    if (query && totalMatches > 0) {
-      const firstMatch = eventCards.find(card => !card.hidden);
-      if (firstMatch) {
-        firstMatch.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-    }
-  }
-
-  searchInput.addEventListener("input", searchEvents);
-</script>
 
 </body>
 </html>
