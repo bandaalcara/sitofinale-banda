@@ -1,16 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>La Banda | Corpo Bandistico Municipale “G. Verdi”</title>
+<meta name="theme-color" content="#14263D">
+<meta name="description" content="La storia del Corpo Bandistico Municipale G. Verdi di Alcara Li Fusi, fondato nel 1911.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+<style>
 :root {
-  --navy: #172A43;
-  --navy-light: #243D5B;
-  --blue: #53799F;
-  --blue-hover: #3F6488;
+  --navy: #14263D;
+  --navy-deep: #0D1B2B;
+  --navy-soft: #203A57;
+  --gold: #C5A66B;
+  --gold-light: #E3D2AC;
+  --cream: #F5F1E8;
+  --cream-dark: #EAE3D5;
+  --burgundy: #642F3C;
+  --burgundy-light: #7D3E4E;
   --white: #FFFFFF;
-  --light: #EDF2F7;
-  --light-blue: #F5F8FB;
-  --text: #303943;
-  --muted: #657181;
-  --border: #DCE4EC;
-  --shadow: 0 10px 30px rgba(23, 42, 67, 0.09);
+  --text: #303B43;
+  --muted: #747B7C;
+  --border: #DDD8CD;
+  --shadow: 0 18px 45px rgba(16,32,53,.10);
 }
 
 * {
@@ -21,19 +38,20 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 24px;
+  scroll-padding-top: 90px;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'DM Sans', Arial, sans-serif;
   background: var(--white);
   color: var(--text);
   line-height: 1.7;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3 {
-  font-family: Georgia, "Times New Roman", serif;
+h1,h2,h3 {
+  font-family: 'Playfair Display', Georgia, serif;
   font-weight: 500;
   line-height: 1.2;
 }
@@ -43,25 +61,32 @@ a {
   color: inherit;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+}
+
 .container {
-  width: min(1120px, 88%);
+  width: min(1160px, 88%);
   margin: auto;
 }
 
 /* HEADER */
 
 header {
-  position: relative;
-  width: 100%;
-  background: var(--navy);
-  color: var(--white);
+  position: sticky;
+  top: 0;
   z-index: 100;
+  background: rgba(20,38,61,.97);
+  backdrop-filter: blur(12px);
+  color: white;
+  border-bottom: 1px solid rgba(255,255,255,.09);
 }
 
 .header-inner {
   width: 90%;
   max-width: 1450px;
-  min-height: 80px;
+  min-height: 82px;
   margin: auto;
   display: flex;
   align-items: center;
@@ -73,32 +98,33 @@ header {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: var(--white);
+  color: white;
   flex-shrink: 0;
 }
 
 .logo-img {
-  width: 48px;
-  height: 48px;
+  width: 49px;
+  height: 49px;
   object-fit: contain;
   border-radius: 50%;
-  background: var(--white);
+  background: white;
   padding: 3px;
 }
 
 .logo-text {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: 'Playfair Display', Georgia, serif;
   font-size: 19px;
-  font-weight: bold;
+  font-weight: 600;
   letter-spacing: 1px;
 }
 
 .logo-text small {
   display: block;
-  color: #AFC8E1;
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--gold-light);
+  font-family: 'DM Sans', sans-serif;
   font-size: 9px;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  margin-top: 1px;
 }
 
 nav {
@@ -106,21 +132,21 @@ nav {
   align-items: center;
   justify-content: flex-end;
   flex-wrap: wrap;
-  gap: 8px 20px;
+  gap: 10px 21px;
 }
 
 nav a {
-  color: #F0F4F8;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  letter-spacing: .7px;
+  color: #E8EDF2;
+  font-size: 11px;
+  letter-spacing: .8px;
   text-transform: uppercase;
-  transition: color .2s;
+  transition: color .25s;
+  white-space: nowrap;
 }
 
 nav a:hover,
 nav a.active {
-  color: #AFC8E1;
+  color: var(--gold-light);
 }
 
 .mobile-menu {
@@ -132,10 +158,10 @@ nav a.active {
 .hero {
   position: relative;
   min-height: 540px;
-  height: 66vh;
-  max-height: 720px;
-  background: var(--navy);
-  color: var(--white);
+  height: 68vh;
+  max-height: 740px;
+  background: var(--navy-deep);
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -150,9 +176,9 @@ nav a.active {
   z-index: -2;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
-  opacity: .86;
+  opacity: .55;
 }
 
 .hero::after {
@@ -162,8 +188,8 @@ nav a.active {
   z-index: -1;
   background: linear-gradient(
     180deg,
-    rgba(15, 34, 57, .48),
-    rgba(15, 34, 57, .88)
+    rgba(10,23,39,.62) 0%,
+    rgba(13,27,43,.88) 100%
   );
 }
 
@@ -177,11 +203,10 @@ nav a.active {
   justify-content: center;
   align-items: center;
   gap: 15px;
-  color: #AFC8E1;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 11px;
-  font-weight: bold;
-  letter-spacing: 3px;
+  color: var(--gold-light);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 5px;
   text-transform: uppercase;
   margin-bottom: 24px;
 }
@@ -189,48 +214,49 @@ nav a.active {
 .hero-label::before,
 .hero-label::after {
   content: "";
-  width: 35px;
+  width: 45px;
   height: 1px;
-  background: var(--blue);
+  background: var(--gold);
 }
 
 .hero h1 {
-  font-size: clamp(55px, 8vw, 95px);
+  font-size: clamp(52px,8vw,88px);
   margin-bottom: 20px;
+  letter-spacing: -1.5px;
 }
 
 .hero p {
   max-width: 650px;
   margin: auto;
-  font-size: 16px;
-  color: #DCE4EC;
+  font-size: 17px;
+  color: #E4E8ED;
   line-height: 1.9;
 }
 
 .hero-bottom {
   margin-top: 38px;
-  color: #AFC8E1;
-  font-family: Georgia, "Times New Roman", serif;
+  color: var(--gold-light);
+  font-family: 'Playfair Display',serif;
   font-style: italic;
   font-size: 18px;
 }
 
-/* ETICHETTE E TITOLI */
+/* SECTION INTRO */
 
 .section-label {
-  color: var(--blue);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--burgundy);
   font-size: 11px;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2.5px;
+  letter-spacing: 3px;
   margin-bottom: 14px;
 }
 
 .section-title {
   color: var(--navy);
-  font-size: clamp(34px, 4.5vw, 45px);
+  font-size: clamp(36px,4.5vw,55px);
   margin-bottom: 25px;
+  letter-spacing: -.5px;
 }
 
 .intro {
@@ -240,14 +266,30 @@ nav a.active {
   max-width: 900px;
 }
 
-/* STORIA */
+/* HISTORY */
 
 .history {
-  background: var(--light-blue);
-  padding: 100px 0;
+  background: var(--cream);
+  padding: 110px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.history::before {
+  content: "1911";
+  position: absolute;
+  right: -25px;
+  top: 30px;
+  font-family: 'Playfair Display',serif;
+  font-size: clamp(180px,30vw,420px);
+  color: rgba(20,38,61,.035);
+  line-height: 1;
+  pointer-events: none;
 }
 
 .history-layout {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 230px 1fr;
   gap: 75px;
@@ -256,41 +298,41 @@ nav a.active {
 
 .history-number {
   position: sticky;
-  top: 30px;
+  top: 115px;
   padding-top: 8px;
 }
 
 .history-number strong {
   display: block;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 76px;
-  line-height: 1.1;
+  font-family: 'Playfair Display',serif;
+  font-size: clamp(90px,10vw,125px);
+  line-height: 1;
   color: var(--navy);
-  letter-spacing: -5px;
+  letter-spacing: -6px;
 }
 
 .history-number span {
   display: block;
-  margin-top: 13px;
-  color: var(--blue);
-  font-size: 10px;
-  letter-spacing: 3px;
-  font-weight: bold;
+  margin-top: 14px;
+  color: var(--burgundy);
+  font-size: 11px;
+  letter-spacing: 3.5px;
+  font-weight: 700;
 }
 
 .history-number i {
   display: block;
   width: 48px;
-  height: 2px;
-  background: var(--blue);
+  height: 1px;
+  background: var(--gold);
   margin-top: 25px;
 }
 
 .history-text p {
-  font-size: 15px;
-  color: var(--text);
+  font-size: 16px;
+  color: #606765;
   margin-bottom: 21px;
-  line-height: 1.9;
+  line-height: 2;
 }
 
 .history-text p:first-child {
@@ -313,15 +355,17 @@ nav a.active {
 /* STATISTICHE */
 
 .stats {
+  position: relative;
+  z-index: 1;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: 55px;
+  grid-template-columns: repeat(3,1fr);
+  margin-top: 60px;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
 
 .stat {
-  padding: 30px 15px;
+  padding: 32px 15px;
   text-align: center;
   position: relative;
 }
@@ -338,17 +382,18 @@ nav a.active {
 
 .stat strong {
   display: block;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: 'Playfair Display',serif;
   color: var(--navy);
-  font-size: 43px;
+  font-size: 46px;
   line-height: 1.2;
 }
 
 .stat span {
-  color: var(--muted);
+  color: var(--burgundy);
   font-size: 11px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
   margin-top: 10px;
   display: block;
 }
@@ -356,9 +401,9 @@ nav a.active {
 /* DIRETTORE */
 
 .director {
-  padding: 100px 0;
-  background: var(--navy);
-  color: var(--white);
+  padding: 110px 0;
+  background: linear-gradient(135deg, var(--navy-soft) 0%, var(--navy) 100%);
+  color: white;
   position: relative;
   overflow: hidden;
 }
@@ -368,8 +413,8 @@ nav a.active {
   position: absolute;
   right: -35px;
   bottom: -70px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(100px, 20vw, 260px);
+  font-family: 'Playfair Display',serif;
+  font-size: clamp(100px,20vw,260px);
   color: rgba(255,255,255,.035);
   pointer-events: none;
 }
@@ -384,59 +429,59 @@ nav a.active {
 }
 
 .director-photo-wrap {
-  background: var(--navy-light);
-  padding: 12px;
-  border: 1px solid rgba(255,255,255,.2);
-  border-radius: 5px;
+  background: rgba(13,27,43,.55);
+  padding: 14px;
+  border: 1px solid rgba(197,166,107,.45);
 }
 
 .director-photo {
   width: 100%;
   min-height: 380px;
   max-height: 540px;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
-  background: var(--navy-light);
+  background: var(--navy-deep);
 }
 
 .director-caption {
-  color: #AFC8E1;
+  color: var(--gold-light);
   text-align: center;
   font-size: 11px;
-  letter-spacing: 1.5px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
-  margin-top: 15px;
+  margin-top: 16px;
 }
 
 .director .section-label {
-  color: #AFC8E1;
+  color: var(--gold-light);
 }
 
 .director .section-title {
-  color: var(--white);
+  color: white;
 }
 
 .director-name {
-  color: #AFC8E1;
+  color: var(--gold-light);
   font-size: 29px;
   margin-bottom: 28px;
 }
 
 .director-text p {
-  color: #DCE4EC;
-  font-size: 14px;
-  line-height: 1.9;
-  margin-bottom: 17px;
+  color: #DCE5EC;
+  font-size: 15px;
+  line-height: 1.95;
+  margin-bottom: 18px;
 }
 
 .director-text p strong {
-  color: var(--white);
+  color: white;
 }
 
 /* DIRETTIVO */
 
 .board {
-  padding: 100px 0;
+  padding: 110px 0;
   background: var(--white);
 }
 
@@ -451,29 +496,29 @@ nav a.active {
 
 .people {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+  grid-template-columns: repeat(2,1fr);
+  gap: 16px;
 }
 
 .person {
   background: var(--white);
   border: 1px solid var(--border);
-  border-radius: 5px;
   padding: 23px 25px;
   display: flex;
   align-items: center;
   gap: 20px;
-  transition: transform .25s, box-shadow .25s;
+  transition: transform .25s, box-shadow .25s, border-color .25s;
 }
 
 .person:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow);
+  border-color: var(--gold);
 }
 
 .person-number {
-  color: var(--blue);
-  font-family: Georgia, "Times New Roman", serif;
+  color: var(--gold);
+  font-family: 'Playfair Display',serif;
   font-size: 25px;
   min-width: 35px;
 }
@@ -481,7 +526,7 @@ nav a.active {
 .person-info strong {
   display: block;
   color: var(--navy);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: 'Playfair Display',serif;
   font-size: 17px;
   line-height: 1.4;
 }
@@ -491,19 +536,20 @@ nav a.active {
   color: var(--muted);
   font-size: 11px;
   margin-top: 4px;
-  letter-spacing: .4px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
 }
 
 .person.president {
-  border-left: 4px solid var(--blue);
-  background: var(--light-blue);
+  border-left: 4px solid var(--gold);
+  background: var(--cream);
 }
 
 /* ARCHIVIO */
 
 .archive {
-  background: var(--light);
-  padding: 95px 0;
+  background: var(--cream);
+  padding: 100px 0;
 }
 
 .archive-box {
@@ -511,11 +557,11 @@ nav a.active {
   overflow: hidden;
   max-width: 950px;
   margin: auto;
-  padding: 65px 45px;
+  padding: 68px 45px;
   text-align: center;
   background: var(--navy);
-  color: var(--white);
-  border-radius: 4px;
+  color: white;
+  border: 1px solid rgba(197,166,107,.28);
 }
 
 .archive-box::before,
@@ -524,7 +570,7 @@ nav a.active {
   position: absolute;
   width: 180px;
   height: 180px;
-  border: 1px solid rgba(255,255,255,.12);
+  border: 1px solid rgba(197,166,107,.16);
   transform: rotate(45deg);
 }
 
@@ -539,24 +585,24 @@ nav a.active {
 }
 
 .archive-label {
-  color: #AFC8E1;
+  color: var(--gold-light);
   text-transform: uppercase;
-  letter-spacing: 2.5px;
+  letter-spacing: 3px;
   font-size: 11px;
-  font-weight: bold;
+  font-weight: 700;
   margin-bottom: 17px;
 }
 
 .archive-box h3 {
-  font-size: clamp(34px, 5vw, 49px);
+  font-size: clamp(34px,5vw,52px);
   margin-bottom: 18px;
 }
 
 .archive-box p {
   max-width: 650px;
   margin: auto;
-  color: #DCE4EC;
-  font-size: 14px;
+  color: #C5D0DC;
+  font-size: 15px;
   line-height: 1.9;
 }
 
@@ -565,67 +611,64 @@ nav a.active {
   justify-content: center;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 33px;
+  margin-top: 35px;
   position: relative;
   z-index: 1;
 }
 
 .archive-button {
-  padding: 13px 19px;
-  border: 1px solid #AFC8E1;
-  border-radius: 3px;
-  color: var(--white);
+  padding: 13px 22px;
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
   font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: .7px;
-  font-weight: bold;
+  letter-spacing: 1px;
+  font-weight: 700;
   transition: .25s;
 }
 
 .archive-button:hover {
-  background: var(--blue);
-  border-color: var(--blue);
-  color: var(--white);
+  background: var(--gold);
+  color: var(--navy-deep);
 }
 
 /* FOOTER */
 
 footer {
-  background: #102035;
-  color: #B8C5D4;
+  background: var(--navy-deep);
+  color: #AAB7C5;
   text-align: center;
-  padding: 30px 7%;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  line-height: 1.9;
+  padding: 35px 5%;
+  font-size: 11px;
+  line-height: 2;
 }
 
 footer strong {
-  color: var(--white);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 13px;
-  font-weight: bold;
+  color: white;
+  font-family: 'Playfair Display',serif;
+  font-size: 17px;
+  font-weight: 500;
 }
 
 .footer-line {
   width: 45px;
   height: 1px;
-  background: var(--blue);
+  background: var(--gold);
   margin: 15px auto;
 }
 
 footer p:last-child {
   font-size: 10px;
-  color: #B8C5D4;
-  margin-top: 8px;
+  color: #8191A2;
+  margin-top: 9px;
 }
 
 /* ANIMAZIONI */
 
 .reveal {
   opacity: 0;
-  transform: translateY(22px);
-  transition: opacity .7s ease, transform .7s ease;
+  transform: translateY(25px);
+  transition: opacity .8s ease, transform .8s ease;
 }
 
 .reveal.visible {
@@ -637,7 +680,7 @@ footer p:last-child {
 
 @media(max-width:1050px) {
   nav {
-    gap: 10px;
+    gap: 10px 12px;
   }
 
   nav a {
@@ -655,6 +698,7 @@ footer p:last-child {
 
 @media(max-width:850px) {
   .header-inner {
+    width: 90%;
     flex-wrap: wrap;
     padding: 13px 0;
   }
@@ -665,9 +709,9 @@ footer p:last-child {
     border: 1px solid rgba(255,255,255,.35);
     color: white;
     padding: 9px 13px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: inherit;
     cursor: pointer;
-    font-size: 11px;
+    font-size: 12px;
   }
 
   nav {
@@ -676,7 +720,7 @@ footer p:last-child {
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
-    padding-bottom: 12px;
+    padding: 8px 0 15px;
   }
 
   nav.open {
@@ -687,7 +731,7 @@ footer p:last-child {
     width: 100%;
     padding: 10px 0;
     font-size: 11px;
-    border-bottom: 1px solid rgba(255,255,255,.1);
+    border-bottom: 1px solid rgba(255,255,255,.08);
   }
 
   .hero {
@@ -705,7 +749,7 @@ footer p:last-child {
   }
 
   .history-number strong {
-    font-size: 85px;
+    font-size: 95px;
   }
 
   .director-grid {
@@ -732,8 +776,8 @@ footer p:last-child {
   }
 
   .logo-img {
-    width: 42px;
-    height: 42px;
+    width: 43px;
+    height: 43px;
   }
 
   .logo-text {
@@ -746,31 +790,31 @@ footer p:last-child {
   }
 
   .hero h1 {
-    font-size: 57px;
+    font-size: clamp(46px,11vw,62px);
   }
 
   .hero p {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .hero-label {
-    font-size: 9px;
-    letter-spacing: 2px;
+    font-size: 10px;
+    letter-spacing: 3px;
   }
 
   .history,
   .director,
   .board,
   .archive {
-    padding: 72px 0;
+    padding: 75px 0;
   }
 
   .history-number strong {
-    font-size: 72px;
+    font-size: 80px;
   }
 
   .section-title {
-    font-size: 37px;
+    font-size: 36px;
   }
 
   .stats {
@@ -834,3 +878,471 @@ footer p:last-child {
     transform: none;
   }
 }
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+  <div class="header-inner">
+
+    <a class="logo-link" href="index.html" aria-label="Torna alla Home">
+      <img class="logo-img" src="logo.jpeg" alt="Logo Corpo Bandistico Municipale G. Verdi">
+      <span class="logo-text">
+        G. VERDI
+        <small>ALCARA LI FUSI · 1911</small>
+      </span>
+    </a>
+
+    <button class="mobile-menu" id="menuButton"
+            aria-expanded="false" aria-controls="mainNav">
+      MENU ☰
+    </button>
+
+    <nav id="mainNav" aria-label="Navigazione principale">
+      <a href="index.html">Home</a>
+      <a href="la-banda.html" class="active" aria-current="page">La Banda</a>
+      <a href="musica.html">La Scuola di Musica</a>
+      <a href="eventi.html">Eventi</a>
+      <a href="albo.html">Albo Storico</a>
+      <a href="maestri-direttori.html">Maestri Direttori</a>
+      <a href="galleria.html">Galleria</a>
+      <a href="index.html#contatti">Contatti</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <img class="hero-image" src="fotostorica.jpg"
+       alt="Fotografia storica del Corpo Bandistico Municipale"
+       fetchpriority="high">
+
+  <div class="hero-content reveal">
+
+    <div class="hero-label">La nostra identità</div>
+
+    <h1>La Banda</h1>
+
+    <p>
+      Una storia iniziata nel 1911, costruita attraverso generazioni
+      di musicisti, tradizione, passione e cultura.
+    </p>
+
+    <div class="hero-bottom">
+      Oltre un secolo di musica e appartenenza.
+    </div>
+
+  </div>
+</section>
+
+<!-- STORIA -->
+
+<section class="history">
+  <div class="container">
+
+    <div class="history-layout">
+
+      <div class="history-number reveal">
+        <div class="section-label">Le nostre origini</div>
+        <strong>1911</strong>
+        <span>ALCARA LI FUSI</span>
+        <i></i>
+      </div>
+
+      <div class="history-text reveal">
+
+        <h2 class="section-title">La nostra storia</h2>
+
+        <p>
+          L'Associazione Musicale Alcarese fu fondata ad Alcara Li Fusi (ME)
+          nel 1911 per interessamento del sindaco Giuseppe Mileti, che ne affidò
+          la direzione organizzativa e musicale al maestro Giacomo Zurlino.
+        </p>
+
+        <p>
+          Oltre allo Statuto e agli atti della Giunta Comunale del tempo,
+          la fondazione è attestata anche da una preziosa fotografia d'epoca
+          che mostra il Corpo Bandistico Municipale con una imponente uniforme
+          commissionata dal sindaco Mileti, composto da 42 elementi più il maestro,
+          schierati per l'occasione sul sagrato della Chiesa Madre.
+        </p>
+
+        <p>
+          Quel gruppo di amanti della cultura scommise che Alcara, un giorno,
+          avrebbe avuto un ruolo importante nell'ambito culturale, così come
+          la sua tradizione, i suoi personaggi e la sua storia volevano e meritavano.
+          Quel loro sogno si è realizzato.
+        </p>
+
+        <p>
+          Da allora questa istituzione locale ha favorito lo sviluppo nella comunità
+          di una forte tradizione, passione e cultura musicale e, da oltre un secolo,
+          rappresenta un importante veicolo di divulgazione della musica.
+          Nel corso della sua storia ha coinvolto quasi 400 persone, contribuendo
+          fortemente all'educazione musicale di tanti alcaresi.
+        </p>
+
+        <p>
+          Molti di coloro che hanno iniziato il proprio percorso musicale nella Banda
+          hanno poi proseguito gli studi con successo, diplomandosi al Conservatorio
+          e raggiungendo importanti livelli professionali, fino a entrare a far parte
+          di orchestre e bande di prestigio nazionale.
+        </p>
+
+        <p>
+          Dopo più di 110 anni, la nostra associazione è una realtà culturale
+          fortemente radicata nella comunità. Insieme alla sua Scuola di Musica,
+          svolge un ruolo fondamentale di interazione e aggregazione sociale,
+          mettendo a confronto generazioni, esperienze e professionalità diverse.
+        </p>
+
+        <p>
+          La Banda partecipa con stile e impegno alle manifestazioni pubbliche
+          ufficiali, locali e non, sia religiose che civili: dalle feste patronali
+          alle celebrazioni della Settimana Santa, dai concerti di musica classica
+          alle commemorazioni dei Caduti.
+        </p>
+
+        <p>
+          Il repertorio comprende, oltre alle tradizionali marce militari,
+          brani originali e trascrizioni di musica classica, jazz e contemporanea.
+          L'associazione organizza inoltre eventi musicali, culturali e ricreativi.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- DATI STORICI -->
+
+    <div class="stats reveal">
+
+      <div class="stat">
+        <strong>1911</strong>
+        <span>Anno di fondazione</span>
+      </div>
+
+      <div class="stat">
+        <strong>400+</strong>
+        <span>Componenti coinvolti nella storia</span>
+      </div>
+
+      <div class="stat">
+        <strong>50</strong>
+        <span>Componenti effettivi attuali</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- DIRETTORE -->
+
+<section class="director">
+  <div class="container director-grid">
+
+    <div class="director-photo-area reveal">
+
+      <div class="director-photo-wrap">
+        <img class="director-photo"
+             src="maestro.jpg"
+             alt="Maestro Michele Saccone"
+             loading="lazy">
+      </div>
+
+      <div class="director-caption">
+        Direttore dal 1981
+      </div>
+
+    </div>
+
+    <div class="director-text reveal">
+
+      <div class="section-label">La guida musicale</div>
+
+      <h2 class="section-title">Il Direttore</h2>
+
+      <h3 class="director-name">M° Michele Saccone</h3>
+
+      <p>
+        Nato a Messina il 1° maggio 1962, Michele Saccone si avvicina
+        alla musica all'età di undici anni, entrando nella Scuola di Musica
+        Municipale Alcarese. Nel 1975 entra ufficialmente a far parte della
+        Banda, iniziando a suonare il sax contralto.
+      </p>
+
+      <p>
+        Nel 1977 intraprende gli studi presso il Conservatorio
+        “A. Corelli” di Messina, nella classe di fagotto del M° Dante Pavarini,
+        conseguendo il diploma nel 1984 con il M° Aldo Terzo.
+      </p>
+
+      <p>
+        Nel 1981 viene nominato Maestro Direttore della Banda Municipale
+        Alcarese, incarico che ricopre tuttora, diventando una figura centrale
+        nella continuità musicale e nella crescita dell'associazione.
+      </p>
+
+      <p>
+        Ha approfondito lo studio del fagotto a Milano con il M° Ovidio Danzi,
+        primo fagotto dell'Orchestra del Teatro alla Scala, e successivamente
+        a Winterthur, in Svizzera, con il M° Janos Meszaros.
+      </p>
+
+      <p>
+        Nel corso della sua attività professionale ha collaborato con importanti
+        formazioni orchestrali e cameristiche, prendendo parte a numerosi
+        concerti in Italia e a prestigiose produzioni musicali.
+      </p>
+
+      <p>
+        La sua attività comprende anche la musica antica, la ricerca e la
+        valorizzazione del patrimonio etnomusicologico, oltre all'insegnamento
+        dell'Educazione Musicale nelle scuole.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- DIRETTIVO -->
+
+<section class="board">
+  <div class="container">
+
+    <div class="board-header reveal">
+
+      <div class="section-label">Organizzazione e rappresentanza</div>
+
+      <h2 class="section-title">Il Direttivo</h2>
+
+      <p class="intro">
+        Il Direttivo dell'Associazione Musicale, eletto nel gennaio 2026,
+        guida l'associazione nella gestione delle attività culturali, musicali
+        e organizzative.
+      </p>
+
+    </div>
+
+    <div class="people">
+
+      <div class="person president reveal">
+        <span class="person-number">01</span>
+        <div class="person-info">
+          <strong>M° Giuseppe Calanni Macchio</strong>
+          <span>Presidente</span>
+        </div>
+      </div>
+
+      <div class="person reveal">
+        <span class="person-number">02</span>
+        <div class="person-info">
+          <strong>M° Antonino Santoro</strong>
+          <span>Vice Presidente</span>
+        </div>
+      </div>
+
+      <div class="person reveal">
+        <span class="person-number">03</span>
+        <div class="person-info">
+          <strong>Alexander Pio Collica</strong>
+          <span>Segretario – Consigliere</span>
+        </div>
+      </div>
+
+      <div class="person reveal">
+        <span class="person-number">04</span>
+        <div class="person-info">
+          <strong>Dott.ssa Melissa Dottore</strong>
+          <span>Componente del Direttivo</span>
+        </div>
+      </div>
+
+      <div class="person reveal">
+        <span class="person-number">05</span>
+        <div class="person-info">
+          <strong>Dott.ssa Mariapia Faraci</strong>
+          <span>Componente del Direttivo</span>
+        </div>
+      </div>
+
+      <div class="person reveal">
+        <span class="person-number">06</span>
+        <div class="person-info">
+          <strong>Salvatore Gioitta</strong>
+          <span>Componente del Direttivo</span>
+        </div>
+      </div>
+
+      <div class="person reveal">
+        <span class="person-number">07</span>
+        <div class="person-info">
+          <strong>Alisia Oriti</strong>
+          <span>Componente del Direttivo</span>
+        </div>
+      </div>
+
+      <div class="person reveal">
+        <span class="person-number">08</span>
+        <div class="person-info">
+          <strong>M° Santino Santoro</strong>
+          <span>Componente del Direttivo</span>
+        </div>
+      </div>
+
+      <div class="person reveal">
+        <span class="person-number">09</span>
+        <div class="person-info">
+          <strong>M° Michele Saccone</strong>
+          <span>Maestro Direttore – in carica dal 1981</span>
+        </div>
+      </div>
+
+      <div class="person reveal">
+        <span class="person-number">10</span>
+        <div class="person-info">
+          <strong>M° Antonio Mannanici</strong>
+          <span>Capo Banda</span>
+        </div>
+      </div>
+
+      <div class="person reveal">
+        <span class="person-number">11</span>
+        <div class="person-info">
+          <strong>Maria Saccone</strong>
+          <span>Tesoriere</span>
+        </div>
+      </div>
+
+      <div class="person reveal">
+        <span class="person-number">12</span>
+        <div class="person-info">
+          <strong>M° Salvatore Saccone</strong>
+          <span>Vice-Tesoriere</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ARCHIVIO -->
+
+<section class="archive">
+  <div class="container">
+
+    <div class="archive-box reveal">
+
+      <div class="archive-label">La memoria della Banda</div>
+
+      <h3>Dal 1911 ad oggi</h3>
+
+      <p>
+        Consulta l'Albo Storico e scopri i Maestri Direttori che hanno
+        guidato il Corpo Bandistico Municipale nel corso della sua storia.
+        Un patrimonio di persone, strumenti e generazioni che racconta
+        più di un secolo di musica ad Alcara Li Fusi.
+      </p>
+
+      <div class="archive-buttons">
+
+        <a href="albo.html" class="archive-button">
+          Consulta l'Albo Storico →
+        </a>
+
+        <a href="maestri-direttori.html" class="archive-button">
+          Maestri Direttori →
+        </a>
+
+        <a href="direttivi.html" class="archive-button">
+          I Direttivi →
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <p>
+    <strong>Corpo Bandistico Municipale “G. Verdi”</strong>
+  </p>
+
+  <div class="footer-line"></div>
+
+  <p>
+    © 2026 Associazione Musicale Alcarese – Alcara Li Fusi, Messina
+  </p>
+
+  <p>Dal 1911, musica e tradizione.</p>
+
+  <p>
+    Sito web creato e curato da Antonina Vaneria
+    e dai Responsabili della Comunicazione del Direttivo.
+  </p>
+
+</footer>
+
+<script>
+/* MENU MOBILE */
+
+const menuButton = document.getElementById("menuButton");
+const mainNav = document.getElementById("mainNav");
+
+menuButton.addEventListener("click", () => {
+  const isOpen = mainNav.classList.toggle("open");
+
+  menuButton.setAttribute("aria-expanded", isOpen);
+  menuButton.textContent = isOpen ? "CHIUDI ✕" : "MENU ☰";
+});
+
+mainNav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    mainNav.classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.textContent = "MENU ☰";
+  });
+});
+
+/* ANIMAZIONI */
+
+const revealElements = document.querySelectorAll(".reveal");
+
+if (
+  "IntersectionObserver" in window &&
+  !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.10
+  });
+
+  revealElements.forEach(element => observer.observe(element));
+
+} else {
+  revealElements.forEach(element => element.classList.add("visible"));
+}
+</script>
+
+</body>
+</html>
