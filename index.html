@@ -1,13 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Corpo Bandistico Municipale “G. Verdi” | Alcara Li Fusi</title>
+<title>La Banda | Corpo Bandistico Municipale “G. Verdi” – Alcara Li Fusi</title>
 <meta name="theme-color" content="#14263D">
-<meta name="description" content="Corpo Bandistico Municipale G. Verdi di Alcara Li Fusi. Dal 1911, musica, tradizione e passione.">
+<meta name="description" content="La storia dal 1911, l'organico e il Direttivo del Corpo Bandistico Municipale G. Verdi di Alcara Li Fusi.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +22,6 @@
   --cream: #F5F1E8;
   --cream-dark: #EAE3D5;
   --green: #29483B;
-  --green-light: #E9EFE8;
   --burgundy: #642F3C;
   --white: #FFFFFF;
   --text: #303B43;
@@ -48,6 +46,7 @@ body {
   color: var(--text);
   line-height: 1.7;
   overflow-x: hidden;
+  background: var(--white);
 }
 
 h1,h2,h3 {
@@ -72,7 +71,6 @@ img {
 }
 
 /* HEADER */
-
 header {
   position: sticky;
   top: 0;
@@ -142,7 +140,8 @@ nav a {
   white-space: nowrap;
 }
 
-nav a:hover {
+nav a:hover,
+nav a.active {
   color: var(--gold-light);
 }
 
@@ -150,38 +149,25 @@ nav a:hover {
   display: none;
 }
 
-/* HERO */
-
-.hero {
-  min-height: 650px;
-  height: 78vh;
-  max-height: 850px;
-  position: relative;
-  display: flex;
-  align-items: center;
+/* PAGE HERO */
+.page-hero {
+  background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 65%, var(--navy-soft) 100%);
   color: white;
-  background:
-    linear-gradient(90deg,
-      rgba(10,23,39,.88) 0%,
-      rgba(10,23,39,.65) 48%,
-      rgba(10,23,39,.15) 100%),
-    url("home.jpeg") center 43% / cover no-repeat;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(0deg,rgba(10,23,39,.55),transparent 40%);
-  pointer-events: none;
-}
-
-.hero-content {
+  padding: 95px 0 85px;
   position: relative;
-  z-index: 2;
-  width: min(1160px,88%);
-  margin: auto;
-  padding: 70px 0;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: "1911";
+  position: absolute;
+  right: -20px;
+  bottom: -45px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(140px, 24vw, 320px);
+  color: rgba(255,255,255,.03);
+  line-height: 1;
+  pointer-events: none;
 }
 
 .hero-line {
@@ -189,108 +175,47 @@ nav a:hover {
   align-items: center;
   gap: 15px;
   color: var(--gold-light);
-  font-size: 12px;
-  letter-spacing: 5px;
+  font-size: 11px;
+  letter-spacing: 4px;
   text-transform: uppercase;
   font-weight: 600;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .hero-line::before {
   content: "";
-  width: 45px;
+  width: 40px;
   height: 1px;
   background: var(--gold);
 }
 
-.hero h1 {
-  font-size: clamp(48px,7vw,88px);
-  max-width: 850px;
-  line-height: 1.08;
-  margin-bottom: 25px;
-  letter-spacing: -1.5px;
+.page-hero h1 {
+  font-size: clamp(40px, 5.5vw, 68px);
+  max-width: 780px;
+  margin-bottom: 20px;
 }
 
-.hero h1 span {
+.page-hero h1 span {
   color: var(--gold-light);
   font-style: italic;
 }
 
-.hero-subtitle {
-  color: #E4E8ED;
-  font-size: 17px;
+.page-hero p {
+  color: #D6DFE8;
+  max-width: 650px;
+  font-size: 16px;
   line-height: 1.9;
-  margin-bottom: 35px;
 }
 
-.hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 25px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  transition: .3s;
-}
-
-.btn-gold {
-  background: var(--gold);
-  color: var(--navy-deep);
-  border: 1px solid var(--gold);
-}
-
-.btn-gold:hover {
-  background: var(--gold-light);
-  border-color: var(--gold-light);
-  transform: translateY(-3px);
-}
-
-.btn-outline {
-  border: 1px solid rgba(255,255,255,.6);
-  color: white;
-}
-
-.btn-outline:hover {
-  background: white;
-  color: var(--navy);
-}
-
-/* HISTORY */
-
-.history {
+/* SEZIONI */
+.section-cream {
   background: var(--cream);
-  padding: 110px 0;
-  position: relative;
-  overflow: hidden;
+  padding: 95px 0;
 }
 
-.history::before {
-  content: "1911";
-  position: absolute;
-  right: -25px;
-  top: 30px;
-  font-family: 'Playfair Display',serif;
-  font-size: clamp(180px,30vw,420px);
-  color: rgba(20,38,61,.035);
-  line-height: 1;
-  pointer-events: none;
-}
-
-.history-grid {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: .85fr 1.4fr;
-  gap: 90px;
-  align-items: center;
+.section-white {
+  background: var(--white);
+  padding: 95px 0;
 }
 
 .eyebrow {
@@ -299,326 +224,130 @@ nav a:hover {
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
-  margin-bottom: 17px;
+  margin-bottom: 14px;
 }
 
 .section-title {
   color: var(--navy);
-  font-size: clamp(36px,4.5vw,55px);
-  margin-bottom: 23px;
+  font-size: clamp(32px, 4vw, 48px);
+  margin-bottom: 24px;
 }
 
-.history-year {
-  color: var(--navy);
-  font-family: 'Playfair Display',serif;
-  font-size: clamp(100px,14vw,175px);
-  line-height: 1;
-  letter-spacing: -9px;
-}
-
-.history-period {
-  color: var(--burgundy);
-  font-size: 13px;
-  letter-spacing: 4px;
-  font-weight: 700;
-  margin-top: 15px;
-}
-
-.history-description {
-  max-width: 600px;
-  color: #606765;
-  font-size: 16px;
-  line-height: 2;
-}
-
-.history-description strong {
-  color: var(--navy);
-}
-
-.history-bottom {
+/* TIMELINE STORICA */
+.timeline {
+  display: grid;
+  gap: 28px;
   margin-top: 45px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  color: var(--burgundy);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+  border-left: 1px solid var(--gold);
+  padding-left: 32px;
 }
 
-.history-bottom::before {
+.timeline-item {
+  background: white;
+  padding: 30px 32px;
+  border: 1px solid var(--border);
+  position: relative;
+}
+
+.timeline-item::before {
   content: "";
-  width: 42px;
-  height: 1px;
-  background: var(--gold);
+  width: 11px;
+  height: 11px;
+  background: var(--burgundy);
+  border: 2px solid var(--cream);
+  border-radius: 50%;
+  position: absolute;
+  left: -38px;
+  top: 36px;
 }
 
-/* BAND */
+.timeline-year {
+  color: var(--burgundy);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
 
-.band {
-  padding: 110px 0;
+.timeline-item h3 {
+  color: var(--navy);
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.timeline-item p {
+  color: #5A6266;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* DIRETTIVO */
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 40px;
+}
+
+.board-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  padding: 30px 26px;
+  border-top: 3px solid var(--gold);
+}
+
+.board-role {
+  color: var(--burgundy);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.board-card h3 {
+  color: var(--navy);
+  font-size: 23px;
+  margin-bottom: 8px;
+}
+
+.board-card p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* SEZIONI STRUMENTALI */
+.sections-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 40px;
+}
+
+.instrument-box {
+  padding: 26px 22px;
+  border: 1px solid var(--border);
   background: white;
 }
 
-.band-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 85px;
-  align-items: center;
-}
-
-.band-image {
-  position: relative;
-  min-height: 470px;
-}
-
-.band-image img {
-  width: 100%;
-  height: 470px;
-  object-fit: cover;
-  box-shadow: var(--shadow);
-}
-
-.band-image::after {
-  content: "";
-  position: absolute;
-  width: 75%;
-  height: 75%;
-  right: -18px;
-  bottom: -18px;
-  border: 1px solid var(--gold);
-  z-index: -1;
-}
-
-.band-text p {
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.95;
-  margin-bottom: 25px;
-}
-
-.band-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.text-link {
+.instrument-box h3 {
   color: var(--navy);
-  border-bottom: 1px solid var(--gold);
-  padding: 8px 0;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: color .2s;
-}
-
-.text-link:hover {
-  color: var(--burgundy);
-}
-
-/* SCHOOL */
-
-.school {
-  background: var(--green);
-  color: white;
-  padding: 105px 0;
-  position: relative;
-  overflow: hidden;
-}
-
-.school::before {
-  content: "MUSICA";
-  position: absolute;
-  right: -35px;
-  bottom: -50px;
-  font-family: 'Playfair Display',serif;
-  font-size: clamp(100px,20vw,260px);
-  color: rgba(255,255,255,.035);
-  pointer-events: none;
-}
-
-.school .container {
-  position: relative;
-  z-index: 1;
-}
-
-.school .eyebrow {
-  color: #D9C99F;
-}
-
-.school .section-title {
-  color: white;
-  max-width: 700px;
-}
-
-.school-intro {
-  color: #DCE5DC;
-  max-width: 750px;
-  line-height: 1.95;
-  font-size: 15px;
-}
-
-.school-intro + .school-intro {
-  margin-top: 12px;
-}
-
-.music-features {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 20px;
-  margin-top: 48px;
-}
-
-.music-card {
-  padding: 32px 25px;
-  background: rgba(255,255,255,.07);
-  border: 1px solid rgba(255,255,255,.16);
-  transition: .3s;
-}
-
-.music-card:hover {
-  background: rgba(255,255,255,.13);
-  transform: translateY(-6px);
-}
-
-.music-icon {
-  color: var(--gold-light);
-  font-size: 29px;
-  margin-bottom: 17px;
-}
-
-.music-card h3 {
-  font-size: 24px;
-  color: white;
-  margin-bottom: 13px;
-}
-
-.music-card p {
-  color: #D2DDD4;
-  font-size: 13px;
-  line-height: 1.9;
-}
-
-.school-button {
-  margin-top: 35px;
-  background: var(--cream);
-  color: var(--green);
-  border: 1px solid var(--cream);
-}
-
-.school-button:hover {
-  background: var(--gold-light);
-  border-color: var(--gold-light);
-  transform: translateY(-3px);
-}
-
-/* CONTACT */
-
-.contact {
-  padding: 105px 0;
-  background: var(--navy);
-  color: white;
-  position: relative;
-  overflow: hidden;
-}
-
-.contact::before {
-  content: "G. VERDI";
-  position: absolute;
-  right: -20px;
-  bottom: -60px;
-  font-family: 'Playfair Display',serif;
-  font-size: clamp(100px,19vw,260px);
-  color: rgba(255,255,255,.025);
-  pointer-events: none;
-}
-
-.contact-grid {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 70px;
-}
-
-.contact .eyebrow {
-  color: var(--gold-light);
-}
-
-.contact .section-title {
-  color: white;
-}
-
-.contact-description {
-  color: #C5D0DC;
-  font-size: 15px;
-  max-width: 430px;
-  line-height: 1.9;
-}
-
-.contact-info {
-  border-left: 1px solid var(--gold);
-  padding-left: 35px;
-}
-
-.contact-info h3 {
-  color: var(--gold-light);
   font-size: 21px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--gold-light);
 }
 
-.contact-info p {
-  color: #D4DDE6;
-  font-size: 13px;
-  margin-bottom: 17px;
-  line-height: 1.9;
-}
-
-.contact-info strong {
-  color: white;
-}
-
-.contact-info a {
-  color: var(--gold-light);
-  overflow-wrap: anywhere;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
-}
-
-.contact-info small {
-  color: #9DADBE;
-}
-
-.social {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 27px;
-}
-
-.social a {
-  padding: 11px 22px;
-  border: 1px solid rgba(255,255,255,.35);
-  color: white;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: .25s;
-}
-
-.social a:hover {
-  background: var(--gold);
-  border-color: var(--gold);
-  color: var(--navy);
+.instrument-box ul {
+  list-style: none;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 2;
 }
 
 /* FOOTER */
-
 footer {
   background: var(--navy-deep);
   color: #AAB7C5;
@@ -648,8 +377,7 @@ footer p:last-child {
   color: #8191A2;
 }
 
-/* ANIMATIONS */
-
+/* REVEAL */
 .reveal {
   opacity: 0;
   transform: translateY(25px);
@@ -662,32 +390,14 @@ footer p:last-child {
 }
 
 /* RESPONSIVE */
-
 @media(max-width:1050px) {
-  nav {
-    gap: 12px;
-  }
-
-  nav a {
-    font-size: 10px;
-  }
-
-  .history-grid {
-    gap: 45px;
-  }
-
-  .band-grid {
-    gap: 50px;
-  }
+  nav { gap: 12px; }
+  nav a { font-size: 10px; }
+  .sections-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media(max-width:850px) {
-  .header-inner {
-    width: 90%;
-    padding: 13px 0;
-    flex-wrap: wrap;
-  }
-
+  .header-inner { width: 90%; padding: 13px 0; flex-wrap: wrap; }
   .mobile-menu {
     display: block;
     color: white;
@@ -698,7 +408,6 @@ footer p:last-child {
     font-size: 12px;
     cursor: pointer;
   }
-
   .header-inner nav {
     display: none;
     width: 100%;
@@ -707,154 +416,20 @@ footer p:last-child {
     gap: 0;
     padding: 8px 0 15px;
   }
-
-  .header-inner nav.open {
-    display: flex;
-  }
-
+  .header-inner nav.open { display: flex; }
   nav a {
     width: 100%;
     padding: 10px 0;
     font-size: 11px;
     border-bottom: 1px solid rgba(255,255,255,.08);
   }
-
-  .hero {
-    min-height: 610px;
-    height: 75vh;
-    background-position: center;
-  }
-
-  .history-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .history-year {
-    font-size: 130px;
-  }
-
-  .band-grid {
-    grid-template-columns: 1fr;
-    gap: 55px;
-  }
-
-  .band-image {
-    max-width: 650px;
-  }
-
-  .music-features {
-    grid-template-columns: 1fr;
-  }
-
-  .music-card {
-    padding: 25px;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 45px;
-  }
+  .board-grid { grid-template-columns: 1fr; }
 }
 
 @media(max-width:520px) {
-  .container {
-    width: 88%;
-  }
-
-  .logo img {
-    width: 43px;
-    height: 43px;
-  }
-
-  .logo-text {
-    font-size: 16px;
-  }
-
-  .hero {
-    min-height: 570px;
-    height: 72vh;
-    background-position: 58% center;
-  }
-
-  .hero-content {
-    width: 88%;
-  }
-
-  .hero h1 {
-    font-size: clamp(42px,11vw,58px);
-  }
-
-  .hero-subtitle {
-    font-size: 15px;
-  }
-
-  .hero-line {
-    font-size: 10px;
-    letter-spacing: 3px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .btn {
-    padding: 13px 19px;
-  }
-
-  .history,
-  .band,
-  .school,
-  .contact {
-    padding: 75px 0;
-  }
-
-  .history-year {
-    font-size: 105px;
-    letter-spacing: -6px;
-  }
-
-  .history-period {
-    font-size: 11px;
-    letter-spacing: 2px;
-  }
-
-  .section-title {
-    font-size: 36px;
-  }
-
-  .band-image {
-    min-height: 300px;
-  }
-
-  .band-image img {
-    height: 300px;
-  }
-
-  .contact-info {
-    padding-left: 20px;
-  }
-
-  .social {
-    gap: 9px;
-  }
-}
-
-@media(prefers-reduced-motion:reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,*::before,*::after {
-    transition-duration: .01ms !important;
-    animation-duration: .01ms !important;
-  }
-
-  .reveal {
-    opacity: 1;
-    transform: none;
-  }
+  .sections-grid { grid-template-columns: 1fr; }
+  .timeline { padding-left: 22px; }
+  .timeline-item::before { left: -28px; }
 }
 </style>
 </head>
@@ -863,7 +438,6 @@ footer p:last-child {
 
 <header>
   <div class="header-inner">
-
     <a class="logo" href="index.html" aria-label="Torna alla Home">
       <img src="logo.jpeg" alt="Logo Corpo Bandistico Municipale G. Verdi">
       <span class="logo-text">
@@ -872,308 +446,163 @@ footer p:last-child {
       </span>
     </a>
 
-    <button class="mobile-menu" id="menuButton"
-            aria-expanded="false" aria-controls="mainNav">
+    <button class="mobile-menu" id="menuButton" aria-expanded="false" aria-controls="mainNav">
       MENU ☰
     </button>
 
     <nav id="mainNav" aria-label="Navigazione principale">
       <a href="index.html">Home</a>
-      <a href="la-banda.html">La Banda</a>
+      <a href="la-banda.html" class="active">La Banda</a>
       <a href="musica.html">Scuola di Musica</a>
       <a href="eventi.html">Eventi</a>
       <a href="albo.html">Albo Storico</a>
       <a href="maestri-direttori.html">Maestri Direttori</a>
       <a href="galleria.html">Galleria</a>
-      <a href="#contatti">Contatti</a>
+      <a href="index.html#contatti">Contatti</a>
     </nav>
-
   </div>
 </header>
 
-<!-- HERO -->
-
-<section class="hero">
-  <div class="hero-content reveal">
-
-    <div class="hero-line">Una storia dal 1911</div>
-
-    <h1>
-      Corpo Bandistico<br>
-      Municipale <span>“G. Verdi”</span>
-    </h1>
-
-    <p class="hero-subtitle">
-      Associazione Musicale Alcarese<br>
-      115 anni di musica, tradizione e passione.
+<section class="page-hero">
+  <div class="container reveal">
+    <div class="hero-line">Identità e Tradizione</div>
+    <h1>Il Corpo Bandistico <span>“G. Verdi”</span></h1>
+    <p>
+      Oltre un secolo di impegno culturale e musicale al servizio della comunità
+      di Alcara Li Fusi e dei Nebrodi.
     </p>
-
-    <div class="hero-buttons">
-      <a href="la-banda.html" class="btn btn-gold">
-        Scopri la nostra storia →
-      </a>
-
-      <a href="eventi.html" class="btn btn-outline">
-        I nostri eventi
-      </a>
-    </div>
-
   </div>
 </section>
 
-<!-- STORIA -->
-
-<section class="history" id="storia">
-  <div class="container history-grid">
-
-    <div class="reveal">
-      <div class="eyebrow">La nostra storia</div>
-      <h2 class="section-title">Una tradizione<br>che continua.</h2>
-
-      <div class="history-year">1911</div>
-      <div class="history-period">1911 — 2026</div>
-    </div>
-
-    <div class="history-description reveal">
-      <p>
-        Una tradizione musicale che attraversa generazioni,
-        accompagnando la vita della comunità di Alcara Li Fusi
-        e mantenendo vivo, anno dopo anno, il valore della musica
-        e della condivisione.
-      </p>
-
-      <p style="margin-top:20px;">
-        Da oltre un secolo il Corpo Bandistico Municipale
-        “G. Verdi” rappresenta un importante punto di riferimento
-        culturale e musicale per il territorio, unendo persone,
-        esperienze e generazioni attraverso il linguaggio universale
-        della musica.
-      </p>
-
-      <div class="history-bottom">
-        Oltre un secolo di musica insieme
-      </div>
-
-      <a href="la-banda.html" class="text-link"
-         style="display:inline-block;margin-top:25px;">
-        Approfondisci la nostra storia →
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<!-- LA BANDA -->
-
-<section class="band">
-  <div class="container band-grid">
-
-    <div class="band-image reveal">
-      <img src="labanda.jpeg"
-           alt="Fotografia del Corpo Bandistico Municipale G. Verdi">
-    </div>
-
-    <div class="band-text reveal">
-      <div class="eyebrow">Il Corpo Bandistico</div>
-
-      <h2 class="section-title">
-        Una comunità<br>
-        che suona insieme.
-      </h2>
-
-      <p>
-        Scopri la storia del Corpo Bandistico Municipale
-        “G. Verdi”, le persone che ne hanno fatto parte,
-        i direttori e il direttivo dell'Associazione Musicale
-        Alcarese.
-      </p>
-
-      <p>
-        Una realtà profondamente legata al proprio territorio,
-        che continua a custodire e trasmettere un patrimonio
-        musicale costruito nel corso di oltre cento anni.
-      </p>
-
-      <div class="band-links">
-        <a href="la-banda.html" class="text-link">Scopri la Banda →</a>
-        <a href="albo.html" class="text-link">Albo Storico →</a>
-        <a href="maestri-direttori.html" class="text-link">I Direttori →</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- SCUOLA DI MUSICA -->
-
-<section class="school" id="musica">
+<section class="section-cream">
   <div class="container">
-
     <div class="reveal">
-      <div class="eyebrow">Musica e formazione</div>
-
-      <h2 class="section-title">
-        La musica che<br>
-        cresce con noi.
-      </h2>
-
-      <p class="school-intro">
-        La musica si impara, si vive e si trasmette.
-        Da oltre un secolo, l'Associazione Musicale Alcarese
-        rappresenta un punto di riferimento per la formazione
-        musicale e per la crescita di nuove generazioni di musicisti.
-      </p>
-
-      <p class="school-intro">
-        Attraverso la Scuola di Musica, bambini, ragazzi e adulti
-        possono avvicinarsi al mondo della musica, conoscere gli
-        strumenti della banda e sviluppare passione, disciplina
-        e spirito di gruppo.
-      </p>
+      <div class="eyebrow">Le tappe principali</div>
+      <h2 class="section-title">Un percorso iniziato nel 1911</h2>
     </div>
 
-    <div class="music-features">
-
-      <article class="music-card reveal">
-        <div class="music-icon">♬</div>
-        <h3>Strumenti</h3>
+    <div class="timeline">
+      <article class="timeline-item reveal">
+        <div class="timeline-year">1911 · Le Origini</div>
+        <h3>La fondazione del Corpo Bandistico</h3>
         <p>
-          Un percorso dedicato alla conoscenza e allo studio
-          degli strumenti musicali della banda.
+          Nasce ad Alcara Li Fusi il Corpo Bandistico intitolato a Giuseppe Verdi,
+          rispondendo al desiderio della comunità di dotarsi di un presidio culturale
+          capace di accompagnare le ricorrenze civili e religiose del paese.
         </p>
       </article>
 
-      <article class="music-card reveal">
-        <div class="music-icon">♫</div>
-        <h3>Formazione</h3>
+      <article class="timeline-item reveal">
+        <div class="timeline-year">Il Novecento · Crescita e continuità</div>
+        <h3>Generazioni di musicisti alcalesi</h3>
         <p>
-          Dalle prime nozioni musicali alla pratica d'insieme,
-          per costruire solide basi e crescere insieme.
+          Nel corso dei decenni la banda diventa scuola di vita e di aggregazione,
+          tramandando di padre in figlio l'amore per gli strumenti a fiato e a percussione
+          e partecipando a rassegne e feste patronali in tutta la Sicilia.
         </p>
       </article>
 
-      <article class="music-card reveal">
-        <div class="music-icon">♪</div>
-        <h3>Passione</h3>
+      <article class="timeline-item reveal">
+        <div class="timeline-year">Oggi · Associazione Musicale Alcarese</div>
+        <h3>115 anni di musica tra tradizione e innovazione</h3>
         <p>
-          La musica come esperienza di condivisione,
-          tradizione e partecipazione alla vita della comunità.
+          Oggi l'Associazione Musicale Alcarese unisce il repertorio bandistico classico
+          a concerti sinfonici, colonne sonore e progetti formativi rivolti ai più giovani.
         </p>
       </article>
-
     </div>
-
-    <a href="musica.html" class="btn school-button">
-      Scopri la Scuola di Musica →
-    </a>
-
   </div>
 </section>
 
-<!-- CONTATTI -->
-
-<section class="contact" id="contatti">
-  <div class="container contact-grid">
-
+<section class="section-white">
+  <div class="container">
     <div class="reveal">
-      <div class="eyebrow">Restiamo in contatto</div>
+      <div class="eyebrow">Organizzazione</div>
+      <h2 class="section-title">Il Consiglio Direttivo</h2>
+    </div>
 
-      <h2 class="section-title">
-        La musica<br>
-        ci unisce.
-      </h2>
+    <div class="board-grid">
+      <article class="board-card reveal">
+        <div class="board-role">Presidente</div>
+        <h3>Nome Cognome</h3>
+        <p>Rappresentanza legale dell'Associazione Musicale Alcarese e coordinamento istituzionale.</p>
+      </article>
 
-      <p class="contact-description">
-        Tutte le novità, gli eventi e le attività
-        dell'Associazione Musicale Alcarese.
-        Seguici sui nostri canali social e rimani
-        aggiornato sulle iniziative della Banda.
-      </p>
+      <article class="board-card reveal">
+        <div class="board-role">Vicepresidente</div>
+        <h3>Nome Cognome</h3>
+        <p>Supporto organizzativo alle attività concertistiche e gestione dei rapporti con gli enti.</p>
+      </article>
 
-      <div class="social">
-        <a href="https://www.facebook.com/share/1FMSerYGo9/?mibextid=wwXIfr"
-           target="_blank" rel="noopener noreferrer">
-          Facebook ↗
-        </a>
+      <article class="board-card reveal">
+        <div class="board-role">Segretario e Tesoriere</div>
+        <h3>Nome Cognome</h3>
+        <p>Amministrazione, archivio sociale e coordinamento delle comunicazioni agli iscritti.</p>
+      </article>
+    </div>
 
-        <a href="https://www.instagram.com/bandamunicipalealcara?psln=ZWJ2em0za2RkZXRz"
-           target="_blank" rel="noopener noreferrer">
-          Instagram ↗
-        </a>
+    <div class="reveal" style="margin-top:80px;">
+      <div class="eyebrow">L'organico</div>
+      <h2 class="section-title">Le Sezioni Strumentali</h2>
+    </div>
+
+    <div class="sections-grid">
+      <div class="instrument-box reveal">
+        <h3>Legni</h3>
+        <ul>
+          <li>Flauti e Ottavino</li>
+          <li>Clarinetti</li>
+          <li>Sassofoni Contralti</li>
+          <li>Sassofoni Tenori e Baritoni</li>
+        </ul>
+      </div>
+
+      <div class="instrument-box reveal">
+        <h3>Ottoni Acuti</h3>
+        <ul>
+          <li>Trombe</li>
+          <li>Flicorni Soprani</li>
+          <li>Corni</li>
+        </ul>
+      </div>
+
+      <div class="instrument-box reveal">
+        <h3>Ottoni Gravi</h3>
+        <ul>
+          <li>Tromboni</li>
+          <li>Flicorni Tenori e Baritoni</li>
+          <li>Bassi Tuba</li>
+        </ul>
+      </div>
+
+      <div class="instrument-box reveal">
+        <h3>Percussioni</h3>
+        <ul>
+          <li>Grancassa e Piatti</li>
+          <li>Rullante e Tamburi</li>
+          <li>Timpani e Accessori</li>
+        </ul>
       </div>
     </div>
-
-    <div class="contact-info reveal">
-
-      <h3>Associazione Musicale Alcarese</h3>
-
-      <p>
-        Via della Rinascita, n. 16<br>
-        98070 Alcara li Fusi (ME)
-      </p>
-
-      <p>
-        P. IVA n. 03297680831<br>
-        C.F. 95023530835
-      </p>
-
-      <p>
-        <strong>Telefono</strong><br>
-        <a href="tel:+393382402745">338.240.2745</a><br>
-        <small>Maestro Direttore</small>
-      </p>
-
-      <p>
-        <strong>Email</strong><br>
-        <a href="mailto:bandamunicipalealcara@gmail.com">
-          bandamunicipalealcara@gmail.com
-        </a>
-      </p>
-
-      <p>
-        <strong>PEC</strong><br>
-        <a href="mailto:associazionemusicalealcarese@pec.it">
-          associazionemusicalealcarese@pec.it
-        </a>
-      </p>
-
-    </div>
   </div>
 </section>
-
-<!-- FOOTER -->
 
 <footer>
-  <p>
-    <strong>Corpo Bandistico Municipale “G. Verdi”</strong>
-  </p>
-
+  <p><strong>Corpo Bandistico Municipale “G. Verdi”</strong></p>
   <div class="footer-line"></div>
-
-  <p>
-    © 2026 Associazione Musicale Alcarese – Alcara Li Fusi, Messina
-  </p>
-
+  <p>© 2026 Associazione Musicale Alcarese – Alcara Li Fusi, Messina</p>
   <p>Dal 1911, musica e tradizione.</p>
-
-  <p>
-    Sito web creato e curato da Antonina Vaneria
-    e dai Responsabili della Comunicazione del Direttivo.
-  </p>
+  <p>Sito web creato e curato da Antonina Vaneria e dai Responsabili della Comunicazione del Direttivo.</p>
 </footer>
 
 <script>
-/* MENU MOBILE */
-
 const menuButton = document.getElementById("menuButton");
 const mainNav = document.getElementById("mainNav");
-
 menuButton.addEventListener("click", () => {
   const isOpen = mainNav.classList.toggle("open");
   menuButton.setAttribute("aria-expanded", isOpen);
   menuButton.textContent = isOpen ? "CHIUDI ✕" : "MENU ☰";
 });
-
 mainNav.querySelectorAll("a").forEach(link => {
   link.addEventListener("click", () => {
     mainNav.classList.remove("open");
@@ -1181,14 +610,8 @@ mainNav.querySelectorAll("a").forEach(link => {
     menuButton.textContent = "MENU ☰";
   });
 });
-
-/* ANIMAZIONI ALL'APPARIZIONE */
-
 const revealElements = document.querySelectorAll(".reveal");
-
-if ("IntersectionObserver" in window &&
-    !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-
+if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -1196,16 +619,11 @@ if ("IntersectionObserver" in window &&
         observer.unobserve(entry.target);
       }
     });
-  }, {
-    threshold: 0.12
-  });
-
+  }, { threshold: 0.12 });
   revealElements.forEach(element => observer.observe(element));
-
 } else {
   revealElements.forEach(element => element.classList.add("visible"));
 }
 </script>
-
 </body>
 </html>
