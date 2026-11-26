@@ -369,7 +369,7 @@
       color: var(--muted);
     }
 
-    /* GALLERIE ESISTENTI */
+    /* GALLERIA PARRINO */
 
     .gallery {
       margin-top: 24px;
@@ -427,6 +427,52 @@
       font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
+      margin-top: 12px;
+    }
+
+    /* GRIGLIA MINIATURE CONDIVISA (CIAK + RISULTATI) */
+
+    .thumbs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .thumbs-grid--five {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .thumb-item {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      background: var(--cream-dark);
+      border: 1px solid var(--border);
+      box-shadow: 0 5px 18px rgba(16, 32, 53, 0.08);
+      cursor: zoom-in;
+    }
+
+    .thumb-item img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .thumb-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .award-card--navy .thumb-item {
+      background: var(--navy-deep);
+      border-color: rgba(197, 166, 107, .35);
+    }
+
+    .award-card--navy .gallery-hint {
+      color: var(--gold-light);
     }
 
     /* TESTIMONIANZA */
@@ -522,8 +568,6 @@
       border-top: 1px solid rgba(255, 255, 255, .14);
     }
 
-    /* GALLERIA CIAK */
-
     .ciak-gallery {
       max-width: 1100px;
       margin: 0 auto;
@@ -543,34 +587,6 @@
     .ciak-gallery-heading p {
       color: var(--muted);
       font-size: 14px;
-    }
-
-    .ciak-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 17px;
-    }
-
-    .ciak-grid-item {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 4 / 3;
-      background: var(--cream-dark);
-      border: 1px solid var(--border);
-      box-shadow: 0 5px 18px rgba(16, 32, 53, 0.08);
-      cursor: zoom-in;
-    }
-
-    .ciak-grid-item img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.35s ease;
-    }
-
-    .ciak-grid-item:hover img {
-      transform: scale(1.045);
     }
 
     /* RISULTATI - GRAFICA DIFFERENZIATA PER OGNI EVENTO */
@@ -655,19 +671,6 @@
     }
 
     .award-card--navy .event-meta {
-      color: var(--gold-light);
-    }
-
-    .award-card--navy .gallery-image {
-      background: var(--navy-deep);
-      border-color: rgba(197, 166, 107, .35);
-    }
-
-    .award-card--navy .gallery-counter {
-      color: #C5D0DC;
-    }
-
-    .award-card--navy .gallery-hint {
       color: var(--gold-light);
     }
 
@@ -802,11 +805,6 @@
       transform: scale(1.06);
     }
 
-    .lightbox-nav:disabled {
-      opacity: 0.22;
-      cursor: default;
-    }
-
     .lightbox-close {
       position: absolute;
       top: 16px;
@@ -836,6 +834,10 @@
 
       nav a {
         font-size: 10px;
+      }
+
+      .thumbs-grid--five {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
     }
 
@@ -930,7 +932,8 @@
         padding: 65px 5%;
       }
 
-      .ciak-grid {
+      .thumbs-grid,
+      .thumbs-grid--five {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 13px;
       }
@@ -994,13 +997,10 @@
         padding: 17px 19px;
       }
 
-      .ciak-grid {
-        grid-template-columns: 1fr;
-        gap: 13px;
-      }
-
-      .ciak-grid-item {
-        aspect-ratio: 4 / 3;
+      .thumbs-grid,
+      .thumbs-grid--five {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
       }
 
       .intro-poster {
@@ -1425,74 +1425,74 @@
           <p>Clicca su una fotografia per ingrandirla e scorrere l'album di CIAK, SI SUONA!</p>
         </div>
 
-        <div class="ciak-grid">
+        <div class="thumbs-grid">
 
-          <div class="ciak-grid-item" onclick="apriLightboxGalleria('ciak', 0)">
+          <div class="thumb-item" onclick="apriLightboxGalleria('ciak', 0)">
             <img src="foto-eventi/813923299_18440931493131587_7528346578999758601_n.jpg"
                  alt="CIAK, SI SUONA! - Fotografia 1" loading="lazy">
           </div>
 
-          <div class="ciak-grid-item" onclick="apriLightboxGalleria('ciak', 1)">
+          <div class="thumb-item" onclick="apriLightboxGalleria('ciak', 1)">
             <img src="foto-eventi/813987078_18440931418131587_4239156655046501289_n.jpg"
                  alt="CIAK, SI SUONA! - Fotografia 2" loading="lazy">
           </div>
 
-          <div class="ciak-grid-item" onclick="apriLightboxGalleria('ciak', 2)">
+          <div class="thumb-item" onclick="apriLightboxGalleria('ciak', 2)">
             <img src="foto-eventi/814086114_18440931316131587_945695719456408618_n.jpg"
                  alt="CIAK, SI SUONA! - Fotografia 3" loading="lazy">
           </div>
 
-          <div class="ciak-grid-item" onclick="apriLightboxGalleria('ciak', 3)">
+          <div class="thumb-item" onclick="apriLightboxGalleria('ciak', 3)">
             <img src="foto-eventi/814339179_18440931346131587_8543452811096287639_n.jpg"
                  alt="CIAK, SI SUONA! - Fotografia 4" loading="lazy">
           </div>
 
-          <div class="ciak-grid-item" onclick="apriLightboxGalleria('ciak', 4)">
+          <div class="thumb-item" onclick="apriLightboxGalleria('ciak', 4)">
             <img src="foto-eventi/814364950_18440931325131587_6096093319054158529_n.jpg"
                  alt="CIAK, SI SUONA! - Fotografia 5" loading="lazy">
           </div>
 
-          <div class="ciak-grid-item" onclick="apriLightboxGalleria('ciak', 5)">
+          <div class="thumb-item" onclick="apriLightboxGalleria('ciak', 5)">
             <img src="foto-eventi/814381857_18440931463131587_3481236781457697101_n.jpg"
                  alt="CIAK, SI SUONA! - Fotografia 6" loading="lazy">
           </div>
 
-          <div class="ciak-grid-item" onclick="apriLightboxGalleria('ciak', 6)">
+          <div class="thumb-item" onclick="apriLightboxGalleria('ciak', 6)">
             <img src="foto-eventi/814535083_18440931361131587_6280593480539962481_n.jpg"
                  alt="CIAK, SI SUONA! - Fotografia 7" loading="lazy">
           </div>
 
-          <div class="ciak-grid-item" onclick="apriLightboxGalleria('ciak', 7)">
+          <div class="thumb-item" onclick="apriLightboxGalleria('ciak', 7)">
             <img src="foto-eventi/814575416_18440931385131587_7594603602484681504_n.jpg"
                  alt="CIAK, SI SUONA! - Fotografia 8" loading="lazy">
           </div>
 
-          <div class="ciak-grid-item" onclick="apriLightboxGalleria('ciak', 8)">
+          <div class="thumb-item" onclick="apriLightboxGalleria('ciak', 8)">
             <img src="foto-eventi/814695528_18440931382131587_4855359373968887534_n.jpg"
                  alt="CIAK, SI SUONA! - Fotografia 9" loading="lazy">
           </div>
 
-          <div class="ciak-grid-item" onclick="apriLightboxGalleria('ciak', 9)">
+          <div class="thumb-item" onclick="apriLightboxGalleria('ciak', 9)">
             <img src="foto-eventi/814768823_18440931511131587_483419872695225980_n.jpg"
                  alt="CIAK, SI SUONA! - Fotografia 10" loading="lazy">
           </div>
 
-          <div class="ciak-grid-item" onclick="apriLightboxGalleria('ciak', 10)">
+          <div class="thumb-item" onclick="apriLightboxGalleria('ciak', 10)">
             <img src="foto-eventi/814818348_18440931394131587_7761606483491561043_n.jpg"
                  alt="CIAK, SI SUONA! - Fotografia 11" loading="lazy">
           </div>
 
-          <div class="ciak-grid-item" onclick="apriLightboxGalleria('ciak', 11)">
+          <div class="thumb-item" onclick="apriLightboxGalleria('ciak', 11)">
             <img src="foto-eventi/814908130_18440931433131587_329848320124586274_n.jpg"
                  alt="CIAK, SI SUONA! - Fotografia 12" loading="lazy">
           </div>
 
-          <div class="ciak-grid-item" onclick="apriLightboxGalleria('ciak', 12)">
+          <div class="thumb-item" onclick="apriLightboxGalleria('ciak', 12)">
             <img src="foto-eventi/814926288_18440931415131587_1933472902691021730_n.jpg"
                  alt="CIAK, SI SUONA! - Fotografia 13" loading="lazy">
           </div>
 
-          <div class="ciak-grid-item" onclick="apriLightboxGalleria('ciak', 13)">
+          <div class="thumb-item" onclick="apriLightboxGalleria('ciak', 13)">
             <img src="foto-eventi/815157646_18440931460131587_1716126028973800124_n.jpg"
                  alt="CIAK, SI SUONA! - Fotografia 14" loading="lazy">
           </div>
@@ -1548,6 +1548,7 @@
             onclick="apriLightboxSingola(this.src, 'Premio Salvuccio Percacciolo 2026 · Mirto')"
           >
         </div>
+        <p class="gallery-hint">Clicca sulla foto per ingrandirla</p>
       </div>
 
       <!-- EVENTO 2: CONCORSO 2026 - CROTONE -->
@@ -1604,26 +1605,33 @@
           a suonare con questo entusiasmo e a farci emozionare!
         </p>
 
-        <div class="gallery">
-          <div class="gallery-image-wrap">
-            <button class="gallery-arrow" type="button"
-              onclick="scorriFoto('cutuli', -1)" aria-label="Foto precedente">❮</button>
-
-            <img
-              id="foto-cutuli"
-              class="gallery-image"
-              src="foto-eventi/698990281-1623511926446892-948983126384039020-n.jpg"
-              alt="Concorso Maria Grazia Cutuli"
-              onclick="apriLightboxGalleria('cutuli', indiciFotoEvento.cutuli)"
-            >
-
-            <button class="gallery-arrow" type="button"
-              onclick="scorriFoto('cutuli', 1)" aria-label="Foto successiva">❯</button>
+        <div class="thumbs-grid thumbs-grid--five">
+          <div class="thumb-item" onclick="apriLightboxGalleria('cutuli', 0)">
+            <img src="foto-eventi/698990281-1623511926446892-948983126384039020-n.jpg"
+                 alt="Concorso Maria Grazia Cutuli - Foto 1" loading="lazy">
           </div>
 
-          <p id="contatore-cutuli" class="gallery-counter">Foto 1 di 5</p>
-          <p class="gallery-hint">Clicca sulla foto per ingrandirla e scorrere</p>
+          <div class="thumb-item" onclick="apriLightboxGalleria('cutuli', 1)">
+            <img src="foto-eventi/4 (1).jpg"
+                 alt="Concorso Maria Grazia Cutuli - Foto 2" loading="lazy">
+          </div>
+
+          <div class="thumb-item" onclick="apriLightboxGalleria('cutuli', 2)">
+            <img src="foto-eventi/700708317-1623511949780223-6917267274862951879-n.jpg"
+                 alt="Concorso Maria Grazia Cutuli - Foto 3" loading="lazy">
+          </div>
+
+          <div class="thumb-item" onclick="apriLightboxGalleria('cutuli', 3)">
+            <img src="foto-eventi/667473774-946127171361876-3645817900863798513-n.jpg"
+                 alt="Concorso Maria Grazia Cutuli - Foto 4" loading="lazy">
+          </div>
+
+          <div class="thumb-item" onclick="apriLightboxGalleria('cutuli', 4)">
+            <img src="foto-eventi/699084263-1623511883113563-7417324054538264152-n.jpg"
+                 alt="Concorso Maria Grazia Cutuli - Foto 5" loading="lazy">
+          </div>
         </div>
+        <p class="gallery-hint">Clicca su una foto per ingrandirla e scorrere l'album</p>
       </div>
 
       <!-- EVENTO 3: CONCORSO 2025 - MIRTO -->
@@ -1672,26 +1680,33 @@
           partecipanti, siete il nostro avvenire.
         </p>
 
-        <div class="gallery">
-          <div class="gallery-image-wrap">
-            <button class="gallery-arrow" type="button"
-              onclick="scorriFoto('percacciolo2025', -1)" aria-label="Foto precedente">❮</button>
-
-            <img
-              id="foto-percacciolo2025"
-              class="gallery-image"
-              src="foto-eventi/500461192-1293897376075017-632198432798670353-n.jpg"
-              alt="Premio Salvuccio Percacciolo 2025"
-              onclick="apriLightboxGalleria('percacciolo2025', indiciFotoEvento.percacciolo2025)"
-            >
-
-            <button class="gallery-arrow" type="button"
-              onclick="scorriFoto('percacciolo2025', 1)" aria-label="Foto successiva">❯</button>
+        <div class="thumbs-grid thumbs-grid--five">
+          <div class="thumb-item" onclick="apriLightboxGalleria('percacciolo2025', 0)">
+            <img src="foto-eventi/499554390-1293897362741685-300458054207010660-n_orig.jpg"
+                 alt="Premio Salvuccio Percacciolo 2025 - Foto 1" loading="lazy">
           </div>
 
-          <p id="contatore-percacciolo2025" class="gallery-counter">Foto 1 di 5</p>
-          <p class="gallery-hint">Clicca sulla foto per ingrandirla e scorrere</p>
+          <div class="thumb-item" onclick="apriLightboxGalleria('percacciolo2025', 1)">
+            <img src="foto-eventi/499785628-1293897379408350-6099964464217998868-n_orig.jpg"
+                 alt="Premio Salvuccio Percacciolo 2025 - Foto 2" loading="lazy">
+          </div>
+
+          <div class="thumb-item" onclick="apriLightboxGalleria('percacciolo2025', 2)">
+            <img src="foto-eventi/499708553-1293897372741684-3626934576983418496-n_orig.jpg"
+                 alt="Premio Salvuccio Percacciolo 2025 - Foto 3" loading="lazy">
+          </div>
+
+          <div class="thumb-item" onclick="apriLightboxGalleria('percacciolo2025', 3)">
+            <img src="foto-eventi/500461192-1293897376075017-632198432798670353-n.jpg"
+                 alt="Premio Salvuccio Percacciolo 2025 - Foto 4" loading="lazy">
+          </div>
+
+          <div class="thumb-item" onclick="apriLightboxGalleria('percacciolo2025', 4)">
+            <img src="foto-eventi/500035244-1293897369408351-5147766654060393707-n_orig.jpg"
+                 alt="Premio Salvuccio Percacciolo 2025 - Foto 5" loading="lazy">
+          </div>
         </div>
+        <p class="gallery-hint">Clicca su una foto per ingrandirla e scorrere l'album</p>
       </div>
 
     </div>
@@ -1839,22 +1854,6 @@
       ]
     };
 
-    const indiciFotoEvento = {
-      cutuli: 0,
-      percacciolo2025: 0
-    };
-
-    function scorriFoto(galleria, direzione) {
-      const immagini = fotoEventi[galleria];
-      indiciFotoEvento[galleria] =
-        (indiciFotoEvento[galleria] + direzione + immagini.length) % immagini.length;
-
-      const idx = indiciFotoEvento[galleria];
-      document.getElementById("foto-" + galleria).src = immagini[idx].src;
-      document.getElementById("contatore-" + galleria).textContent =
-        "Foto " + (idx + 1) + " di " + immagini.length;
-    }
-
     /* LIGHTBOX CON SCORRIMENTO */
 
     let lightboxLista = [];
@@ -1901,22 +1900,11 @@
         (lightboxIndice + direzione + lightboxLista.length) % lightboxLista.length;
       aggiornaLightbox();
 
-      /* Sincronizza anche l'anteprima in pagina se è una galleria con contatore */
       if (lightboxLista === fotoEventi.parrino) {
         indiceParrino = lightboxIndice;
         document.getElementById("foto-parrino-grande").src = fotoEventi.parrino[indiceParrino].src;
         document.getElementById("numero-foto-parrino").textContent =
           "Foto " + (indiceParrino + 1) + " di " + fotoEventi.parrino.length;
-      } else if (lightboxLista === fotoEventi.cutuli) {
-        indiciFotoEvento.cutuli = lightboxIndice;
-        document.getElementById("foto-cutuli").src = fotoEventi.cutuli[lightboxIndice].src;
-        document.getElementById("contatore-cutuli").textContent =
-          "Foto " + (lightboxIndice + 1) + " di " + fotoEventi.cutuli.length;
-      } else if (lightboxLista === fotoEventi.percacciolo2025) {
-        indiciFotoEvento.percacciolo2025 = lightboxIndice;
-        document.getElementById("foto-percacciolo2025").src = fotoEventi.percacciolo2025[lightboxIndice].src;
-        document.getElementById("contatore-percacciolo2025").textContent =
-          "Foto " + (lightboxIndice + 1) + " di " + fotoEventi.percacciolo2025.length;
       }
     }
 
