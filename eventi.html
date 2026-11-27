@@ -2,1575 +2,1273 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Eventi | Corpo Bandistico Municipale “G. Verdi”</title>
-  <meta name="theme-color" content="#14263D">
-  <meta name="description" content="Scopri gli eventi, i concerti e le ricorrenze storiche del Corpo Bandistico Municipale G. Verdi di Alcara Li Fusi.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --navy: #14263D;
-      --navy-deep: #0D1B2B;
-      --navy-soft: #203A57;
-      --gold: #C5A66B;
-      --gold-light: #E3D2AC;
-      --cream: #F5F1E8;
-      --cream-dark: #EAE3D5;
-      --burgundy: #642F3C;
-      --white: #FFFFFF;
-      --text: #303B43;
-      --muted: #747B7C;
-      --border: #DDD8CD;
-      --shadow: 0 18px 45px rgba(16, 32, 53, .10);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 100px;
-    }
-
-    body {
-      font-family: 'DM Sans', Arial, sans-serif;
-      background: var(--white);
-      color: var(--text);
-      line-height: 1.7;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-weight: 500;
-      line-height: 1.2;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    /* HEADER */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(20, 38, 61, .97);
-      backdrop-filter: blur(12px);
-      color: var(--white);
-      border-bottom: 1px solid rgba(255,255,255,.09);
-    }
-
-    .header-inner {
-      width: 90%;
-      max-width: 1450px;
-      min-height: 82px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--white);
-      flex-shrink: 0;
-    }
-
-    .logo img {
-      width: 49px;
-      height: 49px;
-      object-fit: contain;
-      border-radius: 50%;
-      background: var(--white);
-      padding: 3px;
-    }
-
-    .logo-text {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 19px;
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
-
-    .logo-text small {
-      display: block;
-      color: var(--gold-light);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 9px;
-      letter-spacing: 3px;
-      margin-top: 1px;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      flex-wrap: wrap;
-      gap: 10px 21px;
-    }
-
-    nav a {
-      color: #E8EDF2;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: .8px;
-      transition: color .25s ease;
-      white-space: nowrap;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: var(--gold-light);
-    }
-
-    .mobile-menu {
-      display: none;
-    }
-
-    /* HERO */
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, var(--navy-deep), var(--navy) 65%, var(--navy-soft));
-      color: var(--white);
-      width: calc(100% - 56px);
-      max-width: 1400px;
-      margin: 28px auto 0;
-      padding: 85px 24px;
-      text-align: center;
-      border: 1px solid rgba(197,166,107,.25);
-    }
-
-    .hero::before {
-      content: "EVENTI";
-      position: absolute;
-      right: -25px;
-      bottom: -45px;
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(110px,20vw,250px);
-      color: rgba(255,255,255,.03);
-      pointer-events: none;
-      line-height: 1;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .section-label {
-      color: var(--burgundy);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 11px;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .hero .section-label {
-      color: var(--gold-light);
-      letter-spacing: 4px;
-      margin-bottom: 16px;
-    }
-
-    .hero h1 {
-      font-size: clamp(40px,5.5vw,66px);
-      margin-bottom: 20px;
-      letter-spacing: -1px;
-    }
-
-    .hero p {
-      max-width: 740px;
-      margin: auto;
-      color: #DCE5EC;
-      font-size: 16px;
-      line-height: 1.9;
-    }
-
-    .hero-line {
-      width: 65px;
-      height: 1px;
-      background: var(--gold);
-      margin: 28px auto 0;
-    }
-
-    /* SEZIONI */
-
-    .content-section {
-      padding: 85px 7%;
-    }
-
-    .content-section.cream {
-      background: var(--cream);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .content {
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .section-title {
-      color: var(--navy);
-      font-size: clamp(30px,4vw,44px);
-      margin-bottom: 18px;
-    }
-
-    .intro {
-      font-size: 16px;
-      color: var(--muted);
-      max-width: 850px;
-      line-height: 1.85;
-      margin-bottom: 38px;
-    }
-
-    /* ARCHIVIO ANNUALE */
-
-    .years-grid {
-      display: grid;
-      grid-template-columns: repeat(3,minmax(0,1fr));
-      gap: 24px;
-    }
-
-    .year-card {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 310px;
-      padding: 32px 29px;
-      background: var(--navy);
-      color: var(--white);
-      border: 1px solid rgba(197,166,107,.4);
-      border-top: 4px solid var(--gold);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      transition: transform .3s ease, background .3s ease;
-    }
-
-    .year-card::after {
-      content: attr(data-year);
-      position: absolute;
-      right: -8px;
-      bottom: -30px;
-      font-family: 'Playfair Display', serif;
-      font-size: 125px;
-      font-weight: 600;
-      color: rgba(255,255,255,.045);
-      line-height: 1;
-      pointer-events: none;
-    }
-
-    .year-card:hover {
-      transform: translateY(-6px);
-      background: var(--navy-soft);
-    }
-
-    .year-card.current {
-      background: linear-gradient(140deg,var(--navy-deep),var(--navy-soft));
-    }
-
-    .year-top,
-    .year-bottom {
-      position: relative;
-      z-index: 1;
-    }
-
-    .year-label {
-      color: var(--gold-light);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 10px;
-      font-weight: 700;
-    }
-
-    .year-number {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 64px;
-      line-height: 1;
-      margin: 18px 0;
-      color: var(--white);
-    }
-
-    .year-description {
-      color: #DCE5EC;
-      font-size: 14px;
-      line-height: 1.8;
-      max-width: 290px;
-    }
-
-    .year-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 28px;
-      padding-bottom: 7px;
-      border-bottom: 1px solid var(--gold);
-      color: var(--gold-light);
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      width: fit-content;
-    }
-
-    .year-link span {
-      transition: transform .25s ease;
-    }
-
-    .year-card:hover .year-link span {
-      transform: translateX(5px);
-    }
-
-    /* ARCHIVIO STORICO */
-
-    .history-intro {
-      max-width: 850px;
-      color: var(--muted);
-      margin-bottom: 35px;
-      line-height: 1.9;
-    }
-
-    .history-year-heading {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      margin: 55px 0 24px;
-      color: var(--navy);
-    }
-
-    .history-year-heading span {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 34px;
-      font-weight: 600;
-    }
-
-    .history-year-heading::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: var(--gold);
-      opacity: .7;
-    }
-
-    .history-grid {
-      display: grid;
-      grid-template-columns: repeat(2,minmax(0,1fr));
-      gap: 28px;
-      align-items: stretch;
-    }
-
-    .history-card {
-      min-width: 0;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-top: 4px solid var(--gold);
-      padding: 32px;
-      box-shadow: var(--shadow);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .history-date {
-      color: var(--burgundy);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .history-card h3 {
-      color: var(--navy);
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
-
-    .history-card p {
-      color: var(--text);
-      font-size: 15px;
-      line-height: 1.9;
-      margin-bottom: 22px;
-    }
-
-    .history-card p strong {
-      font-weight: 600;
-      color: var(--navy);
-    }
-
-    /* IMMAGINI: NIENTE RITAGLI */
-
-    .history-image-button {
-      display: block;
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0 22px;
-      background: #F8F7F3;
-      border: 1px solid var(--border);
-      cursor: zoom-in;
-      overflow: hidden;
-    }
-
-    .history-image-button img {
-      display: block;
-      width: 100%;
-      height: auto;
-      max-height: 430px;
-      object-fit: contain;
-      object-position: center;
-      margin: 0 auto;
-      transition: transform .3s ease;
-    }
-
-    .history-image-button:hover img {
-      transform: scale(1.015);
-    }
-
-    .history-image-button.poster img {
-      max-height: 480px;
-    }
-
-    .history-link {
-      display: inline-block;
-      width: fit-content;
-      padding: 12px 20px;
-      background: var(--navy);
-      color: var(--white);
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.4px;
-      transition: background .25s ease;
-    }
-
-    .history-link:hover {
-      background: var(--gold);
-      color: var(--navy-deep);
-    }
-
-    .article-author {
-      margin-top: 15px;
-      padding-top: 13px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.8;
-    }
-
-    .article-author strong {
-      color: var(--navy);
-    }
-
-    /* VIDEO */
-
-    .video-wrapper {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16/9;
-      overflow: hidden;
-      background: var(--navy-deep);
-      margin: 20px 0 18px;
-      border: 1px solid var(--border);
-    }
-
-    .video-wrapper iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    .video-chapters {
-      background: var(--cream);
-      border-left: 3px solid var(--gold);
-      padding: 15px 18px;
-      margin: 0 0 22px;
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-    .video-chapters strong {
-      color: var(--navy);
-    }
-
-    /* GALLERIE */
-
-    .photo-gallery {
-      display: grid;
-      grid-template-columns: repeat(3,minmax(0,1fr));
-      gap: 13px;
-      margin: 22px 0 12px;
-    }
-
-    .gallery-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      min-width: 0;
-      min-height: 125px;
-      padding: 7px;
-      border: 1px solid var(--border);
-      background: #F8F7F3;
-      cursor: zoom-in;
-      overflow: hidden;
-    }
-
-    .gallery-item img {
-      display: block;
-      width: 100%;
-      height: 165px;
-      object-fit: contain;
-      object-position: center;
-      transition: transform .3s ease;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.04);
-    }
-
-    .gallery-item.document img {
-      object-fit: contain;
-    }
-
-    .gallery-caption {
-      color: var(--muted);
-      font-size: 11px !important;
-      text-align: center;
-      margin-top: 12px;
-      margin-bottom: 0 !important;
-    }
-
-    /* LIGHTBOX */
-
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      z-index: 1000;
-      background: rgba(8,17,28,.96);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 65px 70px;
-    }
-
-    .lightbox[hidden] {
-      display: none;
-    }
-
-    .lightbox-content {
-      position: relative;
-      max-width: 1200px;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .lightbox img {
-      max-width: 100%;
-      max-height: 100%;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      border: 1px solid rgba(255,255,255,.2);
-    }
-
-    .lightbox-close,
-    .lightbox-prev,
-    .lightbox-next {
-      position: absolute;
-      z-index: 2;
-      border: 1px solid rgba(255,255,255,.4);
-      background: rgba(20,38,61,.9);
-      color: white;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background .2s ease;
-    }
-
-    .lightbox-close:hover,
-    .lightbox-prev:hover,
-    .lightbox-next:hover {
-      background: var(--burgundy);
-    }
-
-    .lightbox-close {
-      top: 20px;
-      right: 25px;
-      width: 43px;
-      height: 43px;
-      font-size: 25px;
-    }
-
-    .lightbox-prev,
-    .lightbox-next {
-      top: 50%;
-      transform: translateY(-50%);
-      width: 45px;
-      height: 55px;
-      font-size: 27px;
-    }
-
-    .lightbox-prev {
-      left: 15px;
-    }
-
-    .lightbox-next {
-      right: 15px;
-    }
-
-    .lightbox-counter {
-      position: absolute;
-      bottom: 18px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: white;
-      font-size: 12px;
-      letter-spacing: 2px;
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: var(--navy-deep);
-      color: #AAB7C5;
-      text-align: center;
-      padding: 35px 5%;
-      font-size: 11px;
-      line-height: 2;
-    }
-
-    footer strong {
-      color: var(--white);
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 17px;
-      font-weight: 500;
-    }
-
-    .footer-line {
-      width: 45px;
-      height: 1px;
-      background: var(--gold);
-      margin: 15px auto;
-    }
-
-    footer p:last-child {
-      font-size: 10px;
-      color: #8191A2;
-      margin-top: 9px;
-    }
-
-    /* RESPONSIVE */
-
-    @media(max-width:1100px) {
-      nav {
-        gap: 10px 12px;
-      }
-
-      nav a {
-        font-size: 10px;
-      }
-    }
-
-    @media(max-width:900px) {
-      .years-grid {
-        grid-template-columns: repeat(2,minmax(0,1fr));
-      }
-
-      .photo-gallery {
-        grid-template-columns: repeat(3,minmax(0,1fr));
-      }
-    }
-
-    @media(max-width:850px) {
-      .header-inner {
-        width: 90%;
-        flex-wrap: wrap;
-        padding: 13px 0;
-      }
-
-      .mobile-menu {
-        display: block;
-        background: transparent;
-        border: 1px solid rgba(255,255,255,.35);
-        color: white;
-        padding: 9px 13px;
-        cursor: pointer;
-        font-size: 12px;
-      }
-
-      .header-right {
-        display: none;
-        width: 100%;
-      }
-
-      .header-right.open {
-        display: block;
-      }
-
-      nav {
-        width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
-        padding: 8px 0 15px;
-      }
-
-      nav a {
-        width: 100%;
-        padding: 10px 0;
-        font-size: 11px;
-        border-bottom: 1px solid rgba(255,255,255,.08);
-      }
-
-      .hero {
-        width: calc(100% - 30px);
-        margin-top: 18px;
-        padding: 60px 20px;
-      }
-
-      .content-section {
-        padding: 65px 6%;
-      }
-
-      .history-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .gallery-item img {
-        height: 180px;
-      }
-    }
-
-    @media(max-width:560px) {
-      .years-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .year-card {
-        min-height: 270px;
-      }
-
-      .hero h1 {
-        font-size: 39px;
-      }
-
-      .history-card {
-        padding: 25px 21px;
-      }
-
-      .history-year-heading span {
-        font-size: 29px;
-      }
-
-      .photo-gallery {
-        grid-template-columns: repeat(2,minmax(0,1fr));
-        gap: 9px;
-      }
-
-      .gallery-item {
-        min-height: 110px;
-      }
-
-      .gallery-item img {
-        height: 135px;
-      }
-
-      .history-image-button img {
-        max-height: 350px;
-      }
-
-      .lightbox {
-        padding: 60px 12px;
-      }
-
-      .lightbox-prev {
-        left: 5px;
-      }
-
-      .lightbox-next {
-        right: 5px;
-      }
-
-      .lightbox-prev,
-      .lightbox-next {
-        width: 35px;
-        height: 45px;
-      }
-
-      .lightbox-close {
-        top: 12px;
-        right: 12px;
-      }
-    }
-
-    @media(prefers-reduced-motion:reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,*::before,*::after {
-        transition-duration: .01ms !important;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Eventi e Archivio | Corpo Bandistico Municipale G. Verdi</title>
+<meta name="theme-color" content="#14263D">
+<meta name="description" content="Eventi, concerti e archivio storico del Corpo Bandistico Municipale G. Verdi di Alcara Li Fusi.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy: #14263D;
+  --navy-deep: #0D1B2B;
+  --navy-soft: #203A57;
+  --gold: #C5A66B;
+  --gold-light: #E3D2AC;
+  --cream: #F5F1E8;
+  --cream-dark: #EAE3D5;
+  --burgundy: #642F3C;
+  --white: #FFFFFF;
+  --text: #303B43;
+  --muted: #747B7C;
+  --border: #DDD8CD;
+  --shadow: 0 18px 45px rgba(16,32,53,.10);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  color: var(--text);
+  background: var(--cream);
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* HEADER */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(20,38,61,.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(197,166,107,.35);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: auto;
+  min-height: 88px;
+  padding: 12px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--white);
+  min-width: 0;
+}
+
+.brand img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.brand-name {
+  font-family: "Playfair Display", serif;
+  font-size: 21px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.brand-subtitle {
+  display: block;
+  margin-top: 5px;
+  color: var(--gold-light);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.main-nav a {
+  color: rgba(255,255,255,.88);
+  font-size: 13px;
+  font-weight: 600;
+  transition: color .2s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--gold-light);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid rgba(255,255,255,.3);
+  color: white;
+  padding: 8px 12px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  background:
+    linear-gradient(115deg, rgba(13,27,43,.98), rgba(32,58,87,.93)),
+    var(--navy);
+  color: white;
+  padding: 95px 25px 90px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border: 1px solid rgba(197,166,107,.18);
+  border-radius: 50%;
+  right: -100px;
+  bottom: -190px;
+}
+
+.hero-label {
+  color: var(--gold-light);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(38px, 6vw, 65px);
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 690px;
+  margin: auto;
+  color: rgba(255,255,255,.78);
+  font-size: 16px;
+}
+
+/* GENERALE */
+
+.container {
+  max-width: 1160px;
+  width: calc(100% - 48px);
+  margin: auto;
+}
+
+.section {
+  padding: 75px 0;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+.section-kicker {
+  color: var(--burgundy);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.section-heading h2 {
+  color: var(--navy);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(30px, 4vw, 43px);
+  font-weight: 600;
+}
+
+.section-heading p {
+  color: var(--muted);
+  max-width: 650px;
+  margin: 12px auto 0;
+}
+
+/* ANNI */
+
+.years-section {
+  background: var(--white);
+  padding: 55px 0;
+}
+
+.years-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.year-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--gold);
+  padding: 28px;
+  text-align: center;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.year-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.year-card .year {
+  font-family: "Playfair Display", serif;
+  font-size: 35px;
+  color: var(--navy);
+  margin-bottom: 7px;
+}
+
+.year-card p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+.year-link {
+  display: inline-block;
+  color: var(--burgundy);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 4px;
+}
+
+/* ARCHIVIO */
+
+.archive-section {
+  padding: 85px 0;
+}
+
+.archive-year {
+  margin-bottom: 65px;
+}
+
+.archive-year-title {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.archive-year-title span {
+  font-family: "Playfair Display", serif;
+  font-size: 35px;
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+.archive-year-title::after {
+  content: "";
+  height: 1px;
+  background: var(--gold);
+  width: 100%;
+}
+
+.history-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+}
+
+.history-card {
+  background: white;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 25px rgba(16,32,53,.045);
+  overflow: hidden;
+  min-width: 0;
+}
+
+.history-card.wide {
+  grid-column: 1 / -1;
+}
+
+.card-content {
+  padding: 27px;
+}
+
+.card-date {
+  color: var(--burgundy);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 9px;
+}
+
+.card-content h3 {
+  color: var(--navy);
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+.card-content p {
+  color: var(--text);
+  font-size: 14px;
+  margin-bottom: 13px;
+}
+
+.card-content ul {
+  padding-left: 22px;
+  margin: 12px 0 18px;
+  font-size: 14px;
+}
+
+.card-content li {
+  margin-bottom: 7px;
+}
+
+.card-author {
+  color: var(--muted);
+  font-size: 12px;
+  font-style: italic;
+  margin-top: 20px;
+  border-top: 1px solid var(--border);
+  padding-top: 13px;
+}
+
+.article-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--burgundy);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 4px;
+}
+
+.article-link:hover {
+  color: var(--navy);
+}
+
+/* FOTO E GALLERIE */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  padding: 0 25px 25px;
+}
+
+.gallery-item {
+  width: 100%;
+  min-height: 180px;
+  max-height: 300px;
+  border: 1px solid var(--border);
+  background: var(--cream);
+  padding: 5px;
+  cursor: zoom-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  transition: transform .3s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.025);
+}
+
+.gallery-grid.single {
+  grid-template-columns: 1fr;
+}
+
+.gallery-grid.single .gallery-item {
+  min-height: 250px;
+  max-height: 520px;
+}
+
+.gallery-grid.single .gallery-item img {
+  max-height: 490px;
+}
+
+/* IMMAGINE IN EVIDENZA */
+
+.feature-image {
+  padding: 0 27px 27px;
+}
+
+.feature-image .gallery-item {
+  min-height: 300px;
+  max-height: 550px;
+}
+
+.feature-image .gallery-item img {
+  max-height: 520px;
+}
+
+/* VIDEO */
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  background: var(--navy-deep);
+  margin-top: 18px;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* LIGHTBOX */
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  background: rgba(5,12,20,.96);
+  align-items: center;
+  justify-content: center;
+  padding: 55px 65px;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  box-shadow: 0 10px 45px rgba(0,0,0,.35);
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.25);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-close {
+  top: 18px;
+  right: 22px;
+  width: 43px;
+  height: 43px;
+  font-size: 27px;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 55px;
+  font-size: 27px;
+}
+
+.lightbox-prev {
+  left: 15px;
+}
+
+.lightbox-next {
+  right: 15px;
+}
+
+.lightbox-counter {
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: rgba(255,255,255,.8);
+  font-size: 13px;
+}
+
+/* FOOTER */
+
+.site-footer {
+  background: var(--navy-deep);
+  color: white;
+  padding: 50px 24px 25px;
+  border-top: 3px solid var(--gold);
+}
+
+.footer-inner {
+  max-width: 1160px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-brand {
+  font-family: "Playfair Display", serif;
+  font-size: 23px;
+  letter-spacing: 1px;
+}
+
+.footer-info {
+  color: rgba(255,255,255,.65);
+  font-size: 12px;
+  margin-top: 7px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.footer-links a {
+  color: var(--gold-light);
+  font-size: 12px;
+}
+
+.footer-bottom {
+  max-width: 1160px;
+  margin: 35px auto 0;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,.13);
+  color: rgba(255,255,255,.45);
+  font-size: 11px;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+  .header-inner {
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 8px 0 15px;
+  }
+
+  .main-nav.open {
+    display: flex;
+  }
+
+  .main-nav a {
+    width: 100%;
+    padding: 11px 0;
+    border-top: 1px solid rgba(255,255,255,.1);
+  }
+
+  .years-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .history-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .history-card.wide {
+    grid-column: auto;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero {
+    padding: 70px 20px;
+  }
+
+  .container {
+    width: calc(100% - 30px);
+  }
+
+  .section {
+    padding: 55px 0;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    padding: 0 15px 18px;
+  }
+
+  .gallery-item {
+    min-height: 210px;
+  }
+
+  .card-content {
+    padding: 21px;
+  }
+
+  .lightbox {
+    padding: 55px 48px;
+  }
+
+  .lightbox-prev {
+    left: 5px;
+  }
+
+  .lightbox-next {
+    right: 5px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
 
-  <header>
-    <div class="header-inner">
+    <a href="index.html" class="brand">
+      <img src="logo.jpeg" alt="Logo Corpo Bandistico G. Verdi">
+      <span>
+        <span class="brand-name">G. VERDI</span>
+        <span class="brand-subtitle">ALCARA LI FUSI · 1911</span>
+      </span>
+    </a>
 
-      <a class="logo" href="index.html" aria-label="Torna alla Home">
-        <img src="logo.jpeg" alt="Logo Corpo Bandistico Municipale G. Verdi">
-        <span class="logo-text">
-          G. VERDI
-          <small>ALCARA LI FUSI · 1911</small>
-        </span>
+    <button class="menu-toggle" id="menuToggle" aria-label="Apri il menu">☰</button>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="la-banda.html">La Banda</a>
+      <a href="scuola-di-musica.html">Scuola di Musica</a>
+      <a href="maestri-direttori.html">Maestri e Direttori</a>
+      <a href="galleria.html">Galleria</a>
+      <a href="eventi.html" class="active">Eventi</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="hero-label">Corpo Bandistico Municipale · Dal 1911</div>
+  <h1>Eventi e Archivio Storico</h1>
+  <p>
+    Concerti, manifestazioni, incontri e momenti indimenticabili.
+    Un viaggio attraverso la storia e le esperienze della nostra Banda.
+  </p>
+</section>
+
+<!-- ARCHIVIO PER ANNO -->
+
+<section class="years-section">
+  <div class="container">
+    <div class="section-heading">
+      <div class="section-kicker">Il nostro percorso</div>
+      <h2>Gli eventi negli anni</h2>
+      <p>Scopri le attività, i concerti e le manifestazioni delle diverse stagioni.</p>
+    </div>
+
+    <div class="years-grid">
+
+      <a class="year-card" href="eventi/2026.html">
+        <div class="year">2026</div>
+        <p>Concerti, manifestazioni e appuntamenti dell'anno.</p>
+        <span class="year-link">Scopri gli eventi</span>
       </a>
 
-      <button class="mobile-menu" id="menuButton"
-        aria-expanded="false" aria-controls="headerRight">
-        MENU ☰
-      </button>
+      <a class="year-card" href="eventi/2025.html">
+        <div class="year">2025</div>
+        <p>Un altro anno di musica, tradizione e condivisione.</p>
+        <span class="year-link">Scopri gli eventi</span>
+      </a>
 
-      <div class="header-right" id="headerRight">
-        <nav aria-label="Navigazione principale">
-          <a href="index.html">Home</a>
-          <a href="la-banda.html">La Banda</a>
-          <a href="musica.html">La Scuola di Musica</a>
-          <a href="eventi.html" class="active" aria-current="page">Eventi</a>
-          <a href="albo.html">Albo Storico</a>
-          <a href="maestri-direttori.html">Maestri Direttori</a>
-          <a href="galleria.html">Galleria</a>
-          <a href="index.html#contatti">Contatti</a>
-        </nav>
-      </div>
+      <a class="year-card" href="eventi/2024.html">
+        <div class="year">2024</div>
+        <p>Le iniziative e i momenti più significativi.</p>
+        <span class="year-link">Scopri gli eventi</span>
+      </a>
 
     </div>
-  </header>
+  </div>
+</section>
 
+<!-- ARCHIVIO STORICO -->
 
-  <!-- HERO -->
+<section class="archive-section">
+  <div class="container">
 
-  <section class="hero">
-    <div class="hero-content">
-      <div class="section-label">
-        ASSOCIAZIONE MUSICALE ALCARESE · DAL 1911
-      </div>
-
-      <h1>Eventi e ricorrenze</h1>
-
+    <div class="section-heading">
+      <div class="section-kicker">La nostra memoria</div>
+      <h2>Dal passato al presente</h2>
       <p>
-        La musica, le manifestazioni e i momenti che raccontano
-        il cammino del Corpo Bandistico Municipale “G. Verdi”
-        di Alcara Li Fusi. Un viaggio attraverso gli appuntamenti
-        più recenti e la memoria della nostra storia.
+        Alcuni dei momenti che hanno segnato il cammino del Corpo Bandistico
+        Municipale G. Verdi.
       </p>
-
-      <div class="hero-line"></div>
     </div>
-  </section>
 
+    <!-- 2015 -->
 
-  <!-- ARCHIVIO PER ANNO -->
-
-  <section class="content-section" id="archivio">
-    <div class="content">
-
-      <div class="section-label">Il nostro percorso</div>
-      <h2 class="section-title">Gli eventi negli anni</h2>
-
-      <p class="intro">
-        Ogni anno è fatto di concerti, incontri, celebrazioni e occasioni
-        di condivisione. Seleziona un anno per scoprire gli eventi,
-        le fotografie e i momenti più significativi della nostra attività.
-      </p>
-
-      <div class="years-grid">
-
-        <a href="eventi/2026.html" class="year-card current" data-year="2026">
-          <div class="year-top">
-            <span class="year-label">Stagione corrente</span>
-            <div class="year-number">2026</div>
-            <p class="year-description">
-              Concerti, progetti musicali, manifestazioni e il
-              115° anniversario della Banda.
-            </p>
-          </div>
-          <div class="year-bottom">
-            <span class="year-link">Scopri gli eventi <span>→</span></span>
-          </div>
-        </a>
-
-        <a href="eventi/2025.html" class="year-card" data-year="2025">
-          <div class="year-top">
-            <span class="year-label">Archivio annuale</span>
-            <div class="year-number">2025</div>
-            <p class="year-description">
-              Rivivi i concerti, le iniziative e gli appuntamenti
-              del Corpo Bandistico durante il 2025.
-            </p>
-          </div>
-          <div class="year-bottom">
-            <span class="year-link">Scopri gli eventi <span>→</span></span>
-          </div>
-        </a>
-
-        <a href="eventi/2024.html" class="year-card" data-year="2024">
-          <div class="year-top">
-            <span class="year-label">Archivio annuale</span>
-            <div class="year-number">2024</div>
-            <p class="year-description">
-              Una raccolta dei momenti musicali e delle
-              manifestazioni che hanno caratterizzato il 2024.
-            </p>
-          </div>
-          <div class="year-bottom">
-            <span class="year-link">Scopri gli eventi <span>→</span></span>
-          </div>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ARCHIVIO STORICO -->
-
-  <section class="content-section cream" id="archivio-storico">
-    <div class="content">
-
-      <div class="section-label">La memoria della Banda</div>
-
-      <h2 class="section-title">La nostra storia attraverso gli eventi</h2>
-
-      <p class="history-intro">
-        Alcuni anniversari rappresentano tappe particolarmente importanti
-        nel cammino del Corpo Bandistico Municipale “G. Verdi”.
-        Attraverso fotografie, documenti, video e testimonianze,
-        conserviamo la memoria dei momenti condivisi con la comunità.
-      </p>
-
-
-      <!-- RICORRENZE STORICHE -->
+    <div class="archive-year">
+      <div class="archive-year-title"><span>2015</span></div>
 
       <div class="history-grid">
 
-        <!-- CENTENARIO -->
+        <!-- CAPODANNO 2015 -->
 
-        <article class="history-card">
-          <div>
-            <div class="history-date">1911 – 2011 · Primo secolo di storia</div>
-
-            <h3>I 100 anni dalla fondazione</h3>
-
-            <p>
-              <strong>Nel 2011, ricorrendo il 100° anno dalla fondazione, la Banda Municipale Alcarese ha organizzato una serie di eventi</strong>
-              che hanno visto la partecipazione degli attuali e degli ex
-              componenti della Banda, nonché quella di tutta la comunità.
-            </p>
-
-            <button class="history-image-button poster" type="button"
-              data-gallery="centenario"
-              aria-label="Ingrandisci immagine del centenario">
-              <img
-                src="eventi/100anni.jpg"
-                alt="Celebrazioni del centenario del Corpo Bandistico Municipale G. Verdi"
-                loading="lazy">
-            </button>
-          </div>
-
-          <a class="history-link" href="centenario.html">
-            Scopri il centenario →
-          </a>
-        </article>
-
-
-        <!-- OTTANTESIMO ANNIVERSARIO -->
-
-        <article class="history-card">
-          <div>
-            <div class="history-date">Ricorrenza storica · 80° anniversario</div>
-
-            <h3>Gli 80 anni della Banda</h3>
+        <article class="history-card wide">
+          <div class="card-content">
+            <div class="card-date">Gennaio 2015 · Concerto</div>
+            <h3>Il tradizionale concerto di Capodanno</h3>
 
             <p>
-              Una ricorrenza importante nella storia del Corpo Bandistico
-              Municipale “G. Verdi”, ricordata attraverso fotografie
-              e documenti che testimoniano il percorso e la tradizione
-              musicale della Banda.
+              È stato il Corpo Bandistico Municipale “G. Verdi” ad aprire ufficialmente
+              il nuovo anno 2015 con il tradizionale concerto di Capodanno. Il concerto,
+              organizzato dalla locale banda con il patrocinio del Comune di Alcara Li Fusi,
+              si è svolto presso la Chiesa Madre locale.
             </p>
-
-            <div class="photo-gallery">
-
-              <button class="gallery-item" type="button" data-gallery="ottantesimo"
-                aria-label="Ingrandisci fotografia 1 dell'80° anniversario">
-                <img src="eventi/80%201.jpg"
-                  alt="Festeggiamenti dell'80° anniversario" loading="lazy">
-              </button>
-
-              <button class="gallery-item" type="button" data-gallery="ottantesimo"
-                aria-label="Ingrandisci fotografia 2 dell'80° anniversario">
-                <img src="eventi/80%202.jpg"
-                  alt="Fotografia dei festeggiamenti dell'80° anniversario" loading="lazy">
-              </button>
-
-              <button class="gallery-item" type="button" data-gallery="ottantesimo"
-                aria-label="Ingrandisci fotografia 3 dell'80° anniversario">
-                <img src="eventi/80%203.jpg"
-                  alt="Un momento delle celebrazioni dell'80° anniversario" loading="lazy">
-              </button>
-
-              <button class="gallery-item document" type="button" data-gallery="ottantesimo"
-                aria-label="Ingrandisci attestato dell'80° anniversario">
-                <img src="eventi/attestato-80-banda_orig.jpg"
-                  alt="Attestato commemorativo dell'80° anniversario" loading="lazy">
-              </button>
-
-            </div>
-
-            <p class="gallery-caption">
-              Fotografie e documenti commemorativi.
-              Clicca sulle immagini per ingrandirle.
-            </p>
-          </div>
-        </article>
-
-      </div>
-
-
-      <!-- ANNO 2015 -->
-
-      <div class="history-year-heading">
-        <span>2015</span>
-      </div>
-
-      <div class="history-grid">
-
-        <!-- CONCERTO DI CAPODANNO 2015 -->
-
-        <article class="history-card">
-          <div>
-            <div class="history-date">Gennaio 2015 · Chiesa Madre di Alcara Li Fusi</div>
-
-            <h3>Il tradizionale Concerto di Capodanno</h3>
 
             <p>
-              È stato il
-              <strong>Corpo Bandistico Municipale “G. Verdi”</strong>
-              ad aprire ufficialmente il nuovo anno 2015 con il tradizionale
-              Concerto di Capodanno. Il concerto, organizzato dalla locale
-              Banda con il patrocinio del Comune di Alcara Li Fusi,
-              si è svolto presso la Chiesa Madre.
-
-              Alla classica esecuzione d'ensemble dei brani sinfonici,
-              diretti come sempre dal Maestro Michele Saccone, sono state
-              associate tante ricche e interessanti novità.
-
-              Particolarmente emozionante è stata la partecipazione
-              dei circa quindici allievi della Scuola di Musica della
-              stessa Banda, seguiti dai maestri Restifo e Santoro.
-
-              Non sono mancate le esecuzioni di musica da camera,
-              con diversi gruppi composti da musicisti della Banda:
+              Alla classica esecuzione d’ensemble dei brani sinfonici diretti come sempre
+              dal M° Michele Saccone, sono state quest’anno associate tante ricche e
+              interessanti novità.
             </p>
 
-            <ul style="padding-left:22px; margin: -8px 0 22px; line-height:1.9; font-size:14px;">
-              <li>Un gruppo formato da undici musiciste della Banda, accompagnate al sax baritono dal loro maestro M. Saccone;</li>
-              <li>Un quartetto di corni: S. Santoro, F. Passalacqua, L. Santoro e A. Mannanici;</li>
-              <li>Un gruppo di sei ottoni: A. Luca, A. Restifo, I. Oriti, M. Restifo, E. Pirronello e G. Calanni M.;</li>
+            <p>
+              In primis, molto bella ed emozionante è stata la partecipazione ed esibizione
+              dei circa 15 emozionatissimi e bravissimi alunni della Scuola di Musica
+              della stessa Banda, seguiti dai maestri Restifo e Santoro.
+            </p>
+
+            <p>
+              Non sono mancate poi le peculiari esecuzioni di musica da camera, che hanno
+              visto la partecipazione di diversi gruppi, composti integralmente da
+              musicisti della Banda:
+            </p>
+
+            <ul>
+              <li>Un gruppo formato da 11 musiciste della banda, accompagnate al sax baritono dal loro maestro M. Saccone;</li>
+              <li>Un quartetto di corni (S. Santoro, F. Passalacqua, L. Santoro e A. Mannanici);</li>
+              <li>Un gruppo di 6 ottoni (A. Luca, A. Restifo, I. Oriti, M. Restifo, E. Pirronello, G. Calanni M.);</li>
               <li>Un duo fagotto-clarinetto, formato dai maestri Michele Saccone e Sandro Galati;</li>
-              <li>I “Bis Acuti”, giovane gruppo musicale alcarese, la cui fama si sta diffondendo tra i Nebrodi.</li>
+              <li>I “Bis Acuti”, giovane gruppo musicale alcarese, la cui fama sta pian piano diffondendosi tra i Nebrodi.</li>
             </ul>
 
-            <div class="photo-gallery">
-
-              <button class="gallery-item" type="button" data-gallery="capodanno2015">
-                <img src="eventi/2804246_orig.jpg" alt="Concerto di Capodanno 2015 - fotografia 1" loading="lazy">
-              </button>
-
-              <button class="gallery-item" type="button" data-gallery="capodanno2015">
-                <img src="eventi/_3893788_orig.jpg" alt="Concerto di Capodanno 2015 - fotografia 2" loading="lazy">
-              </button>
-
-              <button class="gallery-item" type="button" data-gallery="capodanno2015">
-                <img src="eventi/_5361487_orig.jpg" alt="Concerto di Capodanno 2015 - fotografia 3" loading="lazy">
-              </button>
-
-              <button class="gallery-item" type="button" data-gallery="capodanno2015">
-                <img src="eventi/_6050784_orig.jpg" alt="Concerto di Capodanno 2015 - fotografia 4" loading="lazy">
-              </button>
-
-              <button class="gallery-item" type="button" data-gallery="capodanno2015">
-                <img src="eventi/_6731719_orig.jpg" alt="Concerto di Capodanno 2015 - fotografia 5" loading="lazy">
-              </button>
-
-              <button class="gallery-item" type="button" data-gallery="capodanno2015">
-                <img src="eventi/_7118333_orig.jpg" alt="Concerto di Capodanno 2015 - fotografia 6" loading="lazy">
-              </button>
-
-              <button class="gallery-item" type="button" data-gallery="capodanno2015">
-                <img src="eventi/_7128564_orig.jpg" alt="Concerto di Capodanno 2015 - fotografia 7" loading="lazy">
-              </button>
-
-              <button class="gallery-item" type="button" data-gallery="capodanno2015">
-                <img src="eventi/_7255406_orig.jpg" alt="Concerto di Capodanno 2015 - fotografia 8" loading="lazy">
-              </button>
-
-              <button class="gallery-item" type="button" data-gallery="capodanno2015">
-                <img src="eventi/_8399312_orig.jpg" alt="Concerto di Capodanno 2015 - fotografia 9" loading="lazy">
-              </button>
-
-              <button class="gallery-item" type="button" data-gallery="capodanno2015">
-                <img src="eventi/4394768_orig.jpg" alt="Concerto di Capodanno 2015 - fotografia 10" loading="lazy">
-              </button>
-
-              <button class="gallery-item document" type="button" data-gallery="capodanno2015">
-                <img src="eventi/locandina.jpg" alt="Locandina del Concerto di Capodanno 2015" loading="lazy">
-              </button>
-
-            </div>
-
-            <p class="gallery-caption">
-              Fotografie e locandina del Concerto di Capodanno.
-              Clicca sulle immagini per ingrandirle e scorrerle.
-            </p>
-
-            <div class="article-author">
-              Articolo scritto da: <strong>Antonina Vaneria</strong><br>
-              Locandina realizzata da: <strong>Maria Saccone</strong>
+            <div class="card-author">
+              Articolo scritto da: Antonina Vaneria.<br>
+              Locandina di: Maria Saccone.
             </div>
           </div>
 
-          <a
-            class="history-link"
-            href="https://www.facebook.com/Corpo-Bandistico-Municipale-di-Alcara-Li-Fusi-900014306721896/"
-            target="_blank"
-            rel="noopener noreferrer">
-            Visita la pagina Facebook della Banda →
-          </a>
-        </article>
+          <div class="gallery-grid" data-gallery="capodanno2015">
 
+            <button class="gallery-item" type="button">
+              <img src="eventi/_2804246_orig.jpg" alt="Concerto di Capodanno 2015">
+            </button>
+
+            <button class="gallery-item" type="button">
+              <img src="eventi/_3893788_orig.jpg" alt="Concerto di Capodanno 2015">
+            </button>
+
+            <button class="gallery-item" type="button">
+              <img src="eventi/_5361487_orig.jpg" alt="Concerto di Capodanno 2015">
+            </button>
+
+            <button class="gallery-item" type="button">
+              <img src="eventi/_6050784_orig.jpg" alt="Concerto di Capodanno 2015">
+            </button>
+
+            <button class="gallery-item" type="button">
+              <img src="eventi/_6731719_orig.jpg" alt="Concerto di Capodanno 2015">
+            </button>
+
+            <button class="gallery-item" type="button">
+              <img src="eventi/_7118333_orig.jpg" alt="Concerto di Capodanno 2015">
+            </button>
+
+            <button class="gallery-item" type="button">
+              <img src="eventi/_7128564_orig.jpg" alt="Concerto di Capodanno 2015">
+            </button>
+
+            <button class="gallery-item" type="button">
+              <img src="eventi/_7255406_orig.jpg" alt="Concerto di Capodanno 2015">
+            </button>
+
+            <button class="gallery-item" type="button">
+              <img src="eventi/_8399312_orig.jpg" alt="Concerto di Capodanno 2015">
+            </button>
+
+            <button class="gallery-item" type="button">
+              <img src="eventi/4394768_orig.jpg" alt="Concerto di Capodanno 2015">
+            </button>
+
+            <button class="gallery-item" type="button">
+              <img src="eventi/locandina.jpg" alt="Locandina del concerto di Capodanno 2015">
+            </button>
+
+          </div>
+        </article>
 
         <!-- SULLE NOTE DEL RICORDO -->
 
         <article class="history-card">
-          <div>
-            <div class="history-date">23 agosto 2015 · Ore 21:30 · Chiesa Madre</div>
-
-            <h3>“Sulle Note del Ricordo”</h3>
+          <div class="card-content">
+            <div class="card-date">23 agosto 2015 · Concerto commemorativo</div>
+            <h3>Sulle Note del Ricordo</h3>
 
             <p>
-              In occasione del <strong>30° anniversario dall'ultimo concerto
-              diretto dal Maestro Gaetano Patroniti</strong>, il Corpo
-              Bandistico Municipale “G. Verdi”, con il patrocinio del
-              Comune di Alcara Li Fusi e della famiglia Patroniti,
-              ha organizzato un ambizioso concerto musicale dal titolo
-              <strong>“Sulle Note del Ricordo”</strong>.
-
-              Il Maestro Gaetano Patroniti, alcarese, si era diplomato
-              in Oboe nel 1976 a Firenze ed era scomparso prematuramente
-              nel gennaio del 1986, all'età di 36 anni.
-
-              Il concerto si è svolto domenica 23 agosto 2015,
-              alle ore 21:30, nella Chiesa Madre di Alcara Li Fusi.
+              In occasione del 30° anno dall’ultimo concerto diretto dal maestro
+              Gaetano Patroniti, alcarese, diplomatosi in Oboe nel 1976 a Firenze
+              e morto prematuramente nel gennaio del 1986, all’età di 36 anni,
+              il Corpo Bandistico Municipale G. Verdi, col patrocinio del Comune
+              di Alcara Li Fusi e della famiglia Patroniti, ha organizzato un
+              ambizioso concerto musicale denominato “Sulle Note del Ricordo”,
+              che si è svolto domenica 23 agosto 2015 alle ore 21.30 in Chiesa
+              Madre ad Alcara Li Fusi.
             </p>
 
-            <button class="history-image-button poster" type="button"
-              data-gallery="note-ricordo"
-              aria-label="Ingrandisci la locandina di Sulle Note del Ricordo">
-              <img
-                src="eventi/30anni.png"
-                alt="Locandina del concerto Sulle Note del Ricordo del 23 agosto 2015"
-                loading="lazy">
-            </button>
-
-            <p class="gallery-caption">
-              Locandina del concerto commemorativo.
-              Clicca sull'immagine per ingrandirla.
-            </p>
+            <a class="article-link"
+               href="https://corpobandisticomunicipalealcara.weebly.com/23082015-concerto-in-ricordo-del-mdeg-g-patroniti.html"
+               target="_blank"
+               rel="noopener noreferrer">
+              Approfondisci l'evento →
+            </a>
           </div>
 
-          <a
-            class="history-link"
-            href="https://corpobandisticomunicipalealcara.weebly.com/23082015-concerto-in-ricordo-del-mdeg-g-patroniti.html"
-            target="_blank"
-            rel="noopener noreferrer">
-            Scopri “Sulle Note del Ricordo” →
-          </a>
+          <div class="feature-image">
+            <div class="gallery-grid single" data-gallery="note2015">
+              <button class="gallery-item" type="button">
+                <img src="eventi/30anni.png" alt="Sulle Note del Ricordo, 23 agosto 2015">
+              </button>
+            </div>
+          </div>
         </article>
 
       </div>
+    </div>
 
+    <!-- 2014 -->
 
-      <!-- ANNO 2014 -->
-
-      <div class="history-year-heading">
-        <span>2014</span>
-      </div>
+    <div class="archive-year">
+      <div class="archive-year-title"><span>2014</span></div>
 
       <div class="history-grid">
 
         <!-- PAPA FRANCESCO -->
 
         <article class="history-card">
-          <div>
-            <div class="history-date">8 ottobre 2014 · Città del Vaticano</div>
-
-            <h3>La Banda Municipale in udienza da Papa Francesco</h3>
+          <div class="card-content">
+            <div class="card-date">8 ottobre 2014 · Città del Vaticano</div>
+            <h3>La Banda Municipale di Alcara Li Fusi in udienza da Papa Francesco</h3>
 
             <p>
-              Emozionante ed esaltante! Con queste poche parole si possono
-              riassumere le forti sensazioni vissute dai componenti della
-              Banda Municipale “G. Verdi” di Alcara Li Fusi che hanno preso
-              parte al viaggio a Roma per assistere all'udienza che
-              <strong>Papa Francesco</strong> ha tenuto mercoledì
-              8 ottobre 2014 in Piazza San Pietro, nello Stato del Vaticano.
+              Emozionante ed esaltante!!!! Con queste poche parole si possono
+              riassumere le forti sensazioni vissute dai componenti della Banda
+              Municipale “G. Verdi” di Alcara Li Fusi che hanno preso parte al
+              viaggio per assistere all’udienza che Papa Francesco ha tenuto
+              mercoledì 8 ottobre 2014 in Piazza San Pietro, nello Stato del Vaticano.
             </p>
 
-            <button class="history-image-button poster" type="button"
-              data-gallery="papa">
-              <img
-                src="eventi/papa.jpg"
-                alt="La Banda Municipale in occasione dell'udienza da Papa Francesco"
-                loading="lazy">
-            </button>
+            <a class="article-link"
+               href="https://corpobandisticomunicipalealcara.weebly.com/08102014-la-banda-municipale-in-udienza-da-papa-francesco.html"
+               target="_blank"
+               rel="noopener noreferrer">
+              Leggi il racconto e guarda la fotogallery →
+            </a>
           </div>
 
-          <a
-            class="history-link"
-            href="https://corpobandisticomunicipalealcara.weebly.com/08102014-la-banda-municipale-in-udienza-da-papa-francesco.html"
-            target="_blank"
-            rel="noopener noreferrer">
-            Leggi il racconto e visita la fotogallery →
-          </a>
+          <div class="feature-image">
+            <div class="gallery-grid single" data-gallery="papa2014">
+              <button class="gallery-item" type="button">
+                <img src="eventi/papa.jpg" alt="La Banda G. Verdi in udienza da Papa Francesco">
+              </button>
+            </div>
+          </div>
         </article>
 
-
-        <!-- CENTENARIO GRANDE GUERRA -->
+        <!-- GRANDE GUERRA -->
 
         <article class="history-card">
-          <div>
-            <div class="history-date">4 novembre 2014 · Memoria e commemorazione</div>
-
-            <h3>Il centenario della Grande Guerra</h3>
+          <div class="card-content">
+            <div class="card-date">4 novembre 2014 · Commemorazione</div>
+            <h3>Alcara Li Fusi e la sua Banda Municipale celebrano il centenario della Grande Guerra</h3>
 
             <p>
-              In occasione della <strong>Giornata dell’Unità Nazionale e
-              della Festa delle Forze Armate</strong>, Alcara Li Fusi ha
-              dedicato un intero pomeriggio al ricordo degli eventi che
-              hanno contraddistinto e segnato le fasi del grande conflitto
-              mondiale del 1914–1918.
-
-              La manifestazione ha presentato testimonianze inedite,
-              recuperate dagli archivi pubblici e privati e rese note
-              per la prima volta. Hanno partecipato gli alunni di ogni
-              ordine e grado della scuola locale.
-
-              L'evento, patrocinato dal Comune di Alcara Li Fusi e
-              interamente organizzato dalla locale Banda Municipale
-              “G. Verdi”, si è svolto sotto la direzione del
-              Maestro Michele Saccone.
+              04 Novembre 2014. Nella giornata dell’Unità Nazionale e della Festa
+              delle Forze Armate, Alcara Li Fusi ha dedicato un intero pomeriggio
+              al ricordo degli eventi che hanno contraddistinto e segnato le fasi
+              del grande conflitto mondiale del ’14-’18, con testimonianze inedite
+              “scovate” negli archivi pubblici e privati, e per la prima volta resi noti.
             </p>
 
-            <button class="history-image-button poster" type="button"
-              data-gallery="grande-guerra">
-              <img
-                src="eventi/100anniguerra.jpg"
-                alt="Locandina della commemorazione del centenario della Grande Guerra"
-                loading="lazy">
-            </button>
+            <p>
+              Alla manifestazione hanno preso parte gli alunni di ogni ordine e grado
+              della scuola locale; l’evento è stato patrocinato dal Comune di Alcara
+              Li Fusi ed interamente organizzato dalla locale Banda Municipale “G. Verdi”,
+              mirabilmente condotta dal Maestro Michele Saccone.
+            </p>
+
+            <a class="article-link"
+               href="https://corpobandisticomunicipalealcara.weebly.com/04112014-commemorazione-dei-caduti-e-del-100deg-anno-dallinizio-della-grande-guerra.html"
+               target="_blank"
+               rel="noopener noreferrer">
+              Leggi l'articolo originale →
+            </a>
           </div>
 
-          <a
-            class="history-link"
-            href="https://corpobandisticomunicipalealcara.weebly.com/04112014-commemorazione-dei-caduti-e-del-100deg-anno-dallinizio-della-grande-guerra.html"
-            target="_blank"
-            rel="noopener noreferrer">
-            Leggi l'articolo completo →
-          </a>
+          <div class="feature-image">
+            <div class="gallery-grid single" data-gallery="guerra2014">
+              <button class="gallery-item" type="button">
+                <img src="eventi/100anniguerra.jpg" alt="Commemorazione del centenario della Grande Guerra">
+              </button>
+            </div>
+          </div>
         </article>
 
       </div>
+    </div>
 
+    <!-- 2011 -->
 
-      <!-- ANNO 1991 -->
-
-      <div class="history-year-heading">
-        <span>1991</span>
-      </div>
+    <div class="archive-year">
+      <div class="archive-year-title"><span>2011</span></div>
 
       <div class="history-grid">
 
-        <article class="history-card">
-          <div>
-            <div class="history-date">22 novembre 1991 · Santo Stefano di Camastra</div>
+        <article class="history-card wide">
+          <div class="card-content">
+            <div class="card-date">1911 – 2011 · Anniversario</div>
+            <h3>Il Centenario del Corpo Bandistico Municipale “G. Verdi”</h3>
 
+            <p>
+              Cento anni di musica, tradizione, impegno e passione.
+              Un traguardo importante che racconta la storia del Corpo Bandistico
+              Municipale “G. Verdi” e il legame profondo con la comunità di Alcara Li Fusi.
+            </p>
+
+            <p>
+              Dal 1911, generazioni di musicisti hanno contribuito a mantenere viva
+              questa realtà, accompagnando la vita del paese e tramandando l'amore
+              per la musica.
+            </p>
+
+            <a class="article-link" href="centenario.html">
+              Scopri il centenario →
+            </a>
+          </div>
+
+          <div class="feature-image">
+            <div class="gallery-grid single" data-gallery="centenario2011">
+              <button class="gallery-item" type="button">
+                <img src="eventi/100 anni.jpg" alt="Centenario della Banda G. Verdi, 1911-2011">
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- 1991 -->
+
+    <div class="archive-year">
+      <div class="archive-year-title"><span>1991</span></div>
+
+      <div class="history-grid">
+
+        <article class="history-card wide">
+          <div class="card-content">
+            <div class="card-date">22 novembre 1991 · Santo Stefano di Camastra</div>
             <h3>Raduno bandistico per la Festa di Santa Cecilia</h3>
 
             <p>
-              Un'emozionante giornata di festa e di musica trascorsa
-              insieme ad altre tre bande nel 1991, a Santo Stefano
-              di Camastra, in occasione della festa di Santa Cecilia.
-
-              La musica e la vita bandistica sono meravigliose perché
-              permettono di vivere mille esperienze di confronto
-              e di emozioni diverse e sempre nuove, specialmente
-              per i giovanissimi.
-
-              Attraverso la passione, la condivisione e l'allegria,
-              si riesce a comunicare con un unico, globale e
-              incomparabile linguaggio: quello della Musica.
+              Un emozionante video di una bella giornata di festa e di musica
+              trascorsa insieme ad altre 3 bande nel 1991, a Santo Stefano di Camastra,
+              in occasione della festa di Santa Cecilia.
             </p>
 
+            <p>
+              La Musica e la vita bandistica sono meravigliose, perché ti portano
+              a vivere 1000 esperienze di confronto e di emozioni diverse e sempre nuove,
+              specialmente per i giovanissimi. E si riesce a comunicare, con passione,
+              condivisione ed allegria, tramite un unico, globale ed imparagonabile
+              linguaggio, quello della Musica 🎼🎶❤️.
+            </p>
+
+            <p>
+              Cliccando sul video a fianco, potrete vedere e sentire la nostra banda
+              mentre suona durante la sfilata e la processione, in particolare dal
+              minuto 12.00 al minuto 13.00, dal minuto 22.00 al 23.00, dal 30.44
+              al 31.52, dal 37.35 al 42.38.
+            </p>
+
+            <p>
+              Invece, dal minuto 54.00 al minuto 01.12.25 si può assistere
+              all'esibizione serale della nostra Banda, diretta inizialmente
+              dal nostro caro e storico capobanda don Pippo e subito dopo dal
+              nostro grande maestro direttore Michele Saccone.
+            </p>
+
+            <p>Buona visione 😉</p>
+          </div>
+
+          <div class="card-content" style="padding-top:0">
             <div class="video-wrapper">
               <iframe
-                src="https://www.youtube-nocookie.com/embed/EVXCxlZAIpg"
-                title="Raduno bandistico a Santo Stefano di Camastra, 22 novembre 1991"
+                src="https://www.youtube-nocookie.com/embed/EVXCxlZAIpg?start=720"
+                title="Raduno bandistico a Santo Stefano di Camastra, 1991"
                 loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen>
               </iframe>
             </div>
-
-            <div class="video-chapters">
-              <strong>Alcuni momenti da non perdere:</strong><br>
-              Sfilata e processione: 12:00–13:00, 22:00–23:00,
-              30:44–31:52 e 37:35–42:38.<br>
-              Esibizione serale: dal minuto 54:00 a 1:12:25,
-              con la direzione iniziale del nostro storico capobanda
-              don Pippo e successivamente del Maestro Michele Saccone.
-            </div>
-
-            <p>
-              Buona visione e buon ascolto!
-            </p>
           </div>
-
-          <a
-            class="history-link"
-            href="https://youtu.be/EVXCxlZAIpg?si=4VuwKrp0rP_cytUW"
-            target="_blank"
-            rel="noopener noreferrer">
-            Guarda il video su YouTube →
-          </a>
         </article>
 
       </div>
-
     </div>
-  </section>
 
+    <!-- ANNIVERSARIO 80 ANNI -->
 
-  <!-- LIGHTBOX FOTOGRAFIE -->
+    <div class="archive-year">
+      <div class="archive-year-title"><span>80° anniversario</span></div>
 
-  <div class="lightbox" id="lightbox" hidden
-       role="dialog" aria-modal="true"
-       aria-label="Visualizzatore fotografico">
+      <div class="history-grid">
 
-    <button class="lightbox-close" id="lightboxClose"
-            aria-label="Chiudi galleria">×</button>
+        <article class="history-card wide">
+          <div class="card-content">
+            <div class="card-date">Archivio storico · Ottant'anni di musica</div>
+            <h3>La Banda Municipale: una storia lunga ottant'anni</h3>
 
-    <div class="lightbox-content">
+            <p>
+              Un ricordo importante della storia del Corpo Bandistico Municipale
+              “G. Verdi”, attraverso fotografie e documenti che testimoniano
+              il percorso della Banda e il suo ruolo nella comunità.
+            </p>
+          </div>
 
-      <button class="lightbox-prev" id="lightboxPrev"
-              aria-label="Fotografia precedente">‹</button>
+          <div class="gallery-grid" data-gallery="ottantesimo">
 
-      <img id="lightboxImage" src="" alt="">
+            <button class="gallery-item" type="button">
+              <img src="eventi/80%201.jpg" alt="Ottantesimo anniversario della Banda">
+            </button>
 
-      <button class="lightbox-next" id="lightboxNext"
-              aria-label="Fotografia successiva">›</button>
+            <button class="gallery-item" type="button">
+              <img src="eventi/80%202.jpg" alt="Ottantesimo anniversario della Banda">
+            </button>
 
-      <div class="lightbox-counter" id="lightboxCounter"></div>
+            <button class="gallery-item" type="button">
+              <img src="eventi/80%203.jpg" alt="Ottantesimo anniversario della Banda">
+            </button>
 
+            <button class="gallery-item" type="button">
+              <img src="eventi/attestato-80-banda_orig.jpg" alt="Attestato dell'ottantesimo anniversario">
+            </button>
+
+          </div>
+        </article>
+
+      </div>
     </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <div>
+      <div class="footer-brand">Corpo Bandistico Municipale “G. Verdi”</div>
+      <div class="footer-info">Alcara Li Fusi · Dal 1911</div>
+    </div>
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="la-banda.html">La Banda</a>
+      <a href="scuola-di-musica.html">Scuola di Musica</a>
+      <a href="galleria.html">Galleria</a>
+      <a href="contatti.html">Contatti</a>
+    </div>
+
   </div>
 
+  <div class="footer-bottom">
+    © 2026 Corpo Bandistico Municipale “G. Verdi” di Alcara Li Fusi. Tutti i diritti riservati.
+  </div>
+</footer>
 
-  <!-- FOOTER -->
+<!-- LIGHTBOX -->
 
-  <footer>
-    <p>
-      <strong>Corpo Bandistico Municipale “G. Verdi”</strong>
-    </p>
+<div class="lightbox" id="lightbox" aria-modal="true" role="dialog" aria-label="Visualizzazione fotografie">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Chiudi">&times;</button>
+  <button class="lightbox-prev" id="lightboxPrev" aria-label="Foto precedente">&#10094;</button>
+  <img id="lightboxImage" src="" alt="">
+  <button class="lightbox-next" id="lightboxNext" aria-label="Foto successiva">&#10095;</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
 
-    <div class="footer-line"></div>
+<script>
+/* MENU MOBILE */
 
-    <p>
-      © 2026 Associazione Musicale Alcarese – Alcara Li Fusi, Messina
-    </p>
+const menuToggle = document.getElementById("menuToggle");
+const mainNav = document.getElementById("mainNav");
 
-    <p>Dal 1911, musica e tradizione.</p>
+menuToggle.addEventListener("click", () => {
+  mainNav.classList.toggle("open");
+  menuToggle.textContent = mainNav.classList.contains("open") ? "×" : "☰";
+});
 
-    <p>
-      Sito web creato e curato da Antonina Vaneria
-      e dai Responsabili della Comunicazione del Direttivo.
-    </p>
-  </footer>
+/* LIGHTBOX CON GALLERIE SEPARATE */
 
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxCounter = document.getElementById("lightboxCounter");
+const lightboxClose = document.getElementById("lightboxClose");
+const lightboxPrev = document.getElementById("lightboxPrev");
+const lightboxNext = document.getElementById("lightboxNext");
 
-  <!-- SCRIPT -->
+let currentGallery = [];
+let currentIndex = 0;
 
-  <script>
-    // MENU MOBILE
+function showLightboxImage() {
+  if (!currentGallery.length) return;
 
-    const menuButton = document.getElementById("menuButton");
-    const headerRight = document.getElementById("headerRight");
+  const image = currentGallery[currentIndex].querySelector("img");
 
-    if (menuButton && headerRight) {
-      menuButton.addEventListener("click", () => {
-        const isOpen = headerRight.classList.toggle("open");
+  lightboxImage.src = image.src;
+  lightboxImage.alt = image.alt || "Fotografia archivio storico";
 
-        menuButton.setAttribute("aria-expanded", isOpen);
-        menuButton.textContent = isOpen ? "CHIUDI ✕" : "MENU ☰";
-      });
+  lightboxCounter.textContent =
+    (currentIndex + 1) + " / " + currentGallery.length;
 
-      headerRight.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-          headerRight.classList.remove("open");
-          menuButton.setAttribute("aria-expanded", "false");
-          menuButton.textContent = "MENU ☰";
-        });
-      });
-    }
+  const multiple = currentGallery.length > 1;
 
+  lightboxPrev.style.display = multiple ? "flex" : "none";
+  lightboxNext.style.display = multiple ? "flex" : "none";
+}
 
-    // GALLERIE FOTOGRAFICHE SEPARATE PER EVENTO
+document.querySelectorAll(".gallery-grid").forEach(gallery => {
+  const buttons = Array.from(gallery.querySelectorAll(".gallery-item"));
 
-    const galleryButtons = [
-      ...document.querySelectorAll("[data-gallery]")
-    ];
+  buttons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      currentGallery = buttons;
+      currentIndex = index;
 
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImage = document.getElementById("lightboxImage");
-    const lightboxClose = document.getElementById("lightboxClose");
-    const lightboxPrev = document.getElementById("lightboxPrev");
-    const lightboxNext = document.getElementById("lightboxNext");
-    const lightboxCounter = document.getElementById("lightboxCounter");
-
-    let activeGallery = [];
-    let currentPhoto = 0;
-    let previousFocus = null;
-
-    function showPhoto(index) {
-      if (!activeGallery.length) return;
-
-      currentPhoto =
-        (index + activeGallery.length) % activeGallery.length;
-
-      const image =
-        activeGallery[currentPhoto].querySelector("img");
-
-      lightboxImage.src = image.src;
-      lightboxImage.alt = image.alt;
-
-      lightboxCounter.textContent =
-        `${currentPhoto + 1} / ${activeGallery.length}`;
-    }
-
-    function openGallery(button) {
-      const galleryName = button.dataset.gallery;
-
-      activeGallery = galleryButtons.filter(item =>
-        item.dataset.gallery === galleryName
-      );
-
-      const index = activeGallery.indexOf(button);
-
-      if (!activeGallery.length) return;
-
-      previousFocus = document.activeElement;
-      showPhoto(index);
-
-      lightbox.hidden = false;
+      showLightboxImage();
+      lightbox.classList.add("open");
       document.body.style.overflow = "hidden";
-
-      lightboxClose.focus();
-    }
-
-    function closeGallery() {
-      lightbox.hidden = true;
-      document.body.style.overflow = "";
-
-      lightboxImage.src = "";
-      activeGallery = [];
-
-      if (previousFocus) {
-        previousFocus.focus();
-      }
-    }
-
-    galleryButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        openGallery(button);
-      });
     });
+  });
+});
 
-    lightboxClose.addEventListener("click", closeGallery);
+function closeLightbox() {
+  lightbox.classList.remove("open");
+  document.body.style.overflow = "";
+  lightboxImage.src = "";
+}
 
-    lightboxPrev.addEventListener("click", () => {
-      showPhoto(currentPhoto - 1);
-    });
+function previousImage() {
+  if (!currentGallery.length) return;
 
-    lightboxNext.addEventListener("click", () => {
-      showPhoto(currentPhoto + 1);
-    });
+  currentIndex =
+    (currentIndex - 1 + currentGallery.length) % currentGallery.length;
 
-    lightbox.addEventListener("click", event => {
-      if (event.target === lightbox) {
-        closeGallery();
-      }
-    });
+  showLightboxImage();
+}
 
-    document.addEventListener("keydown", event => {
-      if (lightbox.hidden) return;
+function nextImage() {
+  if (!currentGallery.length) return;
 
-      if (event.key === "Escape") {
-        closeGallery();
-      }
+  currentIndex =
+    (currentIndex + 1) % currentGallery.length;
 
-      if (event.key === "ArrowLeft") {
-        showPhoto(currentPhoto - 1);
-      }
+  showLightboxImage();
+}
 
-      if (event.key === "ArrowRight") {
-        showPhoto(currentPhoto + 1);
-      }
-    });
-  </script>
+lightboxClose.addEventListener("click", closeLightbox);
+lightboxPrev.addEventListener("click", previousImage);
+lightboxNext.addEventListener("click", nextImage);
+
+lightbox.addEventListener("click", event => {
+  if (event.target === lightbox) closeLightbox();
+});
+
+document.addEventListener("keydown", event => {
+  if (!lightbox.classList.contains("open")) return;
+
+  if (event.key === "Escape") closeLightbox();
+  if (event.key === "ArrowLeft") previousImage();
+  if (event.key === "ArrowRight") nextImage();
+});
+</script>
 
 </body>
 </html>
