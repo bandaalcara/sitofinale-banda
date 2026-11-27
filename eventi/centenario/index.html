@@ -7,7 +7,7 @@
 
 <title>Il Centenario | Corpo Bandistico Municipale “G. Verdi”</title>
 <meta name="theme-color" content="#14263D">
-<meta name="description" content="I festeggiamenti del centenario della fondazione del Corpo Bandistico Municipale di Alcara Li Fusi, 1911-2011.">
+<meta name="description" content="Il centenario della fondazione del Corpo Bandistico Municipale di Alcara Li Fusi: 1911-2011.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -166,9 +166,9 @@ header {
 /* CONTENUTO */
 
 main {
-    max-width: 1120px;
+    max-width: 1180px;
     margin: auto;
-    padding: 65px 28px 85px;
+    padding: 70px 28px 85px;
 }
 
 .section-heading {
@@ -200,93 +200,155 @@ main {
     margin: 20px auto 0;
 }
 
-/* LOCANDINA */
+/* LOCANDINA E TESTO */
 
-.poster-section {
-    max-width: 780px;
-    margin: 0 auto 75px;
-    text-align: center;
+.intro-card {
+    display: grid;
+    grid-template-columns: minmax(260px, .85fr) 1.35fr;
+    gap: 42px;
+    align-items: center;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    padding: 35px;
+    margin-bottom: 65px;
 }
 
 .poster-frame {
-    display: inline-block;
+    background: white;
     padding: 10px;
-    background: var(--cream);
-    border: 1px solid var(--border);
+    border: 1px solid var(--gold);
     box-shadow: 0 12px 35px rgba(13,27,43,.13);
+    text-align: center;
 }
 
 .poster-frame img {
     display: block;
-    max-width: 100%;
-    max-height: 850px;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-}
-
-/* RACCONTO STORICO */
-
-.story {
-    background: var(--cream);
-    border: 1px solid var(--border);
-    padding: 38px;
-    display: grid;
-    grid-template-columns: minmax(240px, .85fr) 1.5fr;
-    gap: 38px;
-    align-items: start;
-}
-
-.story-image {
-    position: relative;
-}
-
-.story-image::after {
-    content: "";
-    position: absolute;
-    inset: 9px -9px -9px 9px;
-    border: 1px solid var(--gold);
-    z-index: 0;
-}
-
-.story-image img {
-    position: relative;
-    z-index: 1;
-    display: block;
     width: 100%;
-    height: auto;
-    object-fit: cover;
-    border: 5px solid white;
-    box-shadow: 0 5px 18px rgba(13,27,43,.12);
+    max-height: 650px;
+    object-fit: contain;
     cursor: zoom-in;
 }
 
-.story-content {
+.intro-text {
     font-size: 14px;
-    line-height: 1.9;
+    line-height: 1.95;
     text-align: justify;
 }
 
-.story-content p {
-    margin-bottom: 18px;
+.intro-text p {
+    margin-bottom: 17px;
 }
 
-.story-content strong {
+.intro-text strong {
     color: var(--navy);
-    font-weight: 700;
-}
-
-.story-content em {
-    color: #725D3B;
 }
 
 .author {
-    margin-top: 28px;
-    padding-top: 18px;
+    margin-top: 25px;
+    padding-top: 17px;
     border-top: 1px solid var(--border);
     color: var(--navy);
     font-family: 'Playfair Display', serif;
     font-size: 17px;
+}
+
+/* GALLERIE */
+
+.gallery-section {
+    margin: 60px 0 85px;
+}
+
+.gallery-description {
+    max-width: 750px;
+    margin: -15px auto 32px;
+    color: var(--muted);
+    text-align: center;
+    font-size: 14px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    padding: 6px;
+    cursor: pointer;
+    aspect-ratio: 4 / 3;
+    transition: transform .25s, box-shadow .25s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 9px 22px rgba(13,27,43,.15);
+}
+
+.gallery-item::after {
+    content: "";
+    position: absolute;
+    inset: 6px;
+    border: 1px solid rgba(197,166,107,.65);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .25s;
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .4s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.045);
+}
+
+/* SEZIONE MOSTRA */
+
+.exhibition-section {
+    margin-top: 90px;
+    padding: 55px 38px;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--gold);
+}
+
+.exhibition-text {
+    max-width: 900px;
+    margin: 0 auto 38px;
+    font-size: 15px;
+    line-height: 1.95;
+    text-align: center;
+}
+
+.exhibition-text strong {
+    color: var(--navy);
+}
+
+.exhibition-text em {
+    color: #725D3B;
+}
+
+.exhibition-link {
+    color: #9A7840;
+    text-decoration: underline;
+    text-decoration-color: var(--gold);
+    text-underline-offset: 4px;
+}
+
+.exhibition-link:hover {
+    color: var(--navy);
 }
 
 /* NAVIGAZIONE */
@@ -294,7 +356,7 @@ main {
 .back-link {
     display: flex;
     justify-content: center;
-    margin-top: 55px;
+    margin-top: 65px;
 }
 
 .back-link a {
@@ -305,7 +367,6 @@ main {
     border: 1px solid var(--gold);
     font-size: 13px;
     font-weight: 600;
-    letter-spacing: .4px;
     transition: .25s;
 }
 
@@ -340,10 +401,10 @@ footer strong {
     position: fixed;
     inset: 0;
     z-index: 999;
-    background: rgba(5,12,20,.94);
+    background: rgba(5,12,20,.96);
     align-items: center;
     justify-content: center;
-    padding: 30px;
+    padding: 55px 75px;
 }
 
 .lightbox.active {
@@ -351,23 +412,74 @@ footer strong {
 }
 
 .lightbox img {
-    max-width: 95%;
-    max-height: 90vh;
+    max-width: 100%;
+    max-height: 82vh;
     object-fit: contain;
+    box-shadow: 0 8px 35px rgba(0,0,0,.3);
+}
+
+.lightbox-close,
+.lightbox-arrow {
+    position: absolute;
+    color: white;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.25);
+    cursor: pointer;
+    transition: background .2s;
+}
+
+.lightbox-close:hover,
+.lightbox-arrow:hover {
+    background: rgba(197,166,107,.35);
 }
 
 .lightbox-close {
+    top: 18px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    font-size: 30px;
+}
+
+.lightbox-arrow {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 58px;
+    font-size: 30px;
+}
+
+.lightbox-prev {
+    left: 18px;
+}
+
+.lightbox-next {
+    right: 18px;
+}
+
+.lightbox-counter {
     position: absolute;
-    top: 20px;
-    right: 30px;
-    color: white;
-    font-size: 38px;
-    background: none;
-    border: none;
-    cursor: pointer;
+    bottom: 18px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: rgba(255,255,255,.8);
+    font-size: 13px;
+    letter-spacing: 1px;
 }
 
 /* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .intro-card {
+        gap: 28px;
+        padding: 25px;
+    }
+}
 
 @media (max-width: 800px) {
     .nav-links {
@@ -392,22 +504,38 @@ footer strong {
         display: block;
     }
 
-    .story {
+    .intro-card {
         grid-template-columns: 1fr;
-        padding: 25px;
     }
 
-    .story-image {
-        max-width: 450px;
-        margin: 0 auto 10px;
+    .poster-frame {
+        max-width: 500px;
+        margin: auto;
     }
 
-    .story-content {
+    .intro-text {
         text-align: left;
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .gallery-item {
+        padding: 4px;
+    }
+
+    .gallery-item::after {
+        inset: 4px;
+    }
+
+    .exhibition-section {
+        padding: 35px 18px;
+    }
+
     .hero {
         padding: 65px 20px;
     }
@@ -416,16 +544,22 @@ footer strong {
         padding: 45px 17px 65px;
     }
 
-    .story {
-        padding: 19px;
+    .lightbox {
+        padding: 55px 48px;
     }
 
-    .poster-section {
-        margin-bottom: 55px;
+    .lightbox-arrow {
+        width: 35px;
+        height: 48px;
+        font-size: 23px;
     }
 
-    .poster-frame {
-        padding: 6px;
+    .lightbox-prev {
+        left: 5px;
+    }
+
+    .lightbox-next {
+        right: 5px;
     }
 }
 </style>
@@ -462,36 +596,25 @@ footer strong {
 
 <main>
 
-    <section class="poster-section">
-        <div class="section-heading">
-            <div class="eyebrow">1911 · 2011</div>
-            <h2>100 anni di storia</h2>
-            <div class="line"></div>
-        </div>
-
-        <div class="poster-frame">
-            <img src="locandina%20centenario.jpg"
-                 alt="Locandina dei festeggiamenti per il centenario della Banda"
-                 loading="eager">
-        </div>
-    </section>
+    <!-- PRIMA SEZIONE: CENTENARIO -->
 
     <section>
         <div class="section-heading">
-            <div class="eyebrow">La memoria della Banda</div>
+            <div class="eyebrow">1911 · 2011</div>
             <h2>I festeggiamenti del 100° anno dalla fondazione</h2>
             <div class="line"></div>
         </div>
 
-        <div class="story">
+        <div class="intro-card">
 
-            <div class="story-image">
-                <img src="https://corpobandisticomunicipalealcara.weebly.com/uploads/5/5/4/7/55474777/published/_193489.jpg?1484313150"
-                     alt="Immagine dei festeggiamenti del centenario"
-                     onclick="openLightbox(this.src)">
+            <div class="poster-frame">
+                <img src="locandina%20centenario.jpg"
+                     alt="Locandina dei festeggiamenti per il centenario"
+                     onclick="openLightbox(this.src, allImages, allImages.indexOf(this.src))"
+                     loading="eager">
             </div>
 
-            <div class="story-content">
+            <div class="intro-text">
 
                 <p>
                     Nel 2011, ricorrendo il 100° anno dalla fondazione,
@@ -540,6 +663,47 @@ footer strong {
         </div>
     </section>
 
+    <!-- GALLERIA DEL CENTENARIO -->
+
+    <section class="gallery-section">
+        <div class="section-heading">
+            <div class="eyebrow">1911 — 2011</div>
+            <h2>Le immagini del Centenario</h2>
+            <div class="line"></div>
+        </div>
+
+        <p class="gallery-description">
+            Fotografie e ricordi dei festeggiamenti per i cento anni della Banda Municipale Alcarese.
+            Clicca su un'immagine per ingrandirla e scorrere la galleria.
+        </p>
+
+        <div class="gallery-grid" id="galleryCentenario"></div>
+    </section>
+
+    <!-- SECONDA SEZIONE: MOSTRA -->
+
+    <section class="exhibition-section">
+
+        <div class="section-heading">
+            <div class="eyebrow">14 agosto 2011</div>
+            <h2>La mostra in occasione del <a class="exhibition-link" href="https://corpobandisticomunicipalealcara.weebly.com/1911-2011-i-100-anni-dalla-fondazione-del-corpo-bandistico-municipale-alcarese.html" target="_blank" rel="noopener">Centenario</a></h2>
+            <div class="line"></div>
+        </div>
+
+        <div class="exhibition-text">
+            <p>
+                Nella giornata del 14 agosto 2011, presso i locali della società agricola,
+                è stata <strong>allestita una mostra con documenti inediti, strumenti musicali,
+                divise d'ordinanza e foto relative alla Banda e alla sua storia centenaria</strong>.
+                La mostra è stata curata dai componenti:
+                <em>Giuseppe Mannanici, Gianluca Papa, Maria Saccone, Massimo Spinello.</em>
+            </p>
+        </div>
+
+        <div class="gallery-grid" id="galleryMostra"></div>
+
+    </section>
+
     <div class="back-link">
         <a href="../index.html">← Torna agli Eventi</a>
     </div>
@@ -553,9 +717,14 @@ footer strong {
     © 2026 · Tutti i diritti riservati
 </footer>
 
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-    <button class="lightbox-close" aria-label="Chiudi">&times;</button>
-    <img id="lightboxImage" src="" alt="Immagine ingrandita">
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Chiudi" onclick="closeLightbox()">×</button>
+    <button class="lightbox-arrow lightbox-prev" aria-label="Foto precedente" onclick="changeImage(-1)">‹</button>
+    <img id="lightboxImage" src="" alt="Fotografia ingrandita">
+    <button class="lightbox-arrow lightbox-next" aria-label="Foto successiva" onclick="changeImage(1)">›</button>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
 </div>
 
 <script>
@@ -563,17 +732,158 @@ function toggleMenu() {
     document.getElementById('navLinks').classList.toggle('open');
 }
 
-function openLightbox(src) {
-    document.getElementById('lightboxImage').src = src;
+/* FOTOGRAFIE DEL CENTENARIO */
+
+const centenarioImages = [
+    "1650475_orig.jpg",
+    "2813954_orig.jpg",
+    "4024987_orig.jpg",
+    "4256543_orig.jpg",
+    "4485935_orig.jpg",
+    "4722156_orig.jpg",
+    "5128359_orig.jpg",
+    "5346372_orig (1).jpg",
+    "5346372_orig.jpg",
+    "5369693_orig.jpg",
+    "5673015_orig.jpg",
+    "7079520_orig.jpg",
+    "7650424_orig.jpg",
+    "8449046_orig.jpg",
+    "9514479_orig.jpg",
+    "centenario locandina.jpg"
+];
+
+/* FOTOGRAFIE DELLA MOSTRA
+   Nessun file già presente nella prima galleria viene ripetuto. */
+
+const mostraImages = [
+    "85847_orig.jpg",
+    "728733_orig.jpg",
+    "2113029_orig.jpg",
+    "2991254_orig.jpg",
+    "3072464_orig.jpg",
+    "3138276_orig.jpg",
+    "3258776_orig.jpg",
+    "3730924_orig.jpg",
+    "3805266_orig.jpg",
+    "3923945_orig.jpg",
+    "4779491_orig.jpg",
+    "6672271_orig.jpg",
+    "6871228_orig.jpg",
+    "6934240_orig.jpg",
+    "7143636_orig.jpg",
+    "7168842_orig.jpg",
+    "7830085_orig.jpg",
+    "7834361_orig.jpg",
+    "8144119_orig.jpg",
+    "8255891_orig.jpg",
+    "8392483_orig.jpg",
+    "8872252_orig.jpg"
+];
+
+/* COSTRUZIONE GALLERIE */
+
+const allImages = [
+    ...centenarioImages,
+    ...mostraImages
+];
+
+function createGallery(containerId, images) {
+    const container = document.getElementById(containerId);
+
+    images.forEach(filename => {
+        const item = document.createElement('div');
+        item.className = 'gallery-item';
+
+        const img = document.createElement('img');
+        img.src = encodeURIComponent(filename);
+        img.alt = 'Fotografia storica del Centenario della Banda';
+        img.loading = 'lazy';
+
+        img.addEventListener('click', () => {
+            const index = allImages.indexOf(filename);
+            openLightbox(filename, allImages, index);
+        });
+
+        item.appendChild(img);
+        container.appendChild(item);
+    });
+}
+
+createGallery('galleryCentenario', centenarioImages);
+createGallery('galleryMostra', mostraImages);
+
+/* LIGHTBOX CON SCORRIMENTO */
+
+let currentImages = [];
+let currentIndex = 0;
+
+function openLightbox(src, images, index) {
+    currentImages = images;
+    currentIndex = index >= 0 ? index : 0;
+
+    showCurrentImage();
+
     document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function showCurrentImage() {
+    const filename = currentImages[currentIndex];
+
+    document.getElementById('lightboxImage').src =
+        encodeURIComponent(filename);
+
+    document.getElementById('lightboxCounter').textContent =
+        (currentIndex + 1) + ' / ' + currentImages.length;
+}
+
+function changeImage(direction) {
+    if (!currentImages.length) return;
+
+    currentIndex += direction;
+
+    if (currentIndex < 0) {
+        currentIndex = currentImages.length - 1;
+    }
+
+    if (currentIndex >= currentImages.length) {
+        currentIndex = 0;
+    }
+
+    showCurrentImage();
 }
 
 function closeLightbox() {
     document.getElementById('lightbox').classList.remove('active');
+    document.getElementById('lightboxImage').src = '';
+    document.body.style.overflow = '';
 }
 
+/* TASTIERA */
+
 document.addEventListener('keydown', function(event) {
+    const lightbox = document.getElementById('lightbox');
+
+    if (!lightbox.classList.contains('active')) return;
+
     if (event.key === 'Escape') {
+        closeLightbox();
+    }
+
+    if (event.key === 'ArrowRight') {
+        changeImage(1);
+    }
+
+    if (event.key === 'ArrowLeft') {
+        changeImage(-1);
+    }
+});
+
+/* CHIUSURA CLICCANDO SULLO SFONDO */
+
+document.getElementById('lightbox').addEventListener('click', function(event) {
+    if (event.target === this) {
         closeLightbox();
     }
 });
@@ -581,4 +891,3 @@ document.addEventListener('keydown', function(event) {
 
 </body>
 </html>
-
