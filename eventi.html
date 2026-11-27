@@ -357,10 +357,12 @@
     .history-grid {
       display: grid;
       grid-template-columns: repeat(2,minmax(0,1fr));
-      gap: 25px;
+      gap: 28px;
+      align-items: stretch;
     }
 
     .history-card {
+      min-width: 0;
       background: var(--white);
       border: 1px solid var(--border);
       border-top: 4px solid var(--gold);
@@ -393,6 +395,11 @@
       margin-bottom: 24px;
     }
 
+    .history-card p strong {
+      font-weight: 600;
+      color: var(--navy);
+    }
+
     .history-image {
       width: 100%;
       aspect-ratio: 16/9;
@@ -418,6 +425,143 @@
     .history-link:hover {
       background: var(--gold);
       color: var(--navy-deep);
+    }
+
+    /* GALLERIA 80° ANNIVERSARIO */
+
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .gallery-item {
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: 1px solid var(--border);
+      background: var(--cream);
+      cursor: zoom-in;
+      overflow: hidden;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 145px;
+      object-fit: cover;
+      display: block;
+      margin: 0;
+      border: 0;
+      transition: transform .35s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
+
+    .gallery-item.document img {
+      object-fit: contain;
+      background: var(--cream);
+    }
+
+    .gallery-caption {
+      color: var(--muted);
+      font-size: 11px !important;
+      text-align: center;
+      margin-top: 12px;
+      margin-bottom: 0 !important;
+    }
+
+    /* LIGHTBOX */
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(8,17,28,.94);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 65px 70px;
+    }
+
+    .lightbox[hidden] {
+      display: none;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 1100px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border: 1px solid rgba(255,255,255,.2);
+    }
+
+    .lightbox-close,
+    .lightbox-prev,
+    .lightbox-next {
+      position: absolute;
+      border: 1px solid rgba(255,255,255,.4);
+      background: rgba(20,38,61,.85);
+      color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s ease;
+    }
+
+    .lightbox-close:hover,
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+      background: var(--burgundy);
+    }
+
+    .lightbox-close {
+      top: 20px;
+      right: 25px;
+      width: 43px;
+      height: 43px;
+      font-size: 25px;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+      top: 50%;
+      transform: translateY(-50%);
+      width: 45px;
+      height: 55px;
+      font-size: 27px;
+    }
+
+    .lightbox-prev {
+      left: 15px;
+    }
+
+    .lightbox-next {
+      right: 15px;
+    }
+
+    .lightbox-counter {
+      position: absolute;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 12px;
+      letter-spacing: 2px;
     }
 
     /* FOOTER */
@@ -454,8 +598,13 @@
     /* RESPONSIVE */
 
     @media(max-width:1100px) {
-      nav { gap: 10px 12px; }
-      nav a { font-size: 10px; }
+      nav {
+        gap: 10px 12px;
+      }
+
+      nav a {
+        font-size: 10px;
+      }
     }
 
     @media(max-width:900px) {
@@ -518,6 +667,10 @@
       .history-grid {
         grid-template-columns: 1fr;
       }
+
+      .gallery-item img {
+        height: 180px;
+      }
     }
 
     @media(max-width:560px) {
@@ -536,11 +689,43 @@
       .history-card {
         padding: 25px 21px;
       }
+
+      .lightbox {
+        padding: 60px 12px;
+      }
+
+      .lightbox-prev {
+        left: 5px;
+      }
+
+      .lightbox-next {
+        right: 5px;
+      }
+
+      .lightbox-prev,
+      .lightbox-next {
+        width: 35px;
+        height: 45px;
+      }
+
+      .lightbox-close {
+        top: 12px;
+        right: 12px;
+      }
+
+      .gallery-item img {
+        height: 125px;
+      }
     }
 
     @media(prefers-reduced-motion:reduce) {
-      html { scroll-behavior: auto; }
-      *,*::before,*::after { transition-duration: .01ms !important; }
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,*::before,*::after {
+        transition-duration: .01ms !important;
+      }
     }
   </style>
 </head>
@@ -581,10 +766,12 @@
     </div>
   </header>
 
+
   <!-- HERO -->
 
   <section class="hero">
     <div class="hero-content">
+
       <div class="section-label">
         ASSOCIAZIONE MUSICALE ALCARESE · DAL 1911
       </div>
@@ -599,8 +786,10 @@
       </p>
 
       <div class="hero-line"></div>
+
     </div>
   </section>
+
 
   <!-- ARCHIVIO PER ANNO -->
 
@@ -639,6 +828,7 @@
 
         </a>
 
+
         <a href="eventi/2025.html"
            class="year-card"
            data-year="2025">
@@ -659,6 +849,7 @@
           </div>
 
         </a>
+
 
         <a href="eventi/2024.html"
            class="year-card"
@@ -685,20 +876,23 @@
     </div>
   </section>
 
-  <!-- ARCHIVIO STORICO -->
+
+  <!-- RICORRENZE STORICHE -->
 
   <section class="content-section cream" id="archivio-storico">
     <div class="content">
 
       <div class="section-label">La memoria della Banda</div>
-      <h2 class="section-title">La nostra storia, attraverso gli eventi</h2>
+
+      <h2 class="section-title">
+        Le ricorrenze che hanno fatto storia
+      </h2>
 
       <p class="history-intro">
-        Accanto agli appuntamenti più recenti, conserviamo il ricordo
-        delle celebrazioni e dei traguardi che hanno segnato la storia
-        del Corpo Bandistico Municipale “G. Verdi”.
-        Questi momenti rappresentano una parte preziosa della nostra
-        identità e della tradizione musicale alcarese.
+        Alcuni anniversari rappresentano tappe particolarmente importanti
+        nel cammino del Corpo Bandistico Municipale “G. Verdi”.
+        Attraverso fotografie, documenti e testimonianze, conserviamo
+        la memoria di questi momenti condivisi con la comunità.
       </p>
 
       <div class="history-grid">
@@ -708,16 +902,17 @@
         <article class="history-card">
 
           <div>
-            <div class="history-date">1911 – 2011 · Primo secolo di storia</div>
+
+            <div class="history-date">
+              1911 – 2011 · Primo secolo di storia
+            </div>
 
             <h3>I 100 anni dalla fondazione</h3>
 
             <p>
-              Nel 2011, ricorrendo il 100° anno dalla fondazione,
-              la Banda Municipale Alcarese ha organizzato una serie
-              di eventi che hanno visto la partecipazione degli
-              attuali e degli ex componenti della Banda, nonché
-              quella di tutta la comunità.
+              <strong>Nel 2011, ricorrendo il 100° anno dalla fondazione, la Banda Municipale Alcarese ha organizzato una serie di eventi</strong>
+              che hanno visto la partecipazione degli attuali e degli ex
+              componenti della Banda, nonché quella di tutta la comunità.
             </p>
 
             <img
@@ -726,6 +921,7 @@
               alt="Celebrazioni del centenario del Corpo Bandistico Municipale G. Verdi"
               loading="lazy"
             >
+
           </div>
 
           <a class="history-link" href="centenario.html">
@@ -734,33 +930,72 @@
 
         </article>
 
-        <!-- OTTANTESIMO -->
+
+        <!-- OTTANTESIMO ANNIVERSARIO -->
 
         <article class="history-card">
 
           <div>
-            <div class="history-date">Memoria storica · 80° anniversario</div>
 
-            <h3>Festeggiamenti dell'80° anno</h3>
+            <div class="history-date">
+              Ricorrenza storica · 80° anniversario
+            </div>
+
+            <h3>Gli 80 anni della Banda</h3>
 
             <p>
-              Le immagini e l'attestato commemorativo dedicati
-              all'80° anniversario della fondazione del Corpo
-              Bandistico Municipale “G. Verdi”: testimonianze
-              di una storia musicale costruita nel tempo.
+              Una ricorrenza importante nella storia del Corpo Bandistico
+              Municipale “G. Verdi”, ricordata attraverso fotografie
+              e documenti che testimoniano il percorso e la tradizione
+              musicale della Banda.
             </p>
 
-            <img
-              class="history-image"
-              src="eventi/80%201.jpg"
-              alt="Festeggiamenti dell'80° anno dalla fondazione della Banda"
-              loading="lazy"
-            >
-          </div>
+            <div class="photo-gallery">
 
-          <a class="history-link" href="#album-ottantesimo">
-            Guarda le fotografie →
-          </a>
+              <button class="gallery-item" type="button"
+                aria-label="Ingrandisci fotografia 1 dell'80° anniversario">
+                <img
+                  src="eventi/80%201.jpg"
+                  alt="Festeggiamenti dell'80° anniversario"
+                  loading="lazy"
+                >
+              </button>
+
+              <button class="gallery-item" type="button"
+                aria-label="Ingrandisci fotografia 2 dell'80° anniversario">
+                <img
+                  src="eventi/80%202.jpg"
+                  alt="Fotografia dei festeggiamenti dell'80° anniversario"
+                  loading="lazy"
+                >
+              </button>
+
+              <button class="gallery-item" type="button"
+                aria-label="Ingrandisci fotografia 3 dell'80° anniversario">
+                <img
+                  src="eventi/80%203.jpg"
+                  alt="Un momento delle celebrazioni dell'80° anniversario"
+                  loading="lazy"
+                >
+              </button>
+
+              <button class="gallery-item document" type="button"
+                aria-label="Ingrandisci attestato dell'80° anniversario">
+                <img
+                  src="eventi/attestato-80-banda_orig.jpg"
+                  alt="Attestato commemorativo dell'80° anniversario"
+                  loading="lazy"
+                >
+              </button>
+
+            </div>
+
+            <p class="gallery-caption">
+              Fotografie e documenti commemorativi.
+              Clicca sulle immagini per ingrandirle.
+            </p>
+
+          </div>
 
         </article>
 
@@ -768,44 +1003,31 @@
     </div>
   </section>
 
-  <!-- ALBUM OTTANTESIMO -->
 
-  <section class="content-section" id="album-ottantesimo">
-    <div class="content">
+  <!-- VISUALIZZATORE FOTOGRAFIE -->
 
-      <div class="section-label">Documenti e fotografie</div>
-      <h2 class="section-title">L'80° anniversario in immagini</h2>
+  <div class="lightbox" id="lightbox" hidden
+       role="dialog" aria-modal="true"
+       aria-label="Galleria fotografica dell'80° anniversario">
 
-      <p class="intro">
-        Una piccola raccolta di testimonianze fotografiche e documentali
-        dei festeggiamenti dell'80° anno dalla fondazione della Banda.
-      </p>
+    <button class="lightbox-close" id="lightboxClose"
+            aria-label="Chiudi galleria">×</button>
 
-      <div class="history-grid">
+    <div class="lightbox-content">
 
-        <img class="history-image"
-          src="eventi/80%201.jpg"
-          alt="Celebrazioni dell'80° anniversario - fotografia 1"
-          loading="lazy">
+      <button class="lightbox-prev" id="lightboxPrev"
+              aria-label="Fotografia precedente">‹</button>
 
-        <img class="history-image"
-          src="eventi/80%202.jpg"
-          alt="Celebrazioni dell'80° anniversario - fotografia 2"
-          loading="lazy">
+      <img id="lightboxImage" src="" alt="">
 
-        <img class="history-image"
-          src="eventi/80%203.jpg"
-          alt="Celebrazioni dell'80° anniversario - fotografia 3"
-          loading="lazy">
+      <button class="lightbox-next" id="lightboxNext"
+              aria-label="Fotografia successiva">›</button>
 
-        <img class="history-image"
-          src="eventi/attestato-80-banda_orig.jpg"
-          alt="Attestato commemorativo dell'80° anniversario"
-          loading="lazy">
+      <div class="lightbox-counter" id="lightboxCounter"></div>
 
-      </div>
     </div>
-  </section>
+  </div>
+
 
   <!-- FOOTER -->
 
@@ -828,9 +1050,13 @@
     </p>
   </footer>
 
-  <!-- MENU MOBILE -->
+
+  <!-- SCRIPT -->
 
   <script>
+
+    // MENU MOBILE
+
     const menuButton = document.getElementById("menuButton");
     const headerRight = document.getElementById("headerRight");
 
@@ -850,6 +1076,102 @@
         });
       });
     }
+
+
+    // GALLERIA FOTOGRAFICA 80° ANNIVERSARIO
+
+    const galleryButtons = [
+      ...document.querySelectorAll(".gallery-item")
+    ];
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxClose = document.getElementById("lightboxClose");
+    const lightboxPrev = document.getElementById("lightboxPrev");
+    const lightboxNext = document.getElementById("lightboxNext");
+    const lightboxCounter = document.getElementById("lightboxCounter");
+
+    let currentPhoto = 0;
+    let previousFocus = null;
+
+    function showPhoto(index) {
+
+      currentPhoto =
+        (index + galleryButtons.length) % galleryButtons.length;
+
+      const image =
+        galleryButtons[currentPhoto].querySelector("img");
+
+      lightboxImage.src = image.src;
+      lightboxImage.alt = image.alt;
+
+      lightboxCounter.textContent =
+        `${currentPhoto + 1} / ${galleryButtons.length}`;
+    }
+
+    function openGallery(index) {
+
+      if (!galleryButtons.length) return;
+
+      previousFocus = document.activeElement;
+
+      showPhoto(index);
+
+      lightbox.hidden = false;
+      document.body.style.overflow = "hidden";
+
+      lightboxClose.focus();
+    }
+
+    function closeGallery() {
+
+      lightbox.hidden = true;
+      document.body.style.overflow = "";
+
+      if (previousFocus) {
+        previousFocus.focus();
+      }
+    }
+
+    galleryButtons.forEach((button, index) => {
+      button.addEventListener("click", () => {
+        openGallery(index);
+      });
+    });
+
+    lightboxClose.addEventListener("click", closeGallery);
+
+    lightboxPrev.addEventListener("click", () => {
+      showPhoto(currentPhoto - 1);
+    });
+
+    lightboxNext.addEventListener("click", () => {
+      showPhoto(currentPhoto + 1);
+    });
+
+    lightbox.addEventListener("click", event => {
+      if (event.target === lightbox) {
+        closeGallery();
+      }
+    });
+
+    document.addEventListener("keydown", event => {
+
+      if (lightbox.hidden) return;
+
+      if (event.key === "Escape") {
+        closeGallery();
+      }
+
+      if (event.key === "ArrowLeft") {
+        showPhoto(currentPhoto - 1);
+      }
+
+      if (event.key === "ArrowRight") {
+        showPhoto(currentPhoto + 1);
+      }
+    });
+
   </script>
 
 </body>
