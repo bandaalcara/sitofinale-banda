@@ -1,1 +1,584 @@
 
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Il Centenario | Corpo Bandistico Municipale “G. Verdi”</title>
+<meta name="theme-color" content="#14263D">
+<meta name="description" content="I festeggiamenti del centenario della fondazione del Corpo Bandistico Municipale di Alcara Li Fusi, 1911-2011.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --navy: #14263D;
+    --navy-deep: #0D1B2B;
+    --navy-soft: #203A57;
+    --gold: #C5A66B;
+    --gold-light: #E3D2AC;
+    --cream: #F5F1E8;
+    --cream-dark: #EAE3D5;
+    --white: #FFFFFF;
+    --text: #303B43;
+    --muted: #747B7C;
+    --border: #DDD8CD;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* HEADER */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--navy-deep);
+    border-bottom: 1px solid rgba(197,166,107,.35);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    min-height: 76px;
+    padding: 12px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    color: var(--white);
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.logo span {
+    display: block;
+    color: var(--gold);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    color: var(--white);
+    font-size: 13px;
+}
+
+.nav-links a {
+    transition: color .2s;
+}
+
+.nav-links a:hover {
+    color: var(--gold-light);
+}
+
+.menu-toggle {
+    display: none;
+    color: white;
+    background: none;
+    border: 0;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--navy-deep), var(--navy-soft));
+    color: var(--white);
+    text-align: center;
+    padding: 85px 20px 90px;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(197,166,107,.35);
+    pointer-events: none;
+}
+
+.hero-label {
+    color: var(--gold-light);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 6vw, 66px);
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    color: rgba(255,255,255,.8);
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.hero-line {
+    width: 75px;
+    height: 2px;
+    background: var(--gold);
+    margin: 25px auto 0;
+}
+
+/* CONTENUTO */
+
+main {
+    max-width: 1120px;
+    margin: auto;
+    padding: 65px 28px 85px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.section-heading .eyebrow {
+    color: #A4864F;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+    color: var(--navy);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(27px, 4vw, 39px);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.section-heading .line {
+    width: 65px;
+    height: 2px;
+    background: var(--gold);
+    margin: 20px auto 0;
+}
+
+/* LOCANDINA */
+
+.poster-section {
+    max-width: 780px;
+    margin: 0 auto 75px;
+    text-align: center;
+}
+
+.poster-frame {
+    display: inline-block;
+    padding: 10px;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    box-shadow: 0 12px 35px rgba(13,27,43,.13);
+}
+
+.poster-frame img {
+    display: block;
+    max-width: 100%;
+    max-height: 850px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+/* RACCONTO STORICO */
+
+.story {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    padding: 38px;
+    display: grid;
+    grid-template-columns: minmax(240px, .85fr) 1.5fr;
+    gap: 38px;
+    align-items: start;
+}
+
+.story-image {
+    position: relative;
+}
+
+.story-image::after {
+    content: "";
+    position: absolute;
+    inset: 9px -9px -9px 9px;
+    border: 1px solid var(--gold);
+    z-index: 0;
+}
+
+.story-image img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 5px 18px rgba(13,27,43,.12);
+    cursor: zoom-in;
+}
+
+.story-content {
+    font-size: 14px;
+    line-height: 1.9;
+    text-align: justify;
+}
+
+.story-content p {
+    margin-bottom: 18px;
+}
+
+.story-content strong {
+    color: var(--navy);
+    font-weight: 700;
+}
+
+.story-content em {
+    color: #725D3B;
+}
+
+.author {
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    color: var(--navy);
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+}
+
+/* NAVIGAZIONE */
+
+.back-link {
+    display: flex;
+    justify-content: center;
+    margin-top: 55px;
+}
+
+.back-link a {
+    display: inline-block;
+    padding: 13px 25px;
+    color: white;
+    background: var(--navy);
+    border: 1px solid var(--gold);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .4px;
+    transition: .25s;
+}
+
+.back-link a:hover {
+    background: var(--navy-soft);
+    transform: translateY(-2px);
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--navy-deep);
+    color: rgba(255,255,255,.75);
+    text-align: center;
+    padding: 35px 20px;
+    border-top: 2px solid var(--gold);
+    font-size: 12px;
+}
+
+footer strong {
+    display: block;
+    color: var(--gold-light);
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+/* LIGHTBOX */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(5,12,20,.94);
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 95%;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 38px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: var(--navy-deep);
+        padding: 20px 28px 25px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 17px;
+        border-top: 1px solid rgba(197,166,107,.3);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .story {
+        grid-template-columns: 1fr;
+        padding: 25px;
+    }
+
+    .story-image {
+        max-width: 450px;
+        margin: 0 auto 10px;
+    }
+
+    .story-content {
+        text-align: left;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero {
+        padding: 65px 20px;
+    }
+
+    main {
+        padding: 45px 17px 65px;
+    }
+
+    .story {
+        padding: 19px;
+    }
+
+    .poster-section {
+        margin-bottom: 55px;
+    }
+
+    .poster-frame {
+        padding: 6px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="../../index.html" class="logo">
+            Corpo Bandistico Municipale
+            <span>“G. Verdi” · Alcara Li Fusi</span>
+        </a>
+
+        <button class="menu-toggle" aria-label="Apri menu" onclick="toggleMenu()">☰</button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="../../index.html">Home</a>
+            <a href="../../labanda.html">La Banda</a>
+            <a href="../../scuola.html">La Scuola</a>
+            <a href="../index.html">Eventi</a>
+            <a href="../../albo-storico.html">Albo Storico</a>
+            <a href="../../index.html#contatti">Contatti</a>
+        </div>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-label">1911 — 2011 · Cento anni di musica</div>
+    <h1>Il Centenario</h1>
+    <p>Un secolo di storia, musica e tradizione</p>
+    <div class="hero-line"></div>
+</section>
+
+<main>
+
+    <section class="poster-section">
+        <div class="section-heading">
+            <div class="eyebrow">1911 · 2011</div>
+            <h2>100 anni di storia</h2>
+            <div class="line"></div>
+        </div>
+
+        <div class="poster-frame">
+            <img src="locandina%20centenario.jpg"
+                 alt="Locandina dei festeggiamenti per il centenario della Banda"
+                 loading="eager">
+        </div>
+    </section>
+
+    <section>
+        <div class="section-heading">
+            <div class="eyebrow">La memoria della Banda</div>
+            <h2>I festeggiamenti del 100° anno dalla fondazione</h2>
+            <div class="line"></div>
+        </div>
+
+        <div class="story">
+
+            <div class="story-image">
+                <img src="https://corpobandisticomunicipalealcara.weebly.com/uploads/5/5/4/7/55474777/published/_193489.jpg?1484313150"
+                     alt="Immagine dei festeggiamenti del centenario"
+                     onclick="openLightbox(this.src)">
+            </div>
+
+            <div class="story-content">
+
+                <p>
+                    Nel 2011, ricorrendo il 100° anno dalla fondazione,
+                    <strong>la Banda Municipale Alcarese ha organizzato una serie di eventi</strong>
+                    che hanno visto la partecipazione degli attuali e degli ex componenti
+                    della Banda, nonché quella di tutta la comunità.
+                </p>
+
+                <p>
+                    Nella giornata del 14 agosto 2011, è stata organizzata una
+                    <strong>mostra</strong> <em>(foto di seguito)</em> con documenti inediti,
+                    strumenti musicali, divise d'ordinanza e foto relative alla Banda
+                    e alla sua storia centenaria.
+                </p>
+
+                <p>
+                    Nel pomeriggio è stata celebrata, dall'arciprete don Guido Passalacqua,
+                    una partecipata
+                    <strong>S. Messa di commemorazione per i musicanti defunti e di buon
+                    auspicio ed augurio per un roseo avvenire della Banda stessa.</strong>
+                </p>
+
+                <p>
+                    Molto successo ha avuto subito dopo la
+                    <strong>sfilata della Banda, composta per l'occasione dagli attuali
+                    e da molti ex componenti</strong>, che lungo le vie del paese si è
+                    esibita suonando marce sinfoniche e militari e trasmettendo al paese
+                    un gioioso ed emozionante clima di festa.
+                </p>
+
+                <p>
+                    Il <em>clou</em> dei festeggiamenti si è svolto in serata, quando la
+                    Banda Municipale si è esibita in un
+                    <strong>concerto di musica classica</strong> molto seguito ed apprezzato.
+                    In conclusione, oltre ai saluti e ai ringraziamenti delle istituzioni
+                    e del Maestro Saccone, sono state consegnate le targhe ricordo e gli
+                    attestati a tutti i musicisti presenti ed ai familiari di quelli
+                    scomparsi e che nei 100 anni avevano fatto parte della Banda.
+                </p>
+
+                <div class="author">
+                    Articolo scritto da: <strong>Antonina Vaneria</strong>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="back-link">
+        <a href="../index.html">← Torna agli Eventi</a>
+    </div>
+
+</main>
+
+<footer>
+    <strong>Corpo Bandistico Municipale “G. Verdi”</strong>
+    Alcara Li Fusi · Dal 1911
+    <br><br>
+    © 2026 · Tutti i diritti riservati
+</footer>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" aria-label="Chiudi">&times;</button>
+    <img id="lightboxImage" src="" alt="Immagine ingrandita">
+</div>
+
+<script>
+function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+}
+
+function openLightbox(src) {
+    document.getElementById('lightboxImage').src = src;
+    document.getElementById('lightbox').classList.add('active');
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+}
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeLightbox();
+    }
+});
+</script>
+
+</body>
+</html>
+
