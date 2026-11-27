@@ -358,12 +358,8 @@
       display: flex;
       align-items: center;
       gap: 18px;
-      margin: 48px 0 24px;
+      margin: 55px 0 24px;
       color: var(--navy);
-    }
-
-    .history-year-heading:first-child {
-      margin-top: 0;
     }
 
     .history-year-heading span {
@@ -418,7 +414,7 @@
       color: var(--text);
       font-size: 15px;
       line-height: 1.9;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
     .history-card p strong {
@@ -426,18 +422,36 @@
       color: var(--navy);
     }
 
-    .history-image {
+    /* IMMAGINI: NIENTE RITAGLI */
+
+    .history-image-button {
+      display: block;
       width: 100%;
-      aspect-ratio: 16/9;
-      object-fit: cover;
+      padding: 10px;
+      margin: 8px 0 22px;
+      background: #F8F7F3;
       border: 1px solid var(--border);
-      margin-bottom: 22px;
-      background: var(--cream);
+      cursor: zoom-in;
+      overflow: hidden;
     }
 
-    .history-image.contain {
+    .history-image-button img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 430px;
       object-fit: contain;
-      background: var(--cream);
+      object-position: center;
+      margin: 0 auto;
+      transition: transform .3s ease;
+    }
+
+    .history-image-button:hover img {
+      transform: scale(1.015);
+    }
+
+    .history-image-button.poster img {
+      max-height: 480px;
     }
 
     .history-link {
@@ -456,6 +470,19 @@
     .history-link:hover {
       background: var(--gold);
       color: var(--navy-deep);
+    }
+
+    .article-author {
+      margin-top: 15px;
+      padding-top: 13px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .article-author strong {
+      color: var(--navy);
     }
 
     /* VIDEO */
@@ -491,54 +518,44 @@
       color: var(--navy);
     }
 
-    .article-source {
-      color: var(--navy);
-      font-weight: 600;
-      text-decoration: underline;
-      text-decoration-color: var(--gold);
-      text-underline-offset: 4px;
-    }
-
-    .article-source:hover {
-      color: var(--burgundy);
-    }
-
-    /* GALLERIA 80° ANNIVERSARIO */
+    /* GALLERIE */
 
     .photo-gallery {
       display: grid;
-      grid-template-columns: repeat(2,minmax(0,1fr));
-      gap: 12px;
-      margin-top: 22px;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 13px;
+      margin: 22px 0 12px;
     }
 
     .gallery-item {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 100%;
-      padding: 0;
+      min-width: 0;
+      min-height: 125px;
+      padding: 7px;
       border: 1px solid var(--border);
-      background: var(--cream);
+      background: #F8F7F3;
       cursor: zoom-in;
       overflow: hidden;
     }
 
     .gallery-item img {
-      width: 100%;
-      height: 145px;
-      object-fit: cover;
       display: block;
-      margin: 0;
-      border: 0;
-      transition: transform .35s ease;
+      width: 100%;
+      height: 165px;
+      object-fit: contain;
+      object-position: center;
+      transition: transform .3s ease;
     }
 
     .gallery-item:hover img {
-      transform: scale(1.06);
+      transform: scale(1.04);
     }
 
     .gallery-item.document img {
       object-fit: contain;
-      background: var(--cream);
     }
 
     .gallery-caption {
@@ -555,7 +572,7 @@
       position: fixed;
       inset: 0;
       z-index: 1000;
-      background: rgba(8,17,28,.94);
+      background: rgba(8,17,28,.96);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -568,7 +585,7 @@
 
     .lightbox-content {
       position: relative;
-      max-width: 1100px;
+      max-width: 1200px;
       width: 100%;
       height: 100%;
       display: flex;
@@ -589,8 +606,9 @@
     .lightbox-prev,
     .lightbox-next {
       position: absolute;
+      z-index: 2;
       border: 1px solid rgba(255,255,255,.4);
-      background: rgba(20,38,61,.85);
+      background: rgba(20,38,61,.9);
       color: white;
       cursor: pointer;
       display: flex;
@@ -687,6 +705,10 @@
       .years-grid {
         grid-template-columns: repeat(2,minmax(0,1fr));
       }
+
+      .photo-gallery {
+        grid-template-columns: repeat(3,minmax(0,1fr));
+      }
     }
 
     @media(max-width:850px) {
@@ -770,6 +792,23 @@
         font-size: 29px;
       }
 
+      .photo-gallery {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        gap: 9px;
+      }
+
+      .gallery-item {
+        min-height: 110px;
+      }
+
+      .gallery-item img {
+        height: 135px;
+      }
+
+      .history-image-button img {
+        max-height: 350px;
+      }
+
       .lightbox {
         padding: 60px 12px;
       }
@@ -791,10 +830,6 @@
       .lightbox-close {
         top: 12px;
         right: 12px;
-      }
-
-      .gallery-item img {
-        height: 125px;
       }
     }
 
@@ -932,7 +967,7 @@
   </section>
 
 
-  <!-- RICORRENZE STORICHE E ARCHIVIO -->
+  <!-- ARCHIVIO STORICO -->
 
   <section class="content-section cream" id="archivio-storico">
     <div class="content">
@@ -967,12 +1002,14 @@
               componenti della Banda, nonché quella di tutta la comunità.
             </p>
 
-            <img
-              class="history-image"
-              src="eventi/100 anni.jpg"
-              alt="Celebrazioni del centenario del Corpo Bandistico Municipale G. Verdi"
-              loading="lazy"
-            >
+            <button class="history-image-button poster" type="button"
+              data-gallery="centenario"
+              aria-label="Ingrandisci immagine del centenario">
+              <img
+                src="eventi/100 anni.jpg"
+                alt="Celebrazioni del centenario del Corpo Bandistico Municipale G. Verdi"
+                loading="lazy">
+            </button>
           </div>
 
           <a class="history-link" href="centenario.html">
@@ -998,25 +1035,25 @@
 
             <div class="photo-gallery">
 
-              <button class="gallery-item" type="button"
+              <button class="gallery-item" type="button" data-gallery="ottantesimo"
                 aria-label="Ingrandisci fotografia 1 dell'80° anniversario">
                 <img src="eventi/80%201.jpg"
                   alt="Festeggiamenti dell'80° anniversario" loading="lazy">
               </button>
 
-              <button class="gallery-item" type="button"
+              <button class="gallery-item" type="button" data-gallery="ottantesimo"
                 aria-label="Ingrandisci fotografia 2 dell'80° anniversario">
                 <img src="eventi/80%202.jpg"
                   alt="Fotografia dei festeggiamenti dell'80° anniversario" loading="lazy">
               </button>
 
-              <button class="gallery-item" type="button"
+              <button class="gallery-item" type="button" data-gallery="ottantesimo"
                 aria-label="Ingrandisci fotografia 3 dell'80° anniversario">
                 <img src="eventi/80%203.jpg"
                   alt="Un momento delle celebrazioni dell'80° anniversario" loading="lazy">
               </button>
 
-              <button class="gallery-item document" type="button"
+              <button class="gallery-item document" type="button" data-gallery="ottantesimo"
                 aria-label="Ingrandisci attestato dell'80° anniversario">
                 <img src="eventi/attestato-80-banda_orig.jpg"
                   alt="Attestato commemorativo dell'80° anniversario" loading="lazy">
@@ -1034,7 +1071,171 @@
       </div>
 
 
-      <!-- ARCHIVIO 2014 -->
+      <!-- ANNO 2015 -->
+
+      <div class="history-year-heading">
+        <span>2015</span>
+      </div>
+
+      <div class="history-grid">
+
+        <!-- CONCERTO DI CAPODANNO 2015 -->
+
+        <article class="history-card">
+          <div>
+            <div class="history-date">Gennaio 2015 · Chiesa Madre di Alcara Li Fusi</div>
+
+            <h3>Il tradizionale Concerto di Capodanno</h3>
+
+            <p>
+              È stato il
+              <strong>Corpo Bandistico Municipale “G. Verdi”</strong>
+              ad aprire ufficialmente il nuovo anno 2015 con il tradizionale
+              Concerto di Capodanno. Il concerto, organizzato dalla locale
+              Banda con il patrocinio del Comune di Alcara Li Fusi,
+              si è svolto presso la Chiesa Madre.
+
+              Alla classica esecuzione d'ensemble dei brani sinfonici,
+              diretti come sempre dal Maestro Michele Saccone, sono state
+              associate tante ricche e interessanti novità.
+
+              Particolarmente emozionante è stata la partecipazione
+              dei circa quindici allievi della Scuola di Musica della
+              stessa Banda, seguiti dai maestri Restifo e Santoro.
+
+              Non sono mancate le esecuzioni di musica da camera,
+              con diversi gruppi composti da musicisti della Banda:
+            </p>
+
+            <ul style="padding-left:22px; margin: -8px 0 22px; line-height:1.9; font-size:14px;">
+              <li>Un gruppo formato da undici musiciste della Banda, accompagnate al sax baritono dal loro maestro M. Saccone;</li>
+              <li>Un quartetto di corni: S. Santoro, F. Passalacqua, L. Santoro e A. Mannanici;</li>
+              <li>Un gruppo di sei ottoni: A. Luca, A. Restifo, I. Oriti, M. Restifo, E. Pirronello e G. Calanni M.;</li>
+              <li>Un duo fagotto-clarinetto, formato dai maestri Michele Saccone e Sandro Galati;</li>
+              <li>I “Bis Acuti”, giovane gruppo musicale alcarese, la cui fama si sta diffondendo tra i Nebrodi.</li>
+            </ul>
+
+            <div class="photo-gallery">
+
+              <button class="gallery-item" type="button" data-gallery="capodanno2015">
+                <img src="eventi/2804246_orig.jpg" alt="Concerto di Capodanno 2015 - fotografia 1" loading="lazy">
+              </button>
+
+              <button class="gallery-item" type="button" data-gallery="capodanno2015">
+                <img src="eventi/_3893788_orig.jpg" alt="Concerto di Capodanno 2015 - fotografia 2" loading="lazy">
+              </button>
+
+              <button class="gallery-item" type="button" data-gallery="capodanno2015">
+                <img src="eventi/_5361487_orig.jpg" alt="Concerto di Capodanno 2015 - fotografia 3" loading="lazy">
+              </button>
+
+              <button class="gallery-item" type="button" data-gallery="capodanno2015">
+                <img src="eventi/_6050784_orig.jpg" alt="Concerto di Capodanno 2015 - fotografia 4" loading="lazy">
+              </button>
+
+              <button class="gallery-item" type="button" data-gallery="capodanno2015">
+                <img src="eventi/_6731719_orig.jpg" alt="Concerto di Capodanno 2015 - fotografia 5" loading="lazy">
+              </button>
+
+              <button class="gallery-item" type="button" data-gallery="capodanno2015">
+                <img src="eventi/_7118333_orig.jpg" alt="Concerto di Capodanno 2015 - fotografia 6" loading="lazy">
+              </button>
+
+              <button class="gallery-item" type="button" data-gallery="capodanno2015">
+                <img src="eventi/_7128564_orig.jpg" alt="Concerto di Capodanno 2015 - fotografia 7" loading="lazy">
+              </button>
+
+              <button class="gallery-item" type="button" data-gallery="capodanno2015">
+                <img src="eventi/_7255406_orig.jpg" alt="Concerto di Capodanno 2015 - fotografia 8" loading="lazy">
+              </button>
+
+              <button class="gallery-item" type="button" data-gallery="capodanno2015">
+                <img src="eventi/_8399312_orig.jpg" alt="Concerto di Capodanno 2015 - fotografia 9" loading="lazy">
+              </button>
+
+              <button class="gallery-item" type="button" data-gallery="capodanno2015">
+                <img src="eventi/4394768_orig.jpg" alt="Concerto di Capodanno 2015 - fotografia 10" loading="lazy">
+              </button>
+
+              <button class="gallery-item document" type="button" data-gallery="capodanno2015">
+                <img src="eventi/locandina.jpg" alt="Locandina del Concerto di Capodanno 2015" loading="lazy">
+              </button>
+
+            </div>
+
+            <p class="gallery-caption">
+              Fotografie e locandina del Concerto di Capodanno.
+              Clicca sulle immagini per ingrandirle e scorrerle.
+            </p>
+
+            <div class="article-author">
+              Articolo scritto da: <strong>Antonina Vaneria</strong><br>
+              Locandina realizzata da: <strong>Maria Saccone</strong>
+            </div>
+          </div>
+
+          <a
+            class="history-link"
+            href="https://www.facebook.com/Corpo-Bandistico-Municipale-di-Alcara-Li-Fusi-900014306721896/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Visita la pagina Facebook della Banda →
+          </a>
+        </article>
+
+
+        <!-- SULLE NOTE DEL RICORDO -->
+
+        <article class="history-card">
+          <div>
+            <div class="history-date">23 agosto 2015 · Ore 21:30 · Chiesa Madre</div>
+
+            <h3>“Sulle Note del Ricordo”</h3>
+
+            <p>
+              In occasione del <strong>30° anniversario dall'ultimo concerto
+              diretto dal Maestro Gaetano Patroniti</strong>, il Corpo
+              Bandistico Municipale “G. Verdi”, con il patrocinio del
+              Comune di Alcara Li Fusi e della famiglia Patroniti,
+              ha organizzato un ambizioso concerto musicale dal titolo
+              <strong>“Sulle Note del Ricordo”</strong>.
+
+              Il Maestro Gaetano Patroniti, alcarese, si era diplomato
+              in Oboe nel 1976 a Firenze ed era scomparso prematuramente
+              nel gennaio del 1986, all'età di 36 anni.
+
+              Il concerto si è svolto domenica 23 agosto 2015,
+              alle ore 21:30, nella Chiesa Madre di Alcara Li Fusi.
+            </p>
+
+            <button class="history-image-button poster" type="button"
+              data-gallery="note-ricordo"
+              aria-label="Ingrandisci la locandina di Sulle Note del Ricordo">
+              <img
+                src="eventi/30anni.png"
+                alt="Locandina del concerto Sulle Note del Ricordo del 23 agosto 2015"
+                loading="lazy">
+            </button>
+
+            <p class="gallery-caption">
+              Locandina del concerto commemorativo.
+              Clicca sull'immagine per ingrandirla.
+            </p>
+          </div>
+
+          <a
+            class="history-link"
+            href="https://corpobandisticomunicipalealcara.weebly.com/23082015-concerto-in-ricordo-del-mdeg-g-patroniti.html"
+            target="_blank"
+            rel="noopener noreferrer">
+            Scopri “Sulle Note del Ricordo” →
+          </a>
+        </article>
+
+      </div>
+
+
+      <!-- ANNO 2014 -->
 
       <div class="history-year-heading">
         <span>2014</span>
@@ -1059,12 +1260,13 @@
               8 ottobre 2014 in Piazza San Pietro, nello Stato del Vaticano.
             </p>
 
-            <img
-              class="history-image"
-              src="eventi/eventi papa.jpg"
-              alt="La Banda Municipale G. Verdi in occasione dell'udienza da Papa Francesco"
-              loading="lazy"
-            >
+            <button class="history-image-button poster" type="button"
+              data-gallery="papa">
+              <img
+                src="eventi/papa.jpg"
+                alt="La Banda Municipale in occasione dell'udienza da Papa Francesco"
+                loading="lazy">
+            </button>
           </div>
 
           <a
@@ -1072,7 +1274,7 @@
             href="https://corpobandisticomunicipalealcara.weebly.com/08102014-la-banda-municipale-in-udienza-da-papa-francesco.html"
             target="_blank"
             rel="noopener noreferrer">
-            Leggi il racconto e guarda la fotogallery →
+            Leggi il racconto e visita la fotogallery →
           </a>
         </article>
 
@@ -1103,12 +1305,13 @@
               Maestro Michele Saccone.
             </p>
 
-            <img
-              class="history-image contain"
-              src="eventi/100anniguerra.jpg"
-              alt="Locandina della commemorazione del centenario della Grande Guerra"
-              loading="lazy"
-            >
+            <button class="history-image-button poster" type="button"
+              data-gallery="grande-guerra">
+              <img
+                src="eventi/100anniguerra.jpg"
+                alt="Locandina della commemorazione del centenario della Grande Guerra"
+                loading="lazy">
+            </button>
           </div>
 
           <a
@@ -1123,7 +1326,7 @@
       </div>
 
 
-      <!-- ARCHIVIO 1991 -->
+      <!-- ANNO 1991 -->
 
       <div class="history-year-heading">
         <span>1991</span>
@@ -1192,11 +1395,11 @@
   </section>
 
 
-  <!-- VISUALIZZATORE FOTOGRAFIE -->
+  <!-- LIGHTBOX FOTOGRAFIE -->
 
   <div class="lightbox" id="lightbox" hidden
        role="dialog" aria-modal="true"
-       aria-label="Galleria fotografica dell'80° anniversario">
+       aria-label="Visualizzatore fotografico">
 
     <button class="lightbox-close" id="lightboxClose"
             aria-label="Chiudi galleria">×</button>
@@ -1265,10 +1468,10 @@
     }
 
 
-    // GALLERIA FOTOGRAFICA 80° ANNIVERSARIO
+    // GALLERIE FOTOGRAFICHE SEPARATE PER EVENTO
 
     const galleryButtons = [
-      ...document.querySelectorAll(".gallery-item")
+      ...document.querySelectorAll("[data-gallery]")
     ];
 
     const lightbox = document.getElementById("lightbox");
@@ -1278,25 +1481,36 @@
     const lightboxNext = document.getElementById("lightboxNext");
     const lightboxCounter = document.getElementById("lightboxCounter");
 
+    let activeGallery = [];
     let currentPhoto = 0;
     let previousFocus = null;
 
     function showPhoto(index) {
+      if (!activeGallery.length) return;
+
       currentPhoto =
-        (index + galleryButtons.length) % galleryButtons.length;
+        (index + activeGallery.length) % activeGallery.length;
 
       const image =
-        galleryButtons[currentPhoto].querySelector("img");
+        activeGallery[currentPhoto].querySelector("img");
 
       lightboxImage.src = image.src;
       lightboxImage.alt = image.alt;
 
       lightboxCounter.textContent =
-        `${currentPhoto + 1} / ${galleryButtons.length}`;
+        `${currentPhoto + 1} / ${activeGallery.length}`;
     }
 
-    function openGallery(index) {
-      if (!galleryButtons.length) return;
+    function openGallery(button) {
+      const galleryName = button.dataset.gallery;
+
+      activeGallery = galleryButtons.filter(item =>
+        item.dataset.gallery === galleryName
+      );
+
+      const index = activeGallery.indexOf(button);
+
+      if (!activeGallery.length) return;
 
       previousFocus = document.activeElement;
       showPhoto(index);
@@ -1311,14 +1525,17 @@
       lightbox.hidden = true;
       document.body.style.overflow = "";
 
+      lightboxImage.src = "";
+      activeGallery = [];
+
       if (previousFocus) {
         previousFocus.focus();
       }
     }
 
-    galleryButtons.forEach((button, index) => {
+    galleryButtons.forEach(button => {
       button.addEventListener("click", () => {
-        openGallery(index);
+        openGallery(button);
       });
     });
 
