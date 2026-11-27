@@ -354,6 +354,32 @@
       line-height: 1.9;
     }
 
+    .history-year-heading {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin: 48px 0 24px;
+      color: var(--navy);
+    }
+
+    .history-year-heading:first-child {
+      margin-top: 0;
+    }
+
+    .history-year-heading span {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 34px;
+      font-weight: 600;
+    }
+
+    .history-year-heading::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--gold);
+      opacity: .7;
+    }
+
     .history-grid {
       display: grid;
       grid-template-columns: repeat(2,minmax(0,1fr));
@@ -409,6 +435,11 @@
       background: var(--cream);
     }
 
+    .history-image.contain {
+      object-fit: contain;
+      background: var(--cream);
+    }
+
     .history-link {
       display: inline-block;
       width: fit-content;
@@ -425,6 +456,51 @@
     .history-link:hover {
       background: var(--gold);
       color: var(--navy-deep);
+    }
+
+    /* VIDEO */
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      background: var(--navy-deep);
+      margin: 20px 0 18px;
+      border: 1px solid var(--border);
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-chapters {
+      background: var(--cream);
+      border-left: 3px solid var(--gold);
+      padding: 15px 18px;
+      margin: 0 0 22px;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .video-chapters strong {
+      color: var(--navy);
+    }
+
+    .article-source {
+      color: var(--navy);
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-color: var(--gold);
+      text-underline-offset: 4px;
+    }
+
+    .article-source:hover {
+      color: var(--burgundy);
     }
 
     /* GALLERIA 80° ANNIVERSARIO */
@@ -690,6 +766,10 @@
         padding: 25px 21px;
       }
 
+      .history-year-heading span {
+        font-size: 29px;
+      }
+
       .lightbox {
         padding: 60px 12px;
       }
@@ -771,7 +851,6 @@
 
   <section class="hero">
     <div class="hero-content">
-
       <div class="section-label">
         ASSOCIAZIONE MUSICALE ALCARESE · DAL 1911
       </div>
@@ -786,7 +865,6 @@
       </p>
 
       <div class="hero-line"></div>
-
     </div>
   </section>
 
@@ -807,10 +885,7 @@
 
       <div class="years-grid">
 
-        <a href="eventi/2026.html"
-           class="year-card current"
-           data-year="2026">
-
+        <a href="eventi/2026.html" class="year-card current" data-year="2026">
           <div class="year-top">
             <span class="year-label">Stagione corrente</span>
             <div class="year-number">2026</div>
@@ -819,20 +894,12 @@
               115° anniversario della Banda.
             </p>
           </div>
-
           <div class="year-bottom">
-            <span class="year-link">
-              Scopri gli eventi <span>→</span>
-            </span>
+            <span class="year-link">Scopri gli eventi <span>→</span></span>
           </div>
-
         </a>
 
-
-        <a href="eventi/2025.html"
-           class="year-card"
-           data-year="2025">
-
+        <a href="eventi/2025.html" class="year-card" data-year="2025">
           <div class="year-top">
             <span class="year-label">Archivio annuale</span>
             <div class="year-number">2025</div>
@@ -841,20 +908,12 @@
               del Corpo Bandistico durante il 2025.
             </p>
           </div>
-
           <div class="year-bottom">
-            <span class="year-link">
-              Scopri gli eventi <span>→</span>
-            </span>
+            <span class="year-link">Scopri gli eventi <span>→</span></span>
           </div>
-
         </a>
 
-
-        <a href="eventi/2024.html"
-           class="year-card"
-           data-year="2024">
-
+        <a href="eventi/2024.html" class="year-card" data-year="2024">
           <div class="year-top">
             <span class="year-label">Archivio annuale</span>
             <div class="year-number">2024</div>
@@ -863,13 +922,9 @@
               manifestazioni che hanno caratterizzato il 2024.
             </p>
           </div>
-
           <div class="year-bottom">
-            <span class="year-link">
-              Scopri gli eventi <span>→</span>
-            </span>
+            <span class="year-link">Scopri gli eventi <span>→</span></span>
           </div>
-
         </a>
 
       </div>
@@ -877,35 +932,32 @@
   </section>
 
 
-  <!-- RICORRENZE STORICHE -->
+  <!-- RICORRENZE STORICHE E ARCHIVIO -->
 
   <section class="content-section cream" id="archivio-storico">
     <div class="content">
 
       <div class="section-label">La memoria della Banda</div>
 
-      <h2 class="section-title">
-        Le ricorrenze che hanno fatto storia
-      </h2>
+      <h2 class="section-title">La nostra storia attraverso gli eventi</h2>
 
       <p class="history-intro">
         Alcuni anniversari rappresentano tappe particolarmente importanti
         nel cammino del Corpo Bandistico Municipale “G. Verdi”.
-        Attraverso fotografie, documenti e testimonianze, conserviamo
-        la memoria di questi momenti condivisi con la comunità.
+        Attraverso fotografie, documenti, video e testimonianze,
+        conserviamo la memoria dei momenti condivisi con la comunità.
       </p>
+
+
+      <!-- RICORRENZE STORICHE -->
 
       <div class="history-grid">
 
         <!-- CENTENARIO -->
 
         <article class="history-card">
-
           <div>
-
-            <div class="history-date">
-              1911 – 2011 · Primo secolo di storia
-            </div>
+            <div class="history-date">1911 – 2011 · Primo secolo di storia</div>
 
             <h3>I 100 anni dalla fondazione</h3>
 
@@ -921,25 +973,19 @@
               alt="Celebrazioni del centenario del Corpo Bandistico Municipale G. Verdi"
               loading="lazy"
             >
-
           </div>
 
           <a class="history-link" href="centenario.html">
             Scopri il centenario →
           </a>
-
         </article>
 
 
         <!-- OTTANTESIMO ANNIVERSARIO -->
 
         <article class="history-card">
-
           <div>
-
-            <div class="history-date">
-              Ricorrenza storica · 80° anniversario
-            </div>
+            <div class="history-date">Ricorrenza storica · 80° anniversario</div>
 
             <h3>Gli 80 anni della Banda</h3>
 
@@ -954,38 +1000,26 @@
 
               <button class="gallery-item" type="button"
                 aria-label="Ingrandisci fotografia 1 dell'80° anniversario">
-                <img
-                  src="eventi/80%201.jpg"
-                  alt="Festeggiamenti dell'80° anniversario"
-                  loading="lazy"
-                >
+                <img src="eventi/80%201.jpg"
+                  alt="Festeggiamenti dell'80° anniversario" loading="lazy">
               </button>
 
               <button class="gallery-item" type="button"
                 aria-label="Ingrandisci fotografia 2 dell'80° anniversario">
-                <img
-                  src="eventi/80%202.jpg"
-                  alt="Fotografia dei festeggiamenti dell'80° anniversario"
-                  loading="lazy"
-                >
+                <img src="eventi/80%202.jpg"
+                  alt="Fotografia dei festeggiamenti dell'80° anniversario" loading="lazy">
               </button>
 
               <button class="gallery-item" type="button"
                 aria-label="Ingrandisci fotografia 3 dell'80° anniversario">
-                <img
-                  src="eventi/80%203.jpg"
-                  alt="Un momento delle celebrazioni dell'80° anniversario"
-                  loading="lazy"
-                >
+                <img src="eventi/80%203.jpg"
+                  alt="Un momento delle celebrazioni dell'80° anniversario" loading="lazy">
               </button>
 
               <button class="gallery-item document" type="button"
                 aria-label="Ingrandisci attestato dell'80° anniversario">
-                <img
-                  src="eventi/attestato-80-banda_orig.jpg"
-                  alt="Attestato commemorativo dell'80° anniversario"
-                  loading="lazy"
-                >
+                <img src="eventi/attestato-80-banda_orig.jpg"
+                  alt="Attestato commemorativo dell'80° anniversario" loading="lazy">
               </button>
 
             </div>
@@ -994,12 +1028,166 @@
               Fotografie e documenti commemorativi.
               Clicca sulle immagini per ingrandirle.
             </p>
-
           </div>
-
         </article>
 
       </div>
+
+
+      <!-- ARCHIVIO 2014 -->
+
+      <div class="history-year-heading">
+        <span>2014</span>
+      </div>
+
+      <div class="history-grid">
+
+        <!-- PAPA FRANCESCO -->
+
+        <article class="history-card">
+          <div>
+            <div class="history-date">8 ottobre 2014 · Città del Vaticano</div>
+
+            <h3>La Banda Municipale in udienza da Papa Francesco</h3>
+
+            <p>
+              Emozionante ed esaltante! Con queste poche parole si possono
+              riassumere le forti sensazioni vissute dai componenti della
+              Banda Municipale “G. Verdi” di Alcara Li Fusi che hanno preso
+              parte al viaggio a Roma per assistere all'udienza che
+              <strong>Papa Francesco</strong> ha tenuto mercoledì
+              8 ottobre 2014 in Piazza San Pietro, nello Stato del Vaticano.
+            </p>
+
+            <img
+              class="history-image"
+              src="eventi/eventi papa.jpg"
+              alt="La Banda Municipale G. Verdi in occasione dell'udienza da Papa Francesco"
+              loading="lazy"
+            >
+          </div>
+
+          <a
+            class="history-link"
+            href="https://corpobandisticomunicipalealcara.weebly.com/08102014-la-banda-municipale-in-udienza-da-papa-francesco.html"
+            target="_blank"
+            rel="noopener noreferrer">
+            Leggi il racconto e guarda la fotogallery →
+          </a>
+        </article>
+
+
+        <!-- CENTENARIO GRANDE GUERRA -->
+
+        <article class="history-card">
+          <div>
+            <div class="history-date">4 novembre 2014 · Memoria e commemorazione</div>
+
+            <h3>Il centenario della Grande Guerra</h3>
+
+            <p>
+              In occasione della <strong>Giornata dell’Unità Nazionale e
+              della Festa delle Forze Armate</strong>, Alcara Li Fusi ha
+              dedicato un intero pomeriggio al ricordo degli eventi che
+              hanno contraddistinto e segnato le fasi del grande conflitto
+              mondiale del 1914–1918.
+
+              La manifestazione ha presentato testimonianze inedite,
+              recuperate dagli archivi pubblici e privati e rese note
+              per la prima volta. Hanno partecipato gli alunni di ogni
+              ordine e grado della scuola locale.
+
+              L'evento, patrocinato dal Comune di Alcara Li Fusi e
+              interamente organizzato dalla locale Banda Municipale
+              “G. Verdi”, si è svolto sotto la direzione del
+              Maestro Michele Saccone.
+            </p>
+
+            <img
+              class="history-image contain"
+              src="eventi/100anniguerra.jpg"
+              alt="Locandina della commemorazione del centenario della Grande Guerra"
+              loading="lazy"
+            >
+          </div>
+
+          <a
+            class="history-link"
+            href="https://corpobandisticomunicipalealcara.weebly.com/04112014-commemorazione-dei-caduti-e-del-100deg-anno-dallinizio-della-grande-guerra.html"
+            target="_blank"
+            rel="noopener noreferrer">
+            Leggi l'articolo completo →
+          </a>
+        </article>
+
+      </div>
+
+
+      <!-- ARCHIVIO 1991 -->
+
+      <div class="history-year-heading">
+        <span>1991</span>
+      </div>
+
+      <div class="history-grid">
+
+        <article class="history-card">
+          <div>
+            <div class="history-date">22 novembre 1991 · Santo Stefano di Camastra</div>
+
+            <h3>Raduno bandistico per la Festa di Santa Cecilia</h3>
+
+            <p>
+              Un'emozionante giornata di festa e di musica trascorsa
+              insieme ad altre tre bande nel 1991, a Santo Stefano
+              di Camastra, in occasione della festa di Santa Cecilia.
+
+              La musica e la vita bandistica sono meravigliose perché
+              permettono di vivere mille esperienze di confronto
+              e di emozioni diverse e sempre nuove, specialmente
+              per i giovanissimi.
+
+              Attraverso la passione, la condivisione e l'allegria,
+              si riesce a comunicare con un unico, globale e
+              incomparabile linguaggio: quello della Musica.
+            </p>
+
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/EVXCxlZAIpg"
+                title="Raduno bandistico a Santo Stefano di Camastra, 22 novembre 1991"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <div class="video-chapters">
+              <strong>Alcuni momenti da non perdere:</strong><br>
+              Sfilata e processione: 12:00–13:00, 22:00–23:00,
+              30:44–31:52 e 37:35–42:38.<br>
+              Esibizione serale: dal minuto 54:00 a 1:12:25,
+              con la direzione iniziale del nostro storico capobanda
+              don Pippo e successivamente del Maestro Michele Saccone.
+            </div>
+
+            <p>
+              Buona visione e buon ascolto!
+            </p>
+          </div>
+
+          <a
+            class="history-link"
+            href="https://youtu.be/EVXCxlZAIpg?si=4VuwKrp0rP_cytUW"
+            target="_blank"
+            rel="noopener noreferrer">
+            Guarda il video su YouTube →
+          </a>
+        </article>
+
+      </div>
+
     </div>
   </section>
 
@@ -1054,7 +1242,6 @@
   <!-- SCRIPT -->
 
   <script>
-
     // MENU MOBILE
 
     const menuButton = document.getElementById("menuButton");
@@ -1095,7 +1282,6 @@
     let previousFocus = null;
 
     function showPhoto(index) {
-
       currentPhoto =
         (index + galleryButtons.length) % galleryButtons.length;
 
@@ -1110,11 +1296,9 @@
     }
 
     function openGallery(index) {
-
       if (!galleryButtons.length) return;
 
       previousFocus = document.activeElement;
-
       showPhoto(index);
 
       lightbox.hidden = false;
@@ -1124,7 +1308,6 @@
     }
 
     function closeGallery() {
-
       lightbox.hidden = true;
       document.body.style.overflow = "";
 
@@ -1156,7 +1339,6 @@
     });
 
     document.addEventListener("keydown", event => {
-
       if (lightbox.hidden) return;
 
       if (event.key === "Escape") {
@@ -1171,7 +1353,6 @@
         showPhoto(currentPhoto + 1);
       }
     });
-
   </script>
 
 </body>
