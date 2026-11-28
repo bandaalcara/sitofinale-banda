@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -27,7 +28,7 @@
       --text: #303B43;
       --muted: #747B7C;
       --border: #DDD8CD;
-      --shadow: 0 18px 45px rgba(16, 32, 53, .10);
+      --shadow: 0 12px 30px rgba(16, 32, 53, .08);
     }
 
     * {
@@ -138,8 +139,8 @@
       color: #E8EDF2;
       font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 0.8px;
-      transition: color 0.25s ease;
+      letter-spacing: .8px;
+      transition: color .25s ease;
       white-space: nowrap;
     }
 
@@ -162,8 +163,8 @@
       color: var(--white);
       width: calc(100% - 56px);
       max-width: 1400px;
-      margin: 28px auto 0;
-      padding: 78px 24px 72px;
+      margin: 24px auto 0;
+      padding: 65px 24px 60px;
       text-align: center;
       border: 1px solid rgba(197, 166, 107, .25);
     }
@@ -191,14 +192,14 @@
       letter-spacing: 4px;
       font-size: 11px;
       font-weight: 700;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .hero h1 {
       font-size: clamp(38px, 5.5vw, 64px);
       font-weight: 500;
       line-height: 1.15;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
       letter-spacing: -1px;
     }
 
@@ -206,21 +207,21 @@
       max-width: 750px;
       margin: 0 auto 12px;
       color: #DCE5EC;
-      font-size: 16px;
-      line-height: 1.85;
+      font-size: 15px;
+      line-height: 1.8;
     }
 
     .hero-line {
       width: 65px;
       height: 1px;
       background: var(--gold);
-      margin: 26px auto 0;
+      margin: 22px auto 0;
     }
 
     /* SEZIONI */
 
     .content-section {
-      padding: 85px 7%;
+      padding: 55px 7%;
     }
 
     .content {
@@ -236,33 +237,33 @@
       color: var(--burgundy);
       text-transform: uppercase;
       letter-spacing: 3px;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
-      margin-bottom: 12px;
+      margin-bottom: 9px;
     }
 
     .section-title {
       color: var(--navy);
-      font-size: clamp(30px, 4vw, 44px);
+      font-size: clamp(28px, 4vw, 40px);
       line-height: 1.2;
-      margin-bottom: 25px;
-      letter-spacing: -0.4px;
+      margin-bottom: 18px;
+      letter-spacing: -.4px;
     }
 
     .content-section p {
-      font-size: 16px;
-      line-height: 1.9;
+      font-size: 15px;
+      line-height: 1.75;
       color: var(--text);
-      margin-bottom: 16px;
+      margin-bottom: 11px;
     }
 
     /* PRESENTAZIONE + LOCANDINA */
 
     .intro-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.75fr);
+      grid-template-columns: minmax(0, 1.35fr) minmax(260px, .75fr);
       align-items: center;
-      gap: 55px;
+      gap: 40px;
     }
 
     .intro-text {
@@ -273,7 +274,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 18px;
+      padding: 14px;
       background: var(--cream);
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
@@ -282,11 +283,11 @@
     .intro-poster img {
       display: block;
       width: 100%;
-      max-width: 380px;
-      max-height: 480px;
+      max-width: 340px;
+      max-height: 420px;
       object-fit: contain;
       cursor: zoom-in;
-      transition: transform 0.25s ease;
+      transition: transform .25s ease;
     }
 
     .intro-poster img:hover {
@@ -297,8 +298,8 @@
 
     .card {
       background: var(--white);
-      padding: 36px;
-      margin-top: 25px;
+      padding: 26px;
+      margin-top: 18px;
       border: 1px solid var(--border);
       border-top: 3px solid var(--gold);
       box-shadow: var(--shadow);
@@ -306,25 +307,25 @@
 
     .card h2 {
       color: var(--navy);
-      font-size: 30px;
-      margin: 0 0 22px;
+      font-size: 26px;
+      margin: 0 0 15px;
     }
 
     .card h3 {
       color: var(--navy);
-      font-size: 24px;
-      margin: 32px 0 15px;
+      font-size: 21px;
+      margin: 22px 0 10px;
     }
 
     .card ul {
       padding-left: 23px;
       color: var(--muted);
-      line-height: 1.9;
+      line-height: 1.8;
     }
 
     .card li {
       padding-left: 4px;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     strong {
@@ -332,39 +333,39 @@
     }
 
     blockquote {
-      margin: 26px 0;
-      padding: 22px 26px;
+      margin: 17px 0;
+      padding: 16px 21px;
       border-left: 3px solid var(--gold);
       background: var(--cream);
       font-family: 'Playfair Display', Georgia, serif;
       font-style: italic;
-      line-height: 1.85;
+      line-height: 1.7;
       color: var(--navy);
     }
 
     /* MAESTRO PARRINO */
 
     .parrino-portrait {
-      margin-top: 30px;
+      margin-top: 22px;
       text-align: center;
     }
 
     .parrino-portrait img {
       width: 100%;
-      max-width: 450px;
-      max-height: 520px;
+      max-width: 310px;
+      max-height: 350px;
       margin: 0 auto;
       object-fit: contain;
       background: var(--cream);
-      padding: 10px;
+      padding: 7px;
       border: 1px solid var(--border);
       cursor: zoom-in;
       box-shadow: var(--shadow);
     }
 
     .parrino-portrait p {
-      margin-top: 12px;
-      font-size: 14px;
+      margin-top: 8px;
+      font-size: 12px;
       font-style: italic;
       color: var(--muted);
     }
@@ -372,20 +373,21 @@
     /* GALLERIA PARRINO */
 
     .gallery {
-      margin-top: 24px;
+      max-width: 750px;
+      margin: 18px auto 0;
     }
 
     .gallery-image-wrap {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 15px;
+      gap: 12px;
     }
 
     .gallery-image {
       display: block;
       width: 100%;
-      height: 420px;
+      height: 280px;
       object-fit: contain;
       background: var(--cream);
       border: 1px solid var(--border);
@@ -397,14 +399,14 @@
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      width: 43px;
-      height: 43px;
+      width: 39px;
+      height: 39px;
       border: 1px solid var(--gold);
       background: var(--navy);
       color: var(--gold-light);
-      font-size: 20px;
+      font-size: 18px;
       cursor: pointer;
-      transition: background 0.2s, color 0.2s, transform 0.2s;
+      transition: background .2s, color .2s, transform .2s;
     }
 
     .gallery-arrow:hover {
@@ -414,34 +416,34 @@
     }
 
     .gallery-counter {
-      margin: 12px 0 4px;
+      margin: 10px 0 4px;
       text-align: center;
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
     }
 
     .gallery-hint {
       text-align: center;
       color: var(--burgundy);
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      margin-top: 12px;
+      margin-top: 8px;
     }
 
-    /* GRIGLIA MINIATURE CONDIVISA (CIAK + RISULTATI) */
+    /* GRIGLIA MINIATURE */
 
     .thumbs-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 24px;
+      gap: 10px;
+      margin-top: 16px;
     }
 
     .thumbs-grid--five {
       grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 14px;
+      gap: 10px;
     }
 
     .thumb-item {
@@ -450,7 +452,7 @@
       aspect-ratio: 4 / 3;
       background: var(--cream-dark);
       border: 1px solid var(--border);
-      box-shadow: 0 5px 18px rgba(16, 32, 53, 0.08);
+      box-shadow: 0 5px 15px rgba(16, 32, 53, .07);
       cursor: zoom-in;
     }
 
@@ -459,7 +461,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.35s ease;
+      transition: transform .35s ease;
     }
 
     .thumb-item:hover img {
@@ -497,12 +499,12 @@
     .teachers-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
-      margin-top: 35px;
+      gap: 14px;
+      margin-top: 22px;
     }
 
     .teacher-card {
-      padding: 30px 22px;
+      padding: 22px 16px;
       text-align: center;
       background: rgba(255, 255, 255, .06);
       border: 1px solid rgba(197, 166, 107, .4);
@@ -511,8 +513,8 @@
 
     .teacher-card h3 {
       color: var(--gold-light);
-      font-size: 23px;
-      margin-bottom: 10px;
+      font-size: 20px;
+      margin-bottom: 8px;
     }
 
     .teacher-card p {
@@ -529,16 +531,53 @@
 
     .santino-section .card {
       border-top-color: var(--burgundy);
+      padding: 28px;
+    }
+
+    .santino-intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 260px;
+      align-items: start;
+      gap: 28px;
+    }
+
+    .santino-photo {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 7px;
+      box-shadow: var(--shadow);
+    }
+
+    .santino-photo img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      cursor: zoom-in;
+    }
+
+    .santino-photo p {
+      font-size: 12px;
+      text-align: center;
+      margin: 8px 0 0;
+      color: var(--muted);
     }
 
     .santino-list {
-      columns: 2;
-      column-gap: 40px;
-      margin-top: 20px;
+      columns: 3;
+      column-gap: 30px;
+      font-size: 14px;
+      line-height: 1.7;
+      margin-top: 12px;
     }
 
     .santino-list li {
       break-inside: avoid;
+    }
+
+    /* VALORI E PATRIMONIO */
+
+    .content-section > .content > .card {
+      padding: 25px 28px;
     }
 
     /* TESTIMONIANZA */
@@ -547,17 +586,27 @@
       background: var(--cream);
     }
 
+    .testimonial-section .card {
+      max-width: 850px;
+      margin: 18px auto 0;
+      padding: 25px 30px;
+    }
+
     .testimonial-name {
       color: var(--navy);
-      font-size: 16px;
+      font-size: 15px;
       margin-bottom: 4px;
     }
 
-    /* ATTIVITÀ E INIZIATIVE - CIAK, SI SUONA! */
+    .testimonial-section blockquote {
+      font-size: 15px;
+    }
+
+    /* ATTIVITÀ E INIZIATIVE */
 
     .activities-section {
       background: var(--cream);
-      padding: 90px 5%;
+      padding: 55px 5%;
     }
 
     .activities-content {
@@ -567,26 +616,26 @@
 
     .activities-heading {
       text-align: center;
-      margin-bottom: 45px;
+      margin-bottom: 28px;
     }
 
     .activities-heading h2 {
       color: var(--navy);
-      font-size: clamp(32px, 4vw, 45px);
-      margin-bottom: 12px;
+      font-size: clamp(30px, 4vw, 42px);
+      margin-bottom: 10px;
     }
 
     .activities-heading p {
       color: var(--muted);
-      font-size: 15px;
+      font-size: 14px;
     }
 
     .ciak-story {
-      max-width: 940px;
-      margin: 0 auto 48px;
+      max-width: 900px;
+      margin: 0 auto 32px;
       background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
       color: var(--white);
-      padding: 42px;
+      padding: 30px;
       box-shadow: var(--shadow);
       border: 1px solid rgba(197, 166, 107, .35);
       border-top: 4px solid var(--gold);
@@ -597,7 +646,7 @@
     }
 
     .ciak-story h3 {
-      font-size: clamp(28px, 4vw, 38px);
+      font-size: clamp(27px, 4vw, 36px);
       color: var(--white);
       margin-bottom: 10px;
     }
@@ -608,29 +657,29 @@
       border: 1px solid rgba(197, 166, 107, .45);
       color: var(--gold-light);
       padding: 4px 12px;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 24px;
+      margin-bottom: 18px;
     }
 
     .ciak-story p {
       color: #DCE5EC;
-      font-size: 16px;
-      line-height: 1.9;
-      margin-bottom: 15px;
+      font-size: 15px;
+      line-height: 1.75;
+      margin-bottom: 10px;
     }
 
     .ciak-final {
       color: var(--gold-light) !important;
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 20px !important;
+      font-size: 18px !important;
       font-style: italic;
       font-weight: 500;
-      margin-top: 24px !important;
+      margin-top: 18px !important;
       margin-bottom: 0 !important;
-      padding-top: 18px;
+      padding-top: 15px;
       border-top: 1px solid rgba(255, 255, 255, .14);
     }
 
@@ -641,33 +690,35 @@
 
     .ciak-gallery-heading {
       text-align: center;
-      margin-bottom: 28px;
+      margin-bottom: 22px;
     }
 
     .ciak-gallery-heading h3 {
       color: var(--navy);
-      font-size: 27px;
+      font-size: 25px;
       margin-bottom: 6px;
     }
 
     .ciak-gallery-heading p {
       color: var(--muted);
-      font-size: 14px;
+      font-size: 13px;
     }
 
-    /* RISULTATI - GRAFICA DIFFERENZIATA PER OGNI EVENTO */
+    /* RISULTATI E PREMI */
 
     .results-section {
       background: var(--white);
+      padding-top: 55px;
+      padding-bottom: 55px;
     }
 
     .results-section > .content > .section-title {
-      margin-bottom: 34px;
+      margin-bottom: 20px;
     }
 
     .award-card {
-      padding: 36px;
-      margin-top: 32px;
+      padding: 25px;
+      margin-top: 20px;
       box-shadow: var(--shadow);
       position: relative;
     }
@@ -676,33 +727,39 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 10px 14px;
-      margin-bottom: 16px;
+      gap: 8px 12px;
+      margin-bottom: 13px;
     }
 
     .event-badge {
       display: inline-block;
-      padding: 5px 12px;
+      padding: 5px 11px;
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
     }
 
     .event-meta {
       color: var(--muted);
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
-      letter-spacing: 0.5px;
+      letter-spacing: .4px;
     }
 
     .award-card h2 {
       color: var(--navy);
-      font-size: clamp(24px, 3vw, 31px);
-      margin-bottom: 20px;
+      font-size: clamp(23px, 3vw, 28px);
+      margin-bottom: 13px;
     }
 
-    /* Stile 1: Mirto 2026 - Cornice Crema + Bordo Oro */
+    .award-card p {
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+
+    /* MIRTO 2026 */
 
     .award-card--gold {
       background: var(--cream);
@@ -715,7 +772,7 @@
       color: var(--gold-light);
     }
 
-    /* Stile 2: Crotone 2026 - Card Navy Scuro con accenti Oro */
+    /* CROTONE 2026 */
 
     .award-card--navy {
       background: linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 100%);
@@ -742,7 +799,7 @@
       color: var(--gold-light);
     }
 
-    /* Stile 3: Mirto 2025 - Bianco con accento Bordeaux */
+    /* MIRTO 2025 */
 
     .award-card--burgundy {
       background: var(--white);
@@ -756,21 +813,21 @@
     }
 
     .award-image {
-      margin-top: 24px;
+      margin-top: 16px;
       text-align: center;
     }
 
     .award-image img {
       width: 100%;
-      max-width: 650px;
-      max-height: 520px;
+      max-width: 440px;
+      max-height: 330px;
       margin: 0 auto;
       object-fit: contain;
       cursor: zoom-in;
       border: 1px solid var(--border);
       background: var(--white);
-      padding: 8px;
-      transition: transform 0.25s ease;
+      padding: 7px;
+      transition: transform .25s ease;
     }
 
     .award-image img:hover {
@@ -783,7 +840,7 @@
       background: var(--navy-deep);
       color: #AAB7C5;
       text-align: center;
-      padding: 35px 5%;
+      padding: 30px 5%;
       font-size: 11px;
       line-height: 2;
     }
@@ -799,16 +856,16 @@
       width: 45px;
       height: 1px;
       background: var(--gold);
-      margin: 15px auto;
+      margin: 13px auto;
     }
 
     footer p:last-child {
       font-size: 10px;
       color: #8191A2;
-      margin-top: 9px;
+      margin-top: 8px;
     }
 
-    /* LIGHTBOX CON SCORRIMENTO */
+    /* LIGHTBOX */
 
     .lightbox {
       display: none;
@@ -819,7 +876,7 @@
       justify-content: center;
       gap: 18px;
       padding: 28px 20px;
-      background: rgba(10, 23, 39, 0.96);
+      background: rgba(10, 23, 39, .96);
     }
 
     .lightbox.open {
@@ -861,11 +918,11 @@
       width: 48px;
       height: 48px;
       border: 1px solid var(--gold);
-      background: rgba(20, 38, 61, 0.85);
+      background: rgba(20, 38, 61, .85);
       color: var(--gold-light);
       font-size: 22px;
       cursor: pointer;
-      transition: background 0.2s, color 0.2s, transform 0.2s;
+      transition: background .2s, color .2s, transform .2s;
     }
 
     .lightbox-nav:hover:not(:disabled) {
@@ -881,12 +938,12 @@
       width: 45px;
       height: 45px;
       border: 1px solid var(--gold);
-      background: rgba(13, 27, 43, 0.85);
+      background: rgba(13, 27, 43, .85);
       color: var(--gold-light);
       font-size: 30px;
       line-height: 1;
       cursor: pointer;
-      transition: background 0.2s, color 0.2s;
+      transition: background .2s, color .2s;
     }
 
     .lightbox-close:hover {
@@ -952,13 +1009,13 @@
       }
 
       .content-section {
-        padding: 65px 6%;
+        padding: 42px 6%;
       }
 
       .hero {
         width: calc(100% - 30px);
         margin: 18px auto 0;
-        padding: 55px 20px;
+        padding: 48px 20px;
       }
 
       .hero h1 {
@@ -966,25 +1023,25 @@
       }
 
       .hero p {
-        font-size: 15px;
+        font-size: 14px;
       }
 
       .card,
       .award-card,
       .ciak-story {
-        padding: 24px 20px;
+        padding: 22px 18px;
       }
 
       .card h2 {
-        font-size: 25px;
+        font-size: 24px;
       }
 
       .card h3 {
-        font-size: 22px;
+        font-size: 20px;
       }
 
       .gallery-image {
-        height: 300px;
+        height: 250px;
       }
 
       .gallery-image-wrap {
@@ -992,42 +1049,55 @@
       }
 
       .gallery-arrow {
-        width: 36px;
-        height: 36px;
-        font-size: 17px;
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
       }
 
       .activities-section {
-        padding: 65px 5%;
+        padding: 42px 5%;
       }
 
       .thumbs-grid,
       .thumbs-grid--five {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 13px;
+        gap: 10px;
       }
 
       .intro-layout {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 25px;
       }
 
       .intro-poster {
-        max-width: 480px;
+        max-width: 440px;
         margin: 0 auto;
       }
 
       .intro-poster img {
-        max-height: 550px;
+        max-height: 460px;
       }
 
       .teachers-grid {
         grid-template-columns: 1fr;
-        gap: 14px;
+        gap: 12px;
+      }
+
+      .santino-intro {
+        grid-template-columns: 1fr;
+      }
+
+      .santino-photo {
+        max-width: 300px;
+        margin: 0 auto;
       }
 
       .santino-list {
-        columns: 1;
+        columns: 2;
+      }
+
+      .testimonial-section .card {
+        padding: 22px 18px;
       }
     }
 
@@ -1063,7 +1133,7 @@
       }
 
       .gallery-image {
-        height: 230px;
+        height: 210px;
       }
 
       .gallery-arrow {
@@ -1072,17 +1142,29 @@
       }
 
       blockquote {
-        padding: 17px 19px;
+        padding: 15px 17px;
       }
 
       .thumbs-grid,
       .thumbs-grid--five {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
+        gap: 9px;
       }
 
       .intro-poster {
         padding: 12px;
+      }
+
+      .santino-list {
+        columns: 1;
+      }
+
+      .testimonial-section .card {
+        padding: 20px 17px;
+      }
+
+      .award-card {
+        padding: 19px 15px;
       }
     }
 
@@ -1092,7 +1174,7 @@
       }
 
       *, *::before, *::after {
-        transition-duration: 0.01ms !important;
+        transition-duration: .01ms !important;
       }
     }
   </style>
@@ -1107,7 +1189,7 @@
       <a class="logo" href="index.html" aria-label="Torna alla Home">
         <img src="logo.jpeg" alt="Logo Corpo Bandistico Municipale G. Verdi">
         <span class="logo-text">
-          CORPO BANDISTICO MUNICIPALE
+          G. VERDI
           <small>ALCARA LI FUSI · 1911</small>
         </span>
       </a>
@@ -1154,7 +1236,6 @@
 
   <section class="content-section intro-section">
     <div class="content">
-
       <div class="intro-layout">
 
         <div class="intro-text">
@@ -1192,7 +1273,6 @@
         </div>
 
       </div>
-
     </div>
   </section>
 
@@ -1292,6 +1372,7 @@
           <img
             src="foto-parrino/donpippo1.jpg"
             alt="Il Maestro Giuseppe Parrino"
+            loading="lazy"
             onclick="apriLightboxSingola(this.src, 'Il Maestro Onorario Giuseppe Parrino')"
           >
           <p>Il Maestro Onorario Giuseppe Parrino</p>
@@ -1309,6 +1390,7 @@
               class="gallery-image"
               src="foto-parrino/2.jpg"
               alt="Ricordo del Maestro Giuseppe Parrino"
+              loading="lazy"
               onclick="apriLightboxGalleria('parrino', indiceParrino)"
             >
 
@@ -1324,7 +1406,7 @@
     </div>
   </section>
 
-  <!-- SCUOLA DI MUSICA OGGI: DOCENTI -->
+  <!-- SCUOLA DI MUSICA OGGI -->
 
   <section class="content-section teachers-section">
     <div class="content">
@@ -1365,7 +1447,6 @@
         </div>
 
       </div>
-
     </div>
   </section>
 
@@ -1380,29 +1461,45 @@
 
       <div class="card">
 
-        <p>
-          Nel percorso della Scuola di Musica un posto importante
-          è occupato anche dal <strong>Maestro Santino Santoro</strong>,
-          che ha accompagnato tanti giovani nel loro avvicinamento
-          alla musica e nel percorso di preparazione per entrare
-          a far parte del Corpo Bandistico Municipale “G. Verdi”.
-        </p>
+        <div class="santino-intro">
 
-        <p>
-          Attraverso il suo lavoro, la sua guida e la sua dedizione,
-          ha contribuito alla crescita musicale di numerosi ragazzi,
-          trasmettendo loro non soltanto le competenze necessarie
-          per suonare uno strumento, ma anche valori fondamentali
-          come l'impegno, la disciplina, il rispetto e la
-          collaborazione.
-        </p>
+          <div>
+            <p>
+              Nel percorso della Scuola di Musica un posto importante
+              è occupato dal <strong>Maestro Santino Santoro</strong>,
+              che ha accompagnato tanti giovani nel loro avvicinamento
+              alla musica e nel percorso di preparazione per entrare
+              a far parte del Corpo Bandistico Municipale “G. Verdi”.
+            </p>
 
-        <p>
-          Il suo contributo rappresenta una parte significativa
-          della storia della nostra Scuola di Musica e del percorso
-          di tanti giovani che, grazie alla formazione ricevuta,
-          hanno potuto vivere l'esperienza della Banda.
-        </p>
+            <p>
+              Attraverso il suo lavoro, la sua guida e la sua dedizione,
+              ha contribuito alla crescita musicale di numerosi ragazzi,
+              trasmettendo loro non soltanto le competenze necessarie
+              per suonare uno strumento, ma anche valori fondamentali
+              come l'impegno, la disciplina, il rispetto e la
+              collaborazione.
+            </p>
+
+            <p>
+              Il suo contributo rappresenta una parte significativa
+              della storia della nostra Scuola di Musica e del percorso
+              di tanti giovani che, grazie alla formazione ricevuta,
+              hanno potuto vivere l'esperienza della Banda.
+            </p>
+          </div>
+
+          <div class="santino-photo">
+            <img
+              src="foto-eventi/santino.jpg"
+              alt="Il Maestro Santino Santoro"
+              loading="lazy"
+              onclick="apriLightboxSingola(this.src, 'Il Maestro Santino Santoro')"
+            >
+            <p>Il Maestro Santino Santoro</p>
+          </div>
+
+        </div>
 
         <blockquote>
           La musica è un percorso che si costruisce insieme:
@@ -1435,9 +1532,7 @@
           <li>Alisia Oriti</li>
           <li>Davide Oriti</li>
           <li>Nicola Pirronello</li>
-          <li>Mattia Santoro</li>
           <li>Alice Vaneria</li>
-          <li>Antonino Vaneria</li>
           <li>Enrico Vasi</li>
         </ul>
 
@@ -1615,7 +1710,7 @@
 
       </div>
 
-      <!-- GALLERIA COMPLETA CIAK -->
+      <!-- GALLERIA CIAK -->
 
       <div class="ciak-gallery">
 
@@ -1710,7 +1805,7 @@
 
       <h2 class="section-title">I risultati della nostra Scuola</h2>
 
-      <!-- EVENTO 1: CONCORSO 2026 - MIRTO -->
+      <!-- EVENTO 1: MIRTO 2026 -->
 
       <div class="award-card award-card--gold">
         <div class="award-top">
@@ -1721,7 +1816,8 @@
         <h2>Primo Premio al Concorso Musicale Nazionale "Salvuccio Percacciolo" 2026</h2>
 
         <p>
-          Congratulazioni ai nostri ragazzi e al <strong>Maestro Santino Santoro</strong>
+          Congratulazioni ai nostri ragazzi e al
+          <strong>Maestro Santino Santoro</strong>
           per questo straordinario risultato, frutto di impegno,
           preparazione e passione per la musica.
         </p>
@@ -1745,13 +1841,15 @@
           <img
             src="foto-eventi/percacciolo.jpg"
             alt="Premio Salvuccio Percacciolo 2026"
+            loading="lazy"
             onclick="apriLightboxSingola(this.src, 'Premio Salvuccio Percacciolo 2026 · Mirto')"
           >
         </div>
+
         <p class="gallery-hint">Clicca sulla foto per ingrandirla</p>
       </div>
 
-      <!-- EVENTO 2: CONCORSO 2026 - CROTONE -->
+      <!-- EVENTO 2: CROTONE 2026 -->
 
       <div class="award-card award-card--navy">
         <div class="award-top">
@@ -1806,6 +1904,7 @@
         </p>
 
         <div class="thumbs-grid thumbs-grid--five">
+
           <div class="thumb-item" onclick="apriLightboxGalleria('cutuli', 0)">
             <img src="foto-eventi/698990281-1623511926446892-948983126384039020-n.jpg"
                  alt="Concorso Maria Grazia Cutuli - Foto 1" loading="lazy">
@@ -1830,11 +1929,13 @@
             <img src="foto-eventi/699084263-1623511883113563-7417324054538264152-n.jpg"
                  alt="Concorso Maria Grazia Cutuli - Foto 5" loading="lazy">
           </div>
+
         </div>
+
         <p class="gallery-hint">Clicca su una foto per ingrandirla e scorrere l'album</p>
       </div>
 
-      <!-- EVENTO 3: CONCORSO 2025 - MIRTO -->
+      <!-- EVENTO 3: MIRTO 2025 -->
 
       <div class="award-card award-card--burgundy">
         <div class="award-top">
@@ -1881,6 +1982,7 @@
         </p>
 
         <div class="thumbs-grid thumbs-grid--five">
+
           <div class="thumb-item" onclick="apriLightboxGalleria('percacciolo2025', 0)">
             <img src="foto-eventi/499554390-1293897362741685-300458054207010660-n_orig.jpg"
                  alt="Premio Salvuccio Percacciolo 2025 - Foto 1" loading="lazy">
@@ -1905,7 +2007,9 @@
             <img src="foto-eventi/500035244-1293897369408351-5147766654060393707-n_orig.jpg"
                  alt="Premio Salvuccio Percacciolo 2025 - Foto 5" loading="lazy">
           </div>
+
         </div>
+
         <p class="gallery-hint">Clicca su una foto per ingrandirla e scorrere l'album</p>
       </div>
 
@@ -1918,18 +2022,22 @@
     <p>
       <strong>Corpo Bandistico Municipale “G. Verdi”</strong>
     </p>
+
     <div class="footer-line"></div>
+
     <p>
       © 2026 Associazione Musicale Alcarese – Alcara Li Fusi, Messina
     </p>
+
     <p>Dal 1911, musica e tradizione.</p>
+
     <p>
       Sito web creato e curato da Antonina Vaneria
       e dai Responsabili della Comunicazione del Direttivo.
     </p>
   </footer>
 
-  <!-- LIGHTBOX CON SCORRIMENTO -->
+  <!-- LIGHTBOX -->
 
   <div
     id="lightbox"
@@ -1937,206 +2045,4 @@
     role="dialog"
     aria-modal="true"
     aria-label="Fotografia ingrandita"
-    onclick="chiudiFoto(event)"
-  >
-    <button
-      type="button"
-      class="lightbox-close"
-      onclick="chiudiFoto()"
-      aria-label="Chiudi fotografia"
-    >×</button>
-
-    <button
-      type="button"
-      id="lightboxPrev"
-      class="lightbox-nav"
-      onclick="navigaLightbox(-1)"
-      aria-label="Fotografia precedente"
-    >❮</button>
-
-    <div class="lightbox-stage">
-      <img id="lightbox-image" src="" alt="Fotografia ingrandita">
-      <p id="lightbox-caption" class="lightbox-caption"></p>
-    </div>
-
-    <button
-      type="button"
-      id="lightboxNext"
-      class="lightbox-nav"
-      onclick="navigaLightbox(1)"
-      aria-label="Fotografia successiva"
-    >❯</button>
-  </div>
-
-  <script>
-    /* MENU MOBILE */
-
-    const menuButton = document.getElementById("menuButton");
-    const headerRight = document.getElementById("headerRight");
-
-    if (menuButton && headerRight) {
-      menuButton.addEventListener("click", () => {
-        const isOpen = headerRight.classList.toggle("open");
-        menuButton.setAttribute("aria-expanded", isOpen);
-        menuButton.textContent = isOpen ? "CHIUDI ✕" : "MENU ☰";
-      });
-
-      headerRight.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-          headerRight.classList.remove("open");
-          menuButton.setAttribute("aria-expanded", "false");
-          menuButton.textContent = "MENU ☰";
-        });
-      });
-    }
-
-    /* GALLERIA GIUSEPPE PARRINO */
-
-    const fotoParrino = [
-      "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg",
-      "7.jpg", "8.jpg", "9.jpg", "10.jpg", "11.jpg",
-      "14.jpg", "15.jpg", "16.jpg", "17.jpg", "20.jpg",
-      "21.jpg", "23.jpg", "24.jpg", "25.jpg"
-    ];
-
-    let indiceParrino = 0;
-
-    function cambiaParrino(direzione) {
-      indiceParrino =
-        (indiceParrino + direzione + fotoParrino.length) % fotoParrino.length;
-
-      const immagine = document.getElementById("foto-parrino-grande");
-      immagine.src = "foto-parrino/" + fotoParrino[indiceParrino];
-
-      document.getElementById("numero-foto-parrino").textContent =
-        "Foto " + (indiceParrino + 1) + " di " + fotoParrino.length;
-    }
-
-    /* GALLERIE EVENTI E CONCORSI */
-
-    const fotoEventi = {
-      parrino: fotoParrino.map(nome => ({
-        src: "foto-parrino/" + nome,
-        titolo: "Ricordi del Maestro Giuseppe Parrino"
-      })),
-
-      ciak: [
-        { src: "foto-eventi/813923299_18440931493131587_7528346578999758601_n.jpg", titolo: "CIAK, SI SUONA! · 20 Agosto" },
-        { src: "foto-eventi/813987078_18440931418131587_4239156655046501289_n.jpg", titolo: "CIAK, SI SUONA! · 20 Agosto" },
-        { src: "foto-eventi/814086114_18440931316131587_945695719456408618_n.jpg", titolo: "CIAK, SI SUONA! · 20 Agosto" },
-        { src: "foto-eventi/814339179_18440931346131587_8543452811096287639_n.jpg", titolo: "CIAK, SI SUONA! · 20 Agosto" },
-        { src: "foto-eventi/814364950_18440931325131587_6096093319054158529_n.jpg", titolo: "CIAK, SI SUONA! · 20 Agosto" },
-        { src: "foto-eventi/814381857_18440931463131587_3481236781457697101_n.jpg", titolo: "CIAK, SI SUONA! · 20 Agosto" },
-        { src: "foto-eventi/814535083_18440931361131587_6280593480539962481_n.jpg", titolo: "CIAK, SI SUONA! · 20 Agosto" },
-        { src: "foto-eventi/814575416_18440931385131587_7594603602484681504_n.jpg", titolo: "CIAK, SI SUONA! · 20 Agosto" },
-        { src: "foto-eventi/814695528_18440931382131587_4855359373968887534_n.jpg", titolo: "CIAK, SI SUONA! · 20 Agosto" },
-        { src: "foto-eventi/814768823_18440931511131587_483419872695225980_n.jpg", titolo: "CIAK, SI SUONA! · 20 Agosto" },
-        { src: "foto-eventi/814818348_18440931394131587_7761606483491561043_n.jpg", titolo: "CIAK, SI SUONA! · 20 Agosto" },
-        { src: "foto-eventi/814908130_18440931433131587_329848320124586274_n.jpg", titolo: "CIAK, SI SUONA! · 20 Agosto" },
-        { src: "foto-eventi/814926288_18440931415131587_1933472902691021730_n.jpg", titolo: "CIAK, SI SUONA! · 20 Agosto" },
-        { src: "foto-eventi/815157646_18440931460131587_1716126028973800124_n.jpg", titolo: "CIAK, SI SUONA! · 20 Agosto" }
-      ],
-
-      cutuli: [
-        { src: "foto-eventi/698990281-1623511926446892-948983126384039020-n.jpg", titolo: "Concorso Maria Grazia Cutuli · Crotone 2026" },
-        { src: "foto-eventi/4 (1).jpg", titolo: "Concorso Maria Grazia Cutuli · Crotone 2026" },
-        { src: "foto-eventi/700708317-1623511949780223-6917267274862951879-n.jpg", titolo: "Concorso Maria Grazia Cutuli · Crotone 2026" },
-        { src: "foto-eventi/667473774-946127171361876-3645817900863798513-n.jpg", titolo: "Concorso Maria Grazia Cutuli · Crotone 2026" },
-        { src: "foto-eventi/699084263-1623511883113563-7417324054538264152-n.jpg", titolo: "Concorso Maria Grazia Cutuli · Crotone 2026" }
-      ],
-
-      percacciolo2025: [
-        { src: "foto-eventi/499554390-1293897362741685-300458054207010660-n_orig.jpg", titolo: "Premio Salvuccio Percacciolo · Mirto 2025" },
-        { src: "foto-eventi/499785628-1293897379408350-6099964464217998868-n_orig.jpg", titolo: "Premio Salvuccio Percacciolo · Mirto 2025" },
-        { src: "foto-eventi/499708553-1293897372741684-3626934576983418496-n_orig.jpg", titolo: "Premio Salvuccio Percacciolo · Mirto 2025" },
-        { src: "foto-eventi/500461192-1293897376075017-632198432798670353-n.jpg", titolo: "Premio Salvuccio Percacciolo · Mirto 2025" },
-        { src: "foto-eventi/500035244-1293897369408351-5147766654060393707-n_orig.jpg", titolo: "Premio Salvuccio Percacciolo · Mirto 2025" }
-      ]
-    };
-
-    /* LIGHTBOX CON SCORRIMENTO */
-
-    let lightboxLista = [];
-    let lightboxIndice = 0;
-
-    function aggiornaLightbox() {
-      const item = lightboxLista[lightboxIndice];
-      if (!item) return;
-
-      document.getElementById("lightbox-image").src = item.src;
-      document.getElementById("lightbox-image").alt = item.titolo;
-
-      const contatore = lightboxLista.length > 1
-        ? ` · Foto ${lightboxIndice + 1} di ${lightboxLista.length}`
-        : "";
-      document.getElementById("lightbox-caption").textContent = item.titolo + contatore;
-
-      const multi = lightboxLista.length > 1;
-      document.getElementById("lightboxPrev").style.display = multi ? "flex" : "none";
-      document.getElementById("lightboxNext").style.display = multi ? "flex" : "none";
-    }
-
-    function apriLightboxGalleria(galleria, indicePartenza) {
-      lightboxLista = fotoEventi[galleria] || [];
-      lightboxIndice = indicePartenza || 0;
-      aggiornaLightbox();
-
-      document.getElementById("lightbox").classList.add("open");
-      document.body.style.overflow = "hidden";
-    }
-
-    function apriLightboxSingola(src, titolo) {
-      lightboxLista = [{ src: src, titolo: titolo || "Fotografia" }];
-      lightboxIndice = 0;
-      aggiornaLightbox();
-
-      document.getElementById("lightbox").classList.add("open");
-      document.body.style.overflow = "hidden";
-    }
-
-    function navigaLightbox(direzione) {
-      if (lightboxLista.length <= 1) return;
-      lightboxIndice =
-        (lightboxIndice + direzione + lightboxLista.length) % lightboxLista.length;
-      aggiornaLightbox();
-
-      if (lightboxLista === fotoEventi.parrino) {
-        indiceParrino = lightboxIndice;
-        document.getElementById("foto-parrino-grande").src = fotoEventi.parrino[indiceParrino].src;
-        document.getElementById("numero-foto-parrino").textContent =
-          "Foto " + (indiceParrino + 1) + " di " + fotoEventi.parrino.length;
-      }
-    }
-
-    function chiudiFoto(event) {
-      if (
-        event &&
-        event.target !== document.getElementById("lightbox") &&
-        !event.target.classList.contains("lightbox-close")
-      ) {
-        return;
-      }
-
-      document.getElementById("lightbox").classList.remove("open");
-      document.getElementById("lightbox-image").src = "";
-      document.body.style.overflow = "";
-    }
-
-    document.addEventListener("keydown", function(event) {
-      const lightbox = document.getElementById("lightbox");
-      if (!lightbox.classList.contains("open")) return;
-
-      if (event.key === "Escape") {
-        lightbox.classList.remove("open");
-        document.getElementById("lightbox-image").src = "";
-        document.body.style.overflow = "";
-      } else if (event.key === "ArrowLeft") {
-        navigaLightbox(-1);
-      } else if (event.key === "ArrowRight") {
-        navigaLightbox(1);
-      }
-    });
-  </script>
-
-</body>
-</html>
+    onclick="chi
