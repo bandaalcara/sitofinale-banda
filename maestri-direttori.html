@@ -1,219 +1,181 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maestri Direttori | Corpo Bandistico Municipale “G. Verdi”</title>
-  <meta name="theme-color" content="#14263D">
-  <meta name="description" content="Maestri Direttori del Corpo Bandistico Municipale G. Verdi di Alcara Li Fusi dal 1911 a oggi e curriculum del M° Michele Saccone.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<title>Maestri Direttori | Corpo Bandistico Municipale “G. Verdi”</title>
+<meta name="theme-color" content="#14263D">
+<meta name="description" content="Maestri Direttori del Corpo Bandistico Municipale G. Verdi di Alcara li Fusi dal 1911 a oggi e curriculum del M° Michele Saccone.">
 
-  <style>
-    :root {
-      --navy: #14263D;
-      --navy-deep: #0D1B2B;
-      --navy-soft: #203A57;
-      --gold: #C5A66B;
-      --gold-light: #E3D2AC;
-      --cream: #F5F1E8;
-      --cream-dark: #EAE3D5;
-      --burgundy: #642F3C;
-      --white: #FFFFFF;
-      --text: #303B43;
-      --muted: #747B7C;
-      --border: #DDD8CD;
-      --shadow: 0 18px 45px rgba(16, 32, 53, .10);
-    }
+<!-- ICONA DELLA SCHEDA -->
+<link rel="icon" type="image/jpeg" href="logo.jpeg">
+<link rel="apple-touch-icon" href="logo.jpeg">
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<!-- ANTEPRIMA SU WHATSAPP E FACEBOOK -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Maestri Direttori | Corpo Bandistico Municipale “G. Verdi”">
+<meta property="og:description" content="I direttori della Banda di Alcara li Fusi dal 1911 a oggi.">
+<!-- Per la foto nell'anteprima: scrivi l'indirizzo completo del sito e togli i segni di commento
+<meta property="og:url" content="https://INDIRIZZO-DEL-SITO/maestri-direttori.html">
+<meta property="og:image" content="https://INDIRIZZO-DEL-SITO/maestro.jpg">
+-->
 
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 
-    body {
-      font-family: 'DM Sans', Arial, sans-serif;
-      background: var(--white);
-      color: var(--text);
-      line-height: 1.7;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
+<style>
+:root {
+  --navy: #14263D;
+  --navy-deep: #0D1B2B;
+  --navy-soft: #203A57;
+  --gold: #C5A66B;
+  --gold-light: #E3D2AC;
+  --cream: #F5F1E8;
+  --cream-dark: #EAE3D5;
+  --burgundy: #642F3C;
+  --burgundy-light: #7D3E4E;
+  --white: #FFFFFF;
+  --text: #303B43;
+  --muted: #5F6668;
+  --border: #DDD8CD;
+  --shadow: 0 18px 45px rgba(16,32,53,.10);
+}
 
-    h1, h2, h3 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-weight: 500;
-      line-height: 1.2;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+body {
+  font-family: 'DM Sans', Arial, sans-serif;
+  background: var(--white);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
 
-    button {
-      font: inherit;
-    }
+h1,h2,h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  line-height: 1.2;
+}
 
-    /* HEADER */
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(20, 38, 61, .97);
-      backdrop-filter: blur(12px);
-      color: var(--white);
-      border-bottom: 1px solid rgba(255, 255, 255, .09);
-    }
+img {
+  max-width: 100%;
+  display: block;
+}
 
-    .header-inner {
-      width: 90%;
-      max-width: 1450px;
-      min-height: 82px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-    }
+.container {
+  width: min(1160px, 88%);
+  margin: auto;
+}
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--white);
-      flex-shrink: 0;
-    }
+/* HEADER */
 
-    .logo img {
-      width: 49px;
-      height: 49px;
-      object-fit: contain;
-      border-radius: 50%;
-      background: var(--white);
-      padding: 3px;
-    }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(20,38,61,.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,.09);
+}
 
-    .logo-text {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 19px;
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
+.header-inner {
+  width: 94%;
+  max-width: 1450px;
+  min-height: 82px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
 
-    .logo-text small {
-      display: block;
-      color: var(--gold-light);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 9px;
-      letter-spacing: 3px;
-      margin-top: 1px;
-    }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  min-width: 0;
+}
 
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      flex-wrap: wrap;
-      gap: 10px 21px;
-    }
+.logo img {
+  width: 49px;
+  height: 49px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: contain;
+  background: white;
+  padding: 3px;
+}
 
-    nav a {
-      color: #E8EDF2;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      transition: color 0.25s ease;
-      white-space: nowrap;
-    }
+.logo-text {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 16px;
+  line-height: 1.3;
+  letter-spacing: .5px;
+  font-weight: 600;
+  max-width: 15em;
+}
 
-    nav a:hover,
-    nav a[aria-current="page"],
-    nav a.active {
-      color: var(--gold-light);
-    }
+.logo-text small {
+  display: block;
+  color: var(--gold-light);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-top: 2px;
+}
 
-    .mobile-menu {
-      display: none;
-    }
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px 18px;
+}
 
-    /* HERO */
+nav a {
+  color: #E8EDF2;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  transition: color .25s;
+  white-space: nowrap;
+}
 
-    .hero {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 65%, var(--navy-soft) 100%);
-      color: var(--white);
-      width: calc(100% - 56px);
-      max-width: 1400px;
-      margin: 28px auto 0;
-      padding: 78px 24px 72px;
-      text-align: center;
-      border: 1px solid rgba(197, 166, 107, .25);
-    }
+nav a:hover,
+nav a.active {
+  color: var(--gold-light);
+}
 
-    .hero::before {
-      content: "MAESTRI";
-      position: absolute;
-      right: -25px;
-      bottom: -45px;
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(110px, 20vw, 250px);
-      color: rgba(255, 255, 255, .03);
-      pointer-events: none;
-      line-height: 1;
-    }
+.mobile-menu {
+  display: none;
+}
 
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
+button { font: inherit; }
 
-    .hero .section-label {
-      color: var(--gold-light);
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 11px;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-
-    .hero h1 {
-      font-size: clamp(38px, 5.5vw, 64px);
-      font-weight: 500;
-      line-height: 1.15;
-      margin-bottom: 18px;
-      letter-spacing: -1px;
-    }
-
-    .hero p {
-      max-width: 750px;
-      margin: 0 auto 12px;
-      color: #DCE5EC;
-      font-size: 16px;
-      line-height: 1.85;
-    }
-
-    .hero-line {
-      width: 65px;
-      height: 1px;
-      background: var(--gold);
-      margin: 26px auto 0;
-    }
+/* APERTURA */
+.hero { background: linear-gradient(135deg, var(--navy-deep), var(--navy) 65%, var(--navy-soft)); color: white; text-align: center; padding: 75px 0 65px; }
+.hero h1 { font-size: clamp(40px,6vw,70px); margin-bottom: 18px; }
+.hero p { max-width: 680px; margin: auto; color: #E4E8ED; font-size: 18px; }
+.hero .section-label { color: var(--gold-light); }
 
     /* SEZIONI E DIRETTORI */
 
@@ -341,12 +303,15 @@
       grid-column: 2;
       grid-row: 1 / span 4;
       width: 100%;
-      max-height: 300px;
-      object-fit: cover;
-      object-position: center 20%;
       border: 1px solid rgba(197, 166, 107, .4);
       background: var(--navy-deep);
-      cursor: zoom-in;
+    }
+
+    .featured-photo img {
+      width: 100%;
+      max-height: 340px;
+      object-fit: cover;
+      object-position: center 20%;
     }
 
     .director-buttons {
@@ -475,7 +440,7 @@
       scrollbar-color: var(--gold) var(--cream);
     }
 
-    .gallery-track img {
+    .gallery-track .foto {
       flex: 0 0 250px;
       width: 250px;
       height: 195px;
@@ -489,7 +454,7 @@
       transition: transform 0.25s ease, border-color 0.25s ease;
     }
 
-    .gallery-track img:hover {
+    .gallery-track .foto:hover {
       transform: translateY(-3px);
       border-color: var(--gold);
     }
@@ -514,199 +479,143 @@
       transform: scale(1.05);
     }
 
-    /* LIGHTBOX CON SCORRIMENTO */
+    .gallery-track .foto img { width: 100%; height: 100%; object-fit: cover; }
+    .foto { display: block; cursor: zoom-in; }
 
-    .foto-modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 1000;
-      padding: 40px 70px 28px;
-      background: rgba(10, 23, 39, 0.96);
-      align-items: center;
-      justify-content: center;
-    }
+    /* Leggibilità */
+    .section-label, .director-years { font-size: 12px; }
+    .button { font-size: 12px; }
+    .intro, .curriculum-subtitle, .director-card.featured p { font-size: 17px; }
+    .director-card p, .gallery-help { font-size: 16px; }
+    .curriculum-text p { font-size: 17px; }
+    .director-card:not(.featured) { padding: 20px 22px; }
 
-    .foto-modal.open {
-      display: flex;
-    }
+/* FOTO INGRANDITA */
+#lightbox { width: 100%; height: 100%; max-width: 100%; max-height: 100%; border: 0; padding: 16px 10px; background: rgba(10,23,39,.97); align-items: center; justify-content: center; gap: 10px; }
+#lightbox[open] { display: flex; }
+#lightbox figure { min-width: 0; }
+#lightbox img { max-width: 100%; max-height: 80vh; margin: auto; }
+#lightbox figcaption { color: var(--gold-light); }
+#lightbox button { flex-shrink: 0; width: 42px; height: 42px; border: 1px solid var(--gold); background: var(--navy); color: var(--gold-light); font-size: 20px; cursor: pointer; }
+#lightbox .chiudi { position: absolute; top: 12px; right: 12px; z-index: 2; }
 
-    .modal-stage {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      max-width: 100%;
-      max-height: 90vh;
-    }
+/* FOOTER */
 
-    .foto-modal img {
-      display: block;
-      max-width: 100%;
-      max-height: 80vh;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      border: 1px solid rgba(197, 166, 107, .4);
-      background: var(--navy-deep);
-    }
+footer {
+  background: var(--navy-deep);
+  color: #AAB7C5;
+  padding: 35px 5%;
+  text-align: center;
+  font-size: 13px;
+  line-height: 2;
+}
 
-    .modal-caption {
-      margin-top: 12px;
-      color: var(--gold-light);
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      text-align: center;
-    }
+footer strong {
+  color: white;
+  font-family: 'Playfair Display',serif;
+  font-size: 17px;
+  font-weight: 500;
+}
 
-    .chiudi-modal {
-      position: absolute;
-      top: 16px;
-      right: 22px;
-      width: 45px;
-      height: 45px;
-      border: 1px solid var(--gold);
-      background: rgba(13, 27, 43, 0.85);
-      color: var(--gold-light);
-      font-size: 30px;
-      line-height: 1;
-      cursor: pointer;
-      z-index: 1003;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
+.footer-line {
+  width: 45px;
+  height: 1px;
+  background: var(--gold);
+  margin: 15px auto;
+}
 
-    .chiudi-modal:hover {
-      background: var(--gold);
-      color: var(--navy-deep);
-    }
+footer p:last-child {
+  margin-top: 9px;
+  font-size: 12px;
+  color: #8E9EAF;
+}
 
-    .modal-arrow {
-      position: fixed;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 48px;
-      height: 48px;
-      border: 1px solid var(--gold);
-      background: rgba(20, 38, 61, 0.88);
-      color: var(--gold-light);
-      font-size: 20px;
-      cursor: pointer;
-      z-index: 1002;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
+/* ANIMAZIONI (attive solo se JavaScript funziona) */
 
-    .modal-arrow:hover {
-      background: var(--gold);
-      color: var(--navy-deep);
-    }
+.anim .reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .8s ease, transform .8s ease;
+}
 
-    .modal-prev {
-      left: 16px;
-    }
+.anim .reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    .modal-next {
-      right: 16px;
-    }
+.anim .music-card.reveal.visible {
+  transition: opacity .8s ease, transform .3s ease,
+              background .3s, border-color .3s;
+}
 
-    /* FOOTER */
+.anim .music-card.reveal.visible:hover {
+  transform: translateY(-6px);
+}
 
-    footer {
-      background: var(--navy-deep);
-      color: #AAB7C5;
-      text-align: center;
-      padding: 35px 5%;
-      font-size: 11px;
-      line-height: 2;
-    }
+/* RESPONSIVE */
 
-    footer strong {
-      color: var(--white);
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 17px;
-      font-weight: 500;
-    }
+/* Menu a pulsante: telefoni, tablet e schermi piccoli */
+@media(max-width:1279px) {
+  .header-inner {
+    width: 90%;
+    padding: 13px 0;
+    flex-wrap: wrap;
+    gap: 0 12px;
+  }
 
-    .footer-line {
-      width: 45px;
-      height: 1px;
-      background: var(--gold);
-      margin: 15px auto;
-    }
+  .logo {
+    flex: 1 1 0;
+  }
 
-    footer p:last-child {
-      font-size: 10px;
-      color: #8191A2;
-      margin-top: 9px;
-    }
+  .header-inner nav {
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 0;
+    padding: 8px 0 15px;
+  }
 
-    /* RESPONSIVE */
+  nav a {
+    width: 100%;
+    padding: 11px 0;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
 
-    @media (max-width: 1100px) {
-      nav {
-        gap: 10px 12px;
-      }
+  /* Senza JavaScript il menu resta aperto e non segue lo scorrimento */
+  header {
+    position: static;
+  }
 
-      nav a {
-        font-size: 10px;
-      }
-    }
+  .menu-js header {
+    position: sticky;
+  }
+
+  .menu-js .mobile-menu {
+    display: block;
+    flex-shrink: 0;
+    color: white;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.35);
+    padding: 9px 13px;
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .menu-js .header-inner nav {
+    display: none;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+  }
+
+  .menu-js .header-inner nav.open {
+    display: flex;
+  }
+}
 
     @media (max-width: 850px) {
-      .header-inner {
-        width: 90%;
-        flex-wrap: wrap;
-        padding: 13px 0;
-      }
-
-      .mobile-menu {
-        display: block;
-        background: transparent;
-        border: 1px solid rgba(255, 255, 255, .35);
-        color: white;
-        padding: 9px 13px;
-        cursor: pointer;
-        font-size: 12px;
-      }
-
-      .header-right {
-        display: none;
-        width: 100%;
-      }
-
-      .header-right.open {
-        display: block;
-      }
-
-      nav {
-        width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
-        padding: 8px 0 15px;
-      }
-
-      nav a {
-        width: 100%;
-        padding: 10px 0;
-        font-size: 11px;
-        border-bottom: 1px solid rgba(255, 255, 255, .08);
-      }
-
-      .hero {
-        width: calc(100% - 30px);
-        margin: 18px auto 0;
-        padding: 55px 20px;
-      }
-
-      .hero h1 {
-        font-size: clamp(38px, 8vw, 56px);
-      }
-
-      .hero p {
-        font-size: 15px;
-      }
-
       .content-section,
       .curriculum,
       .gallery-section {
@@ -741,9 +650,11 @@
 
       .featured-photo {
         order: 4;
-        max-height: 340px;
-        object-fit: contain;
         margin-top: 8px;
+      }
+
+      .featured-photo img {
+        object-fit: contain;
       }
 
       .director-buttons {
@@ -773,104 +684,73 @@
         font-size: 16px;
       }
 
-      .gallery-track img {
+      .gallery-track .foto {
         flex-basis: 78%;
         width: 78%;
         height: 190px;
       }
 
-      .foto-modal {
-        padding: 60px 54px 24px;
-      }
-
-      .modal-arrow {
-        width: 36px;
-        height: 36px;
-        font-size: 15px;
-      }
-
-      .modal-prev {
-        left: 8px;
-      }
-
-      .modal-next {
-        right: 8px;
-      }
     }
 
-    @media (max-width: 480px) {
-      .logo img {
-        width: 43px;
-        height: 43px;
-      }
+@media(max-width:520px) {
+  .logo img { width: 43px; height: 43px; }
+  .logo-text { font-size: 13px; }
+  .logo-text small { font-size: 10px; letter-spacing: 1px; }
+}
 
-      .logo-text {
-        font-size: 16px;
-      }
-
-      .hero h1 {
-        font-size: 37px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *, *::before, *::after {
-        transition-duration: 0.01ms !important;
-      }
-    }
-  </style>
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior: auto; }
+  .gallery-track { scroll-behavior: auto; }
+  *,*::before,*::after { transition-duration: .01ms !important; }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
+<header>
+  <div class="header-inner">
 
-  <header>
-    <div class="header-inner">
-      <a class="logo" href="index.html" aria-label="Torna alla Home">
-        <img src="logo.jpeg" alt="Logo Corpo Bandistico Municipale G. Verdi">
-        <span class="logo-text">
-          G. VERDI
-          <small>ALCARA LI FUSI · 1911</small>
-        </span>
-      </a>
+    <a class="logo" href="index.html" aria-label="Torna alla Home">
+      <img src="logo.jpeg" alt="Logo Corpo Bandistico Municipale G. Verdi">
+      <span class="logo-text">
+        CORPO BANDISTICO MUNICIPALE
+        <small>ALCARA LI FUSI · 1911</small>
+      </span>
+    </a>
 
-      <button class="mobile-menu" id="menuButton"
-              aria-expanded="false" aria-controls="headerRight">
-        MENU ☰
-      </button>
+    <button class="mobile-menu" id="menuButton" type="button"
+            aria-expanded="false" aria-controls="mainNav">
+      MENU ☰
+    </button>
 
-      <div class="header-right" id="headerRight">
-        <nav id="mainNav" aria-label="Navigazione principale">
-          <a href="index.html">Home</a>
-          <a href="la-banda.html">La Banda</a>
-          <a href="musica.html">La Scuola di Musica</a>
-          <a href="eventi.html">Eventi</a>
-          <a href="albo.html">Albo Storico</a>
-          <a href="maestri-direttori.html" class="active" aria-current="page">Maestri Direttori</a>
-          <a href="galleria.html">Galleria</a>
-          <a href="index.html#contatti">Contatti</a>
-        </nav>
-      </div>
-    </div>
-  </header>
+    <nav id="mainNav" aria-label="Navigazione principale">
+      <a href="index.html">Home</a>
+      <a href="la-banda.html">La Banda</a>
+      <a href="musica.html">La Scuola di Musica</a>
+      <a href="eventi.html">Eventi</a>
+      <a href="albo.html">Albo Storico</a>
+      <a href="maestri-direttori.html" class="active" aria-current="page">Maestri Direttori</a>
+      <a href="galleria.html">Galleria</a>
+      <a href="index.html#contatti">Contatti</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
 
   <!-- HERO -->
 
   <section class="hero">
-    <div class="hero-content">
-      <div class="section-label">ASSOCIAZIONE MUSICALE ALCARESE · DAL 1911</div>
+    <div class="container">
+      <div class="section-label">Associazione Musicale Alcarese · Dal 1911</div>
       <h1>Maestri Direttori</h1>
       <p>
         Gli uomini che, attraverso generazioni diverse, hanno guidato il
         percorso musicale del Corpo Bandistico Municipale “G. Verdi” di
-        Alcara Li Fusi.
+        Alcara li Fusi.
       </p>
-      <div class="hero-line"></div>
     </div>
   </section>
 
@@ -902,13 +782,7 @@
               Bandistico Municipale, incarico che ricopre dal 1981.
             </p>
           </div>
-          <img
-            class="featured-photo"
-            src="maestro.jpg"
-            alt="Maestro Michele Saccone"
-            loading="lazy"
-            onclick="ingrandisciSingola(this.src, 'M° Michele Saccone')"
-          >
+          <a class="foto featured-photo" href="maestro.jpg" data-gruppo="ritratto"><img src="maestro.jpg" alt="Maestro Michele Saccone" loading="lazy"></a>
           <div class="director-buttons">
             <a class="button" href="#curriculum-michele">Leggi il curriculum</a>
           </div>
@@ -953,7 +827,7 @@
       <div class="curriculum-layout">
         <div class="curriculum-text">
           <p>
-            <strong>Michele Saccone</strong> nasce a Messina l'1 maggio 1962.
+            <strong>Michele Saccone</strong> nasce a Messina il 1° maggio 1962.
             A 11 anni si iscrive alla Scuola di Musica Municipale Alcarese
             e nel 1975 entra ufficialmente a far parte della Banda suonando
             il sax contralto.
@@ -1041,12 +915,7 @@
         </div>
 
         <aside class="curriculum-portrait">
-          <img
-            src="maestro1.jpg"
-            alt="Il Maestro Michele Saccone"
-            loading="lazy"
-            onclick="ingrandisciSingola(this.src, 'M° Michele Saccone')"
-          >
+          <a class="foto " href="maestro1.jpg" data-gruppo="curriculum"><img src="maestro1.jpg" alt="Il Maestro Michele Saccone" loading="lazy"></a>
           <div class="portrait-caption">M° Michele Saccone</div>
         </aside>
       </div>
@@ -1059,161 +928,151 @@
     <div class="section-label">Immagini e ricordi</div>
     <h2 class="gallery-heading">Il Maestro Michele Saccone</h2>
     <p class="gallery-help">
-      Usa le frecce per scorrere le fotografie. Seleziona un'immagine per
-      ingrandirla e navigare nell'album.
+      Scorri le fotografie di lato o con le frecce. Tocca un'immagine per
+      ingrandirla.
     </p>
 
     <div class="gallery-slider">
-      <button class="gallery-arrow" type="button" onclick="scorriFoto(-1)" aria-label="Fotografia precedente">❮</button>
+      <button class="gallery-arrow" type="button" data-scorri="-1" aria-label="Fotografia precedente">❮</button>
       <div class="gallery-track" id="galleryTrack">
-        <img src="foto-maestro-c/550097_orig.jpg" alt="Michele Saccone - fotografia 1" loading="lazy" onclick="ingrandisciFoto(this)">
-        <img src="foto-maestro-c/566216_orig.jpg" alt="Michele Saccone - fotografia 2" loading="lazy" onclick="ingrandisciFoto(this)">
-        <img src="foto-maestro-c/1553366_orig.jpg" alt="Michele Saccone - fotografia 3" loading="lazy" onclick="ingrandisciFoto(this)">
-        <img src="foto-maestro-c/2933263_orig.jpg" alt="Michele Saccone - fotografia 4" loading="lazy" onclick="ingrandisciFoto(this)">
-        <img src="foto-maestro-c/4543629_orig.jpg" alt="Michele Saccone - fotografia 5" loading="lazy" onclick="ingrandisciFoto(this)">
-        <img src="foto-maestro-c/5928479_orig.jpg" alt="Michele Saccone - fotografia 6" loading="lazy" onclick="ingrandisciFoto(this)">
-        <img src="foto-maestro-c/6004133_orig.jpg" alt="Michele Saccone - fotografia 7" loading="lazy" onclick="ingrandisciFoto(this)">
-        <img src="foto-maestro-c/6772327_orig.jpg" alt="Michele Saccone - fotografia 8" loading="lazy" onclick="ingrandisciFoto(this)">
-        <img src="foto-maestro-c/6792338_orig.jpg" alt="Michele Saccone - fotografia 9" loading="lazy" onclick="ingrandisciFoto(this)">
-        <img src="foto-maestro-c/7426260_orig.jpg" alt="Michele Saccone - fotografia 10" loading="lazy" onclick="ingrandisciFoto(this)">
-        <img src="foto-maestro-c/9535713_orig.jpg" alt="Michele Saccone - fotografia 11" loading="lazy" onclick="ingrandisciFoto(this)">
-        <img src="foto-maestro-c/9579556_orig.jpg" alt="Michele Saccone - fotografia 12" loading="lazy" onclick="ingrandisciFoto(this)">
-        <img src="foto-maestro-c/9924121_orig.jpg" alt="Michele Saccone - fotografia 13" loading="lazy" onclick="ingrandisciFoto(this)">
+        <a class="foto " href="foto-maestro-c/550097_orig.jpg" data-gruppo="album"><img src="foto-maestro-c/550097_orig.jpg" alt="Michele Saccone - fotografia 1" loading="lazy"></a>
+        <a class="foto " href="foto-maestro-c/566216_orig.jpg" data-gruppo="album"><img src="foto-maestro-c/566216_orig.jpg" alt="Michele Saccone - fotografia 2" loading="lazy"></a>
+        <a class="foto " href="foto-maestro-c/1553366_orig.jpg" data-gruppo="album"><img src="foto-maestro-c/1553366_orig.jpg" alt="Michele Saccone - fotografia 3" loading="lazy"></a>
+        <a class="foto " href="foto-maestro-c/2933263_orig.jpg" data-gruppo="album"><img src="foto-maestro-c/2933263_orig.jpg" alt="Michele Saccone - fotografia 4" loading="lazy"></a>
+        <a class="foto " href="foto-maestro-c/4543629_orig.jpg" data-gruppo="album"><img src="foto-maestro-c/4543629_orig.jpg" alt="Michele Saccone - fotografia 5" loading="lazy"></a>
+        <a class="foto " href="foto-maestro-c/5928479_orig.jpg" data-gruppo="album"><img src="foto-maestro-c/5928479_orig.jpg" alt="Michele Saccone - fotografia 6" loading="lazy"></a>
+        <a class="foto " href="foto-maestro-c/6004133_orig.jpg" data-gruppo="album"><img src="foto-maestro-c/6004133_orig.jpg" alt="Michele Saccone - fotografia 7" loading="lazy"></a>
+        <a class="foto " href="foto-maestro-c/6772327_orig.jpg" data-gruppo="album"><img src="foto-maestro-c/6772327_orig.jpg" alt="Michele Saccone - fotografia 8" loading="lazy"></a>
+        <a class="foto " href="foto-maestro-c/6792338_orig.jpg" data-gruppo="album"><img src="foto-maestro-c/6792338_orig.jpg" alt="Michele Saccone - fotografia 9" loading="lazy"></a>
+        <a class="foto " href="foto-maestro-c/7426260_orig.jpg" data-gruppo="album"><img src="foto-maestro-c/7426260_orig.jpg" alt="Michele Saccone - fotografia 10" loading="lazy"></a>
+        <a class="foto " href="foto-maestro-c/9535713_orig.jpg" data-gruppo="album"><img src="foto-maestro-c/9535713_orig.jpg" alt="Michele Saccone - fotografia 11" loading="lazy"></a>
+        <a class="foto " href="foto-maestro-c/9579556_orig.jpg" data-gruppo="album"><img src="foto-maestro-c/9579556_orig.jpg" alt="Michele Saccone - fotografia 12" loading="lazy"></a>
+        <a class="foto " href="foto-maestro-c/9924121_orig.jpg" data-gruppo="album"><img src="foto-maestro-c/9924121_orig.jpg" alt="Michele Saccone - fotografia 13" loading="lazy"></a>
       </div>
-      <button class="gallery-arrow" type="button" onclick="scorriFoto(1)" aria-label="Fotografia successiva">❯</button>
+      <button class="gallery-arrow" type="button" data-scorri="1" aria-label="Fotografia successiva">❯</button>
     </div>
   </section>
 
-  <!-- MODAL / LIGHTBOX -->
+</main>
 
-  <div id="fotoModal" class="foto-modal" role="dialog" aria-modal="true" aria-label="Fotografia ingrandita" onclick="chiudiFoto()">
-    <button class="chiudi-modal" type="button" onclick="chiudiFoto()" aria-label="Chiudi fotografia">×</button>
-    <button id="modalPrev" class="modal-arrow modal-prev" type="button" onclick="event.stopPropagation(); cambiaFoto(-1)" aria-label="Fotografia precedente">❮</button>
-    <div class="modal-stage" onclick="event.stopPropagation()">
-      <img id="fotoIngrandita" alt="Fotografia ingrandita">
-      <p id="modalCaption" class="modal-caption"></p>
-    </div>
-    <button id="modalNext" class="modal-arrow modal-next" type="button" onclick="event.stopPropagation(); cambiaFoto(1)" aria-label="Fotografia successiva">❯</button>
-  </div>
+<dialog id="lightbox" aria-label="Fotografia ingrandita">
+  <button type="button" class="chiudi" aria-label="Chiudi">×</button>
+  <button type="button" class="prec" aria-label="Foto precedente">❮</button>
+  <figure><img alt=""><figcaption></figcaption></figure>
+  <button type="button" class="succ" aria-label="Foto successiva">❯</button>
+</dialog>
 
-  <!-- FOOTER -->
+<footer>
 
-  <footer>
-    <p>
-      <strong>Corpo Bandistico Municipale “G. Verdi”</strong>
-    </p>
-    <div class="footer-line"></div>
-    <p>
-      © 2026 Associazione Musicale Alcarese – Alcara Li Fusi, Messina
-    </p>
-    <p>Dal 1911, musica e tradizione.</p>
-    <p>
-      Sito web creato e curato da Antonina Vaneria
-      e dai Responsabili della Comunicazione del Direttivo.
-    </p>
-  </footer>
+  <p>
+    <strong>Corpo Bandistico Municipale “G. Verdi”</strong>
+  </p>
 
-  <script>
-    /* MENU MOBILE */
+  <div class="footer-line"></div>
 
-    const menuButton = document.getElementById("menuButton");
-    const headerRight = document.getElementById("headerRight");
+  <p>
+    © <span data-anno>2026</span> Associazione Musicale Alcarese – Alcara li Fusi, Messina
+  </p>
 
-    if (menuButton && headerRight) {
-      menuButton.addEventListener("click", () => {
-        const isOpen = headerRight.classList.toggle("open");
-        menuButton.setAttribute("aria-expanded", isOpen);
-        menuButton.textContent = isOpen ? "CHIUDI ✕" : "MENU ☰";
-      });
+  <p>Dal 1911, musica e tradizione.</p>
 
-      headerRight.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-          headerRight.classList.remove("open");
-          menuButton.setAttribute("aria-expanded", "false");
-          menuButton.textContent = "MENU ☰";
-        });
-      });
-    }
+  <p>
+    Sito web creato e curato da Antonina Vaneria
+    e dai Responsabili della Comunicazione del Direttivo.
+  </p>
 
-    /* GALLERIA E LIGHTBOX */
+</footer>
 
-    let indiceFoto = 0;
-    let modalSingola = null;
+<script>
+/* MENU MOBILE */
 
-    function tutteLeFoto() {
-      return Array.from(document.querySelectorAll("#galleryTrack img"));
-    }
+const menuButton = document.getElementById("menuButton");
+const mainNav = document.getElementById("mainNav");
 
-    function scorriFoto(direzione) {
-      const track = document.getElementById("galleryTrack");
-      const foto = track.querySelector("img");
-      if (!foto) return;
-      track.scrollBy({
-        left: direzione * (foto.getBoundingClientRect().width + 16) * 2,
-        behavior: "smooth"
-      });
-    }
+function setMenu(isOpen) {
+  mainNav.classList.toggle("open", isOpen);
+  menuButton.setAttribute("aria-expanded", String(isOpen));
+  menuButton.textContent = isOpen ? "CHIUDI ✕" : "MENU ☰";
+}
 
-    function ingrandisciFoto(img) {
-      modalSingola = null;
-      const foto = tutteLeFoto();
-      indiceFoto = Math.max(0, foto.indexOf(img));
-      mostraFotoIngrandita();
-      document.getElementById("fotoModal").classList.add("open");
+menuButton.addEventListener("click", () => {
+  setMenu(!mainNav.classList.contains("open"));
+});
+
+mainNav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => setMenu(false));
+});
+
+document.documentElement.classList.add("menu-js");
+
+/* ANNI AGGIORNATI IN AUTOMATICO */
+
+const currentYear = new Date().getFullYear();
+
+document.querySelectorAll("[data-anno]").forEach(element => {
+  element.textContent = currentYear;
+});
+
+document.querySelectorAll("[data-anni]").forEach(element => {
+  element.textContent = currentYear - 1911;
+});
+
+/* FOTO INGRANDITE */
+
+const box = document.getElementById("lightbox");
+const boxImg = box.querySelector("img");
+let gruppo = [];
+let indice = 0;
+
+function mostra(i) {
+  indice = (i + gruppo.length) % gruppo.length;
+  const img = gruppo[indice].querySelector("img");
+  boxImg.src = gruppo[indice].href;
+  boxImg.alt = img.alt;
+  box.querySelector("figcaption").textContent =
+    img.alt + (gruppo.length > 1 ? " · " + (indice + 1) + " / " + gruppo.length : "");
+  box.querySelectorAll(".prec, .succ").forEach(b => b.hidden = gruppo.length < 2);
+}
+
+if (typeof box.showModal === "function") {
+  document.querySelectorAll(".foto").forEach(link => {
+    link.addEventListener("click", event => {
+      event.preventDefault();
+      gruppo = [...document.querySelectorAll('.foto[data-gruppo="' + link.dataset.gruppo + '"]')];
+      mostra(gruppo.indexOf(link));
+      box.showModal();
       document.body.style.overflow = "hidden";
-    }
-
-    function ingrandisciSingola(src, titolo) {
-      modalSingola = { src, titolo };
-      mostraFotoIngrandita();
-      document.getElementById("fotoModal").classList.add("open");
-      document.body.style.overflow = "hidden";
-    }
-
-    function mostraFotoIngrandita() {
-      const immagine = document.getElementById("fotoIngrandita");
-      const caption = document.getElementById("modalCaption");
-      const prevBtn = document.getElementById("modalPrev");
-      const nextBtn = document.getElementById("modalNext");
-
-      if (modalSingola) {
-        immagine.src = modalSingola.src;
-        immagine.alt = modalSingola.titolo;
-        caption.textContent = modalSingola.titolo;
-        prevBtn.style.display = "none";
-        nextBtn.style.display = "none";
-        return;
-      }
-
-      const foto = tutteLeFoto();
-      if (!foto.length) return;
-      indiceFoto = (indiceFoto + foto.length) % foto.length;
-      const originale = foto[indiceFoto];
-      immagine.src = originale.src;
-      immagine.alt = originale.alt;
-      caption.textContent = `M° Michele Saccone · Foto ${indiceFoto + 1} di ${foto.length}`;
-      prevBtn.style.display = foto.length > 1 ? "block" : "none";
-      nextBtn.style.display = foto.length > 1 ? "block" : "none";
-    }
-
-    function cambiaFoto(direzione) {
-      if (modalSingola) return;
-      indiceFoto += direzione;
-      mostraFotoIngrandita();
-    }
-
-    function chiudiFoto() {
-      document.getElementById("fotoModal").classList.remove("open");
-      document.getElementById("fotoIngrandita").src = "";
-      document.body.style.overflow = "";
-    }
-
-    document.addEventListener("keydown", function(event) {
-      if (!document.getElementById("fotoModal").classList.contains("open")) return;
-      if (event.key === "Escape") chiudiFoto();
-      if (event.key === "ArrowRight") cambiaFoto(1);
-      if (event.key === "ArrowLeft") cambiaFoto(-1);
     });
-  </script>
+  });
+}
+
+box.querySelector(".chiudi").addEventListener("click", () => box.close());
+box.querySelector(".prec").addEventListener("click", () => mostra(indice - 1));
+box.querySelector(".succ").addEventListener("click", () => mostra(indice + 1));
+box.addEventListener("click", event => { if (event.target === box) box.close(); });
+box.addEventListener("close", () => document.body.style.overflow = "");
+box.addEventListener("keydown", event => {
+  if (event.key === "ArrowLeft") mostra(indice - 1);
+  if (event.key === "ArrowRight") mostra(indice + 1);
+});
+
+let inizioX = 0;
+box.addEventListener("touchstart", e => inizioX = e.changedTouches[0].clientX, { passive: true });
+box.addEventListener("touchend", e => {
+  const spostamento = e.changedTouches[0].clientX - inizioX;
+  if (gruppo.length > 1 && Math.abs(spostamento) > 50) mostra(indice + (spostamento < 0 ? 1 : -1));
+}, { passive: true });
+
+/* FRECCE DELLA GALLERIA */
+
+const track = document.getElementById("galleryTrack");
+
+document.querySelectorAll("[data-scorri]").forEach(freccia => {
+  freccia.addEventListener("click", () => {
+    track.scrollBy({ left: Number(freccia.dataset.scorri) * (track.firstElementChild.offsetWidth + 16) });
+  });
+});
+</script>
+
 </body>
 </html>
