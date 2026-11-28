@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -7,7 +6,21 @@
 
 <title>I Direttivi | Corpo Bandistico Municipale “G. Verdi”</title>
 <meta name="theme-color" content="#14263D">
-<meta name="description" content="Il Direttivo attuale e i precedenti direttivi dell'Associazione Musicale Alcarese di Alcara Li Fusi.">
+<meta name="description" content="Il Direttivo attuale e i precedenti direttivi dell'Associazione Musicale Alcarese di Alcara li Fusi.">
+
+<!-- ICONA DELLA SCHEDA -->
+<link rel="icon" type="image/jpeg" href="logo.jpeg">
+<link rel="apple-touch-icon" href="logo.jpeg">
+
+<!-- ANTEPRIMA SU WHATSAPP E FACEBOOK -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="I Direttivi | Corpo Bandistico Municipale “G. Verdi”">
+<meta property="og:description" content="Le persone che guidano l'Associazione Musicale Alcarese.">
+<!-- Per la foto nell'anteprima: scrivi l'indirizzo completo del sito e togli i segni di commento
+<meta property="og:url" content="https://INDIRIZZO-DEL-SITO/direttivi.html">
+<meta property="og:image" content="https://INDIRIZZO-DEL-SITO/logo.jpeg">
+-->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +39,7 @@
   --burgundy-light: #7D3E4E;
   --white: #FFFFFF;
   --text: #303B43;
-  --muted: #747B7C;
+  --muted: #5F6668;
   --border: #DDD8CD;
   --shadow: 0 18px 45px rgba(16,32,53,.10);
 }
@@ -80,12 +93,11 @@ header {
   z-index: 100;
   background: rgba(20,38,61,.97);
   backdrop-filter: blur(12px);
-  color: white;
   border-bottom: 1px solid rgba(255,255,255,.09);
 }
 
 .header-inner {
-  width: 90%;
+  width: 94%;
   max-width: 1450px;
   min-height: 82px;
   margin: auto;
@@ -95,52 +107,55 @@ header {
   gap: 25px;
 }
 
-.logo-link {
+.logo {
   display: flex;
   align-items: center;
   gap: 12px;
   color: white;
-  flex-shrink: 0;
+  min-width: 0;
 }
 
-.logo-img {
+.logo img {
   width: 49px;
   height: 49px;
-  object-fit: contain;
+  flex-shrink: 0;
   border-radius: 50%;
+  object-fit: contain;
   background: white;
   padding: 3px;
 }
 
 .logo-text {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 19px;
+  font-size: 16px;
+  line-height: 1.3;
+  letter-spacing: .5px;
   font-weight: 600;
-  letter-spacing: 1px;
+  max-width: 15em;
 }
 
 .logo-text small {
   display: block;
   color: var(--gold-light);
   font-family: 'DM Sans', sans-serif;
-  font-size: 9px;
-  letter-spacing: 3px;
-  margin-top: 1px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-top: 2px;
 }
 
 nav {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
-  flex-wrap: wrap;
-  gap: 10px 21px;
+  gap: 6px 18px;
 }
 
 nav a {
   color: #E8EDF2;
-  font-size: 11px;
-  letter-spacing: .8px;
+  font-size: 12px;
   text-transform: uppercase;
+  letter-spacing: .6px;
   transition: color .25s;
   white-space: nowrap;
 }
@@ -612,14 +627,24 @@ nav a.active {
   border-color: var(--burgundy);
 }
 
+/* Leggibilità */
+.hero-label { font-size: 13px; }
+.hero p, .board-header .intro, .archive-header .intro { font-size: 17px; }
+.section-label, .leader-role, .role-card h3, .page-button { font-size: 12px; }
+.leader-caption { font-size: 11px; }
+.leader-description, .past-card p, .past-card li, .role-card li { font-size: 15px; }
+.role-card p { font-size: 16px; }
+.role-card .detail, .service-note, .past-card .note { font-size: 14px; }
+.past-card h4 { font-size: 13px; }
+
 /* FOOTER */
 
 footer {
   background: var(--navy-deep);
   color: #AAB7C5;
-  text-align: center;
   padding: 35px 5%;
-  font-size: 11px;
+  text-align: center;
+  font-size: 13px;
   line-height: 2;
 }
 
@@ -638,35 +663,104 @@ footer strong {
 }
 
 footer p:last-child {
-  font-size: 10px;
-  color: #8191A2;
   margin-top: 9px;
+  font-size: 12px;
+  color: #8E9EAF;
 }
 
-/* ANIMAZIONI */
+/* ANIMAZIONI (attive solo se JavaScript funziona) */
 
-.reveal {
+.anim .reveal {
   opacity: 0;
   transform: translateY(25px);
   transition: opacity .8s ease, transform .8s ease;
 }
 
-.reveal.visible {
+.anim .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
+.anim .music-card.reveal.visible {
+  transition: opacity .8s ease, transform .3s ease,
+              background .3s, border-color .3s;
+}
+
+.anim .music-card.reveal.visible:hover {
+  transform: translateY(-6px);
+}
+
+/* Le schede si sollevano anche dopo l'animazione */
+.anim .leader-card.reveal.visible, .anim .role-card.reveal.visible, .anim .past-card.reveal.visible {
+  transition: opacity .8s ease, transform .25s ease, box-shadow .25s, border-color .25s;
+}
+.anim .leader-card.reveal.visible:hover { transform: translateY(-4px); }
+.anim .role-card.reveal.visible:hover, .anim .past-card.reveal.visible:hover { transform: translateY(-3px); }
+
 /* TABLET */
 
-@media(max-width:1050px) {
-  nav {
-    gap: 10px 12px;
+/* Menu a pulsante: telefoni, tablet e schermi piccoli */
+@media(max-width:1279px) {
+  .header-inner {
+    width: 90%;
+    padding: 13px 0;
+    flex-wrap: wrap;
+    gap: 0 12px;
+  }
+
+  .logo {
+    flex: 1 1 0;
+  }
+
+  .header-inner nav {
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 0;
+    padding: 8px 0 15px;
   }
 
   nav a {
-    font-size: 10px;
+    width: 100%;
+    padding: 11px 0;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
   }
 
+  /* Senza JavaScript il menu resta aperto e non segue lo scorrimento */
+  header {
+    position: static;
+  }
+
+  .menu-js header {
+    position: sticky;
+  }
+
+  .menu-js .mobile-menu {
+    display: block;
+    flex-shrink: 0;
+    color: white;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.35);
+    padding: 9px 13px;
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .menu-js .header-inner nav {
+    display: none;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+  }
+
+  .menu-js .header-inner nav.open {
+    display: flex;
+  }
+}
+
+@media(max-width:1050px) {
   .leadership {
     grid-template-columns: 1fr;
   }
@@ -684,50 +778,8 @@ footer p:last-child {
   }
 }
 
-/* MENU MOBILE */
-
 @media(max-width:850px) {
-  .header-inner {
-    width: 90%;
-    flex-wrap: wrap;
-    padding: 13px 0;
-  }
-
-  .mobile-menu {
-    display: block;
-    background: transparent;
-    border: 1px solid rgba(255,255,255,.35);
-    color: white;
-    padding: 9px 13px;
-    font-family: inherit;
-    cursor: pointer;
-    font-size: 12px;
-  }
-
-  nav {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-    padding: 8px 0 15px;
-  }
-
-  nav.open {
-    display: flex;
-  }
-
-  nav a {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 11px;
-    border-bottom: 1px solid rgba(255,255,255,.08);
-  }
-
-  .hero {
-    min-height: 430px;
-    height: 60vh;
-  }
+  .hero { min-height: 430px; height: auto; }
 }
 
 /* SMARTPHONE */
@@ -739,7 +791,7 @@ footer p:last-child {
 
   .hero {
     min-height: 430px;
-    height: 60vh;
+    height: auto;
   }
 
   .hero h1 {
@@ -747,12 +799,12 @@ footer p:last-child {
   }
 
   .hero p {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .hero-label {
-    font-size: 10px;
-    letter-spacing: 3px;
+    font-size: 12px;
+    letter-spacing: 2px;
   }
 
   .current-board,
@@ -820,24 +872,19 @@ footer p:last-child {
     height: 230px;
   }
 
-  .logo-img {
-    width: 43px;
-    height: 43px;
-  }
+  .logo img { width: 43px; height: 43px; }
 
-  .logo-text {
-    font-size: 16px;
-  }
+  .leader-card > div:first-child { width: 100%; max-width: 210px; margin: auto; }
 
-  .hero-label {
-    gap: 9px;
-    letter-spacing: 2px;
-  }
+  .hero-label { gap: 9px; }
 
   .hero-label::before,
-  .hero-label::after {
-    width: 25px;
-  }
+  .hero-label::after { width: 25px; }
+}
+
+@media(max-width:520px) {
+  .logo-text { font-size: 13px; }
+  .logo-text small { font-size: 10px; letter-spacing: 1px; }
 }
 
 /* ACCESSIBILITÀ */
@@ -852,30 +899,24 @@ footer p:last-child {
     animation-duration: .01ms !important;
   }
 
-  .reveal {
-    opacity: 1;
-    transform: none;
-  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-
 <header>
   <div class="header-inner">
 
-    <a class="logo-link" href="index.html" aria-label="Torna alla Home">
-      <img class="logo-img" src="logo.jpeg" alt="Logo Corpo Bandistico Municipale G. Verdi">
+    <a class="logo" href="index.html" aria-label="Torna alla Home">
+      <img src="logo.jpeg" alt="Logo Corpo Bandistico Municipale G. Verdi">
       <span class="logo-text">
-        G. VERDI
+        CORPO BANDISTICO MUNICIPALE
         <small>ALCARA LI FUSI · 1911</small>
       </span>
     </a>
 
-    <button class="mobile-menu" id="menuButton"
+    <button class="mobile-menu" id="menuButton" type="button"
             aria-expanded="false" aria-controls="mainNav">
       MENU ☰
     </button>
@@ -1288,8 +1329,6 @@ footer p:last-child {
 
 </main>
 
-<!-- FOOTER -->
-
 <footer>
 
   <p>
@@ -1299,7 +1338,7 @@ footer p:last-child {
   <div class="footer-line"></div>
 
   <p>
-    © 2026 Associazione Musicale Alcarese – Alcara Li Fusi, Messina
+    © <span data-anno>2026</span> Associazione Musicale Alcarese – Alcara li Fusi, Messina
   </p>
 
   <p>Dal 1911, musica e tradizione.</p>
@@ -1317,30 +1356,40 @@ footer p:last-child {
 const menuButton = document.getElementById("menuButton");
 const mainNav = document.getElementById("mainNav");
 
-menuButton.addEventListener("click", () => {
-  const isOpen = mainNav.classList.toggle("open");
-
-  menuButton.setAttribute("aria-expanded", isOpen);
+function setMenu(isOpen) {
+  mainNav.classList.toggle("open", isOpen);
+  menuButton.setAttribute("aria-expanded", String(isOpen));
   menuButton.textContent = isOpen ? "CHIUDI ✕" : "MENU ☰";
+}
+
+menuButton.addEventListener("click", () => {
+  setMenu(!mainNav.classList.contains("open"));
 });
 
 mainNav.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    mainNav.classList.remove("open");
-    menuButton.setAttribute("aria-expanded", "false");
-    menuButton.textContent = "MENU ☰";
-  });
+  link.addEventListener("click", () => setMenu(false));
 });
 
-/* ANIMAZIONI */
+document.documentElement.classList.add("menu-js");
 
-const revealElements = document.querySelectorAll(".reveal");
+/* ANNI AGGIORNATI IN AUTOMATICO */
 
-if (
-  "IntersectionObserver" in window &&
-  !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-) {
-  const observer = new IntersectionObserver(entries => {
+const currentYear = new Date().getFullYear();
+
+document.querySelectorAll("[data-anno]").forEach(element => {
+  element.textContent = currentYear;
+});
+
+document.querySelectorAll("[data-anni]").forEach(element => {
+  element.textContent = currentYear - 1911;
+});
+
+/* ANIMAZIONI ALL'APPARIZIONE */
+
+if ("IntersectionObserver" in window &&
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
@@ -1348,13 +1397,12 @@ if (
       }
     });
   }, {
-    threshold: 0.10
+    threshold: 0,
+    rootMargin: "0px 0px -40px 0px"
   });
 
-  revealElements.forEach(element => observer.observe(element));
-
-} else {
-  revealElements.forEach(element => element.classList.add("visible"));
+  document.querySelectorAll(".reveal").forEach(element => observer.observe(element));
+  document.documentElement.classList.add("anim");
 }
 </script>
 
