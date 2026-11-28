@@ -1,225 +1,186 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#14263D">
-  <title>Galleria Storica | Corpo Bandistico Municipale “G. Verdi”</title>
-  <meta name="description" content="Archivio fotografico storico del Corpo Bandistico Municipale G. Verdi di Alcara Li Fusi, dal 1911 a oggi.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<title>Galleria Storica | Corpo Bandistico Municipale “G. Verdi”</title>
+<meta name="theme-color" content="#14263D">
+<meta name="description" content="Archivio fotografico storico del Corpo Bandistico Municipale G. Verdi di Alcara li Fusi, dal 1911 a oggi.">
 
-  <style>
-    :root {
-      --navy: #14263D;
-      --navy-deep: #0D1B2B;
-      --navy-soft: #203A57;
-      --gold: #C5A66B;
-      --gold-light: #E3D2AC;
-      --cream: #F5F1E8;
-      --cream-dark: #EAE3D5;
-      --burgundy: #642F3C;
-      --white: #FFFFFF;
-      --text: #303B43;
-      --muted: #747B7C;
-      --border: #DDD8CD;
-      --shadow: 0 18px 45px rgba(16, 32, 53, .10);
-    }
+<!-- ICONA DELLA SCHEDA -->
+<link rel="icon" type="image/jpeg" href="logo.jpeg">
+<link rel="apple-touch-icon" href="logo.jpeg">
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<!-- ANTEPRIMA SU WHATSAPP E FACEBOOK -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Galleria Storica | Corpo Bandistico Municipale “G. Verdi”">
+<meta property="og:description" content="La memoria della Banda di Alcara li Fusi in immagini, dal 1911.">
+<!-- Per la foto nell'anteprima: scrivi l'indirizzo completo del sito e togli i segni di commento
+<meta property="og:url" content="https://INDIRIZZO-DEL-SITO/galleria.html">
+<meta property="og:image" content="https://INDIRIZZO-DEL-SITO/logo.jpeg">
+-->
 
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 
-    body {
-      font-family: 'DM Sans', Arial, sans-serif;
-      background: var(--white);
-      color: var(--text);
-      line-height: 1.7;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
+<style>
+:root {
+  --navy: #14263D;
+  --navy-deep: #0D1B2B;
+  --navy-soft: #203A57;
+  --gold: #C5A66B;
+  --gold-light: #E3D2AC;
+  --cream: #F5F1E8;
+  --cream-dark: #EAE3D5;
+  --burgundy: #642F3C;
+  --burgundy-light: #7D3E4E;
+  --white: #FFFFFF;
+  --text: #303B43;
+  --muted: #5F6668;
+  --border: #DDD8CD;
+  --shadow: 0 18px 45px rgba(16,32,53,.10);
+}
 
-    h1, h2, h3 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-weight: 500;
-      line-height: 1.2;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+body {
+  font-family: 'DM Sans', Arial, sans-serif;
+  background: var(--white);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
 
-    button {
-      font: inherit;
-    }
+h1,h2,h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  line-height: 1.2;
+}
 
-    /* HEADER */
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(20, 38, 61, .97);
-      backdrop-filter: blur(12px);
-      color: var(--white);
-      border-bottom: 1px solid rgba(255, 255, 255, .09);
-    }
+img {
+  max-width: 100%;
+  display: block;
+}
 
-    .header-inner {
-      width: 90%;
-      max-width: 1450px;
-      min-height: 82px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-    }
+.container {
+  width: min(1160px, 88%);
+  margin: auto;
+}
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--white);
-      flex-shrink: 0;
-    }
+/* HEADER */
 
-    .logo img {
-      width: 49px;
-      height: 49px;
-      object-fit: contain;
-      border-radius: 50%;
-      background: var(--white);
-      padding: 3px;
-    }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(20,38,61,.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,.09);
+}
 
-    .logo-text {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 19px;
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
+.header-inner {
+  width: 94%;
+  max-width: 1450px;
+  min-height: 82px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
 
-    .logo-text small {
-      display: block;
-      color: var(--gold-light);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 9px;
-      letter-spacing: 3px;
-      margin-top: 1px;
-    }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  min-width: 0;
+}
 
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      flex-wrap: wrap;
-      gap: 10px 21px;
-    }
+.logo img {
+  width: 49px;
+  height: 49px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: contain;
+  background: white;
+  padding: 3px;
+}
 
-    nav a {
-      color: #E8EDF2;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      transition: color 0.25s ease;
-      white-space: nowrap;
-    }
+.logo-text {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 16px;
+  line-height: 1.3;
+  letter-spacing: .5px;
+  font-weight: 600;
+  max-width: 15em;
+}
 
-    nav a:hover,
-    nav a[aria-current="page"],
-    nav a.active {
-      color: var(--gold-light);
-    }
+.logo-text small {
+  display: block;
+  color: var(--gold-light);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-top: 2px;
+}
 
-    .mobile-menu {
-      display: none;
-    }
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px 18px;
+}
 
-    /* HERO */
+nav a {
+  color: #E8EDF2;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  transition: color .25s;
+  white-space: nowrap;
+}
 
-    .hero {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 65%, var(--navy-soft) 100%);
-      color: var(--white);
-      width: calc(100% - 56px);
-      max-width: 1400px;
-      margin: 28px auto 0;
-      padding: 78px 24px 72px;
-      text-align: center;
-      border: 1px solid rgba(197, 166, 107, .25);
-    }
+nav a:hover,
+nav a.active {
+  color: var(--gold-light);
+}
 
-    .hero::before {
-      content: "GALLERIA";
-      position: absolute;
-      right: -25px;
-      bottom: -45px;
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(110px, 20vw, 250px);
-      color: rgba(255, 255, 255, .03);
-      pointer-events: none;
-      line-height: 1;
-    }
+.mobile-menu {
+  display: none;
+}
 
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero .section-label {
-      color: var(--gold-light);
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 11px;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-
-    .hero h1 {
-      font-size: clamp(38px, 5.5vw, 64px);
-      font-weight: 500;
-      line-height: 1.15;
-      margin-bottom: 18px;
-      letter-spacing: -1px;
-    }
-
-    .hero p {
-      max-width: 720px;
-      margin: 0 auto 12px;
-      color: #DCE5EC;
-      font-size: 16px;
-      line-height: 1.85;
-    }
-
-    .hero-line {
-      width: 65px;
-      height: 1px;
-      background: var(--gold);
-      margin: 26px auto 0;
-    }
+/* APERTURA */
+.hero { background: linear-gradient(135deg, var(--navy-deep), var(--navy) 65%, var(--navy-soft)); color: white; text-align: center; padding: 75px 0 65px; }
+.hero h1 { font-size: clamp(40px,6vw,70px); margin-bottom: 18px; }
+.hero p { max-width: 680px; margin: auto; color: #E4E8ED; font-size: 18px; }
+.hero .section-label { color: var(--gold-light); }
+button { font: inherit; }
 
     /* CONTENUTO */
 
     main {
       max-width: none;
-      margin: 56px auto 0;
+      margin: 0 auto;
       padding: 75px max(28px, calc((100% - 1400px) / 2)) 85px;
       background: var(--cream);
       border-top: 1px solid var(--border);
@@ -485,48 +446,127 @@
       text-transform: uppercase;
     }
 
-    /* FOOTER */
+    /* Leggibilità */
+    .section-label, .photo-count, .lightbox-position { font-size: 12px; }
+    .photo-year { font-size: 13px; }
+    .photo-caption, .gallery-heading p { font-size: 16px; }
+    .lightbox-caption { font-size: 16px; }
 
-    footer {
-      background: var(--navy-deep);
-      color: #AAB7C5;
-      text-align: center;
-      padding: 35px 5%;
-      font-size: 11px;
-      line-height: 2;
-    }
+/* FOOTER */
 
-    footer strong {
-      color: var(--white);
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 17px;
-      font-weight: 500;
-    }
+footer {
+  background: var(--navy-deep);
+  color: #AAB7C5;
+  padding: 35px 5%;
+  text-align: center;
+  font-size: 13px;
+  line-height: 2;
+}
 
-    .footer-line {
-      width: 45px;
-      height: 1px;
-      background: var(--gold);
-      margin: 15px auto;
-    }
+footer strong {
+  color: white;
+  font-family: 'Playfair Display',serif;
+  font-size: 17px;
+  font-weight: 500;
+}
 
-    footer p:last-child {
-      font-size: 10px;
-      color: #8191A2;
-      margin-top: 9px;
-    }
+.footer-line {
+  width: 45px;
+  height: 1px;
+  background: var(--gold);
+  margin: 15px auto;
+}
 
-    /* RESPONSIVE */
+footer p:last-child {
+  margin-top: 9px;
+  font-size: 12px;
+  color: #8E9EAF;
+}
 
-    @media (max-width: 1100px) {
-      nav {
-        gap: 10px 12px;
-      }
+/* ANIMAZIONI (attive solo se JavaScript funziona) */
 
-      nav a {
-        font-size: 10px;
-      }
-    }
+.anim .reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.anim .reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.anim .music-card.reveal.visible {
+  transition: opacity .8s ease, transform .3s ease,
+              background .3s, border-color .3s;
+}
+
+.anim .music-card.reveal.visible:hover {
+  transform: translateY(-6px);
+}
+
+/* RESPONSIVE */
+
+/* Menu a pulsante: telefoni, tablet e schermi piccoli */
+@media(max-width:1279px) {
+  .header-inner {
+    width: 90%;
+    padding: 13px 0;
+    flex-wrap: wrap;
+    gap: 0 12px;
+  }
+
+  .logo {
+    flex: 1 1 0;
+  }
+
+  .header-inner nav {
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 0;
+    padding: 8px 0 15px;
+  }
+
+  nav a {
+    width: 100%;
+    padding: 11px 0;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+
+  /* Senza JavaScript il menu resta aperto e non segue lo scorrimento */
+  header {
+    position: static;
+  }
+
+  .menu-js header {
+    position: sticky;
+  }
+
+  .menu-js .mobile-menu {
+    display: block;
+    flex-shrink: 0;
+    color: white;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.35);
+    padding: 9px 13px;
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .menu-js .header-inner nav {
+    display: none;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+  }
+
+  .menu-js .header-inner nav.open {
+    display: flex;
+  }
+}
 
     @media (max-width: 1000px) {
       .gallery-grid {
@@ -535,64 +575,7 @@
     }
 
     @media (max-width: 850px) {
-      .header-inner {
-        width: 90%;
-        flex-wrap: wrap;
-        padding: 13px 0;
-      }
-
-      .mobile-menu {
-        display: block;
-        background: transparent;
-        border: 1px solid rgba(255, 255, 255, .35);
-        color: white;
-        padding: 9px 13px;
-        cursor: pointer;
-        font-size: 12px;
-      }
-
-      .header-right {
-        display: none;
-        width: 100%;
-      }
-
-      .header-right.open {
-        display: block;
-      }
-
-      nav {
-        width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
-        padding: 8px 0 15px;
-      }
-
-      nav a {
-        width: 100%;
-        padding: 10px 0;
-        font-size: 11px;
-        border-bottom: 1px solid rgba(255, 255, 255, .08);
-      }
-
-      .hero {
-        width: calc(100% - 30px);
-        margin: 18px auto 0;
-        padding: 55px 20px;
-      }
-
-      .hero h1 {
-        font-size: clamp(38px, 8vw, 56px);
-      }
-
-      .hero p {
-        font-size: 15px;
-      }
-
-      main {
-        margin-top: 40px;
-        padding: 55px 6% 65px;
-      }
+      main { padding: 55px 6% 65px; }
     }
 
     @media (max-width: 650px) {
@@ -602,7 +585,7 @@
       }
 
       .photo-caption {
-        font-size: 13px;
+        font-size: 15px;
       }
 
       .lightbox {
@@ -639,23 +622,18 @@
       }
 
       .lightbox-caption {
-        font-size: 13px;
+        font-size: 15px;
       }
     }
 
-    @media (max-width: 480px) {
-      .logo img {
-        width: 43px;
-        height: 43px;
-      }
+    @media (max-width: 520px) {
+      .logo img { width: 43px; height: 43px; }
+      .logo-text { font-size: 13px; }
+      .logo-text small { font-size: 10px; letter-spacing: 1px; }
+    }
 
-      .logo-text {
-        font-size: 16px;
-      }
-
-      .hero h1 {
-        font-size: 37px;
-      }
+    @media (max-width: 380px) {
+      .gallery-grid { grid-template-columns: 1fr; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -667,55 +645,52 @@
         transition-duration: 0.01ms !important;
       }
     }
-  </style>
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
+<header>
+  <div class="header-inner">
 
-  <header>
-    <div class="header-inner">
-      <a class="logo" href="index.html" aria-label="Torna alla Home">
-        <img src="logo.jpeg" alt="Logo Corpo Bandistico Municipale G. Verdi">
-        <span class="logo-text">
-          G. VERDI
-          <small>ALCARA LI FUSI · 1911</small>
-        </span>
-      </a>
+    <a class="logo" href="index.html" aria-label="Torna alla Home">
+      <img src="logo.jpeg" alt="Logo Corpo Bandistico Municipale G. Verdi">
+      <span class="logo-text">
+        CORPO BANDISTICO MUNICIPALE
+        <small>ALCARA LI FUSI · 1911</small>
+      </span>
+    </a>
 
-      <button class="mobile-menu" id="menuButton"
-              aria-expanded="false" aria-controls="headerRight">
-        MENU ☰
-      </button>
+    <button class="mobile-menu" id="menuButton" type="button"
+            aria-expanded="false" aria-controls="mainNav">
+      MENU ☰
+    </button>
 
-      <div class="header-right" id="headerRight">
-        <nav id="mainNav" aria-label="Navigazione principale">
-          <a href="index.html">Home</a>
-          <a href="la-banda.html">La Banda</a>
-          <a href="musica.html">La Scuola di Musica</a>
-          <a href="eventi.html">Eventi</a>
-          <a href="albo.html">Albo Storico</a>
-          <a href="maestri-direttori.html">Maestri Direttori</a>
-          <a href="galleria.html" class="active" aria-current="page">Galleria</a>
-          <a href="index.html#contatti">Contatti</a>
-        </nav>
-      </div>
-    </div>
-  </header>
+    <nav id="mainNav" aria-label="Navigazione principale">
+      <a href="index.html">Home</a>
+      <a href="la-banda.html">La Banda</a>
+      <a href="musica.html">La Scuola di Musica</a>
+      <a href="eventi.html">Eventi</a>
+      <a href="albo.html">Albo Storico</a>
+      <a href="maestri-direttori.html">Maestri Direttori</a>
+      <a href="galleria.html" class="active" aria-current="page">Galleria</a>
+      <a href="index.html#contatti">Contatti</a>
+    </nav>
+
+  </div>
+</header>
 
   <!-- HERO -->
 
   <section class="hero">
-    <div class="hero-content">
-      <div class="section-label">ASSOCIAZIONE MUSICALE ALCARESE · DAL 1911</div>
+    <div class="container">
+      <div class="section-label">Associazione Musicale Alcarese · Dal 1911</div>
       <h1>La nostra memoria in immagini</h1>
       <p>
         Un viaggio nella storia del Corpo Bandistico Municipale
-        “G. Verdi” di Alcara Li Fusi, attraverso fotografie,
+        “G. Verdi” di Alcara li Fusi, attraverso fotografie,
         concerti, manifestazioni e ricordi di oltre un secolo di musica.
       </p>
-      <div class="hero-line"></div>
     </div>
   </section>
 
@@ -733,27 +708,33 @@
 
     <div class="gallery-grid" id="gallery-grid"></div>
 
+    <noscript><p>Per vedere le fotografie è necessario attivare JavaScript.</p></noscript>
+
     <div class="empty-message" id="empty-message">
       Nessuna fotografia disponibile.
     </div>
   </main>
 
-  <!-- FOOTER -->
+<footer>
 
-  <footer>
-    <p>
-      <strong>Corpo Bandistico Municipale “G. Verdi”</strong>
-    </p>
-    <div class="footer-line"></div>
-    <p>
-      © 2026 Associazione Musicale Alcarese – Alcara Li Fusi, Messina
-    </p>
-    <p>Dal 1911, musica e tradizione.</p>
-    <p>
-      Sito web creato e curato da Antonina Vaneria
-      e dai Responsabili della Comunicazione del Direttivo.
-    </p>
-  </footer>
+  <p>
+    <strong>Corpo Bandistico Municipale “G. Verdi”</strong>
+  </p>
+
+  <div class="footer-line"></div>
+
+  <p>
+    © <span data-anno>2026</span> Associazione Musicale Alcarese – Alcara li Fusi, Messina
+  </p>
+
+  <p>Dal 1911, musica e tradizione.</p>
+
+  <p>
+    Sito web creato e curato da Antonina Vaneria
+    e dai Responsabili della Comunicazione del Direttivo.
+  </p>
+
+</footer>
 
   <!-- FOTO INGRANDITA -->
 
@@ -778,27 +759,39 @@
     <div class="lightbox-position" id="lightbox-position"></div>
   </div>
 
-  <script>
-    /* MENU MOBILE */
+<script>
+/* MENU MOBILE */
 
-    const menuButton = document.getElementById("menuButton");
-    const headerRight = document.getElementById("headerRight");
+const menuButton = document.getElementById("menuButton");
+const mainNav = document.getElementById("mainNav");
 
-    if (menuButton && headerRight) {
-      menuButton.addEventListener("click", () => {
-        const isOpen = headerRight.classList.toggle("open");
-        menuButton.setAttribute("aria-expanded", isOpen);
-        menuButton.textContent = isOpen ? "CHIUDI ✕" : "MENU ☰";
-      });
+function setMenu(isOpen) {
+  mainNav.classList.toggle("open", isOpen);
+  menuButton.setAttribute("aria-expanded", String(isOpen));
+  menuButton.textContent = isOpen ? "CHIUDI ✕" : "MENU ☰";
+}
 
-      headerRight.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-          headerRight.classList.remove("open");
-          menuButton.setAttribute("aria-expanded", "false");
-          menuButton.textContent = "MENU ☰";
-        });
-      });
-    }
+menuButton.addEventListener("click", () => {
+  setMenu(!mainNav.classList.contains("open"));
+});
+
+mainNav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => setMenu(false));
+});
+
+document.documentElement.classList.add("menu-js");
+
+/* ANNI AGGIORNATI IN AUTOMATICO */
+
+const currentYear = new Date().getFullYear();
+
+document.querySelectorAll("[data-anno]").forEach(element => {
+  element.textContent = currentYear;
+});
+
+document.querySelectorAll("[data-anni]").forEach(element => {
+  element.textContent = currentYear - 1911;
+});
 
     /*
       I nomi dei file devono corrispondere esattamente
@@ -832,9 +825,9 @@
       { file: "3 Maggio 2012.jpg", year: 2012, caption: "3 maggio 2012" },
       { file: "2013.jpg", year: 2013, caption: "La banda nel 2013" },
       { file: "1 Maggio 2013.jpg", year: 2013, caption: "1 maggio 2013" },
-      { file: "4 novembre 2014.jpg", year: 2014, caption: "4 novembre 2014" },
-      { file: "Sagrato di Piazza S.Pietro, udienza papale, 8 ottobre 2014.jpg", year: 2014, caption: "Udienza papale, Piazza San Pietro · 8 ottobre 2014" },
       { file: "17 agosto 2014, concerto Roy Paci.jpg", year: 2014, caption: "Concerto con Roy Paci · 17 agosto 2014" },
+      { file: "Sagrato di Piazza S.Pietro, udienza papale, 8 ottobre 2014.jpg", year: 2014, caption: "Udienza papale, Piazza San Pietro · 8 ottobre 2014" },
+      { file: "4 novembre 2014.jpg", year: 2014, caption: "4 novembre 2014" },
       { file: "2015.jpg", year: 2015, caption: "La banda nel 2015" },
       { file: "16 agosto 2015.jpg", year: 2015, caption: "16 agosto 2015" },
       { file: "23 agosto 2015.jpg", year: 2015, caption: "23 agosto 2015" },
@@ -843,11 +836,11 @@
       { file: "16 agosto 2016, Joe Lovano.jpg", year: 2016, caption: "Joe Lovano · 16 agosto 2016" },
       { file: "19 agosto 2016.jpg", year: 2016, caption: "19 agosto 2016" },
       { file: "Concerto Joe Lovano 19 agosto 2016.jpg", year: 2016, caption: "Concerto con Joe Lovano · 19 agosto 2016" },
+      { file: "Capodanno 2017.jpg", year: 2017, caption: "Concerto di Capodanno 2017" },
+      { file: "Pasqua 2017.jpg", year: 2017, caption: "Pasqua 2017" },
       { file: "1 maggio 2017.jpg", year: 2017, caption: "1 maggio 2017" },
       { file: "16 agosto 2017.jpg", year: 2017, caption: "16 agosto 2017" },
-      { file: "Capodanno 2017.jpg", year: 2017, caption: "Concerto di Capodanno 2017" },
       { file: "Festa della Banda 2017.jpg", year: 2017, caption: "Festa della Banda 2017" },
-      { file: "Pasqua 2017.jpg", year: 2017, caption: "Pasqua 2017" },
       { file: "Consegna del Dono Votivo a San Nicolò 3 maggio 2018.jpg", year: 2018, caption: "Consegna del Dono Votivo a San Nicolò · 3 maggio 2018" },
       { file: "Raduno delle Bande Musicali dei Nebrodi 28 ottobre 2018.jpg", year: 2018, caption: "Raduno delle Bande Musicali dei Nebrodi · 28 ottobre 2018" },
       { file: "Capodanno 2019.jpg", year: 2019, caption: "Concerto di Capodanno 2019" },
@@ -993,7 +986,15 @@
       if (event.key === "ArrowRight") nextPhoto();
       if (event.key === "ArrowLeft") previousPhoto();
     });
-  </script>
+
+    /* Sul telefono si scorre anche con il dito */
+    let inizioX = 0;
+    lightbox.addEventListener("touchstart", e => inizioX = e.changedTouches[0].clientX, { passive: true });
+    lightbox.addEventListener("touchend", e => {
+      const spostamento = e.changedTouches[0].clientX - inizioX;
+      if (Math.abs(spostamento) > 50) spostamento < 0 ? nextPhoto() : previousPhoto();
+    }, { passive: true });
+</script>
 
 </body>
 </html>
