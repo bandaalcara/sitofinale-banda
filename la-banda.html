@@ -6,7 +6,21 @@
 
 <title>La Banda | Corpo Bandistico Municipale “G. Verdi”</title>
 <meta name="theme-color" content="#14263D">
-<meta name="description" content="La storia del Corpo Bandistico Municipale G. Verdi di Alcara Li Fusi, fondato nel 1911.">
+<meta name="description" content="La storia del Corpo Bandistico Municipale G. Verdi di Alcara li Fusi, fondato nel 1911.">
+
+<!-- ICONA DELLA SCHEDA -->
+<link rel="icon" type="image/jpeg" href="logo.jpeg">
+<link rel="apple-touch-icon" href="logo.jpeg">
+
+<!-- ANTEPRIMA SU WHATSAPP E FACEBOOK -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="La Banda | Corpo Bandistico Municipale “G. Verdi”">
+<meta property="og:description" content="La storia della Banda di Alcara li Fusi, dal 1911.">
+<!-- Per la foto nell'anteprima: scrivi l'indirizzo completo del sito e togli i segni di commento
+<meta property="og:url" content="https://INDIRIZZO-DEL-SITO/la-banda.html">
+<meta property="og:image" content="https://INDIRIZZO-DEL-SITO/fotostorica.jpg">
+-->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +39,7 @@
   --burgundy-light: #7D3E4E;
   --white: #FFFFFF;
   --text: #303B43;
-  --muted: #747B7C;
+  --muted: #5F6668;
   --border: #DDD8CD;
   --shadow: 0 18px 45px rgba(16,32,53,.10);
 }
@@ -79,12 +93,11 @@ header {
   z-index: 100;
   background: rgba(20,38,61,.97);
   backdrop-filter: blur(12px);
-  color: white;
   border-bottom: 1px solid rgba(255,255,255,.09);
 }
 
 .header-inner {
-  width: 90%;
+  width: 94%;
   max-width: 1450px;
   min-height: 82px;
   margin: auto;
@@ -94,52 +107,55 @@ header {
   gap: 25px;
 }
 
-.logo-link {
+.logo {
   display: flex;
   align-items: center;
   gap: 12px;
   color: white;
-  flex-shrink: 0;
+  min-width: 0;
 }
 
-.logo-img {
+.logo img {
   width: 49px;
   height: 49px;
-  object-fit: contain;
+  flex-shrink: 0;
   border-radius: 50%;
+  object-fit: contain;
   background: white;
   padding: 3px;
 }
 
 .logo-text {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 19px;
+  font-size: 16px;
+  line-height: 1.3;
+  letter-spacing: .5px;
   font-weight: 600;
-  letter-spacing: 1px;
+  max-width: 15em;
 }
 
 .logo-text small {
   display: block;
   color: var(--gold-light);
   font-family: 'DM Sans', sans-serif;
-  font-size: 9px;
-  letter-spacing: 3px;
-  margin-top: 1px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-top: 2px;
 }
 
 nav {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
-  flex-wrap: wrap;
-  gap: 10px 21px;
+  gap: 6px 18px;
 }
 
 nav a {
   color: #E8EDF2;
-  font-size: 11px;
-  letter-spacing: .8px;
+  font-size: 12px;
   text-transform: uppercase;
+  letter-spacing: .6px;
   transition: color .25s;
   white-space: nowrap;
 }
@@ -204,7 +220,7 @@ nav a.active {
   align-items: center;
   gap: 15px;
   color: var(--gold-light);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 5px;
   text-transform: uppercase;
@@ -228,7 +244,7 @@ nav a.active {
 .hero p {
   max-width: 650px;
   margin: auto;
-  font-size: 17px;
+  font-size: 18px;
   color: #E4E8ED;
   line-height: 1.9;
 }
@@ -245,7 +261,7 @@ nav a.active {
 
 .section-label {
   color: var(--burgundy);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -261,7 +277,7 @@ nav a.active {
 
 .intro {
   color: var(--muted);
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.9;
   max-width: 900px;
 }
@@ -273,6 +289,7 @@ nav a.active {
   padding: 110px 0;
   position: relative;
   overflow: hidden;
+  overflow: clip;
 }
 
 .history::before {
@@ -315,7 +332,7 @@ nav a.active {
   display: block;
   margin-top: 14px;
   color: var(--burgundy);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 3.5px;
   font-weight: 700;
 }
@@ -329,14 +346,14 @@ nav a.active {
 }
 
 .history-text p {
-  font-size: 16px;
-  color: #606765;
+  font-size: 17px;
+  color: #525956;
   margin-bottom: 21px;
-  line-height: 2;
+  line-height: 1.9;
 }
 
-.history-text p:first-child {
-  font-size: 17px;
+.history-text h2 + p {
+  font-size: 18px;
   color: var(--navy);
   font-weight: 500;
 }
@@ -390,7 +407,7 @@ nav a.active {
 
 .stat span {
   color: var(--burgundy);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.2px;
@@ -446,7 +463,7 @@ nav a.active {
 .director-caption {
   color: var(--gold-light);
   text-align: center;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 2.5px;
   text-transform: uppercase;
@@ -469,7 +486,7 @@ nav a.active {
 
 .director-text p {
   color: #DCE5EC;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.95;
   margin-bottom: 18px;
 }
@@ -491,7 +508,7 @@ nav a.active {
 }
 
 .board-header .intro {
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .people {
@@ -527,14 +544,14 @@ nav a.active {
   display: block;
   color: var(--navy);
   font-family: 'Playfair Display',serif;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.4;
 }
 
 .person-info span {
   display: block;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 13px;
   margin-top: 4px;
   letter-spacing: .5px;
   text-transform: uppercase;
@@ -588,12 +605,12 @@ nav a.active {
   color: var(--gold-light);
   text-transform: uppercase;
   letter-spacing: 3px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   margin-bottom: 17px;
 }
 
-.archive-box h3 {
+.archive-box h2 {
   font-size: clamp(34px,5vw,52px);
   margin-bottom: 18px;
 }
@@ -602,7 +619,7 @@ nav a.active {
   max-width: 650px;
   margin: auto;
   color: #C5D0DC;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.9;
 }
 
@@ -620,7 +637,7 @@ nav a.active {
   padding: 13px 22px;
   border: 1px solid var(--gold);
   color: var(--gold-light);
-  font-size: 11px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 700;
@@ -637,9 +654,9 @@ nav a.active {
 footer {
   background: var(--navy-deep);
   color: #AAB7C5;
-  text-align: center;
   padding: 35px 5%;
-  font-size: 11px;
+  text-align: center;
+  font-size: 13px;
   line-height: 2;
 }
 
@@ -658,35 +675,106 @@ footer strong {
 }
 
 footer p:last-child {
-  font-size: 10px;
-  color: #8191A2;
   margin-top: 9px;
+  font-size: 12px;
+  color: #8E9EAF;
 }
 
-/* ANIMAZIONI */
+/* ANIMAZIONI (attive solo se JavaScript funziona) */
 
-.reveal {
+.anim .reveal {
   opacity: 0;
   transform: translateY(25px);
   transition: opacity .8s ease, transform .8s ease;
 }
 
-.reveal.visible {
+.anim .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
+.anim .music-card.reveal.visible {
+  transition: opacity .8s ease, transform .3s ease,
+              background .3s, border-color .3s;
+}
+
+.anim .music-card.reveal.visible:hover {
+  transform: translateY(-6px);
+}
+
+.anim .person.reveal.visible {
+  transition: opacity .8s ease, transform .25s ease,
+              box-shadow .25s, border-color .25s;
+}
+
+.anim .person.reveal.visible:hover {
+  transform: translateY(-3px);
+}
+
 /* RESPONSIVE */
 
-@media(max-width:1050px) {
-  nav {
-    gap: 10px 12px;
+/* Menu a pulsante: telefoni, tablet e schermi piccoli */
+@media(max-width:1279px) {
+  .header-inner {
+    width: 90%;
+    padding: 13px 0;
+    flex-wrap: wrap;
+    gap: 0 12px;
+  }
+
+  .logo {
+    flex: 1 1 0;
+  }
+
+  .header-inner nav {
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 0;
+    padding: 8px 0 15px;
   }
 
   nav a {
-    font-size: 10px;
+    width: 100%;
+    padding: 11px 0;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
   }
 
+  /* Senza JavaScript il menu resta aperto e non segue lo scorrimento */
+  header {
+    position: static;
+  }
+
+  .menu-js header {
+    position: sticky;
+  }
+
+  .menu-js .mobile-menu {
+    display: block;
+    flex-shrink: 0;
+    color: white;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.35);
+    padding: 9px 13px;
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .menu-js .header-inner nav {
+    display: none;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+  }
+
+  .menu-js .header-inner nav.open {
+    display: flex;
+  }
+}
+
+@media(max-width:1050px) {
   .history-layout {
     gap: 40px;
   }
@@ -697,43 +785,6 @@ footer p:last-child {
 }
 
 @media(max-width:850px) {
-  .header-inner {
-    width: 90%;
-    flex-wrap: wrap;
-    padding: 13px 0;
-  }
-
-  .mobile-menu {
-    display: block;
-    background: transparent;
-    border: 1px solid rgba(255,255,255,.35);
-    color: white;
-    padding: 9px 13px;
-    font-family: inherit;
-    cursor: pointer;
-    font-size: 12px;
-  }
-
-  nav {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-    padding: 8px 0 15px;
-  }
-
-  nav.open {
-    display: flex;
-  }
-
-  nav a {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 11px;
-    border-bottom: 1px solid rgba(255,255,255,.08);
-  }
-
   .hero {
     min-height: 490px;
     height: 65vh;
@@ -775,18 +826,23 @@ footer p:last-child {
     width: 88%;
   }
 
-  .logo-img {
+  .logo img {
     width: 43px;
     height: 43px;
   }
 
   .logo-text {
-    font-size: 16px;
+    font-size: 13px;
+  }
+
+  .logo-text small {
+    font-size: 10px;
+    letter-spacing: 1px;
   }
 
   .hero {
     min-height: 470px;
-    height: 65vh;
+    height: auto;
   }
 
   .hero h1 {
@@ -794,12 +850,12 @@ footer p:last-child {
   }
 
   .hero p {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .hero-label {
-    font-size: 10px;
-    letter-spacing: 3px;
+    font-size: 12px;
+    letter-spacing: 2px;
   }
 
   .history,
@@ -847,7 +903,7 @@ footer p:last-child {
   }
 
   .person-info strong {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .archive-box {
@@ -872,11 +928,6 @@ footer p:last-child {
     transition-duration: .01ms !important;
     animation-duration: .01ms !important;
   }
-
-  .reveal {
-    opacity: 1;
-    transform: none;
-  }
 }
 </style>
 </head>
@@ -888,15 +939,15 @@ footer p:last-child {
 <header>
   <div class="header-inner">
 
-    <a class="logo-link" href="index.html" aria-label="Torna alla Home">
-      <img class="logo-img" src="logo.jpeg" alt="Logo Corpo Bandistico Municipale G. Verdi">
+    <a class="logo" href="index.html" aria-label="Torna alla Home">
+      <img src="logo.jpeg" alt="Logo Corpo Bandistico Municipale G. Verdi">
       <span class="logo-text">
-        G. VERDI
+        CORPO BANDISTICO MUNICIPALE
         <small>ALCARA LI FUSI · 1911</small>
       </span>
     </a>
 
-    <button class="mobile-menu" id="menuButton"
+    <button class="mobile-menu" id="menuButton" type="button"
             aria-expanded="false" aria-controls="mainNav">
       MENU ☰
     </button>
@@ -914,6 +965,8 @@ footer p:last-child {
 
   </div>
 </header>
+
+<main>
 
 <!-- HERO -->
 
@@ -960,7 +1013,7 @@ footer p:last-child {
         <h2 class="section-title">La nostra storia</h2>
 
         <p>
-          L'Associazione Musicale Alcarese fu fondata ad Alcara Li Fusi (ME)
+          L'Associazione Musicale Alcarese fu fondata ad Alcara li Fusi (ME)
           nel 1911 per interessamento del sindaco Giuseppe Mileti, che ne affidò
           la direzione organizzativa e musicale al maestro Giacomo Zurlino.
         </p>
@@ -982,8 +1035,7 @@ footer p:last-child {
 
         <p>
           Da allora questa istituzione locale ha favorito lo sviluppo nella comunità
-          di una forte tradizione, passione e cultura musicale e, da oltre un secolo,
-          rappresenta un importante veicolo di divulgazione della musica.
+          di una forte tradizione, passione e cultura musicale, ed è un importante veicolo di divulgazione della musica.
           Nel corso della sua storia ha coinvolto quasi 400 persone, contribuendo
           fortemente all'educazione musicale di tanti alcaresi.
         </p>
@@ -1244,13 +1296,13 @@ footer p:last-child {
 
       <div class="archive-label">La memoria della Banda</div>
 
-      <h3>Dal 1911 ad oggi</h3>
+      <h2>Dal 1911 a oggi</h2>
 
       <p>
         Consulta l'Albo Storico e scopri i Maestri Direttori che hanno
         guidato il Corpo Bandistico Municipale nel corso della sua storia.
         Un patrimonio di persone, strumenti e generazioni che racconta
-        più di un secolo di musica ad Alcara Li Fusi.
+        la musica ad Alcara li Fusi.
       </p>
 
       <div class="archive-buttons">
@@ -1274,6 +1326,8 @@ footer p:last-child {
   </div>
 </section>
 
+</main>
+
 <!-- FOOTER -->
 
 <footer>
@@ -1285,7 +1339,7 @@ footer p:last-child {
   <div class="footer-line"></div>
 
   <p>
-    © 2026 Associazione Musicale Alcarese – Alcara Li Fusi, Messina
+    © <span data-anno>2026</span> Associazione Musicale Alcarese – Alcara li Fusi, Messina
   </p>
 
   <p>Dal 1911, musica e tradizione.</p>
@@ -1303,30 +1357,40 @@ footer p:last-child {
 const menuButton = document.getElementById("menuButton");
 const mainNav = document.getElementById("mainNav");
 
-menuButton.addEventListener("click", () => {
-  const isOpen = mainNav.classList.toggle("open");
-
-  menuButton.setAttribute("aria-expanded", isOpen);
+function setMenu(isOpen) {
+  mainNav.classList.toggle("open", isOpen);
+  menuButton.setAttribute("aria-expanded", String(isOpen));
   menuButton.textContent = isOpen ? "CHIUDI ✕" : "MENU ☰";
+}
+
+menuButton.addEventListener("click", () => {
+  setMenu(!mainNav.classList.contains("open"));
 });
 
 mainNav.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    mainNav.classList.remove("open");
-    menuButton.setAttribute("aria-expanded", "false");
-    menuButton.textContent = "MENU ☰";
-  });
+  link.addEventListener("click", () => setMenu(false));
 });
 
-/* ANIMAZIONI */
+document.documentElement.classList.add("menu-js");
 
-const revealElements = document.querySelectorAll(".reveal");
+/* ANNI AGGIORNATI IN AUTOMATICO */
 
-if (
-  "IntersectionObserver" in window &&
-  !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-) {
-  const observer = new IntersectionObserver(entries => {
+const currentYear = new Date().getFullYear();
+
+document.querySelectorAll("[data-anno]").forEach(element => {
+  element.textContent = currentYear;
+});
+
+document.querySelectorAll("[data-anni]").forEach(element => {
+  element.textContent = currentYear - 1911;
+});
+
+/* ANIMAZIONI ALL'APPARIZIONE */
+
+if ("IntersectionObserver" in window &&
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
@@ -1334,13 +1398,12 @@ if (
       }
     });
   }, {
-    threshold: 0.10
+    threshold: 0,
+    rootMargin: "0px 0px -40px 0px"
   });
 
-  revealElements.forEach(element => observer.observe(element));
-
-} else {
-  revealElements.forEach(element => element.classList.add("visible"));
+  document.querySelectorAll(".reveal").forEach(element => observer.observe(element));
+  document.documentElement.classList.add("anim");
 }
 </script>
 
