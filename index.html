@@ -4,13 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Corpo Bandistico Municipale “G. Verdi” | Alcara Li Fusi</title>
+<title>Corpo Bandistico Municipale “G. Verdi” | Alcara li Fusi</title>
 <meta name="theme-color" content="#14263D">
-<meta name="description" content="Corpo Bandistico Municipale G. Verdi di Alcara Li Fusi. Dal 1911, musica, tradizione e passione.">
+<meta name="description" content="Corpo Bandistico Municipale G. Verdi di Alcara li Fusi. Dal 1911, musica, tradizione e passione.">
+
+<!-- ICONA DELLA SCHEDA -->
+<link rel="icon" type="image/jpeg" href="logo.jpeg">
+<link rel="apple-touch-icon" href="logo.jpeg">
+
+<!-- ANTEPRIMA SU WHATSAPP E FACEBOOK -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Corpo Bandistico Municipale “G. Verdi” | Alcara li Fusi">
+<meta property="og:description" content="Dal 1911, musica, tradizione e passione.">
+<!-- Per la foto nell'anteprima: scrivi l'indirizzo completo del sito e togli i segni di commento
+<meta property="og:url" content="https://INDIRIZZO-DEL-SITO/">
+<meta property="og:image" content="https://INDIRIZZO-DEL-SITO/home.jpeg">
+-->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -24,7 +38,7 @@
   --burgundy: #642F3C;
   --white: #FFFFFF;
   --text: #303B43;
-  --muted: #747B7C;
+  --muted: #5F6668;
   --border: #DDD8CD;
   --shadow: 0 18px 45px rgba(16,32,53,.10);
 }
@@ -80,7 +94,7 @@ header {
 }
 
 .header-inner {
-  width: 90%;
+  width: 94%;
   max-width: 1450px;
   min-height: 82px;
   margin: auto;
@@ -95,12 +109,13 @@ header {
   align-items: center;
   gap: 12px;
   color: white;
-  flex-shrink: 0;
+  min-width: 0;
 }
 
 .logo img {
   width: 49px;
   height: 49px;
+  flex-shrink: 0;
   border-radius: 50%;
   object-fit: contain;
   background: white;
@@ -109,32 +124,35 @@ header {
 
 .logo-text {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 19px;
-  letter-spacing: 1px;
+  font-size: 16px;
+  line-height: 1.3;
+  letter-spacing: .5px;
   font-weight: 600;
+  max-width: 15em;
 }
 
 .logo-text small {
   display: block;
   color: var(--gold-light);
   font-family: 'DM Sans', sans-serif;
-  font-size: 9px;
-  letter-spacing: 3px;
-  margin-top: 1px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-top: 2px;
 }
 
 nav {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
-  gap: 21px;
+  gap: 6px 18px;
 }
 
 nav a {
   color: #E8EDF2;
-  font-size: 11px;
+  font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: .8px;
+  letter-spacing: .6px;
   transition: color .25s;
   white-space: nowrap;
 }
@@ -187,8 +205,8 @@ nav a.active {
   align-items: center;
   gap: 15px;
   color: var(--gold-light);
-  font-size: 12px;
-  letter-spacing: 5px;
+  font-size: 13px;
+  letter-spacing: 4px;
   text-transform: uppercase;
   font-weight: 600;
   margin-bottom: 30px;
@@ -212,12 +230,13 @@ nav a.active {
 .hero h1 span {
   color: var(--gold-light);
   font-style: italic;
+  white-space: nowrap;
 }
 
 .hero-subtitle {
   color: #E4E8ED;
-  font-size: 17px;
-  line-height: 1.9;
+  font-size: 18px;
+  line-height: 1.8;
   margin-bottom: 35px;
 }
 
@@ -232,7 +251,7 @@ nav a.active {
   align-items: center;
   justify-content: center;
   padding: 14px 25px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 1.2px;
   text-transform: uppercase;
@@ -259,6 +278,30 @@ nav a.active {
 .btn-outline:hover {
   background: white;
   color: var(--navy);
+}
+
+/* PROSSIMO APPUNTAMENTO */
+
+.next-event {
+  background: var(--cream-dark);
+  padding: 35px 0;
+}
+
+.next-event .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.next-event h2 {
+  color: var(--navy);
+  font-size: 28px;
+}
+
+.next-event .eyebrow {
+  margin-bottom: 6px;
 }
 
 /* HISTORY */
@@ -293,7 +336,7 @@ nav a.active {
 
 .eyebrow {
   color: var(--burgundy);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -324,13 +367,9 @@ nav a.active {
 
 .history-description {
   max-width: 600px;
-  color: #606765;
-  font-size: 16px;
-  line-height: 2;
-}
-
-.history-description strong {
-  color: var(--navy);
+  color: #525956;
+  font-size: 17px;
+  line-height: 1.9;
 }
 
 .history-bottom {
@@ -339,7 +378,7 @@ nav a.active {
   align-items: center;
   gap: 15px;
   color: var(--burgundy);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -368,6 +407,7 @@ nav a.active {
 
 .band-image {
   position: relative;
+  isolation: isolate;
   min-height: 470px;
 }
 
@@ -391,22 +431,22 @@ nav a.active {
 
 .band-text p {
   color: var(--muted);
-  font-size: 15px;
-  line-height: 1.95;
+  font-size: 16px;
+  line-height: 1.9;
   margin-bottom: 25px;
 }
 
 .band-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 12px 20px;
 }
 
 .text-link {
   color: var(--navy);
   border-bottom: 1px solid var(--gold);
   padding: 8px 0;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -456,8 +496,8 @@ nav a.active {
 .school-intro {
   color: #DCE5EC;
   max-width: 750px;
-  line-height: 1.95;
-  font-size: 15px;
+  line-height: 1.9;
+  font-size: 16px;
 }
 
 .school-intro + .school-intro {
@@ -498,21 +538,15 @@ nav a.active {
 
 .music-card p {
   color: #CFD9E3;
-  font-size: 13px;
-  line-height: 1.9;
+  font-size: 15px;
+  line-height: 1.8;
 }
 
-.school-button {
+.school-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
   margin-top: 35px;
-  background: var(--gold);
-  color: var(--navy-deep);
-  border: 1px solid var(--gold);
-}
-
-.school-button:hover {
-  background: var(--gold-light);
-  border-color: var(--gold-light);
-  transform: translateY(-3px);
 }
 
 /* CONTACT */
@@ -554,7 +588,7 @@ nav a.active {
 
 .contact-description {
   color: #C5D0DC;
-  font-size: 15px;
+  font-size: 16px;
   max-width: 430px;
   line-height: 1.9;
 }
@@ -566,15 +600,15 @@ nav a.active {
 
 .contact-info h3 {
   color: var(--gold-light);
-  font-size: 21px;
+  font-size: 22px;
   margin-bottom: 20px;
 }
 
 .contact-info p {
   color: #D4DDE6;
-  font-size: 13px;
+  font-size: 15px;
   margin-bottom: 17px;
-  line-height: 1.9;
+  line-height: 1.8;
 }
 
 .contact-info strong {
@@ -591,7 +625,8 @@ nav a.active {
 }
 
 .contact-info small {
-  color: #9DADBE;
+  color: #AEBCCB;
+  font-size: 13px;
 }
 
 .social {
@@ -605,7 +640,7 @@ nav a.active {
   padding: 11px 22px;
   border: 1px solid rgba(255,255,255,.35);
   color: white;
-  font-size: 11px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: .25s;
@@ -624,7 +659,7 @@ footer {
   color: #AAB7C5;
   padding: 35px 5%;
   text-align: center;
-  font-size: 11px;
+  font-size: 13px;
   line-height: 2;
 }
 
@@ -644,34 +679,96 @@ footer strong {
 
 footer p:last-child {
   margin-top: 9px;
-  font-size: 10px;
-  color: #8191A2;
+  font-size: 12px;
+  color: #8E9EAF;
 }
 
-/* ANIMATIONS */
+/* ANIMAZIONI (attive solo se JavaScript funziona) */
 
-.reveal {
+.anim .reveal {
   opacity: 0;
   transform: translateY(25px);
   transition: opacity .8s ease, transform .8s ease;
 }
 
-.reveal.visible {
+.anim .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
+.anim .music-card.reveal.visible {
+  transition: opacity .8s ease, transform .3s ease,
+              background .3s, border-color .3s;
+}
+
+.anim .music-card.reveal.visible:hover {
+  transform: translateY(-6px);
+}
+
 /* RESPONSIVE */
 
-@media(max-width:1050px) {
-  nav {
-    gap: 12px;
+/* Menu a pulsante: telefoni, tablet e schermi piccoli */
+@media(max-width:1279px) {
+  .header-inner {
+    width: 90%;
+    padding: 13px 0;
+    flex-wrap: wrap;
+    gap: 0 12px;
+  }
+
+  .logo {
+    flex: 1 1 0;
+  }
+
+  .header-inner nav {
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 0;
+    padding: 8px 0 15px;
   }
 
   nav a {
-    font-size: 10px;
+    width: 100%;
+    padding: 11px 0;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
   }
 
+  /* Senza JavaScript il menu resta aperto e non segue lo scorrimento */
+  header {
+    position: static;
+  }
+
+  .menu-js header {
+    position: sticky;
+  }
+
+  .menu-js .mobile-menu {
+    display: block;
+    flex-shrink: 0;
+    color: white;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.35);
+    padding: 9px 13px;
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .menu-js .header-inner nav {
+    display: none;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+  }
+
+  .menu-js .header-inner nav.open {
+    display: flex;
+  }
+}
+
+@media(max-width:1050px) {
   .history-grid {
     gap: 45px;
   }
@@ -682,43 +779,6 @@ footer p:last-child {
 }
 
 @media(max-width:850px) {
-  .header-inner {
-    width: 90%;
-    padding: 13px 0;
-    flex-wrap: wrap;
-  }
-
-  .mobile-menu {
-    display: block;
-    color: white;
-    background: transparent;
-    border: 1px solid rgba(255,255,255,.35);
-    padding: 9px 13px;
-    font-family: inherit;
-    font-size: 12px;
-    cursor: pointer;
-  }
-
-  .header-inner nav {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-    padding: 8px 0 15px;
-  }
-
-  .header-inner nav.open {
-    display: flex;
-  }
-
-  nav a {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 11px;
-    border-bottom: 1px solid rgba(255,255,255,.08);
-  }
-
   .hero {
     min-height: 610px;
     height: 75vh;
@@ -768,12 +828,17 @@ footer p:last-child {
   }
 
   .logo-text {
-    font-size: 16px;
+    font-size: 13px;
+  }
+
+  .logo-text small {
+    font-size: 10px;
+    letter-spacing: 1px;
   }
 
   .hero {
     min-height: 570px;
-    height: 72vh;
+    height: auto;
     background-position: 58% center;
   }
 
@@ -782,16 +847,16 @@ footer p:last-child {
   }
 
   .hero h1 {
-    font-size: clamp(42px,11vw,58px);
+    font-size: clamp(38px,11vw,58px);
   }
 
   .hero-subtitle {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .hero-line {
-    font-size: 10px;
-    letter-spacing: 3px;
+    font-size: 12px;
+    letter-spacing: 2px;
   }
 
   .hero-buttons {
@@ -816,7 +881,7 @@ footer p:last-child {
   }
 
   .history-period {
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 2px;
   }
 
@@ -850,11 +915,6 @@ footer p:last-child {
     transition-duration: .01ms !important;
     animation-duration: .01ms !important;
   }
-
-  .reveal {
-    opacity: 1;
-    transform: none;
-  }
 }
 </style>
 </head>
@@ -872,13 +932,13 @@ footer p:last-child {
       </span>
     </a>
 
-    <button class="mobile-menu" id="menuButton"
+    <button class="mobile-menu" id="menuButton" type="button"
             aria-expanded="false" aria-controls="mainNav">
       MENU ☰
     </button>
 
     <nav id="mainNav" aria-label="Navigazione principale">
-      <a href="index.html" class="active">Home</a>
+      <a href="index.html" class="active" aria-current="page">Home</a>
       <a href="la-banda.html">La Banda</a>
       <a href="musica.html">La Scuola di Musica</a>
       <a href="eventi.html">Eventi</a>
@@ -890,6 +950,8 @@ footer p:last-child {
 
   </div>
 </header>
+
+<main>
 
 <!-- HERO -->
 
@@ -905,7 +967,7 @@ footer p:last-child {
 
     <p class="hero-subtitle">
       Associazione Musicale Alcarese<br>
-      115 anni di musica, tradizione e passione.
+      <span data-anni>115</span> anni di musica, tradizione e passione.
     </p>
 
     <div class="hero-buttons">
@@ -921,6 +983,23 @@ footer p:last-child {
   </div>
 </section>
 
+<!-- PROSSIMO APPUNTAMENTO
+     Per mostrarlo: scrivi titolo, data, ora e luogo,
+     poi cancella questa riga di apertura del commento e quella di chiusura.
+
+<section class="next-event">
+  <div class="container">
+    <div>
+      <div class="eyebrow">Prossimo appuntamento</div>
+      <h2>TITOLO DELL'EVENTO</h2>
+      <p>GIORNO E DATA, ore ORA · LUOGO</p>
+    </div>
+    <a href="eventi.html" class="btn btn-gold">Tutti gli eventi →</a>
+  </div>
+</section>
+
+-->
+
 <!-- STORIA -->
 
 <section class="history" id="storia">
@@ -931,23 +1010,22 @@ footer p:last-child {
       <h2 class="section-title">Una tradizione<br>che continua.</h2>
 
       <div class="history-year">1911</div>
-      <div class="history-period">1911 — 2026</div>
+      <div class="history-period">1911 — <span data-anno>2026</span></div>
     </div>
 
     <div class="history-description reveal">
       <p>
         Una tradizione musicale che attraversa generazioni,
-        accompagnando la vita della comunità di Alcara Li Fusi
+        accompagnando la vita della comunità di Alcara li Fusi
         e mantenendo vivo, anno dopo anno, il valore della musica
         e della condivisione.
       </p>
 
       <p style="margin-top:20px;">
-        Da oltre un secolo il Corpo Bandistico Municipale
-        “G. Verdi” rappresenta un importante punto di riferimento
-        culturale e musicale per il territorio, unendo persone,
-        esperienze e generazioni attraverso il linguaggio universale
-        della musica.
+        Il Corpo Bandistico Municipale “G. Verdi” è un importante
+        punto di riferimento culturale e musicale per il territorio,
+        e unisce persone ed esperienze attraverso il linguaggio
+        universale della musica.
       </p>
 
       <div class="history-bottom">
@@ -970,7 +1048,8 @@ footer p:last-child {
 
     <div class="band-image reveal">
       <img src="labanda.jpeg"
-           alt="Fotografia del Corpo Bandistico Municipale G. Verdi">
+           alt="Fotografia del Corpo Bandistico Municipale G. Verdi"
+           loading="lazy">
     </div>
 
     <div class="band-text reveal">
@@ -991,7 +1070,7 @@ footer p:last-child {
       <p>
         Una realtà profondamente legata al proprio territorio,
         che continua a custodire e trasmettere un patrimonio
-        musicale costruito nel corso di oltre cento anni.
+        musicale costruito nel tempo.
       </p>
 
       <div class="band-links">
@@ -1019,9 +1098,9 @@ footer p:last-child {
 
       <p class="school-intro">
         La musica si impara, si vive e si trasmette.
-        Da oltre un secolo, l'Associazione Musicale Alcarese
-        rappresenta un punto di riferimento per la formazione
-        musicale e per la crescita di nuove generazioni di musicisti.
+        L'Associazione Musicale Alcarese è un punto di riferimento
+        per la formazione musicale e per la crescita di nuove
+        generazioni di musicisti.
       </p>
 
       <p class="school-intro">
@@ -1035,7 +1114,7 @@ footer p:last-child {
     <div class="music-features">
 
       <article class="music-card reveal">
-        <div class="music-icon">♬</div>
+        <div class="music-icon" aria-hidden="true">♬</div>
         <h3>Strumenti</h3>
         <p>
           Un percorso dedicato alla conoscenza e allo studio
@@ -1044,7 +1123,7 @@ footer p:last-child {
       </article>
 
       <article class="music-card reveal">
-        <div class="music-icon">♫</div>
+        <div class="music-icon" aria-hidden="true">♫</div>
         <h3>Formazione</h3>
         <p>
           Dalle prime nozioni musicali alla pratica d'insieme,
@@ -1053,7 +1132,7 @@ footer p:last-child {
       </article>
 
       <article class="music-card reveal">
-        <div class="music-icon">♪</div>
+        <div class="music-icon" aria-hidden="true">♪</div>
         <h3>Passione</h3>
         <p>
           La musica come esperienza di condivisione,
@@ -1063,9 +1142,14 @@ footer p:last-child {
 
     </div>
 
-    <a href="musica.html" class="btn school-button">
-      Scopri la Scuola di Musica →
-    </a>
+    <div class="school-actions">
+      <a href="musica.html" class="btn btn-gold">
+        Scopri la Scuola di Musica →
+      </a>
+      <a href="#contatti" class="btn btn-outline">
+        Chiedi informazioni
+      </a>
+    </div>
 
   </div>
 </section>
@@ -1141,6 +1225,8 @@ footer p:last-child {
   </div>
 </section>
 
+</main>
+
 <!-- FOOTER -->
 
 <footer>
@@ -1151,7 +1237,7 @@ footer p:last-child {
   <div class="footer-line"></div>
 
   <p>
-    © 2026 Associazione Musicale Alcarese – Alcara Li Fusi, Messina
+    © <span data-anno>2026</span> Associazione Musicale Alcarese – Alcara li Fusi, Messina
   </p>
 
   <p>Dal 1911, musica e tradizione.</p>
@@ -1168,23 +1254,35 @@ footer p:last-child {
 const menuButton = document.getElementById("menuButton");
 const mainNav = document.getElementById("mainNav");
 
-menuButton.addEventListener("click", () => {
-  const isOpen = mainNav.classList.toggle("open");
-  menuButton.setAttribute("aria-expanded", isOpen);
+function setMenu(isOpen) {
+  mainNav.classList.toggle("open", isOpen);
+  menuButton.setAttribute("aria-expanded", String(isOpen));
   menuButton.textContent = isOpen ? "CHIUDI ✕" : "MENU ☰";
+}
+
+menuButton.addEventListener("click", () => {
+  setMenu(!mainNav.classList.contains("open"));
 });
 
 mainNav.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    mainNav.classList.remove("open");
-    menuButton.setAttribute("aria-expanded", "false");
-    menuButton.textContent = "MENU ☰";
-  });
+  link.addEventListener("click", () => setMenu(false));
+});
+
+document.documentElement.classList.add("menu-js");
+
+/* ANNI AGGIORNATI IN AUTOMATICO */
+
+const currentYear = new Date().getFullYear();
+
+document.querySelectorAll("[data-anno]").forEach(element => {
+  element.textContent = currentYear;
+});
+
+document.querySelectorAll("[data-anni]").forEach(element => {
+  element.textContent = currentYear - 1911;
 });
 
 /* ANIMAZIONI ALL'APPARIZIONE */
-
-const revealElements = document.querySelectorAll(".reveal");
 
 if ("IntersectionObserver" in window &&
     !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -1200,10 +1298,8 @@ if ("IntersectionObserver" in window &&
     threshold: 0.12
   });
 
-  revealElements.forEach(element => observer.observe(element));
-
-} else {
-  revealElements.forEach(element => element.classList.add("visible"));
+  document.querySelectorAll(".reveal").forEach(element => observer.observe(element));
+  document.documentElement.classList.add("anim");
 }
 </script>
 
