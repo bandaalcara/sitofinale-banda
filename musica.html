@@ -1,1428 +1,476 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>La Scuola di Musica | Corpo Bandistico Municipale “G. Verdi”</title>
-  <meta name="theme-color" content="#14263D">
-  <meta name="description" content="La Scuola di Musica dell'Associazione Musicale Alcarese: formazione, passione e tradizione dal 1911.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --navy: #14263D;
-      --navy-deep: #0D1B2B;
-      --navy-soft: #203A57;
-      --gold: #C5A66B;
-      --gold-light: #E3D2AC;
-      --cream: #F5F1E8;
-      --cream-dark: #EAE3D5;
-      --burgundy: #642F3C;
-      --burgundy-light: #7D3E4E;
-      --white: #FFFFFF;
-      --text: #303B43;
-      --muted: #747B7C;
-      --border: #DDD8CD;
-      --shadow: 0 12px 30px rgba(16, 32, 53, .08);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-    }
-
-    body {
-      font-family: 'DM Sans', Arial, sans-serif;
-      background: var(--white);
-      color: var(--text);
-      line-height: 1.7;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-weight: 500;
-      line-height: 1.2;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    button {
-      font: inherit;
-    }
-
-    /* HEADER */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(20, 38, 61, .97);
-      backdrop-filter: blur(12px);
-      color: var(--white);
-      border-bottom: 1px solid rgba(255, 255, 255, .09);
-    }
-
-    .header-inner {
-      width: 90%;
-      max-width: 1450px;
-      min-height: 82px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--white);
-      flex-shrink: 0;
-    }
-
-    .logo img {
-      width: 49px;
-      height: 49px;
-      object-fit: contain;
-      border-radius: 50%;
-      background: var(--white);
-      padding: 3px;
-    }
-
-    .logo-text {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 19px;
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
-
-    .logo-text small {
-      display: block;
-      color: var(--gold-light);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 9px;
-      letter-spacing: 3px;
-      margin-top: 1px;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      flex-wrap: wrap;
-      gap: 10px 21px;
-    }
-
-    nav a {
-      color: #E8EDF2;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: .8px;
-      transition: color .25s ease;
-      white-space: nowrap;
-    }
-
-    nav a:hover,
-    nav a[aria-current="page"],
-    nav a.active {
-      color: var(--gold-light);
-    }
-
-    .mobile-menu {
-      display: none;
-    }
-
-    /* HERO */
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 65%, var(--navy-soft) 100%);
-      color: var(--white);
-      width: calc(100% - 56px);
-      max-width: 1400px;
-      margin: 24px auto 0;
-      padding: 65px 24px 60px;
-      text-align: center;
-      border: 1px solid rgba(197, 166, 107, .25);
-    }
-
-    .hero::before {
-      content: "MUSICA";
-      position: absolute;
-      right: -25px;
-      bottom: -45px;
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(110px, 20vw, 250px);
-      color: rgba(255, 255, 255, .03);
-      pointer-events: none;
-      line-height: 1;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero .section-label {
-      color: var(--gold-light);
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 11px;
-      font-weight: 700;
-      margin-bottom: 14px;
-    }
-
-    .hero h1 {
-      font-size: clamp(38px, 5.5vw, 64px);
-      font-weight: 500;
-      line-height: 1.15;
-      margin-bottom: 16px;
-      letter-spacing: -1px;
-    }
-
-    .hero p {
-      max-width: 750px;
-      margin: 0 auto 12px;
-      color: #DCE5EC;
-      font-size: 15px;
-      line-height: 1.8;
-    }
-
-    .hero-line {
-      width: 65px;
-      height: 1px;
-      background: var(--gold);
-      margin: 22px auto 0;
-    }
-
-    /* SEZIONI */
-
-    .content-section {
-      padding: 55px 7%;
-    }
-
-    .content {
-      max-width: 1120px;
-      margin: 0 auto;
-    }
-
-    .intro-section .content {
-      max-width: 1160px;
-    }
-
-    .section-label {
-      color: var(--burgundy);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 10px;
-      font-weight: 700;
-      margin-bottom: 9px;
-    }
-
-    .section-title {
-      color: var(--navy);
-      font-size: clamp(28px, 4vw, 40px);
-      line-height: 1.2;
-      margin-bottom: 18px;
-      letter-spacing: -.4px;
-    }
-
-    .content-section p {
-      font-size: 15px;
-      line-height: 1.75;
-      color: var(--text);
-      margin-bottom: 11px;
-    }
-
-    /* PRESENTAZIONE + LOCANDINA */
-
-    .intro-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(260px, .75fr);
-      align-items: center;
-      gap: 40px;
-    }
-
-    .intro-text {
-      min-width: 0;
-    }
-
-    .intro-poster {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px;
-      background: var(--cream);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-    }
-
-    .intro-poster img {
-      display: block;
-      width: 100%;
-      max-width: 340px;
-      max-height: 420px;
-      object-fit: contain;
-      cursor: zoom-in;
-      transition: transform .25s ease;
-    }
-
-    .intro-poster img:hover {
-      transform: scale(1.02);
-    }
-
-    /* CARDS */
-
-    .card {
-      background: var(--white);
-      padding: 26px;
-      margin-top: 18px;
-      border: 1px solid var(--border);
-      border-top: 3px solid var(--gold);
-      box-shadow: var(--shadow);
-    }
-
-    .card h2 {
-      color: var(--navy);
-      font-size: 26px;
-      margin: 0 0 15px;
-    }
-
-    .card h3 {
-      color: var(--navy);
-      font-size: 21px;
-      margin: 22px 0 10px;
-    }
-
-    .card ul {
-      padding-left: 23px;
-      color: var(--muted);
-      line-height: 1.8;
-    }
-
-    .card li {
-      padding-left: 4px;
-      margin-bottom: 4px;
-    }
-
-    strong {
-      color: var(--navy);
-    }
-
-    blockquote {
-      margin: 17px 0;
-      padding: 16px 21px;
-      border-left: 3px solid var(--gold);
-      background: var(--cream);
-      font-family: 'Playfair Display', Georgia, serif;
-      font-style: italic;
-      line-height: 1.7;
-      color: var(--navy);
-    }
-
-    /* MAESTRO PARRINO */
-
-    .parrino-portrait {
-      margin-top: 22px;
-      text-align: center;
-    }
-
-    .parrino-portrait img {
-      width: 100%;
-      max-width: 310px;
-      max-height: 350px;
-      margin: 0 auto;
-      object-fit: contain;
-      background: var(--cream);
-      padding: 7px;
-      border: 1px solid var(--border);
-      cursor: zoom-in;
-      box-shadow: var(--shadow);
-    }
-
-    .parrino-portrait p {
-      margin-top: 8px;
-      font-size: 12px;
-      font-style: italic;
-      color: var(--muted);
-    }
-
-    /* GALLERIA PARRINO */
-
-    .gallery {
-      max-width: 750px;
-      margin: 18px auto 0;
-    }
-
-    .gallery-image-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-    }
-
-    .gallery-image {
-      display: block;
-      width: 100%;
-      height: 280px;
-      object-fit: contain;
-      background: var(--cream);
-      border: 1px solid var(--border);
-      cursor: zoom-in;
-    }
-
-    .gallery-arrow {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      width: 39px;
-      height: 39px;
-      border: 1px solid var(--gold);
-      background: var(--navy);
-      color: var(--gold-light);
-      font-size: 18px;
-      cursor: pointer;
-      transition: background .2s, color .2s, transform .2s;
-    }
-
-    .gallery-arrow:hover {
-      background: var(--gold);
-      color: var(--navy-deep);
-      transform: scale(1.05);
-    }
-
-    .gallery-counter {
-      margin: 10px 0 4px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .gallery-hint {
-      text-align: center;
-      color: var(--burgundy);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-top: 8px;
-    }
-
-    /* GRIGLIA MINIATURE */
-
-    .thumbs-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .thumbs-grid--five {
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 10px;
-    }
-
-    .thumb-item {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 4 / 3;
-      background: var(--cream-dark);
-      border: 1px solid var(--border);
-      box-shadow: 0 5px 15px rgba(16, 32, 53, .07);
-      cursor: zoom-in;
-    }
-
-    .thumb-item img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .35s ease;
-    }
-
-    .thumb-item:hover img {
-      transform: scale(1.05);
-    }
-
-    .award-card--navy .thumb-item {
-      background: var(--navy-deep);
-      border-color: rgba(197, 166, 107, .35);
-    }
-
-    .award-card--navy .gallery-hint {
-      color: var(--gold-light);
-    }
-
-    /* SCUOLA DI MUSICA OGGI */
-
-    .teachers-section {
-      background: var(--navy);
-      color: var(--white);
-    }
-
-    .teachers-section .section-label {
-      color: var(--gold-light);
-    }
-
-    .teachers-section .section-title {
-      color: var(--white);
-    }
-
-    .teachers-section .content > p {
-      color: #DCE5EC;
-    }
-
-   .teachers-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 22px;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>La Scuola di Musica | Corpo Bandistico Municipale “G. Verdi”</title>
+<meta name="theme-color" content="#14263D">
+<meta name="description" content="La Scuola di Musica dell'Associazione Musicale Alcarese: formazione, passione e tradizione dal 1911.">
+
+<!-- ICONA DELLA SCHEDA -->
+<link rel="icon" type="image/jpeg" href="logo.jpeg">
+<link rel="apple-touch-icon" href="logo.jpeg">
+
+<!-- ANTEPRIMA SU WHATSAPP E FACEBOOK -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="La Scuola di Musica | Corpo Bandistico Municipale “G. Verdi”">
+<meta property="og:description" content="Formazione, passione e tradizione per tutte le età.">
+<!-- Per la foto nell'anteprima: scrivi l'indirizzo completo del sito e togli i segni di commento
+<meta property="og:url" content="https://INDIRIZZO-DEL-SITO/musica.html">
+<meta property="og:image" content="https://INDIRIZZO-DEL-SITO/foto-eventi/scuoladimusica.jpg">
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy: #14263D;
+  --navy-deep: #0D1B2B;
+  --navy-soft: #203A57;
+  --gold: #C5A66B;
+  --gold-light: #E3D2AC;
+  --cream: #F5F1E8;
+  --cream-dark: #EAE3D5;
+  --burgundy: #642F3C;
+  --burgundy-light: #7D3E4E;
+  --white: #FFFFFF;
+  --text: #303B43;
+  --muted: #5F6668;
+  --border: #DDD8CD;
+  --shadow: 0 18px 45px rgba(16,32,53,.10);
 }
 
-.teacher-card {
-  padding: 20px 12px;
-  text-align: center;
-  background: rgba(255, 255, 255, .06);
-  border: 1px solid rgba(197, 166, 107, .4);
-  border-top: 3px solid var(--gold);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.teacher-card h3 {
-  color: var(--gold-light);
-  font-size: 18px;
-  margin-bottom: 8px;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
-.teacher-card p {
-  color: #DCE5EC !important;
-  font-size: 12px !important;
-  margin: 0 !important;
+body {
+  font-family: 'DM Sans', Arial, sans-serif;
+  background: var(--white);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-    /* MAESTRO SANTINO SANTORO */
-
-    .santino-section {
-      background: var(--cream);
-    }
-
-    .santino-section .card {
-      border-top-color: var(--burgundy);
-      padding: 28px;
-    }
-
-    .santino-intro {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 260px;
-      align-items: start;
-      gap: 28px;
-    }
-
-    .santino-photo {
-      background: var(--white);
-      border: 1px solid var(--border);
-      padding: 7px;
-      box-shadow: var(--shadow);
-    }
-
-    .santino-photo img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      cursor: zoom-in;
-    }
-
-    .santino-photo p {
-      font-size: 12px;
-      text-align: center;
-      margin: 8px 0 0;
-      color: var(--muted);
-    }
-
-    .santino-list {
-      columns: 3;
-      column-gap: 30px;
-      font-size: 14px;
-      line-height: 1.7;
-      margin-top: 12px;
-    }
-
-    .santino-list li {
-      break-inside: avoid;
-    }
-
-    /* VALORI E PATRIMONIO */
-
-    .content-section > .content > .card {
-      padding: 25px 28px;
-    }
-
-    /* TESTIMONIANZA */
-
-    .testimonial-section {
-      background: var(--cream);
-    }
-
-    .testimonial-section .card {
-      max-width: 850px;
-      margin: 18px auto 0;
-      padding: 25px 30px;
-    }
-
-    .testimonial-name {
-      color: var(--navy);
-      font-size: 15px;
-      margin-bottom: 4px;
-    }
-
-    .testimonial-section blockquote {
-      font-size: 15px;
-    }
-
-    /* ATTIVITÀ E INIZIATIVE */
-
-    .activities-section {
-      background: var(--cream);
-      padding: 55px 5%;
-    }
-
-    .activities-content {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .activities-heading {
-      text-align: center;
-      margin-bottom: 28px;
-    }
-
-    .activities-heading h2 {
-      color: var(--navy);
-      font-size: clamp(30px, 4vw, 42px);
-      margin-bottom: 10px;
-    }
-
-    .activities-heading p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .ciak-story {
-      max-width: 900px;
-      margin: 0 auto 32px;
-      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
-      color: var(--white);
-      padding: 30px;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(197, 166, 107, .35);
-      border-top: 4px solid var(--gold);
-    }
-
-    .ciak-story .section-label {
-      color: var(--gold-light);
-    }
-
-    .ciak-story h3 {
-      font-size: clamp(27px, 4vw, 36px);
-      color: var(--white);
-      margin-bottom: 10px;
-    }
-
-    .ciak-date {
-      display: inline-block;
-      background: rgba(197, 166, 107, .16);
-      border: 1px solid rgba(197, 166, 107, .45);
-      color: var(--gold-light);
-      padding: 4px 12px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-.ciak-story {
-  max-width: 1000px;
-  margin: 0 auto 20px;
-  background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
-  color: var(--white);
-  padding: 22px 26px;
-  box-shadow: var(--shadow);
-  border: 1px solid rgba(197, 166, 107, .35);
-  border-top: 4px solid var(--gold);
-}
-
-.ciak-story .section-label {
-  color: var(--gold-light);
-  margin-bottom: 5px;
-}
-
-.ciak-story h3 {
-  font-size: 29px;
-  color: var(--white);
-  margin-bottom: 7px;
-}
-
-.ciak-date {
-  display: inline-block;
-  background: rgba(197, 166, 107, .16);
-  border: 1px solid rgba(197, 166, 107, .45);
-  color: var(--gold-light);
-  padding: 3px 10px;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-.ciak-story p {
-  color: #DCE5EC;
-  font-size: 13px;
-  line-height: 1.6;
-  margin-bottom: 7px;
-}
-
-.ciak-final {
-  color: var(--gold-light) !important;
+h1,h2,h3 {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 16px !important;
-  font-style: italic;
-  margin-top: 10px !important;
-  margin-bottom: 0 !important;
-  padding-top: 10px;
-  border-top: 1px solid rgba(255, 255, 255, .14);
+  font-weight: 500;
+  line-height: 1.2;
 }
 
-.ciak-gallery {
-  max-width: 1000px;
-  margin: 0 auto;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.ciak-gallery-heading {
-  text-align: center;
-  margin-bottom: 14px;
-}
-
-.ciak-gallery-heading h3 {
-  color: var(--navy);
-  font-size: 22px;
-  margin-bottom: 4px;
-}
-
-.ciak-gallery-heading p {
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.ciak-gallery .thumbs-grid {
-  gap: 8px;
-  margin-top: 10px;
-}
-
-.ciak-gallery .thumb-item {
-  aspect-ratio: 4 / 3;
-}
-    /* PREMI: SCHEDE COMPATTE AFFIANCATE */
-
-.awards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  align-items: stretch;
-  margin-top: 20px;
-}
-
-.awards-grid .award-card {
-  min-width: 0;
-  margin-top: 0;
-  padding: 17px;
-  display: flex;
-  flex-direction: column;
-}
-
-.awards-grid .award-top {
-  gap: 6px;
-  margin-bottom: 10px;
-}
-
-.awards-grid .event-badge {
-  font-size: 9px;
-  padding: 4px 7px;
-  letter-spacing: 1px;
-}
-
-.awards-grid .event-meta {
-  font-size: 10px;
-}
-
-.awards-grid .award-card h2 {
-  font-size: 20px;
-  line-height: 1.3;
-  margin-bottom: 10px;
-}
-
-.awards-grid .award-card p {
-  font-size: 12px;
-  line-height: 1.6;
-  margin-bottom: 8px;
-}
-
-.awards-grid .thumbs-grid,
-.awards-grid .thumbs-grid--five {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 7px;
-  margin-top: auto;
-  padding-top: 10px;
-}
-
-.awards-grid .thumb-item {
-  aspect-ratio: 4 / 3;
-}
-
-.awards-grid .award-image {
-  margin-top: auto;
-  padding-top: 12px;
-}
-
-.awards-grid .award-image img {
+img {
   max-width: 100%;
-  max-height: 170px;
-  padding: 4px;
+  display: block;
 }
 
-.awards-grid .gallery-hint {
-  font-size: 9px;
-  margin-top: 8px;
+.container {
+  width: min(1160px, 88%);
+  margin: auto;
 }
 
-/* CIAK: GALLERIA PIÙ COMPATTA */
+/* HEADER */
 
-.ciak-gallery {
-  max-width: 900px;
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(20,38,61,.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,.09);
 }
 
-.ciak-gallery .thumbs-grid {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 8px;
+.header-inner {
+  width: 94%;
+  max-width: 1450px;
+  min-height: 82px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
 }
 
-.ciak-gallery .thumb-item {
-  aspect-ratio: 4 / 3;
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  min-width: 0;
 }
 
-/* TUTTE LE MINIATURE CLICCABILI */
+.logo img {
+  width: 49px;
+  height: 49px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: contain;
+  background: white;
+  padding: 3px;
+}
 
-.thumb-item,
-.award-image img,
-.parrino-portrait img,
-.santino-photo img,
-.intro-poster img {
-  cursor: zoom-in;
+.logo-text {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 16px;
+  line-height: 1.3;
+  letter-spacing: .5px;
+  font-weight: 600;
+  max-width: 15em;
+}
+
+.logo-text small {
+  display: block;
+  color: var(--gold-light);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-top: 2px;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px 18px;
+}
+
+nav a {
+  color: #E8EDF2;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  transition: color .25s;
+  white-space: nowrap;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--gold-light);
+}
+
+.mobile-menu {
+  display: none;
+}
+
+/* APERTURA */
+.hero { background: linear-gradient(135deg, var(--navy-deep), var(--navy) 65%, var(--navy-soft)); color: white; text-align: center; padding: 75px 0 65px; }
+.hero h1 { font-size: clamp(40px,6vw,70px); margin-bottom: 18px; }
+.hero p { max-width: 680px; margin: auto; color: #E4E8ED; font-size: 18px; }
+.hero .eyebrow { color: var(--gold-light); }
+.hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 30px; }
+.btn { display: inline-flex; padding: 14px 24px; font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; }
+.btn-gold { background: var(--gold); color: var(--navy-deep); border: 1px solid var(--gold); }
+.btn-gold:hover { background: var(--gold-light); }
+.btn-outline { border: 1px solid rgba(255,255,255,.6); }
+.btn-outline:hover { background: white; color: var(--navy); }
+
+/* INDICE DELLA PAGINA */
+.indice { display: flex; flex-direction: row; flex-wrap: wrap; background: var(--cream-dark); justify-content: center; gap: 4px 28px; padding: 14px 5%; }
+.indice a { color: var(--navy); font-weight: 700; font-size: 12px; padding: 6px 0; }
+.indice a:hover { color: var(--burgundy); }
+.indice a { width: auto; border: 0; }
+
+/* SEZIONI */
+.sezione { padding: 85px 0; }
+.crema { background: var(--cream); }
+.scura { background: var(--navy); color: white; }
+.eyebrow { color: var(--burgundy); font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 14px; }
+.section-title { color: var(--navy); font-size: clamp(32px,4vw,46px); margin-bottom: 24px; }
+.scura .eyebrow { color: var(--gold-light); }
+.scura .section-title { color: white; }
+.sezione p, .sezione li { font-size: 16px; line-height: 1.85; }
+.sezione p { margin-bottom: 14px; }
+.sezione h3 { color: var(--navy); font-size: 23px; margin-bottom: 14px; }
+.sezione ul { padding-left: 22px; }
+.testo { max-width: 780px; }
+strong { font-weight: 700; }
+blockquote { margin: 20px 0; padding: 16px 22px; border-left: 3px solid var(--gold); background: var(--cream); color: var(--navy); font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 17px; }
+.crema blockquote { background: white; }
+figcaption { margin-top: 10px; text-align: center; font-size: 14px; font-style: italic; color: var(--muted); }
+.scura figcaption { color: #C5D0DC; }
+
+.due-colonne { display: grid; grid-template-columns: minmax(0,1.5fr) minmax(0,1fr); gap: 60px; align-items: start; }
+.foto { display: block; overflow: hidden; background: var(--cream-dark); cursor: zoom-in; }
+.foto img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+.foto:hover img { transform: scale(1.04); }
+.locandina, .ritratto { width: 100%; max-width: 360px; justify-self: center; }
+.locandina .foto img, .ritratto .foto img { height: auto; }
+
+.perche { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 50px; }
+.perche > div { padding: 28px; background: var(--cream); border-top: 3px solid var(--gold); }
+.approfondimento { margin-top: 20px; border: 1px solid var(--border); background: white; color: var(--text); padding: 0 22px; }
+.approfondimento[open] { padding-bottom: 18px; }
+summary { cursor: pointer; padding: 15px 0; color: var(--navy); font-weight: 700; font-size: 15px; }
+
+/* MAESTRI */
+.teachers-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 14px; margin-top: 30px; }
+.teacher-card { padding: 22px 14px; text-align: center; border: 1px solid rgba(197,166,107,.4); border-top: 3px solid var(--gold); }
+.sezione .teacher-card h3 { color: var(--gold-light); font-size: 19px; margin-bottom: 6px; }
+.sezione .teacher-card p { color: #DCE5EC; font-size: 14px; margin: 0; }
+.santino-list { columns: 3 170px; margin-top: 8px; }
+
+/* PREMI: titolo, foto con didascalia subito sotto, testo */
+.premio { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); grid-template-areas: "foto testa" "foto testo"; grid-template-rows: auto 1fr; column-gap: 40px; margin-top: 30px; padding: 30px; background: var(--cream); border-top: 4px solid var(--gold); }
+.premio-testa { grid-area: testa; }
+.premio-foto { grid-area: foto; align-self: start; }
+.premio-testo { grid-area: testo; }
+.badge { display: inline-block; background: var(--navy); color: var(--gold-light); padding: 5px 12px; font-size: 12px; font-weight: 700; }
+.meta { display: block; margin: 12px 0 8px; color: var(--burgundy); font-size: 13px; font-weight: 700; }
+.premio-foto .grande { aspect-ratio: 4 / 3; }
+.premio-foto .grande img { object-fit: contain; }
+.mini { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 8px; margin-top: 8px; }
+.mini .foto { aspect-ratio: 1; }
+
+/* GALLERIE */
+.griglia { display: grid; grid-template-columns: repeat(auto-fill,minmax(150px,1fr)); gap: 8px; margin-top: 25px; }
+.griglia .foto { aspect-ratio: 4 / 3; }
+.ricordi { margin-top: 45px; min-width: 0; }
+.striscia { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 12px; scroll-snap-type: x mandatory; }
+.striscia .foto { flex: 0 0 220px; height: 170px; scroll-snap-align: start; }
+.striscia .foto img { object-fit: contain; }
+
+.testimonianza { max-width: 820px; text-align: center; }
+.testimonianza blockquote { background: none; border: 0; color: white; padding: 0; }
+.sezione.scura .testimonianza p, .testimonianza blockquote p { font-size: 19px; }
+.motto { font-family: 'Playfair Display', Georgia, serif; font-style: italic; color: var(--burgundy); }
+.iscrizioni { text-align: center; }
+.iscrizioni .recapiti { margin-top: 22px; color: #C5D0DC; overflow-wrap: anywhere; }
+
+/* FOTO INGRANDITA */
+#lightbox { width: 100%; height: 100%; max-width: 100%; max-height: 100%; border: 0; padding: 16px 10px; background: rgba(10,23,39,.97); align-items: center; justify-content: center; gap: 10px; }
+#lightbox[open] { display: flex; }
+#lightbox figure { min-width: 0; }
+#lightbox img { max-width: 100%; max-height: 80vh; margin: auto; }
+#lightbox figcaption { color: var(--gold-light); }
+#lightbox button { flex-shrink: 0; width: 42px; height: 42px; border: 1px solid var(--gold); background: var(--navy); color: var(--gold-light); font-size: 20px; cursor: pointer; }
+#lightbox .chiudi { position: absolute; top: 12px; right: 12px; z-index: 2; }
+
+/* FOOTER */
+
+footer {
+  background: var(--navy-deep);
+  color: #AAB7C5;
+  padding: 35px 5%;
+  text-align: center;
+  font-size: 13px;
+  line-height: 2;
+}
+
+footer strong {
+  color: white;
+  font-family: 'Playfair Display',serif;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.footer-line {
+  width: 45px;
+  height: 1px;
+  background: var(--gold);
+  margin: 15px auto;
+}
+
+footer p:last-child {
+  margin-top: 9px;
+  font-size: 12px;
+  color: #8E9EAF;
+}
+
+/* ANIMAZIONI (attive solo se JavaScript funziona) */
+
+.anim .reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.anim .reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.anim .music-card.reveal.visible {
+  transition: opacity .8s ease, transform .3s ease,
+              background .3s, border-color .3s;
+}
+
+.anim .music-card.reveal.visible:hover {
+  transform: translateY(-6px);
 }
 
 /* RESPONSIVE */
 
-@media (max-width: 900px) {
-  .awards-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+/* Menu a pulsante: telefoni, tablet e schermi piccoli */
+@media(max-width:1279px) {
+  .header-inner {
+    width: 90%;
+    padding: 13px 0;
+    flex-wrap: wrap;
+    gap: 0 12px;
   }
 
-  .ciak-gallery .thumbs-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+  .logo {
+    flex: 1 1 0;
+  }
+
+  .header-inner nav {
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 0;
+    padding: 8px 0 15px;
+  }
+
+  nav a {
+    width: 100%;
+    padding: 11px 0;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+
+  /* Senza JavaScript il menu resta aperto e non segue lo scorrimento */
+  header {
+    position: static;
+  }
+
+  .menu-js header {
+    position: sticky;
+  }
+
+  .menu-js .mobile-menu {
+    display: block;
+    flex-shrink: 0;
+    color: white;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.35);
+    padding: 9px 13px;
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .menu-js .header-inner nav {
+    display: none;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+  }
+
+  .menu-js .header-inner nav.open {
+    display: flex;
   }
 }
 
-@media (max-width: 600px) {
-  .awards-grid {
-    grid-template-columns: 1fr;
-    gap: 13px;
-  }
-
-  .awards-grid .award-card {
-    padding: 18px;
-  }
-
-  .ciak-gallery .thumbs-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 7px;
-  }
+@media(max-width:1279px) {
+  nav.indice a { width: auto; border: 0; font-size: 12px; padding: 6px 0; }
 }
 
-    /* RISULTATI E PREMI */
-
-    .results-section {
-      background: var(--white);
-      padding-top: 55px;
-      padding-bottom: 55px;
-    }
-
-    .results-section > .content > .section-title {
-      margin-bottom: 20px;
-    }
-
-    .award-card {
-      padding: 25px;
-      margin-top: 20px;
-      box-shadow: var(--shadow);
-      position: relative;
-    }
-
-    .award-top {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 8px 12px;
-      margin-bottom: 13px;
-    }
-
-    .event-badge {
-      display: inline-block;
-      padding: 5px 11px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    .event-meta {
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: .4px;
-    }
-
-    .award-card h2 {
-      color: var(--navy);
-      font-size: clamp(23px, 3vw, 28px);
-      margin-bottom: 13px;
-    }
-
-    .award-card p {
-      font-size: 14px;
-      line-height: 1.7;
-      margin-bottom: 10px;
-    }
-
-    /* MIRTO 2026 */
-
-    .award-card--gold {
-      background: var(--cream);
-      border: 1px solid var(--border);
-      border-top: 4px solid var(--gold);
-    }
-
-    .award-card--gold .event-badge {
-      background: var(--navy);
-      color: var(--gold-light);
-    }
-
-    /* CROTONE 2026 */
-
-    .award-card--navy {
-      background: linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 100%);
-      color: var(--white);
-      border: 1px solid rgba(197, 166, 107, .35);
-      border-left: 5px solid var(--gold);
-    }
-
-    .award-card--navy h2 {
-      color: var(--white);
-    }
-
-    .award-card--navy p,
-    .award-card--navy strong {
-      color: #E4EBF2;
-    }
-
-    .award-card--navy .event-badge {
-      background: var(--gold);
-      color: var(--navy-deep);
-    }
-
-    .award-card--navy .event-meta {
-      color: var(--gold-light);
-    }
-
-    /* MIRTO 2025 */
-
-    .award-card--burgundy {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-left: 5px solid var(--burgundy);
-    }
-
-    .award-card--burgundy .event-badge {
-      background: var(--burgundy);
-      color: var(--white);
-    }
-
-    .award-image {
-      margin-top: 16px;
-      text-align: center;
-    }
-
-    .award-image img {
-      width: 100%;
-      max-width: 440px;
-      max-height: 330px;
-      margin: 0 auto;
-      object-fit: contain;
-      cursor: zoom-in;
-      border: 1px solid var(--border);
-      background: var(--white);
-      padding: 7px;
-      transition: transform .25s ease;
-    }
-
-    .award-image img:hover {
-      transform: scale(1.015);
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: var(--navy-deep);
-      color: #AAB7C5;
-      text-align: center;
-      padding: 30px 5%;
-      font-size: 11px;
-      line-height: 2;
-    }
-
-    footer strong {
-      color: var(--white);
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 17px;
-      font-weight: 500;
-    }
-
-    .footer-line {
-      width: 45px;
-      height: 1px;
-      background: var(--gold);
-      margin: 13px auto;
-    }
-
-    footer p:last-child {
-      font-size: 10px;
-      color: #8191A2;
-      margin-top: 8px;
-    }
-
-    /* LIGHTBOX */
-
-    .lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 1000;
-      align-items: center;
-      justify-content: center;
-      gap: 18px;
-      padding: 28px 20px;
-      background: rgba(10, 23, 39, .96);
-    }
-
-    .lightbox.open {
-      display: flex;
-    }
-
-    .lightbox-stage {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      max-width: 84vw;
-      max-height: 90vh;
-    }
-
-    .lightbox img {
-      display: block;
-      max-width: 100%;
-      max-height: 80vh;
-      object-fit: contain;
-      border: 1px solid rgba(197, 166, 107, .4);
-      background: var(--navy-deep);
-    }
-
-    .lightbox-caption {
-      margin-top: 12px;
-      color: var(--gold-light);
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      text-align: center;
-    }
-
-    .lightbox-nav {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      width: 48px;
-      height: 48px;
-      border: 1px solid var(--gold);
-      background: rgba(20, 38, 61, .85);
-      color: var(--gold-light);
-      font-size: 22px;
-      cursor: pointer;
-      transition: background .2s, color .2s, transform .2s;
-    }
-
-    .lightbox-nav:hover:not(:disabled) {
-      background: var(--gold);
-      color: var(--navy-deep);
-      transform: scale(1.06);
-    }
-
-    .lightbox-close {
-      position: absolute;
-      top: 16px;
-      right: 22px;
-      width: 45px;
-      height: 45px;
-      border: 1px solid var(--gold);
-      background: rgba(13, 27, 43, .85);
-      color: var(--gold-light);
-      font-size: 30px;
-      line-height: 1;
-      cursor: pointer;
-      transition: background .2s, color .2s;
-    }
-
-    .lightbox-close:hover {
-      background: var(--gold);
-      color: var(--navy-deep);
-    }
-
-    /* RESPONSIVE */
-
-    @media (max-width: 1100px) {
-      nav {
-        gap: 10px 12px;
-      }
-
-      nav a {
-        font-size: 10px;
-      }
-
-      .thumbs-grid--five {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 850px) {
-      .header-inner {
-        width: 90%;
-        flex-wrap: wrap;
-        padding: 13px 0;
-      }
-
-      .mobile-menu {
-        display: block;
-        background: transparent;
-        border: 1px solid rgba(255, 255, 255, .35);
-        color: white;
-        padding: 9px 13px;
-        cursor: pointer;
-        font-size: 12px;
-      }
-
-      .header-right {
-        display: none;
-        width: 100%;
-      }
-
-      .header-right.open {
-        display: block;
-      }
-
-      nav {
-        width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
-        padding: 8px 0 15px;
-      }
-
-      nav a {
-        width: 100%;
-        padding: 10px 0;
-        font-size: 11px;
-        border-bottom: 1px solid rgba(255, 255, 255, .08);
-      }
-
-      .content-section {
-        padding: 42px 6%;
-      }
-
-      .hero {
-        width: calc(100% - 30px);
-        margin: 18px auto 0;
-        padding: 48px 20px;
-      }
-
-      .hero h1 {
-        font-size: clamp(38px, 8vw, 56px);
-      }
-
-      .hero p {
-        font-size: 14px;
-      }
-
-      .card,
-      .award-card,
-      .ciak-story {
-        padding: 22px 18px;
-      }
-
-      .card h2 {
-        font-size: 24px;
-      }
-
-      .card h3 {
-        font-size: 20px;
-      }
-
-      .gallery-image {
-        height: 250px;
-      }
-
-      .gallery-image-wrap {
-        gap: 8px;
-      }
-
-      .gallery-arrow {
-        width: 35px;
-        height: 35px;
-        font-size: 16px;
-      }
-
-      .activities-section {
-        padding: 42px 5%;
-      }
-
-      .thumbs-grid,
-      .thumbs-grid--five {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-      }
-
-      .intro-layout {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-
-      .intro-poster {
-        max-width: 440px;
-        margin: 0 auto;
-      }
-
-      .intro-poster img {
-        max-height: 460px;
-      }
-.teachers-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+@media(max-width:850px) {
+  .due-colonne, .perche { grid-template-columns: 1fr; gap: 30px; }
+  .premio { display: block; padding: 22px 18px; }
+  .premio-foto { margin: 18px 0; }
+  .teachers-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
 }
 
-      .santino-intro {
-        grid-template-columns: 1fr;
-      }
-
-      .santino-photo {
-        max-width: 300px;
-        margin: 0 auto;
-      }
-
-      .santino-list {
-        columns: 2;
-      }
-
-      .testimonial-section .card {
-        padding: 22px 18px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .lightbox {
-        padding: 16px 10px;
-        gap: 8px;
-      }
-
-      .lightbox-stage {
-        max-width: 74vw;
-      }
-
-      .lightbox-nav {
-        width: 38px;
-        height: 38px;
-        font-size: 18px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .logo img {
-        width: 43px;
-        height: 43px;
-      }
-
-      .logo-text {
-        font-size: 16px;
-      }
-
-      .hero h1 {
-        font-size: 37px;
-      }
-
-      .gallery-image {
-        height: 210px;
-      }
-
-      .gallery-arrow {
-        width: 31px;
-        height: 31px;
-      }
-
-      blockquote {
-        padding: 15px 17px;
-      }
-
-      .thumbs-grid,
-      .thumbs-grid--five {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 9px;
-      }
-
-      .intro-poster {
-        padding: 12px;
-      }
-
-      .santino-list {
-        columns: 1;
-      }
-
-      .testimonial-section .card {
-        padding: 20px 17px;
-      }
-      .teachers-grid {
-  grid-template-columns: 1fr;
+@media(max-width:520px) {
+  .logo img { width: 43px; height: 43px; }
+  .logo-text { font-size: 13px; }
+  .logo-text small { font-size: 10px; letter-spacing: 1px; }
+  .sezione { padding: 60px 0; }
+  .teachers-grid { grid-template-columns: 1fr; }
+  .griglia { grid-template-columns: repeat(2,minmax(0,1fr)); }
 }
 
-.ciak-story {
-  padding: 18px 15px;
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior: auto; }
+  *,*::before,*::after { transition-duration: .01ms !important; }
 }
-
-.ciak-story h3 {
-  font-size: 25px;
-}
-
-      .award-card {
-        padding: 19px 15px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *, *::before, *::after {
-        transition-duration: .01ms !important;
-      }
-    }
-  </style>
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
+<header>
+  <div class="header-inner">
 
-  <header>
-    <div class="header-inner">
-      <a class="logo" href="index.html" aria-label="Torna alla Home">
-        <img src="logo.jpeg" alt="Logo Corpo Bandistico Municipale G. Verdi">
-        <span class="logo-text">
-          CORPO BANDISTICO MUNICIPALE
-          <small>ALCARA LI FUSI · 1911</small>
-        </span>
-      </a>
+    <a class="logo" href="index.html" aria-label="Torna alla Home">
+      <img src="logo.jpeg" alt="Logo Corpo Bandistico Municipale G. Verdi">
+      <span class="logo-text">
+        CORPO BANDISTICO MUNICIPALE
+        <small>ALCARA LI FUSI · 1911</small>
+      </span>
+    </a>
 
-      <button class="mobile-menu" id="menuButton"
-              aria-expanded="false" aria-controls="headerRight">
-        MENU ☰
-      </button>
+    <button class="mobile-menu" id="menuButton" type="button"
+            aria-expanded="false" aria-controls="mainNav">
+      MENU ☰
+    </button>
 
-      <div class="header-right" id="headerRight">
-        <nav id="mainNav" aria-label="Navigazione principale">
-          <a href="index.html">Home</a>
-          <a href="la-banda.html">La Banda</a>
-          <a href="musica.html" class="active" aria-current="page">La Scuola di Musica</a>
-          <a href="eventi.html">Eventi</a>
-          <a href="albo.html">Albo Storico</a>
-          <a href="maestri-direttori.html">Maestri Direttori</a>
-          <a href="galleria.html">Galleria</a>
-          <a href="index.html#contatti">Contatti</a>
-        </nav>
-      </div>
-    </div>
-  </header>
+    <nav id="mainNav" aria-label="Navigazione principale">
+      <a href="index.html">Home</a>
+      <a href="la-banda.html">La Banda</a>
+      <a href="musica.html" class="active" aria-current="page">La Scuola di Musica</a>
+      <a href="eventi.html">Eventi</a>
+      <a href="albo.html">Albo Storico</a>
+      <a href="maestri-direttori.html">Maestri Direttori</a>
+      <a href="galleria.html">Galleria</a>
+      <a href="index.html#contatti">Contatti</a>
+    </nav>
 
-  <!-- HERO -->
+  </div>
+</header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <div class="section-label">ASSOCIAZIONE MUSICALE ALCARESE · DAL 1911</div>
+<main>
 
-      <h1>La Scuola<br>di Musica</h1>
-
-      <p>
+<!-- APERTURA -->
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">Associazione Musicale Alcarese</div>
+    <h1>La Scuola di Musica</h1>
+    <p>
         Musica, formazione, passione e condivisione.
         Un percorso aperto a tutte le età, guidato dai Maestri
         del Corpo Bandistico Municipale “G. Verdi”.
-      </p>
-
-      <div class="hero-line"></div>
+    </p>
+    <div class="hero-actions">
+      <a href="#iscrizioni" class="btn btn-gold">Chiedi informazioni</a>
+      <a href="#premi" class="btn btn-outline">I nostri premi</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PRESENTAZIONE + LOCANDINA -->
+<nav class="indice" aria-label="Sezioni della pagina">
+  <a href="#scuola">La scuola</a>
+  <a href="#maestri">I Maestri</a>
+  <a href="#premi">Premi</a>
+  <a href="#attivita">Attività</a>
+  <a href="#parrino">Maestro Parrino</a>
+  <a href="#iscrizioni">Iscrizioni</a>
+</nav>
 
-  <section class="content-section intro-section">
-    <div class="content">
-      <div class="intro-layout">
-
-        <div class="intro-text">
-          <div class="section-label">La nostra scuola</div>
-
-          <h2 class="section-title">
-            La musica si impara, si vive e si trasmette.
-          </h2>
-
+<!-- LA SCUOLA -->
+<section class="sezione" id="scuola">
+  <div class="container due-colonne">
+    <div>
+      <div class="eyebrow">La nostra scuola</div>
+      <h2 class="section-title">La musica si impara, si vive e si trasmette.</h2>
           <p>
             La Scuola di Musica dell’Associazione Musicale Alcarese
             è aperta a persone di tutte le età.
@@ -1439,31 +487,421 @@
             tra generazioni diverse e contribuisce a mantenere viva
             la tradizione musicale della nostra Associazione.
           </p>
-        </div>
-
-        <div class="intro-poster">
-          <img
-            src="foto-eventi/scuoladimusica.jpg"
-            alt="Locandina della Scuola di Musica"
-            loading="lazy"
-            onclick="apriLightboxSingola(this.src, 'Locandina della Scuola di Musica')"
-          >
-        </div>
-
-      </div>
     </div>
-  </section>
+    <figure class="locandina">
+      <a class="foto " href="foto-eventi/scuoladimusica.jpg" data-gruppo="locandina"><img src="foto-eventi/scuoladimusica.jpg" alt="Locandina della Scuola di Musica" loading="lazy"></a>
+      <figcaption>La locandina della Scuola di Musica</figcaption>
+    </figure>
+  </div>
 
-  <!-- MAESTRO GIUSEPPE PARRINO -->
+  <div class="container perche">
+    <div>
+      <h3>Perché scegliere la Scuola di Musica della Banda</h3>
+      <p>
+        La Banda è un’importante realtà di aggregazione, dove
+        si imparano il rispetto, il decoro e soprattutto il valore
+        dello stare insieme.
+      </p>
 
-  <section class="content-section" style="background: var(--cream);">
-    <div class="content">
-      <div class="section-label">Una figura fondamentale</div>
+      <p>
+        La nostra Scuola non si limita alla semplice lezione:
+        accompagna gli allievi all’interno di un gruppo nel quale
+        persone di età e professioni diverse imparano a collaborare,
+        sostenersi e condividere la passione per la musica.
+      </p>
+    </div>
+    <div>
+      <h3>La Banda come patrimonio culturale</h3>
+      <p>
+        La Banda è una vera e propria realtà culturale che non si
+        limita alla divulgazione musicale, ma svolge anche un ruolo
+        importante nella promozione della cultura, nella formazione
+        e nella crescita della comunità.
+      </p>
 
-      <h2 class="section-title">Il Maestro Onorario Giuseppe Parrino</h2>
+      <p>
+        Attraverso la propria Scuola di Musica, la Banda trasmette
+        alle nuove generazioni non soltanto la conoscenza musicale,
+        ma anche valori come la collaborazione, il rispetto,
+        la disciplina e il senso di appartenenza.
+      </p>
+    </div>
+  </div>
 
-      <div class="card">
+  <div class="container">
+    <details class="approfondimento">
+      <summary>L'importanza delle bande</summary>
+        <p>
+          Il Maestro Riccardo Muti ha più volte sottolineato
+          l'importanza delle bande e delle realtà musicali
+          amatoriali nella formazione culturale e sociale.
+        </p>
 
+        <p>
+          Le bande possono essere considerate vere e proprie
+          piccole orchestre di fiati, capaci di avvicinare alla
+          musica persone di età e provenienze diverse e di creare
+          occasioni di incontro e condivisione.
+        </p>
+
+        <blockquote>
+          «Imparare a stare in un coro, in una banda, in un'orchestra,
+          significa imparare a stare in una società dove l'armonia
+          nasce dalla differenza».
+        </blockquote>
+
+        <p>
+          È proprio questo uno dei valori più profondi della nostra
+          Banda: persone diverse, con età, professioni e percorsi
+          differenti, che attraverso la musica imparano a suonare
+          insieme e a costruire qualcosa di comune.
+        </p>
+    </details>
+  </div>
+</section>
+
+<!-- MAESTRI -->
+<section class="sezione scura" id="maestri">
+  <div class="container">
+    <div class="eyebrow">La formazione continua</div>
+    <h2 class="section-title">La Scuola di Musica oggi</h2>
+    <div class="testo">
+      <p>
+        Oggi la Scuola di Musica prosegue il proprio percorso
+        di formazione grazie all'impegno dei Maestri che mettono
+        le proprie competenze e la propria passione al servizio
+        delle nuove generazioni.
+      </p>
+
+      <p>
+        Attraverso le lezioni e il lavoro condiviso, gli allievi
+        possono avvicinarsi allo studio della musica, sviluppare
+        le proprie capacità e prepararsi, per chi lo desidera,
+        a entrare a far parte del Corpo Bandistico.
+      </p>
+    </div>
+     <div class="teachers-grid">
+
+  <div class="teacher-card">
+    <h3>M° Michele Saccone</h3>
+    <p>Maestro della Scuola di Musica</p>
+  </div>
+
+  <div class="teacher-card">
+    <h3>M° Salvatore Saccone</h3>
+    <p>Maestro della Scuola di Musica</p>
+  </div>
+
+  <div class="teacher-card">
+    <h3>M° Salvatore Gioitta</h3>
+    <p>Maestro della Scuola di Musica</p>
+  </div>
+
+  <div class="teacher-card">
+    <h3>M° Santino Santoro</h3>
+    <p>Maestro della Scuola di Musica</p>
+  </div>
+
+</div>
+  </div>
+</section>
+
+<section class="sezione crema">
+  <div class="container due-colonne">
+    <div>
+      <div class="eyebrow">La storia della nostra formazione</div>
+      <h2 class="section-title">Il Maestro Santino Santoro</h2>
+            <p>
+              Nel percorso della Scuola di Musica un posto importante
+              è occupato dal <strong>Maestro Santino Santoro</strong>,
+              che ha accompagnato tanti giovani nel loro avvicinamento
+              alla musica e nel percorso di preparazione per entrare
+              a far parte del Corpo Bandistico Municipale “G. Verdi”.
+            </p>
+
+            <p>
+              Attraverso il suo lavoro, la sua guida e la sua dedizione,
+              ha contribuito alla crescita musicale di numerosi ragazzi,
+              trasmettendo loro non soltanto le competenze necessarie
+              per suonare uno strumento, ma anche valori fondamentali
+              come l'impegno, la disciplina, il rispetto e la
+              collaborazione.
+            </p>
+
+            <p>
+              Il suo contributo rappresenta una parte significativa
+              della storia della nostra Scuola di Musica e del percorso
+              di tanti giovani che, grazie alla formazione ricevuta,
+              hanno potuto vivere l'esperienza della Banda.
+            </p>
+      <blockquote>
+          La musica è un percorso che si costruisce insieme:
+          ogni allievo che cresce e diventa parte della Banda
+          porta con sé anche il lavoro, la passione e gli
+          insegnamenti di chi lo ha accompagnato nei primi passi.
+      </blockquote>
+      <details class="approfondimento">
+        <summary>I ragazzi entrati in Banda sotto la sua guida</summary>
+        <p>
+          Questi sono i giovani che hanno intrapreso il proprio
+          percorso all'interno del Corpo Bandistico Municipale
+          sotto la guida del Maestro Santino Santoro:
+        </p>
+
+        <ul class="santino-list">
+          <li>Davide Calcò</li>
+          <li>Ilary Calcò</li>
+          <li>Ginevra Cavallaro</li>
+          <li>Carola Dottore</li>
+          <li>Nunzio Dottore</li>
+          <li>Davide Faraci</li>
+          <li>Mariapia Faraci</li>
+          <li>Nicolò Gioitta</li>
+          <li>Salvatore Gioitta</li>
+          <li>Alessandro Marino</li>
+          <li>Stefano Marino</li>
+          <li>Salvatore Mustica</li>
+          <li>Alisia Oriti</li>
+          <li>Davide Oriti</li>
+          <li>Nicola Pirronello</li>
+          <li>Luca Santoro</li>
+          <li>Mattia Santoro</li>
+          <li>Alice Vaneria</li>
+          <li>Enrico Vasi</li>
+        </ul>
+      </details>
+    </div>
+    <figure class="ritratto">
+      <a class="foto " href="foto-eventi/santino.jpg" data-gruppo="santino"><img src="foto-eventi/santino.jpg" alt="Il Maestro Santino Santoro" loading="lazy"></a>
+      <figcaption>Il Maestro Santino Santoro</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- PREMI -->
+<section class="sezione" id="premi">
+  <div class="container">
+    <div class="eyebrow">I nostri giovani musicisti</div>
+    <h2 class="section-title">I risultati della nostra Scuola</h2>
+<article class="premio">
+  <div class="premio-testa">
+    <span class="badge">1° Premio Assoluto · 100/100</span>
+    <span class="meta">Concorso Nazionale “Salvuccio Percacciolo” · Mirto · 2026</span>
+    <h3>Primo Premio al Concorso Musicale Nazionale "Salvuccio Percacciolo" 2026</h3>
+  </div>
+  <figure class="premio-foto">
+  <a class="foto grande" href="foto-eventi/percacciolo.jpg" data-gruppo="p2026"><img src="foto-eventi/percacciolo.jpg" alt="Premio Salvuccio Percacciolo 2026 - Foto 1" loading="lazy"></a>
+  
+  <figcaption>Premio “Salvuccio Percacciolo” 2026 · Mirto</figcaption>
+</figure>
+  <div class="premio-testo">
+        <p>
+          Congratulazioni ai nostri ragazzi e al
+          <strong>Maestro Santino Santoro</strong>
+          per questo straordinario risultato, frutto di impegno,
+          preparazione e passione per la musica.
+        </p>
+    <details>
+      <summary>Leggi tutto</summary>
+        <p>
+          La Scuola di Musica del Corpo Bandistico Municipale Alcarese
+          conferma la propria voglia di migliorarsi, misurarsi e divertirsi
+          all'insegna della musica aggiudicandosi, con punti
+          <strong>100/100</strong>, il <strong>1° premio assoluto</strong>
+          al Concorso Nazionale "Salvuccio Percacciolo" di Mirto.
+        </p>
+
+        <p>
+          Questo successo, frutto di impegno e determinazione, dà lustro
+          alla cultura musicale Alcarese e crea un continuum con il lavoro
+          e l'ambizione del nostro Corpo Bandistico, pronto ad accogliere
+          con gioia questi ragazzi meravigliosi nel mondo "dei grandi".
+        </p>
+    </details>
+  </div>
+</article>
+<article class="premio">
+  <div class="premio-testa">
+    <span class="badge">1° Premio · XVIII Edizione</span>
+    <span class="meta">Concorso Nazionale “Maria Grazia Cutuli” · Crotone · Maggio 2026</span>
+    <h3>Primo Premio alla XVIII Edizione del Concorso Musicale Nazionale "Maria Grazia Cutuli"</h3>
+  </div>
+  <figure class="premio-foto">
+  <a class="foto grande" href="foto-eventi/698990281-1623511926446892-948983126384039020-n.jpg" data-gruppo="cutuli"><img src="foto-eventi/698990281-1623511926446892-948983126384039020-n.jpg" alt="Concorso Maria Grazia Cutuli - Foto 1" loading="lazy"></a>
+  <div class="mini"><a class="foto " href="foto-eventi/4 (1).jpg" data-gruppo="cutuli"><img src="foto-eventi/4 (1).jpg" alt="Concorso Maria Grazia Cutuli - Foto 2" loading="lazy"></a><a class="foto " href="foto-eventi/700708317-1623511949780223-6917267274862951879-n.jpg" data-gruppo="cutuli"><img src="foto-eventi/700708317-1623511949780223-6917267274862951879-n.jpg" alt="Concorso Maria Grazia Cutuli - Foto 3" loading="lazy"></a><a class="foto " href="foto-eventi/667473774-946127171361876-3645817900863798513-n.jpg" data-gruppo="cutuli"><img src="foto-eventi/667473774-946127171361876-3645817900863798513-n.jpg" alt="Concorso Maria Grazia Cutuli - Foto 4" loading="lazy"></a><a class="foto " href="foto-eventi/699084263-1623511883113563-7417324054538264152-n.jpg" data-gruppo="cutuli"><img src="foto-eventi/699084263-1623511883113563-7417324054538264152-n.jpg" alt="Concorso Maria Grazia Cutuli - Foto 5" loading="lazy"></a></div>
+  <figcaption>Concorso “Maria Grazia Cutuli” · Crotone, maggio 2026</figcaption>
+</figure>
+  <div class="premio-testo">
+        <p>
+          <strong>ORGOGLIO ALCARESE: I NOSTRI RAGAZZI CONQUISTANO
+          IL PRIMO PREMIO!</strong>
+        </p>
+        <p>
+          La gioia è immensa e l'emozione ancora di più! Con immenso
+          orgoglio, noi, Corpo Bandistico Municipale “G. Verdi” di
+          Alcara li Fusi festeggiamo i ragazzi della nostra Scuola
+          di Musica, che hanno conquistato il
+          <strong>Primo Premio</strong> alla XVIII Edizione del
+          Concorso Musicale Nazionale “Maria Grazia Cutuli” che si
+          è svolta nel mese di maggio del <strong>2026 a Crotone</strong>!
+        </p>
+    <details>
+      <summary>Leggi tutto</summary>
+        <p>
+          Partiti con la voglia di mettersi in gioco e di vivere
+          un'importante esperienza di crescita, i nostri giovani
+          musicisti hanno superato ogni aspettativa, dimostrando sul
+          palco non solo un grandissimo talento, ma anche una maturità
+          e una passione straordinarie.
+        </p>
+
+        <p>
+          Un ringraziamento speciale va al M° Santino Santoro, che con
+          dedizione, pazienza e guida sapiente ha accompagnato i ragazzi
+          in questo percorso, valorizzando il lavoro svolto durante
+          tutto l'anno.
+        </p>
+
+        <p>
+          Questo traguardo non è solo una vittoria in una competizione,
+          ma la conferma che l'impegno, il sacrificio e l'amore per la
+          musica ripagano sempre. Siete il futuro della nostra
+          associazione e della nostra tradizione bandistica, e non
+          potremmo essere più fieri di voi!
+        </p>
+
+        <p>
+          Grazie ragazzi per aver portato così in alto il nome di
+          Alcara li Fusi e della nostra realtà musicale. Continuate
+          a suonare con questo entusiasmo e a farci emozionare!
+        </p>
+    </details>
+  </div>
+</article>
+<article class="premio">
+  <div class="premio-testa">
+    <span class="badge">2° Premio · 94/100</span>
+    <span class="meta">Premio Internazionale “Salvuccio Percacciolo” · Mirto · 22 maggio 2025</span>
+    <h3>Secondo Premio al Premio Internazionale “Salvuccio Percacciolo” 2025</h3>
+  </div>
+  <figure class="premio-foto">
+  <a class="foto grande" href="foto-eventi/499554390-1293897362741685-300458054207010660-n_orig.jpg" data-gruppo="p2025"><img src="foto-eventi/499554390-1293897362741685-300458054207010660-n_orig.jpg" alt="Premio Salvuccio Percacciolo 2025 - Foto 1" loading="lazy"></a>
+  <div class="mini"><a class="foto " href="foto-eventi/499785628-1293897379408350-6099964464217998868-n_orig.jpg" data-gruppo="p2025"><img src="foto-eventi/499785628-1293897379408350-6099964464217998868-n_orig.jpg" alt="Premio Salvuccio Percacciolo 2025 - Foto 2" loading="lazy"></a><a class="foto " href="foto-eventi/499708553-1293897372741684-3626934576983418496-n_orig.jpg" data-gruppo="p2025"><img src="foto-eventi/499708553-1293897372741684-3626934576983418496-n_orig.jpg" alt="Premio Salvuccio Percacciolo 2025 - Foto 3" loading="lazy"></a><a class="foto " href="foto-eventi/500461192-1293897376075017-632198432798670353-n.jpg" data-gruppo="p2025"><img src="foto-eventi/500461192-1293897376075017-632198432798670353-n.jpg" alt="Premio Salvuccio Percacciolo 2025 - Foto 4" loading="lazy"></a><a class="foto " href="foto-eventi/500035244-1293897369408351-5147766654060393707-n_orig.jpg" data-gruppo="p2025"><img src="foto-eventi/500035244-1293897369408351-5147766654060393707-n_orig.jpg" alt="Premio Salvuccio Percacciolo 2025 - Foto 5" loading="lazy"></a></div>
+  <figcaption>Premio “Salvuccio Percacciolo” · Mirto, 22 maggio 2025</figcaption>
+</figure>
+  <div class="premio-testo">
+        <p>
+          Congratulazioni ai meravigliosi ragazzi della scuola di musica
+          del nostro Corpo Bandistico, guidati dal Maestro Santino Santoro,
+          per essersi aggiudicati il <strong>2° premio</strong>, con
+          votazione <strong>94/100</strong>, al Premio Internazionale
+          "Salvuccio Percacciolo"!
+        </p>
+    <details>
+      <summary>Leggi tutto</summary>
+        <p>
+          <strong>
+            Partecipazione degli studenti della nostra Scuola di Musica
+            alla Rassegna musicale scolastica Premio Internazionale
+            "Salvuccio Percacciolo" di Mirto.
+          </strong>
+        </p>
+
+        <p><strong>Piccoli Grandi "Banditi" crescono!</strong></p>
+        <p>
+          La musica è un essenziale mezzo di educazione e di crescita
+          musicale ma soprattutto umana.
+        </p>
+
+        <p>
+          Siamo felici che tanti giovanissimi credano fortemente in
+          questi valori, nel potere della musica di unire la passione
+          alla dedizione e alla cultura del lavoro, ma soprattutto di
+          congiungere tanti ragazzi che condividono lo stesso amore
+          per il pentagramma.
+        </p>
+
+        <p>
+          Complimenti dunque ai nostri piccoli Bandisti e a tutti i
+          partecipanti, siete il nostro avvenire.
+        </p>
+    </details>
+  </div>
+</article>
+  </div>
+</section>
+
+<!-- ATTIVITÀ -->
+<section class="sezione crema" id="attivita">
+  <div class="container">
+    <div class="eyebrow">Esperienze e iniziative · 20 agosto</div>
+    <h2 class="section-title">CIAK, SI SUONA!</h2>
+    <div class="testo">
+        <p>
+          Un pomeriggio dedicato alla musica, alla creatività
+          e alla condivisione, pensato per avvicinare bambini
+          e ragazzi al mondo musicale.
+        </p>
+
+        <p>
+          Nella Sala Musicale presso il Monastero di S. Andrea
+          si è svolto un laboratorio musicale dedicato ai più
+          giovani: un'occasione per giocare, scoprire e avvicinarsi
+          alla musica attraverso attività coinvolgenti e momenti
+          di sperimentazione.
+        </p>
+
+        <p>
+          A seguire, il concerto in Piazza San Nicolò Politi
+          ha visto protagonisti i giovani allievi della Scuola
+          di Musica, che hanno avuto l'opportunità di condividere
+          con il pubblico il proprio percorso e la propria passione.
+        </p>
+      <p class="motto">Seminare musica oggi significa far crescere nuove passioni domani.</p>
+    </div>
+    <figure>
+      <div class="griglia">
+<a class="foto " href="foto-eventi/813923299_18440931493131587_7528346578999758601_n.jpg" data-gruppo="ciak"><img src="foto-eventi/813923299_18440931493131587_7528346578999758601_n.jpg" alt="CIAK, SI SUONA! - Fotografia 1" loading="lazy"></a>
+<a class="foto " href="foto-eventi/813987078_18440931418131587_4239156655046501289_n.jpg" data-gruppo="ciak"><img src="foto-eventi/813987078_18440931418131587_4239156655046501289_n.jpg" alt="CIAK, SI SUONA! - Fotografia 2" loading="lazy"></a>
+<a class="foto " href="foto-eventi/814086114_18440931316131587_945695719456408618_n.jpg" data-gruppo="ciak"><img src="foto-eventi/814086114_18440931316131587_945695719456408618_n.jpg" alt="CIAK, SI SUONA! - Fotografia 3" loading="lazy"></a>
+<a class="foto " href="foto-eventi/814339179_18440931346131587_8543452811096287639_n.jpg" data-gruppo="ciak"><img src="foto-eventi/814339179_18440931346131587_8543452811096287639_n.jpg" alt="CIAK, SI SUONA! - Fotografia 4" loading="lazy"></a>
+<a class="foto " href="foto-eventi/814364950_18440931325131587_6096093319054158529_n.jpg" data-gruppo="ciak"><img src="foto-eventi/814364950_18440931325131587_6096093319054158529_n.jpg" alt="CIAK, SI SUONA! - Fotografia 5" loading="lazy"></a>
+<a class="foto " href="foto-eventi/814381857_18440931463131587_3481236781457697101_n.jpg" data-gruppo="ciak"><img src="foto-eventi/814381857_18440931463131587_3481236781457697101_n.jpg" alt="CIAK, SI SUONA! - Fotografia 6" loading="lazy"></a>
+<a class="foto " href="foto-eventi/814535083_18440931361131587_6280593480539962481_n.jpg" data-gruppo="ciak"><img src="foto-eventi/814535083_18440931361131587_6280593480539962481_n.jpg" alt="CIAK, SI SUONA! - Fotografia 7" loading="lazy"></a>
+<a class="foto " href="foto-eventi/814575416_18440931385131587_7594603602484681504_n.jpg" data-gruppo="ciak"><img src="foto-eventi/814575416_18440931385131587_7594603602484681504_n.jpg" alt="CIAK, SI SUONA! - Fotografia 8" loading="lazy"></a>
+<a class="foto " href="foto-eventi/814695528_18440931382131587_4855359373968887534_n.jpg" data-gruppo="ciak"><img src="foto-eventi/814695528_18440931382131587_4855359373968887534_n.jpg" alt="CIAK, SI SUONA! - Fotografia 9" loading="lazy"></a>
+<a class="foto " href="foto-eventi/814768823_18440931511131587_483419872695225980_n.jpg" data-gruppo="ciak"><img src="foto-eventi/814768823_18440931511131587_483419872695225980_n.jpg" alt="CIAK, SI SUONA! - Fotografia 10" loading="lazy"></a>
+<a class="foto " href="foto-eventi/814818348_18440931394131587_7761606483491561043_n.jpg" data-gruppo="ciak"><img src="foto-eventi/814818348_18440931394131587_7761606483491561043_n.jpg" alt="CIAK, SI SUONA! - Fotografia 11" loading="lazy"></a>
+<a class="foto " href="foto-eventi/814908130_18440931433131587_329848320124586274_n.jpg" data-gruppo="ciak"><img src="foto-eventi/814908130_18440931433131587_329848320124586274_n.jpg" alt="CIAK, SI SUONA! - Fotografia 12" loading="lazy"></a>
+<a class="foto " href="foto-eventi/814926288_18440931415131587_1933472902691021730_n.jpg" data-gruppo="ciak"><img src="foto-eventi/814926288_18440931415131587_1933472902691021730_n.jpg" alt="CIAK, SI SUONA! - Fotografia 13" loading="lazy"></a>
+<a class="foto " href="foto-eventi/815157646_18440931460131587_1716126028973800124_n.jpg" data-gruppo="ciak"><img src="foto-eventi/815157646_18440931460131587_1716126028973800124_n.jpg" alt="CIAK, SI SUONA! - Fotografia 14" loading="lazy"></a>
+      </div>
+      <figcaption>La giornata in immagini · tocca una foto per ingrandirla</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- TESTIMONIANZA -->
+<section class="sezione scura">
+  <div class="container testimonianza">
+    <div class="eyebrow">Una testimonianza</div>
+    <h2 class="section-title">La Banda è famiglia</h2>
+    <figure>
+      <blockquote>
+        <p>«La banda non è solo un insieme di persone, suonare non significa conoscere quelle 7 note.</p><p>La banda è collaborare, rispettare i tempi degli altri, capire che ognuno di noi ha un ruolo ed è importante, ma che non è nessuno senza gli altri.</p><p>La banda è famiglia, è amicizia, è rispetto.</p><p>Quindi, cari ragazzi e genitori, pensateci. Iscrivere un figlio alla scuola di musica non è solo fargli suonare uno strumento ma è anche farlo entrare in un mondo di gioia e allegria che porterà sempre nel cuore!»</p>
+      </blockquote>
+      <figcaption><strong>Rosaria Gianguzzo</strong><br>Componente della Banda Municipale — Sax Contralto</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- MAESTRO PARRINO -->
+<section class="sezione" id="parrino">
+  <div class="container">
+    <div class="due-colonne">
+      <div>
+        <div class="eyebrow">Una figura fondamentale</div>
+        <h2 class="section-title">Il Maestro Onorario Giuseppe Parrino</h2>
         <p>
           Il Maestro Onorario Giuseppe Parrino è nato nel 1929
           ad Alcara li Fusi ed è morto l'8 ottobre 2021.
@@ -1502,9 +940,15 @@
           con passione e virtù al servizio reso con esemplare talento
           nel Corpo Bandistico Municipale».
         </blockquote>
+      </div>
+      <figure class="ritratto">
+        <a class="foto " href="foto-parrino/donpippo1.jpg" data-gruppo="ritratto-parrino"><img src="foto-parrino/donpippo1.jpg" alt="Il Maestro Giuseppe Parrino" loading="lazy"></a>
+        <figcaption>Il Maestro Onorario Giuseppe Parrino</figcaption>
+      </figure>
+    </div>
 
-        <h3>Le sue composizioni</h3>
-
+    <details class="approfondimento">
+      <summary>Le sue composizioni</summary>
         <ul>
           <li><strong>Vecchia banda musicale Alcarese</strong> — marcia sinfonica</li>
           <li><strong>Desy</strong> — marcia sinfonica</li>
@@ -1512,9 +956,9 @@
           <li><strong>Argentina</strong> — marcia militare</li>
           <li><strong>Due Novembre</strong> — marcia funebre</li>
         </ul>
-
-        <h3>Un'eredità che continua</h3>
-
+    </details>
+    <details class="approfondimento">
+      <summary>Un'eredità che continua: il grazie della sua Banda</summary>
         <p>
           Al Maestro Giuseppe Parrino il Corpo Bandistico Municipale
           deve moltissimo. Ha educato all'arte musicale intere
@@ -1545,796 +989,166 @@
         </p>
 
         <p><strong>La sua cara Banda.</strong></p>
+    </details>
 
-        <div class="parrino-portrait">
-          <img
-            src="foto-parrino/donpippo1.jpg"
-            alt="Il Maestro Giuseppe Parrino"
-            loading="lazy"
-            onclick="apriLightboxSingola(this.src, 'Il Maestro Onorario Giuseppe Parrino')"
-          >
-          <p>Il Maestro Onorario Giuseppe Parrino</p>
-        </div>
-
-        <h3>Ricordi del Maestro</h3>
-
-        <div class="gallery">
-          <div class="gallery-image-wrap">
-            <button class="gallery-arrow" type="button"
-              onclick="cambiaParrino(-1)" aria-label="Foto precedente">❮</button>
-
-            <img
-              id="foto-parrino-grande"
-              class="gallery-image"
-              src="foto-parrino/2.jpg"
-              alt="Ricordo del Maestro Giuseppe Parrino"
-              loading="lazy"
-              onclick="apriLightboxGalleria('parrino', indiceParrino)"
-            >
-
-            <button class="gallery-arrow" type="button"
-              onclick="cambiaParrino(1)" aria-label="Foto successiva">❯</button>
-          </div>
-
-          <p id="numero-foto-parrino" class="gallery-counter">Foto 1 di 19</p>
-          <p class="gallery-hint">Clicca sulla foto per ingrandirla e scorrere</p>
-        </div>
-
+    <figure class="ricordi">
+      <h3>Ricordi del Maestro</h3>
+      <div class="striscia">
+<a class="foto " href="foto-parrino/2.jpg" data-gruppo="parrino"><img src="foto-parrino/2.jpg" alt="Ricordo del Maestro Giuseppe Parrino" loading="lazy"></a>
+<a class="foto " href="foto-parrino/3.jpg" data-gruppo="parrino"><img src="foto-parrino/3.jpg" alt="Ricordo del Maestro Giuseppe Parrino" loading="lazy"></a>
+<a class="foto " href="foto-parrino/4.jpg" data-gruppo="parrino"><img src="foto-parrino/4.jpg" alt="Ricordo del Maestro Giuseppe Parrino" loading="lazy"></a>
+<a class="foto " href="foto-parrino/5.jpg" data-gruppo="parrino"><img src="foto-parrino/5.jpg" alt="Ricordo del Maestro Giuseppe Parrino" loading="lazy"></a>
+<a class="foto " href="foto-parrino/6.jpg" data-gruppo="parrino"><img src="foto-parrino/6.jpg" alt="Ricordo del Maestro Giuseppe Parrino" loading="lazy"></a>
+<a class="foto " href="foto-parrino/7.jpg" data-gruppo="parrino"><img src="foto-parrino/7.jpg" alt="Ricordo del Maestro Giuseppe Parrino" loading="lazy"></a>
+<a class="foto " href="foto-parrino/8.jpg" data-gruppo="parrino"><img src="foto-parrino/8.jpg" alt="Ricordo del Maestro Giuseppe Parrino" loading="lazy"></a>
+<a class="foto " href="foto-parrino/9.jpg" data-gruppo="parrino"><img src="foto-parrino/9.jpg" alt="Ricordo del Maestro Giuseppe Parrino" loading="lazy"></a>
+<a class="foto " href="foto-parrino/10.jpg" data-gruppo="parrino"><img src="foto-parrino/10.jpg" alt="Ricordo del Maestro Giuseppe Parrino" loading="lazy"></a>
+<a class="foto " href="foto-parrino/11.jpg" data-gruppo="parrino"><img src="foto-parrino/11.jpg" alt="Ricordo del Maestro Giuseppe Parrino" loading="lazy"></a>
+<a class="foto " href="foto-parrino/12.jpg" data-gruppo="parrino"><img src="foto-parrino/12.jpg" alt="Ricordo del Maestro Giuseppe Parrino" loading="lazy"></a>
+<a class="foto " href="foto-parrino/13.jpg" data-gruppo="parrino"><img src="foto-parrino/13.jpg" alt="Ricordo del Maestro Giuseppe Parrino" loading="lazy"></a>
+<a class="foto " href="foto-parrino/14.jpg" data-gruppo="parrino"><img src="foto-parrino/14.jpg" alt="Ricordo del Maestro Giuseppe Parrino" loading="lazy"></a>
+<a class="foto " href="foto-parrino/15.jpg" data-gruppo="parrino"><img src="foto-parrino/15.jpg" alt="Ricordo del Maestro Giuseppe Parrino" loading="lazy"></a>
+<a class="foto " href="foto-parrino/16.jpg" data-gruppo="parrino"><img src="foto-parrino/16.jpg" alt="Ricordo del Maestro Giuseppe Parrino" loading="lazy"></a>
+<a class="foto " href="foto-parrino/17.jpg" data-gruppo="parrino"><img src="foto-parrino/17.jpg" alt="Ricordo del Maestro Giuseppe Parrino" loading="lazy"></a>
+<a class="foto " href="foto-parrino/18.jpg" data-gruppo="parrino"><img src="foto-parrino/18.jpg" alt="Ricordo del Maestro Giuseppe Parrino" loading="lazy"></a>
+<a class="foto " href="foto-parrino/19.jpg" data-gruppo="parrino"><img src="foto-parrino/19.jpg" alt="Ricordo del Maestro Giuseppe Parrino" loading="lazy"></a>
+<a class="foto " href="foto-parrino/20.jpg" data-gruppo="parrino"><img src="foto-parrino/20.jpg" alt="Ricordo del Maestro Giuseppe Parrino" loading="lazy"></a>
       </div>
-    </div>
-  </section>
-
-  <!-- SCUOLA DI MUSICA OGGI -->
-
-  <section class="content-section teachers-section">
-    <div class="content">
-
-      <div class="section-label">La formazione continua</div>
-
-      <h2 class="section-title">La Scuola di Musica oggi</h2>
-
-      <p>
-        Oggi la Scuola di Musica prosegue il proprio percorso
-        di formazione grazie all'impegno dei Maestri che mettono
-        le proprie competenze e la propria passione al servizio
-        delle nuove generazioni.
-      </p>
-
-      <p>
-        Attraverso le lezioni e il lavoro condiviso, gli allievi
-        possono avvicinarsi allo studio della musica, sviluppare
-        le proprie capacità e prepararsi, per chi lo desidera,
-        a entrare a far parte del Corpo Bandistico.
-      </p>
-
-     <div class="teachers-grid">
-
-  <div class="teacher-card">
-    <h3>M° Michele Saccone</h3>
-    <p>Maestro della Scuola di Musica</p>
+      <figcaption>Scorri di lato e tocca una foto per ingrandirla</figcaption>
+    </figure>
   </div>
+</section>
 
-  <div class="teacher-card">
-    <h3>M° Salvatore Saccone</h3>
-    <p>Maestro della Scuola di Musica</p>
+<!-- ISCRIZIONI -->
+<section class="sezione scura iscrizioni" id="iscrizioni">
+  <div class="container">
+    <div class="eyebrow">Iscrizioni e informazioni</div>
+    <h2 class="section-title">Vieni a suonare con noi</h2>
+    <p>La Scuola di Musica è aperta a persone di tutte le età.</p>
+    <div class="hero-actions">
+      <a href="tel:+393382402745" class="btn btn-gold">Chiama il Maestro Direttore</a>
+      <a href="mailto:bandamunicipalealcara@gmail.com" class="btn btn-outline">Scrivi una email</a>
+    </div>
+    <p class="recapiti">338.240.2745 · bandamunicipalealcara@gmail.com</p>
   </div>
+</section>
 
-  <div class="teacher-card">
-    <h3>M° Salvatore Gioitta</h3>
-    <p>Maestro della Scuola di Musica</p>
-  </div>
+</main>
 
-  <div class="teacher-card">
-    <h3>M° Santino Santoro</h3>
-    <p>Maestro della Scuola di Musica</p>
-  </div>
+<dialog id="lightbox" aria-label="Fotografia ingrandita">
+  <button type="button" class="chiudi" aria-label="Chiudi">×</button>
+  <button type="button" class="prec" aria-label="Foto precedente">❮</button>
+  <figure><img alt=""><figcaption></figcaption></figure>
+  <button type="button" class="succ" aria-label="Foto successiva">❯</button>
+</dialog>
 
-</div>
-      </div>
-    </div>
-  </section>
+<footer>
 
-  <!-- IL MAESTRO SANTINO SANTORO -->
+  <p>
+    <strong>Corpo Bandistico Municipale “G. Verdi”</strong>
+  </p>
 
-  <section class="content-section santino-section">
-    <div class="content">
+  <div class="footer-line"></div>
 
-      <div class="section-label">La storia della nostra formazione</div>
+  <p>
+    © <span data-anno>2026</span> Associazione Musicale Alcarese – Alcara li Fusi, Messina
+  </p>
 
-      <h2 class="section-title">Il Maestro Santino Santoro</h2>
+  <p>Dal 1911, musica e tradizione.</p>
 
-      <div class="card">
+  <p>
+    Sito web creato e curato da Antonina Vaneria
+    e dai Responsabili della Comunicazione del Direttivo.
+  </p>
 
-        <div class="santino-intro">
+</footer>
 
-          <div>
-            <p>
-              Nel percorso della Scuola di Musica un posto importante
-              è occupato dal <strong>Maestro Santino Santoro</strong>,
-              che ha accompagnato tanti giovani nel loro avvicinamento
-              alla musica e nel percorso di preparazione per entrare
-              a far parte del Corpo Bandistico Municipale “G. Verdi”.
-            </p>
-
-            <p>
-              Attraverso il suo lavoro, la sua guida e la sua dedizione,
-              ha contribuito alla crescita musicale di numerosi ragazzi,
-              trasmettendo loro non soltanto le competenze necessarie
-              per suonare uno strumento, ma anche valori fondamentali
-              come l'impegno, la disciplina, il rispetto e la
-              collaborazione.
-            </p>
-
-            <p>
-              Il suo contributo rappresenta una parte significativa
-              della storia della nostra Scuola di Musica e del percorso
-              di tanti giovani che, grazie alla formazione ricevuta,
-              hanno potuto vivere l'esperienza della Banda.
-            </p>
-          </div>
-
-          <div class="santino-photo">
-            <img
-              src="foto-eventi/santino.jpg"
-              alt="Il Maestro Santino Santoro"
-              loading="lazy"
-              onclick="apriLightboxSingola(this.src, 'Il Maestro Santino Santoro')"
-            >
-            <p>Il Maestro Santino Santoro</p>
-          </div>
-
-        </div>
-
-        <blockquote>
-          La musica è un percorso che si costruisce insieme:
-          ogni allievo che cresce e diventa parte della Banda
-          porta con sé anche il lavoro, la passione e gli
-          insegnamenti di chi lo ha accompagnato nei primi passi.
-        </blockquote>
-
-        <h3>I ragazzi entrati in Banda sotto la sua guida</h3>
-
-        <p>
-          Questi sono i giovani che hanno intrapreso il proprio
-          percorso all'interno del Corpo Bandistico Municipale
-          sotto la guida del Maestro Santino Santoro:
-        </p>
-
-        <ul class="santino-list">
-          <li>Davide Calcò</li>
-          <li>Ilary Calcò</li>
-          <li>Ginevra Cavallaro</li>
-          <li>Carola Dottore</li>
-          <li>Nunzio Dottore</li>
-          <li>Davide Faraci</li>
-          <li>Mariapia Faraci</li>
-          <li>Nicolò Gioitta</li>
-          <li>Salvatore Gioitta</li>
-          <li>Alessandro Marino</li>
-          <li>Stefano Marino</li>
-          <li>Salvatore Mustica</li>
-          <li>Alisia Oriti</li>
-          <li>Davide Oriti</li>
-          <li>Nicola Pirronello</li>
-          <li>Luca Santoro</li>
-          <li>Mattia Santoro</li>
-          <li>Alice Vaneria</li>
-          <li>Enrico Vasi</li>
-        </ul>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- VALORI -->
-
-  <section class="content-section">
-    <div class="content">
-      <div class="section-label">Valori</div>
-
-      <h2 class="section-title">
-        Perché scegliere la Scuola di Musica della Banda
-      </h2>
-
-      <p>
-        La Banda è un’importante realtà di aggregazione, dove
-        si imparano il rispetto, il decoro e soprattutto il valore
-        dello stare insieme.
-      </p>
-
-      <p>
-        La nostra Scuola non si limita alla semplice lezione:
-        accompagna gli allievi all’interno di un gruppo nel quale
-        persone di età e professioni diverse imparano a collaborare,
-        sostenersi e condividere la passione per la musica.
-      </p>
-    </div>
-  </section>
-
-  <!-- TESTIMONIANZA -->
-
-  <section class="content-section testimonial-section">
-    <div class="content">
-      <div class="section-label">Una testimonianza</div>
-
-      <h2 class="section-title">La Banda è famiglia</h2>
-
-      <div class="card">
-        <p class="testimonial-name">
-          <strong>Rosaria Gianguzzo</strong>
-        </p>
-
-        <p>Componente della Banda Municipale — Sax Contralto</p>
-
-        <blockquote>
-          «La banda non è solo un insieme di persone, suonare non
-          significa conoscere quelle 7 note.
-        </blockquote>
-
-        <blockquote>
-          La banda è collaborare, rispettare i tempi degli altri,
-          capire che ognuno di noi ha un ruolo ed è importante,
-          ma che non è nessuno senza gli altri.
-        </blockquote>
-
-        <blockquote>
-          La banda è famiglia, è amicizia, è rispetto.
-        </blockquote>
-
-        <blockquote>
-          Quindi, cari ragazzi e genitori, pensateci.
-          Iscrivere un figlio alla scuola di musica non è solo
-          fargli suonare uno strumento ma è anche farlo entrare
-          in un mondo di gioia e allegria che porterà sempre
-          nel cuore!»
-        </blockquote>
-      </div>
-    </div>
-  </section>
-
-  <!-- PATRIMONIO CULTURALE -->
-
-  <section class="content-section">
-    <div class="content">
-      <div class="section-label">Cultura musicale</div>
-
-      <h2 class="section-title">La Banda come patrimonio culturale</h2>
-
-      <p>
-        La Banda è una vera e propria realtà culturale che non si
-        limita alla divulgazione musicale, ma svolge anche un ruolo
-        importante nella promozione della cultura, nella formazione
-        e nella crescita della comunità.
-      </p>
-
-      <p>
-        Attraverso la propria Scuola di Musica, la Banda trasmette
-        alle nuove generazioni non soltanto la conoscenza musicale,
-        ma anche valori come la collaborazione, il rispetto,
-        la disciplina e il senso di appartenenza.
-      </p>
-
-      <div class="card">
-        <h2>L'importanza delle bande</h2>
-
-        <p>
-          Il Maestro Riccardo Muti ha più volte sottolineato
-          l'importanza delle bande e delle realtà musicali
-          amatoriali nella formazione culturale e sociale.
-        </p>
-
-        <p>
-          Le bande possono essere considerate vere e proprie
-          piccole orchestre di fiati, capaci di avvicinare alla
-          musica persone di età e provenienze diverse e di creare
-          occasioni di incontro e condivisione.
-        </p>
-
-        <blockquote>
-          «Imparare a stare in un coro, in una banda, in un'orchestra,
-          significa imparare a stare in una società dove l'armonia
-          nasce dalla differenza».
-        </blockquote>
-
-        <p>
-          È proprio questo uno dei valori più profondi della nostra
-          Banda: persone diverse, con età, professioni e percorsi
-          differenti, che attraverso la musica imparano a suonare
-          insieme e a costruire qualcosa di comune.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ATTIVITÀ ED ESPERIENZE -->
-
-  <section class="activities-section" id="attivita">
-    <div class="activities-content">
-
-      <div class="activities-heading">
-        <div class="section-label">Esperienze e iniziative</div>
-        <h2>La musica si vive insieme</h2>
-        <p>
-          Laboratori, incontri, concerti e momenti di condivisione
-          della nostra Scuola di Musica.
-        </p>
-      </div>
-
-      <div class="ciak-story">
-
-        <div class="section-label">Un'esperienza da ricordare</div>
-
-        <h3>CIAK, SI SUONA!</h3>
-
-        <span class="ciak-date">20 agosto</span>
-
-        <p>
-          Un pomeriggio dedicato alla musica, alla creatività
-          e alla condivisione, pensato per avvicinare bambini
-          e ragazzi al mondo musicale.
-        </p>
-
-        <p>
-          Nella Sala Musicale presso il Monastero di S. Andrea
-          si è svolto un laboratorio musicale dedicato ai più
-          giovani: un'occasione per giocare, scoprire e avvicinarsi
-          alla musica attraverso attività coinvolgenti e momenti
-          di sperimentazione.
-        </p>
-
-        <p>
-          A seguire, il concerto in Piazza San Nicolò Politi
-          ha visto protagonisti i giovani allievi della Scuola
-          di Musica, che hanno avuto l'opportunità di condividere
-          con il pubblico il proprio percorso e la propria passione.
-        </p>
-
-        <p class="ciak-final">
-          Seminare musica oggi significa far crescere nuove
-          passioni domani.
-        </p>
-
-      </div>
-
-      <!-- GALLERIA CIAK -->
-
-      <div class="ciak-gallery">
-
-        <div class="ciak-gallery-heading">
-          <h3>La giornata in immagini</h3>
-          <p>Clicca su una fotografia per ingrandirla e scorrere l'album di CIAK, SI SUONA!</p>
-        </div>
-
-        <div class="thumbs-grid">
-
-          <div class="thumb-item" onclick="apriLightboxGalleria('ciak', 0)">
-            <img src="foto-eventi/813923299_18440931493131587_7528346578999758601_n.jpg"
-                 alt="CIAK, SI SUONA! - Fotografia 1" loading="lazy">
-          </div>
-
-          <div class="thumb-item" onclick="apriLightboxGalleria('ciak', 1)">
-            <img src="foto-eventi/813987078_18440931418131587_4239156655046501289_n.jpg"
-                 alt="CIAK, SI SUONA! - Fotografia 2" loading="lazy">
-          </div>
-
-          <div class="thumb-item" onclick="apriLightboxGalleria('ciak', 2)">
-            <img src="foto-eventi/814086114_18440931316131587_945695719456408618_n.jpg"
-                 alt="CIAK, SI SUONA! - Fotografia 3" loading="lazy">
-          </div>
-
-          <div class="thumb-item" onclick="apriLightboxGalleria('ciak', 3)">
-            <img src="foto-eventi/814339179_18440931346131587_8543452811096287639_n.jpg"
-                 alt="CIAK, SI SUONA! - Fotografia 4" loading="lazy">
-          </div>
-
-          <div class="thumb-item" onclick="apriLightboxGalleria('ciak', 4)">
-            <img src="foto-eventi/814364950_18440931325131587_6096093319054158529_n.jpg"
-                 alt="CIAK, SI SUONA! - Fotografia 5" loading="lazy">
-          </div>
-
-          <div class="thumb-item" onclick="apriLightboxGalleria('ciak', 5)">
-            <img src="foto-eventi/814381857_18440931463131587_3481236781457697101_n.jpg"
-                 alt="CIAK, SI SUONA! - Fotografia 6" loading="lazy">
-          </div>
-
-          <div class="thumb-item" onclick="apriLightboxGalleria('ciak', 6)">
-            <img src="foto-eventi/814535083_18440931361131587_6280593480539962481_n.jpg"
-                 alt="CIAK, SI SUONA! - Fotografia 7" loading="lazy">
-          </div>
-
-          <div class="thumb-item" onclick="apriLightboxGalleria('ciak', 7)">
-            <img src="foto-eventi/814575416_18440931385131587_7594603602484681504_n.jpg"
-                 alt="CIAK, SI SUONA! - Fotografia 8" loading="lazy">
-          </div>
-
-          <div class="thumb-item" onclick="apriLightboxGalleria('ciak', 8)">
-            <img src="foto-eventi/814695528_18440931382131587_4855359373968887534_n.jpg"
-                 alt="CIAK, SI SUONA! - Fotografia 9" loading="lazy">
-          </div>
-
-          <div class="thumb-item" onclick="apriLightboxGalleria('ciak', 9)">
-            <img src="foto-eventi/814768823_18440931511131587_483419872695225980_n.jpg"
-                 alt="CIAK, SI SUONA! - Fotografia 10" loading="lazy">
-          </div>
-
-          <div class="thumb-item" onclick="apriLightboxGalleria('ciak', 10)">
-            <img src="foto-eventi/814818348_18440931394131587_7761606483491561043_n.jpg"
-                 alt="CIAK, SI SUONA! - Fotografia 11" loading="lazy">
-          </div>
-
-          <div class="thumb-item" onclick="apriLightboxGalleria('ciak', 11)">
-            <img src="foto-eventi/814908130_18440931433131587_329848320124586274_n.jpg"
-                 alt="CIAK, SI SUONA! - Fotografia 12" loading="lazy">
-          </div>
-
-          <div class="thumb-item" onclick="apriLightboxGalleria('ciak', 12)">
-            <img src="foto-eventi/814926288_18440931415131587_1933472902691021730_n.jpg"
-                 alt="CIAK, SI SUONA! - Fotografia 13" loading="lazy">
-          </div>
-
-          <div class="thumb-item" onclick="apriLightboxGalleria('ciak', 13)">
-            <img src="foto-eventi/815157646_18440931460131587_1716126028973800124_n.jpg"
-                 alt="CIAK, SI SUONA! - Fotografia 14" loading="lazy">
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- RISULTATI DELLA SCUOLA -->
-
-  <section class="content-section results-section">
-    <div class="content">
-      <div class="section-label">I nostri giovani musicisti</div>
-
-      <h2 class="section-title">I risultati della nostra Scuola</h2>
-<div class="awards-grid">
-      <!-- EVENTO 1: MIRTO 2026 -->
-
-      <div class="award-card award-card--gold">
-        <div class="award-top">
-          <span class="event-badge">1° Premio Assoluto · 100/100</span>
-          <span class="event-meta">Concorso Nazionale "Salvuccio Percacciolo" · Mirto · 2026</span>
-        </div>
-
-        <h2>Primo Premio al Concorso Musicale Nazionale "Salvuccio Percacciolo" 2026</h2>
-
-        <p>
-          Congratulazioni ai nostri ragazzi e al
-          <strong>Maestro Santino Santoro</strong>
-          per questo straordinario risultato, frutto di impegno,
-          preparazione e passione per la musica.
-        </p>
-
-        <p>
-          La Scuola di Musica del Corpo Bandistico Municipale Alcarese
-          conferma la propria voglia di migliorarsi, misurarsi e divertirsi
-          all'insegna della musica aggiudicandosi, con punti
-          <strong>100/100</strong>, il <strong>1° premio assoluto</strong>
-          al Concorso Nazionale "Salvuccio Percacciolo" di Mirto.
-        </p>
-
-        <p>
-          Questo successo, frutto di impegno e determinazione, dà lustro
-          alla cultura musicale Alcarese e crea un continuum con il lavoro
-          e l'ambizione del nostro Corpo Bandistico, pronto ad accogliere
-          con gioia questi ragazzi meravigliosi nel mondo "dei grandi".
-        </p>
-
-        <div class="award-image">
-          <img
-            src="foto-eventi/percacciolo.jpg"
-            alt="Premio Salvuccio Percacciolo 2026"
-            loading="lazy"
-            onclick="apriLightboxSingola(this.src, 'Premio Salvuccio Percacciolo 2026 · Mirto')"
-          >
-        </div>
-
-        <p class="gallery-hint">Clicca sulla foto per ingrandirla</p>
-      </div>
-
-      <!-- EVENTO 2: CROTONE 2026 -->
-
-      <div class="award-card award-card--navy">
-        <div class="award-top">
-          <span class="event-badge">1° Premio · XVIII Edizione</span>
-          <span class="event-meta">Concorso Nazionale "Maria Grazia Cutuli" · Crotone · Maggio 2026</span>
-        </div>
-
-        <h2>Primo Premio alla XVIII Edizione del Concorso Musicale Nazionale "Maria Grazia Cutuli"</h2>
-
-        <p>
-          <strong>ORGOGLIO ALCARESE: I NOSTRI RAGAZZI CONQUISTANO
-          IL PRIMO PREMIO!</strong>
-        </p>
-
-        <p>
-          La gioia è immensa e l'emozione ancora di più! Con immenso
-          orgoglio, noi, Corpo Bandistico Municipale “G. Verdi” di
-          Alcara li Fusi festeggiamo i ragazzi della nostra Scuola
-          di Musica, che hanno conquistato il
-          <strong>Primo Premio</strong> alla XVIII Edizione del
-          Concorso Musicale Nazionale “Maria Grazia Cutuli” che si
-          è svolta nel mese di maggio del <strong>2026 a Crotone</strong>!
-        </p>
-
-        <p>
-          Partiti con la voglia di mettersi in gioco e di vivere
-          un'importante esperienza di crescita, i nostri giovani
-          musicisti hanno superato ogni aspettativa, dimostrando sul
-          palco non solo un grandissimo talento, ma anche una maturità
-          e una passione straordinarie.
-        </p>
-
-        <p>
-          Un ringraziamento speciale va al M° Santino Santoro, che con
-          dedizione, pazienza e guida sapiente ha accompagnato i ragazzi
-          in questo percorso, valorizzando il lavoro svolto durante
-          tutto l'anno.
-        </p>
-
-        <p>
-          Questo traguardo non è solo una vittoria in una competizione,
-          ma la conferma che l'impegno, il sacrificio e l'amore per la
-          musica ripagano sempre. Siete il futuro della nostra
-          associazione e della nostra tradizione bandistica, e non
-          potremmo essere più fieri di voi!
-        </p>
-
-        <p>
-          Grazie ragazzi per aver portato così in alto il nome di
-          Alcara Li Fusi e della nostra realtà musicale. Continuate
-          a suonare con questo entusiasmo e a farci emozionare!
-        </p>
-
-        <div class="thumbs-grid thumbs-grid--five">
 <script>
-const gallerie = {
-  ciak: Array.from(
-    document.querySelectorAll('.ciak-gallery .thumb-item img')
-  ),
+/* MENU MOBILE */
 
-  cutuli: Array.from(
-    document.querySelectorAll('.award-card--navy .thumb-item img')
-  ),
+const menuButton = document.getElementById("menuButton");
+const mainNav = document.getElementById("mainNav");
 
-  percacciolo2025: Array.from(
-    document.querySelectorAll('.award-card--burgundy .thumb-item img')
-  )
-};
-
-let gruppoAttivo = null;
-let indiceAttivo = 0;
-
-function apriLightboxGalleria(gruppo, indice) {
-  if (!gallerie[gruppo] || !gallerie[gruppo].length) return;
-
-  gruppoAttivo = gruppo;
-  indiceAttivo = indice;
-
-  mostraFoto();
-  document.getElementById('lightbox').classList.add('open');
-  document.body.style.overflow = 'hidden';
+function setMenu(isOpen) {
+  mainNav.classList.toggle("open", isOpen);
+  menuButton.setAttribute("aria-expanded", String(isOpen));
+  menuButton.textContent = isOpen ? "CHIUDI ✕" : "MENU ☰";
 }
 
-function apriLightboxSingola(src, descrizione) {
-  gruppoAttivo = null;
+menuButton.addEventListener("click", () => {
+  setMenu(!mainNav.classList.contains("open"));
+});
 
-  const lightbox = document.getElementById('lightbox');
-  document.getElementById('lightbox-img').src = src;
-  document.getElementById('lightbox-caption').textContent =
-    descrizione || '';
+mainNav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => setMenu(false));
+});
 
-  document.getElementById('lightbox-counter').textContent = '';
-  lightbox.classList.add('open');
-  document.body.style.overflow = 'hidden';
+document.documentElement.classList.add("menu-js");
 
-  aggiornaFrecce();
+/* ANNI AGGIORNATI IN AUTOMATICO */
+
+const currentYear = new Date().getFullYear();
+
+document.querySelectorAll("[data-anno]").forEach(element => {
+  element.textContent = currentYear;
+});
+
+document.querySelectorAll("[data-anni]").forEach(element => {
+  element.textContent = currentYear - 1911;
+});
+
+/* FOTO INGRANDITE */
+
+const box = document.getElementById("lightbox");
+const boxImg = box.querySelector("img");
+let gruppo = [];
+let indice = 0;
+
+function mostra(i) {
+  indice = (i + gruppo.length) % gruppo.length;
+  const img = gruppo[indice].querySelector("img");
+  boxImg.src = gruppo[indice].href;
+  boxImg.alt = img.alt;
+  box.querySelector("figcaption").textContent =
+    img.alt + (gruppo.length > 1 ? " · " + (indice + 1) + " / " + gruppo.length : "");
+  box.querySelectorAll(".prec, .succ").forEach(b => b.hidden = gruppo.length < 2);
 }
 
-function mostraFoto() {
-  const foto = gallerie[gruppoAttivo][indiceAttivo];
-  const lightbox = document.getElementById('lightbox');
-
-  document.getElementById('lightbox-img').src = foto.src;
-  document.getElementById('lightbox-caption').textContent =
-    foto.alt || '';
-
-  document.getElementById('lightbox-counter').textContent =
-    (indiceAttivo + 1) + ' / ' + gallerie[gruppoAttivo].length;
-
-  aggiornaFrecce();
+if (typeof box.showModal === "function") {
+  document.querySelectorAll(".foto").forEach(link => {
+    link.addEventListener("click", event => {
+      event.preventDefault();
+      gruppo = [...document.querySelectorAll('.foto[data-gruppo="' + link.dataset.gruppo + '"]')];
+      mostra(gruppo.indexOf(link));
+      box.showModal();
+      document.body.style.overflow = "hidden";
+    });
+  });
 }
 
-function aggiornaFrecce() {
-  const navigazione = gruppoAttivo !== null;
+box.querySelector(".chiudi").addEventListener("click", () => box.close());
+box.querySelector(".prec").addEventListener("click", () => mostra(indice - 1));
+box.querySelector(".succ").addEventListener("click", () => mostra(indice + 1));
+box.addEventListener("click", event => { if (event.target === box) box.close(); });
+box.addEventListener("close", () => document.body.style.overflow = "");
+box.addEventListener("keydown", event => {
+  if (event.key === "ArrowLeft") mostra(indice - 1);
+  if (event.key === "ArrowRight") mostra(indice + 1);
+});
 
-  document.getElementById('lightbox-prev').style.visibility =
-    navigazione ? 'visible' : 'hidden';
+let inizioX = 0;
+box.addEventListener("touchstart", e => inizioX = e.changedTouches[0].clientX, { passive: true });
+box.addEventListener("touchend", e => {
+  const spostamento = e.changedTouches[0].clientX - inizioX;
+  if (gruppo.length > 1 && Math.abs(spostamento) > 50) mostra(indice + (spostamento < 0 ? 1 : -1));
+}, { passive: true });
 
-  document.getElementById('lightbox-next').style.visibility =
-    navigazione ? 'visible' : 'hidden';
-}
-
-function cambiaFotoLightbox(direzione) {
-  if (!gruppoAttivo) return;
-
-  const totale = gallerie[gruppoAttivo].length;
-
-  indiceAttivo =
-    (indiceAttivo + direzione + totale) % totale;
-
-  mostraFoto();
-}
-
-function chiudiLightbox() {
-  const lightbox = document.getElementById('lightbox');
-
-  lightbox.classList.remove('open');
-  document.getElementById('lightbox-img').src = '';
-  document.body.style.overflow = '';
-
-  gruppoAttivo = null;
-}
-
-document.addEventListener('keydown', function(event) {
-  const lightbox = document.getElementById('lightbox');
-
-  if (!lightbox.classList.contains('open')) return;
-
-  if (event.key === 'Escape') {
-    chiudiLightbox();
-  }
-
-  if (event.key === 'ArrowRight') {
-    cambiaFotoLightbox(1);
-  }
-
-  if (event.key === 'ArrowLeft') {
-    cambiaFotoLightbox(-1);
-  }
+/* Nasconde i ricordi il cui file non esiste */
+document.querySelectorAll('.foto[data-gruppo="parrino"] img').forEach(img => {
+  const togli = () => img.parentElement.remove();
+  img.addEventListener("error", togli);
 });
 </script>
-          <div class="thumb-item" onclick="apriLightboxGalleria('cutuli', 0)">
-            <img src="foto-eventi/698990281-1623511926446892-948983126384039020-n.jpg"
-                 alt="Concorso Maria Grazia Cutuli - Foto 1" loading="lazy">
-          </div>
 
-          <div class="thumb-item" onclick="apriLightboxGalleria('cutuli', 1)">
-            <img src="foto-eventi/4 (1).jpg"
-                 alt="Concorso Maria Grazia Cutuli - Foto 2" loading="lazy">
-          </div>
-
-          <div class="thumb-item" onclick="apriLightboxGalleria('cutuli', 2)">
-            <img src="foto-eventi/700708317-1623511949780223-6917267274862951879-n.jpg"
-                 alt="Concorso Maria Grazia Cutuli - Foto 3" loading="lazy">
-          </div>
-
-          <div class="thumb-item" onclick="apriLightboxGalleria('cutuli', 3)">
-            <img src="foto-eventi/667473774-946127171361876-3645817900863798513-n.jpg"
-                 alt="Concorso Maria Grazia Cutuli - Foto 4" loading="lazy">
-          </div>
-
-          <div class="thumb-item" onclick="apriLightboxGalleria('cutuli', 4)">
-            <img src="foto-eventi/699084263-1623511883113563-7417324054538264152-n.jpg"
-                 alt="Concorso Maria Grazia Cutuli - Foto 5" loading="lazy">
-          </div>
-
-        </div>
-
-        <p class="gallery-hint">Clicca su una foto per ingrandirla e scorrere l'album</p>
-      </div>
-
-      <!-- EVENTO 3: MIRTO 2025 -->
-
-      <div class="award-card award-card--burgundy">
-        <div class="award-top">
-          <span class="event-badge">2° Premio · 94/100</span>
-          <span class="event-meta">Premio Internazionale "Salvuccio Percacciolo" · Mirto · 22 Maggio 2025</span>
-        </div>
-
-        <h2>Secondo Premio — 22 maggio 2025</h2>
-
-        <p>
-          <strong>
-            Partecipazione degli studenti della nostra Scuola di Musica
-            alla Rassegna musicale scolastica Premio Internazionale
-            "Salvuccio Percacciolo" di Mirto.
-          </strong>
-        </p>
-
-        <p><strong>Piccoli Grandi "Banditi" crescono!</strong></p>
-
-        <p>
-          Congratulazioni ai meravigliosi ragazzi della scuola di musica
-          del nostro Corpo Bandistico, guidati dal Maestro Santino Santoro,
-          per essersi aggiudicati il <strong>2° premio</strong>, con
-          votazione <strong>94/100</strong>, al Premio Internazionale
-          "Salvuccio Percacciolo"!
-        </p>
-
-        <p>
-          La musica è un essenziale mezzo di educazione e di crescita
-          musicale ma soprattutto umana.
-        </p>
-
-        <p>
-          Siamo felici che tanti giovanissimi credano fortemente in
-          questi valori, nel potere della musica di unire la passione
-          alla dedizione e alla cultura del lavoro, ma soprattutto di
-          congiungere tanti ragazzi che condividono lo stesso amore
-          per il pentagramma.
-        </p>
-
-        <p>
-          Complimenti dunque ai nostri piccoli Bandisti e a tutti i
-          partecipanti, siete il nostro avvenire.
-        </p>
-</div>
-        <div class="thumbs-grid thumbs-grid--five">
-
-          <div class="thumb-item" onclick="apriLightboxGalleria('percacciolo2025', 0)">
-            <img src="foto-eventi/499554390-1293897362741685-300458054207010660-n_orig.jpg"
-                 alt="Premio Salvuccio Percacciolo 2025 - Foto 1" loading="lazy">
-          </div>
-
-          <div class="thumb-item" onclick="apriLightboxGalleria('percacciolo2025', 1)">
-            <img src="foto-eventi/499785628-1293897379408350-6099964464217998868-n_orig.jpg"
-                 alt="Premio Salvuccio Percacciolo 2025 - Foto 2" loading="lazy">
-          </div>
-
-          <div class="thumb-item" onclick="apriLightboxGalleria('percacciolo2025', 2)">
-            <img src="foto-eventi/499708553-1293897372741684-3626934576983418496-n_orig.jpg"
-                 alt="Premio Salvuccio Percacciolo 2025 - Foto 3" loading="lazy">
-          </div>
-
-          <div class="thumb-item" onclick="apriLightboxGalleria('percacciolo2025', 3)">
-            <img src="foto-eventi/500461192-1293897376075017-632198432798670353-n.jpg"
-                 alt="Premio Salvuccio Percacciolo 2025 - Foto 4" loading="lazy">
-          </div>
-
-          <div class="thumb-item" onclick="apriLightboxGalleria('percacciolo2025', 4)">
-            <img src="foto-eventi/500035244-1293897369408351-5147766654060393707-n_orig.jpg"
-                 alt="Premio Salvuccio Percacciolo 2025 - Foto 5" loading="lazy">
-          </div>
-
-        </div>
-
-        <p class="gallery-hint">Clicca su una foto per ingrandirla e scorrere l'album</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-
-  <footer>
-    <p>
-      <strong>Corpo Bandistico Municipale “G. Verdi”</strong>
-    </p>
-
-    <div class="footer-line"></div>
-
-    <p>
-      © 2026 Associazione Musicale Alcarese – Alcara Li Fusi, Messina
-    </p>
-
-    <p>Dal 1911, musica e tradizione.</p>
-
-    <p>
-      Sito web creato e curato da Antonina Vaneria
-      e dai Responsabili della Comunicazione del Direttivo.
-    </p>
-  </footer>
-
-  <!-- LIGHTBOX -->
-
-  <div
-    id="lightbox"
-    class="lightbox"
-    role="dialog"
-    aria-modal="true"
-    aria-label="Fotografia ingrandita"
-    onclick="chi
+</body>
+</html>
