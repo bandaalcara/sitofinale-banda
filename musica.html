@@ -746,6 +746,131 @@
 .ciak-gallery .thumb-item {
   aspect-ratio: 4 / 3;
 }
+    /* PREMI: SCHEDE COMPATTE AFFIANCATE */
+
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+  margin-top: 20px;
+}
+
+.awards-grid .award-card {
+  min-width: 0;
+  margin-top: 0;
+  padding: 17px;
+  display: flex;
+  flex-direction: column;
+}
+
+.awards-grid .award-top {
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.awards-grid .event-badge {
+  font-size: 9px;
+  padding: 4px 7px;
+  letter-spacing: 1px;
+}
+
+.awards-grid .event-meta {
+  font-size: 10px;
+}
+
+.awards-grid .award-card h2 {
+  font-size: 20px;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+.awards-grid .award-card p {
+  font-size: 12px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.awards-grid .thumbs-grid,
+.awards-grid .thumbs-grid--five {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.awards-grid .thumb-item {
+  aspect-ratio: 4 / 3;
+}
+
+.awards-grid .award-image {
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.awards-grid .award-image img {
+  max-width: 100%;
+  max-height: 170px;
+  padding: 4px;
+}
+
+.awards-grid .gallery-hint {
+  font-size: 9px;
+  margin-top: 8px;
+}
+
+/* CIAK: GALLERIA PIÙ COMPATTA */
+
+.ciak-gallery {
+  max-width: 900px;
+}
+
+.ciak-gallery .thumbs-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.ciak-gallery .thumb-item {
+  aspect-ratio: 4 / 3;
+}
+
+/* TUTTE LE MINIATURE CLICCABILI */
+
+.thumb-item,
+.award-image img,
+.parrino-portrait img,
+.santino-photo img,
+.intro-poster img {
+  cursor: zoom-in;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .awards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ciak-gallery .thumbs-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .awards-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .awards-grid .award-card {
+    padding: 18px;
+  }
+
+  .ciak-gallery .thumbs-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+  }
+}
 
     /* RISULTATI E PREMI */
 
@@ -1865,7 +1990,7 @@
       <div class="section-label">I nostri giovani musicisti</div>
 
       <h2 class="section-title">I risultati della nostra Scuola</h2>
-
+<div class="awards-grid">
       <!-- EVENTO 1: MIRTO 2026 -->
 
       <div class="award-card award-card--gold">
@@ -1965,7 +2090,113 @@
         </p>
 
         <div class="thumbs-grid thumbs-grid--five">
+<script>
+const gallerie = {
+  ciak: Array.from(
+    document.querySelectorAll('.ciak-gallery .thumb-item img')
+  ),
 
+  cutuli: Array.from(
+    document.querySelectorAll('.award-card--navy .thumb-item img')
+  ),
+
+  percacciolo2025: Array.from(
+    document.querySelectorAll('.award-card--burgundy .thumb-item img')
+  )
+};
+
+let gruppoAttivo = null;
+let indiceAttivo = 0;
+
+function apriLightboxGalleria(gruppo, indice) {
+  if (!gallerie[gruppo] || !gallerie[gruppo].length) return;
+
+  gruppoAttivo = gruppo;
+  indiceAttivo = indice;
+
+  mostraFoto();
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function apriLightboxSingola(src, descrizione) {
+  gruppoAttivo = null;
+
+  const lightbox = document.getElementById('lightbox');
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox-caption').textContent =
+    descrizione || '';
+
+  document.getElementById('lightbox-counter').textContent = '';
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  aggiornaFrecce();
+}
+
+function mostraFoto() {
+  const foto = gallerie[gruppoAttivo][indiceAttivo];
+  const lightbox = document.getElementById('lightbox');
+
+  document.getElementById('lightbox-img').src = foto.src;
+  document.getElementById('lightbox-caption').textContent =
+    foto.alt || '';
+
+  document.getElementById('lightbox-counter').textContent =
+    (indiceAttivo + 1) + ' / ' + gallerie[gruppoAttivo].length;
+
+  aggiornaFrecce();
+}
+
+function aggiornaFrecce() {
+  const navigazione = gruppoAttivo !== null;
+
+  document.getElementById('lightbox-prev').style.visibility =
+    navigazione ? 'visible' : 'hidden';
+
+  document.getElementById('lightbox-next').style.visibility =
+    navigazione ? 'visible' : 'hidden';
+}
+
+function cambiaFotoLightbox(direzione) {
+  if (!gruppoAttivo) return;
+
+  const totale = gallerie[gruppoAttivo].length;
+
+  indiceAttivo =
+    (indiceAttivo + direzione + totale) % totale;
+
+  mostraFoto();
+}
+
+function chiudiLightbox() {
+  const lightbox = document.getElementById('lightbox');
+
+  lightbox.classList.remove('open');
+  document.getElementById('lightbox-img').src = '';
+  document.body.style.overflow = '';
+
+  gruppoAttivo = null;
+}
+
+document.addEventListener('keydown', function(event) {
+  const lightbox = document.getElementById('lightbox');
+
+  if (!lightbox.classList.contains('open')) return;
+
+  if (event.key === 'Escape') {
+    chiudiLightbox();
+  }
+
+  if (event.key === 'ArrowRight') {
+    cambiaFotoLightbox(1);
+  }
+
+  if (event.key === 'ArrowLeft') {
+    cambiaFotoLightbox(-1);
+  }
+});
+</script>
           <div class="thumb-item" onclick="apriLightboxGalleria('cutuli', 0)">
             <img src="foto-eventi/698990281-1623511926446892-948983126384039020-n.jpg"
                  alt="Concorso Maria Grazia Cutuli - Foto 1" loading="lazy">
@@ -2041,7 +2272,7 @@
           Complimenti dunque ai nostri piccoli Bandisti e a tutti i
           partecipanti, siete il nostro avvenire.
         </p>
-
+</div>
         <div class="thumbs-grid thumbs-grid--five">
 
           <div class="thumb-item" onclick="apriLightboxGalleria('percacciolo2025', 0)">
